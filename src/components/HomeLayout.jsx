@@ -82,24 +82,6 @@ const HomeLayout = ({ children }) => {
           <div className="min-h-screen shadow drawer drawer-mobile  ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="flex flex-col items-center justify-start drawer-content">
-              <label
-                htmlFor="my-drawer-2"
-                className="my-4 btn btn-primary rounded-full drawer-button lg:hidden"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block w-6 h-6 stroke-current"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>{" "}
-                </svg>
-              </label>
               <HomeStyles>
                 <ContentStyles>{children}</ContentStyles>
               </HomeStyles>

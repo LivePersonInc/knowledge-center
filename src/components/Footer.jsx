@@ -1,4 +1,5 @@
 import React from "react"
+import ThemeToggle from "./ThemeToggler"
 
 export default function Footer() {
   return (
@@ -23,7 +24,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.
           </p>
-        </div>{" "}
+        </div>
         <div className="justify-center min-w-full">
           <div className="flex justify-between gap-4">
             <div className="social-icons grid grid-flow-col gap-4">
@@ -118,6 +119,9 @@ export default function Footer() {
                   />
                 </svg>
               </a>
+            </div>
+            <div className="md:hidden sm:visible">
+              <ThemeToggle />
             </div>
           </div>
         </div>
