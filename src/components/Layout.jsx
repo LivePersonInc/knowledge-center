@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import Helmet from "react-helmet"
 import KontentSmartLink from "@kentico/kontent-smart-link"
 import Header from "./Header"
 import Footer from "./Footer"

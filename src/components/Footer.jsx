@@ -1,5 +1,4 @@
 import React from "react"
-import ThemeToggle from "./ThemeToggler"
 
 export default function Footer() {
   return (
@@ -119,9 +118,6 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-            </div>
-            <div className="md:hidden sm:visible">
-              <ThemeToggle />
             </div>
           </div>
         </div>
