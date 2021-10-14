@@ -1,0 +1,44 @@
+.kc {
+  .content {
+    & > *:not(.documenttitlecontainer) {
+      padding-left: 75px;
+    }
+    .documenttitlecontainer {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dedddd;
+      // adding space from left to title container
+      & > * {
+        padding-left: 75px;
+      }
+      .h1 {
+        font-family: "Roboto", "Open Sans", Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        color: #5879da;
+      }
+      div#subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        color: #1e1e1e;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+      .indicators .tag {
+        color: #8b8b8b;
+        background-color: #f2f1f2;
+        font-size: 12px;
+        padding: 2px 4px;
+        margin-bottom: 2px;
+        cursor: default;
+        text-transform: capitalize;
+        align-self: center;
+        margin-right: 13px;
+        border-radius: 0;
+        border-left: solid 2px #5879da;
+      }
+    }
+    .post-content {
+      padding-top: 30px;
+    }
+  }
+}

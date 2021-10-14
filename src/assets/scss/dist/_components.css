@@ -1,0 +1,50 @@
+.content-widget {
+  border-left-width: 0.25rem;
+  border-left-style: solid;
+  color: var(--content-widget-text);
+}
+.content-widget.missing-something {
+  border-color: var(--missing-something-color);
+  background-color: var(--missing-something-background);
+}
+.content-widget.notice {
+  border-color: var(--notice-color);
+  background-color: var(--notice-background);
+}
+.content-widget.important {
+  border-color: var(--important-color);
+  background-color: var(--important-background);
+}
+.content-widget.success {
+  border-color: var(--success-color);
+  background-color: var(--success-background);
+}
+.content-widget a {
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 0 0.4rem;
+  color: var(--link-color);
+}
+.content-widget img {
+  max-width: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+.searchcomponent form.ais-SearchBox-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.searchcomponent input.ais-SearchBox-input {
+  margin-right: auto;
+  width: 100%;
+}
+.searchcomponent .ais-SearchBox.input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.maincontent .post-content > a {
+  word-break: break-all;
+}

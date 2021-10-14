@@ -1,0 +1,65 @@
+{
+  "name": "liveperson-kontent",
+  "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.0",
+    "@heroicons/react": "^1.0.4",
+    "@kentico/gatsby-kontent-components": "^7.2.0",
+    "@kentico/gatsby-source-kontent": "^7.2.0",
+    "@kentico/kontent-delivery": "^10.4.1",
+    "@kentico/kontent-smart-link": "^2.1.0",
+    "@styled-icons/fa-solid": "^10.34.0",
+    "@tailwindcss/typography": "^0.4.1",
+    "algoliasearch": "^4.10.5",
+    "autoprefixer": "^10.3.1",
+    "axios": "^0.21.1",
+    "babel-plugin-styled-components": "^1.13.2",
+    "daisyui": "^1.11.1",
+    "dotenv": "^10.0.0",
+    "gatsby": "^3.14.2",
+    "gatsby-plugin-algolia": "^0.22.2",
+    "gatsby-plugin-dark-mode": "^1.1.2",
+    "gatsby-plugin-gatsby-cloud": "^3.2.0",
+    "gatsby-plugin-image": "^1.14.1",
+    "gatsby-plugin-sass": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-styled-components": "^4.14.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "install-peerdeps": "^3.0.3",
+    "kentico-cloud-delivery": "^6.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-instantsearch-dom": "^6.12.1",
+    "sanitize-html": "^2.4.0",
+    "sass": "^1.37.5",
+    "slugify": "^1.6.0",
+    "styled-components": "^5.3.1",
+    "tailwindcss": "^2.2.7",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itay1313/Kontent-helpcenter"
+  },
+  "bugs": {
+    "url": "https://github.com/itay1313/Kontent-helpcenter/issues"
+  }
+}
