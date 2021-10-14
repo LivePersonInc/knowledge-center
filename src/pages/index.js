@@ -39,7 +39,7 @@ const HomePage = ({ data }) => {
           link="getting-started-getting-started-with-live-chat.html"
           icon={learnMoreIcon}
           desc={kontentItemHomepage?.elements?.box_description_1?.value}
-          homeimg={kontentItemHomepage?.elements?.image?.value?.url}
+          homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
         />
         <CardIcon
           link="getting-started-getting-started-with-live-chat.html"

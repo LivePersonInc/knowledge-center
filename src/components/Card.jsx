@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
-import homeimg from "../assets/images/home/home.svg"
 
-const Card = ({ title, desc, link, icon, image }) => {
+const Card = ({ title, desc, link, icon, homeimg }) => {
   return (
     <Link
       to={link}
