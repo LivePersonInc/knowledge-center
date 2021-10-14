@@ -3,8 +3,10 @@ import { graphql } from "gatsby"
 import HomeLayout from "../components/HomeLayout"
 import Card from "../components/Card"
 import CardIcon from "../components/CardIcon"
-
-import { postMarkup } from "../utils"
+import {
+  RichTextElement,
+  ImageElement,
+} from "@kentico/gatsby-kontent-components"
 // import { resolveItemInRichText } from "../itemResolver"
 // import { resolveContentLink } from "../linkResolver"
 // Icons
@@ -27,8 +29,8 @@ const HomePage = ({ data }) => {
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
-        <p className="pr-40 sm:pr-8">
-          {postMarkup(bodyTextHomepage, "text-body-text")}
+        <p className="text-body-text pr-40 sm:pr-8">
+          <RichTextElement value={bodyTextHomepage} />
         </p>
       </div>
       <div className="flex flex-wrap justify-between gap-4 mt-8">
@@ -37,7 +39,7 @@ const HomePage = ({ data }) => {
           link="getting-started-getting-started-with-live-chat.html"
           icon={learnMoreIcon}
           desc={kontentItemHomepage?.elements?.box_description_1?.value}
-          // image={kontentItemHomepage?.elements?.image?.value?.url}
+          homeimg={kontentItemHomepage?.elements?.image?.value?.url}
         />
         <CardIcon
           link="getting-started-getting-started-with-live-chat.html"
