@@ -5,7 +5,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/GlobalStyles"
 import Sidebar from "./Sidebar"
-import SEO from "./Seo"
+import Seo from "./Seo"
 
 const BodyStyles = styled.div`
   min-height: 100vh;
@@ -68,7 +68,7 @@ const HomeLayout = ({ children }) => (
           data.sitePlugin.pluginOptions.languageCodenames[0]
         }
       >
-        <SEO title={data.site.siteMetadata.title} />
+        <Seo title={data.site.siteMetadata.title} />
         <GlobalStyles />
         <Header />
         <div className="min-h-screen shadow drawer drawer-mobile  ">

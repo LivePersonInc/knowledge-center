@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function SEO({ children, location, description, title, image }) {
+export default function Seo({ children, location, description, title, image }) {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -18,7 +18,7 @@ export default function SEO({ children, location, description, title, image }) {
       <html lang="en" />
       <title>{title}</title>
       {/* Fav Icons */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="alternate icon" href="/favicon.ico" />
       {/* Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
