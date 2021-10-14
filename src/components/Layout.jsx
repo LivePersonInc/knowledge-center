@@ -7,6 +7,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/GlobalStyles"
 import Sidebar from "./Sidebar"
+import SEO from "./Seo"
 
 const BodyStyles = styled.div`
   min-height: 100vh;
@@ -65,6 +66,11 @@ const Layout = ({ children }) => {
               languageCodenames
             }
           }
+          site {
+            siteMetadata {
+              title
+            }
+          }
         }
       `}
       render={data => (
@@ -75,9 +81,7 @@ const Layout = ({ children }) => {
             data.sitePlugin.pluginOptions.languageCodenames[0]
           }
         >
-          <Helmet defaultTitle="Liveperson Knowledge center">
-            <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-          </Helmet>
+          <SEO title={data.site.siteMetadata.title} />
           <GlobalStyles />
           <Header />
           <div className="min-h-screen shadow drawer drawer-mobile overflow-y-visible">

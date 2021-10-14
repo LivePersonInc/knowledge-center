@@ -7,6 +7,7 @@ import {
 } from "@kentico/gatsby-kontent-components"
 import get from "lodash/get"
 import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import Tags from "../components/Tags"
 import Breadcrumbs from "../components/Breadbrumbs"
 import AlertComponent from "../components/AlertComponent"
@@ -39,6 +40,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
 
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
+      <SEO title={pageTitle} />
       <div ref={contentRef}>
         <div
           className="documenttitlecontainer"

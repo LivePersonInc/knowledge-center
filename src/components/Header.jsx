@@ -1,10 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
-// import logo from "../assets/images/logo.svg"
-// import { resolveContentLink } from "../linkResolver"
+import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import ThemeToggle from "./ThemeToggler"
-import { postMarkup } from "../utils"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -13,8 +10,6 @@ import {
   Index,
   SearchBox,
 } from "react-instantsearch-dom"
-
-const HeaderStyles = styled.header``
 
 let appId = process.env.GATSBY_ALGOLIA_APP_ID
 let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
@@ -29,7 +24,7 @@ export default function Header() {
         : null
   )
   return (
-    <HeaderStyles className="navbar pb-2 bg-white shadow-lg text-base-content z-50">
+    <header className="navbar pb-2 bg-white shadow-lg text-base-content z-50">
       <div className="px-2 mx-2 navbar-start sm:hidden">
         <Link to="/">
           {/* logo svg */}
@@ -144,7 +139,7 @@ export default function Header() {
           Free trial
         </a>
       </div>
-    </HeaderStyles>
+    </header>
   )
 }
 
@@ -170,8 +165,8 @@ const Hit = props => {
                       {pP.elements.pagename.value}
                     </p>
                   </div>
-                  <div className="hit-description">
-                    {postMarkup(pP.elements.subtitle.value, "text-body-text")}
+                  <div className="hit-description text-body-text">
+                    <RichTextElement value={pP.elements.subtitle.value} />
                   </div>
                 </Link>
               </div>

@@ -6,6 +6,11 @@
 require("dotenv").config()
 
 module.exports = {
+  siteMetadata: {
+    title: `LivePerson Knowledge Center`,
+    siteUrl: "https://helpcenterlp.gatsbyjs.io/",
+    description: "Manage, measure, and scale messaging conversations",
+  },
   plugins: [
     {
       resolve: "@kentico/gatsby-source-kontent",

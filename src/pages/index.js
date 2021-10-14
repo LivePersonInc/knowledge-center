@@ -3,10 +3,7 @@ import { graphql } from "gatsby"
 import HomeLayout from "../components/HomeLayout"
 import Card from "../components/Card"
 import CardIcon from "../components/CardIcon"
-import {
-  RichTextElement,
-  ImageElement,
-} from "@kentico/gatsby-kontent-components"
+import { RichTextElement } from "@kentico/gatsby-kontent-components"
 // import { resolveItemInRichText } from "../itemResolver"
 // import { resolveContentLink } from "../linkResolver"
 // Icons
