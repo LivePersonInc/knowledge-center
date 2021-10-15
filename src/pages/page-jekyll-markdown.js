@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import {
   RichTextElement,
   ImageElement,

@@ -24,7 +24,7 @@ export default function Header() {
         : null
   )
   return (
-    <header className="navbar pb-2 bg-white shadow-lg text-base-content z-50">
+    <header className="navbar pb-2 shadow-lg z-50">
       <div className="px-2 mx-2 navbar-start sm:hidden">
         <Link to="/">
           {/* logo svg */}
