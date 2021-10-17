@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
 body .drawer-content {
-  max-height: inherit !important;
+  max-height: inherit !warning;
 }
 body .menu li.hover-bordered:focus a,
 body .menu li.hover-bordered a:hover {
@@ -71,9 +71,9 @@ a {
   border-color: var(--notice-text);
   background-color: var(--notice-background);
 }
-.content-widget.important {
-  border-color: var(--important-text);
-  background-color: var(--important-background);
+.content-widget.warning {
+  border-color: var(--warning-text);
+  background-color: var(--warning-background);
 }
 .content-widget.success {
   border-color: var(--success-text);
@@ -440,8 +440,8 @@ body.light {
   --missing-something-text: #000;
   --notice-background: #edf5fa;
   --notice-color: #016ba7;
-  --important-background: #fff5f5;
-  --important-color: #bf3e3e;
+  --warning-background: #fff5f5;
+  --warning-color: #bf3e3e;
   --success-background: #eff2e9;
   --success-color: #5a7826;
   --box-shadow: #dadbe5e0;
@@ -480,8 +480,8 @@ body.dark {
   --missing-something-color: #000;
   --notice-background: #0b2240;
   --notice-color: #2d9cdb;
-  --important-background: #311525;
-  --important-color: #eb5757;
+  --warning-background: #311525;
+  --warning-color: #eb5757;
   --success-background: #13171a;
   --success-color: #a0c125;
   --box-shadow: #000000d6;

@@ -171,27 +171,16 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                       </div>
                     )
                   }
-                  case "notice": {
+                  case "contentbox": {
                     return (
-                      <div className="my-6">
-                        <div className="content-widget notice flex p-4">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                fill="var(--notice-color)"
-                                fillRule="evenodd"
-                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm10.838 1.184a.842.842 0 01-1.683 0l-.125-4.185A.97.97 0 1112.969 9l-.131 4.184zM13 16a1 1 0 11-2 0 1 1 0 012 0z"
-                                clipRule="evenodd"
-                                opacity="0.9"
-                              ></path>
-                            </svg>
-                          </div>
+                      <div className="my-6" key={linkedItem.elements.id}>
+                        <div
+                          className={
+                            "content-widget " +
+                            linkedItem.elements.type.value[0].codename +
+                            " flex p-4"
+                          }
+                        >
                           <div
                             className="px-3"
                             dangerouslySetInnerHTML={{
@@ -202,10 +191,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                       </div>
                     )
                   }
-                  case "important": {
+
+                  case "warning": {
                     return (
                       <div className="my-6" key={linkedItem.system.id}>
-                        <div className="content-widget important flex p-4">
+                        <div className="content-widget warning flex p-4">
                           <div>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +205,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                               viewBox="0 0 24 24"
                             >
                               <path
-                                fill="var(--important-color)"
+                                fill="var(--warning-color)"
                                 fillRule="evenodd"
                                 d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm6.136-5.12a.9.9 0 00-1.272 1.272l3.863 3.864-3.863 3.863a.9.9 0 001.272 1.273L12 13.288l3.864 3.864a.9.9 0 001.273-1.273l-3.864-3.864 3.864-3.863a.9.9 0 10-1.273-1.273L12 10.743 8.136 6.879z"
                                 clipRule="evenodd"
@@ -321,42 +311,6 @@ export const query = graphql`
               codename
               id
             }
-            ... on kontent_item_notice {
-              id
-              elements {
-                notice_text {
-                  value
-                }
-              }
-              system {
-                type
-                codename
-              }
-            }
-            ... on kontent_item_success {
-              id
-              elements {
-                success_text {
-                  value
-                }
-              }
-              system {
-                codename
-                type
-              }
-            }
-            ... on kontent_item_important {
-              id
-              system {
-                codename
-                type
-              }
-              elements {
-                important_content {
-                  value
-                }
-              }
-            }
             ... on kontent_item_video___widget {
               id
               elements {
@@ -410,6 +364,23 @@ export const query = graphql`
               elements {
                 code {
                   value
+                }
+              }
+            }
+            ... on kontent_item_contentbox {
+              id
+              system {
+                codename
+                type
+              }
+              elements {
+                notice_text {
+                  value
+                }
+                type {
+                  value {
+                    codename
+                  }
                 }
               }
             }
