@@ -160,6 +160,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                   case "code_sample": {
                     return (
                       <div
+                        className="my-6"
                         style={{
                           background: "var(--card-background)",
                           whiteSpace: "pre",
@@ -181,6 +182,37 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                             " flex p-4"
                           }
                         >
+                          <div>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                fill={
+                                  "var(--" +
+                                  linkedItem.elements.type.value[0].codename +
+                                  "-color)"
+                                }
+                                fillRule="evenodd"
+                                d={
+                                  (linkedItem.elements.type.value[0]
+                                    .codename === "notice" &&
+                                    "M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm10.838 1.184a.842.842 0 01-1.683 0l-.125-4.185A.97.97 0 1112.969 9l-.131 4.184zM13 16a1 1 0 11-2 0 1 1 0 012 0z") ||
+                                  (linkedItem.elements.type.value[0]
+                                    .codename === "warning" &&
+                                    "M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm6.136-5.12a.9.9 0 00-1.272 1.272l3.863 3.864-3.863 3.863a.9.9 0 001.272 1.273L12 13.288l3.864 3.864a.9.9 0 001.273-1.273l-3.864-3.864 3.864-3.863a.9.9 0 10-1.273-1.273L12 10.743 8.136 6.879z") ||
+                                  (linkedItem.elements.type.value[0]
+                                    .codename === "success" &&
+                                    "M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm5.601 7.176a.9.9 0 10-1.273-1.273l-6.341 6.341-2.39-2.39a.9.9 0 00-1.273 1.273l3.663 3.663L17.6 9.176z")
+                                }
+                                clipRule="evenodd"
+                                opacity="0.9"
+                              ></path>
+                            </svg>
+                          </div>
                           <div
                             className="px-3"
                             dangerouslySetInnerHTML={{
@@ -192,69 +224,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                     )
                   }
 
-                  case "warning": {
-                    return (
-                      <div className="my-6" key={linkedItem.system.id}>
-                        <div className="content-widget warning flex p-4">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                fill="var(--warning-color)"
-                                fillRule="evenodd"
-                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm6.136-5.12a.9.9 0 00-1.272 1.272l3.863 3.864-3.863 3.863a.9.9 0 001.272 1.273L12 13.288l3.864 3.864a.9.9 0 001.273-1.273l-3.864-3.864 3.864-3.863a.9.9 0 10-1.273-1.273L12 10.743 8.136 6.879z"
-                                clipRule="evenodd"
-                                opacity="0.9"
-                              ></path>
-                            </svg>
-                          </div>
-                          <div
-                            className="px-3"
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                linkedItem.elements.important_content.value,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    )
-                  }
-                  case "success": {
-                    return (
-                      <div className="my-6" key={linkedItem.system.id}>
-                        <div className="content-widget success flex p-4">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                fill="var(--success-color)"
-                                fillRule="evenodd"
-                                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm5.601 7.176a.9.9 0 10-1.273-1.273l-6.341 6.341-2.39-2.39a.9.9 0 00-1.273 1.273l3.663 3.663L17.6 9.176z"
-                                clipRule="evenodd"
-                                opacity="0.9"
-                              ></path>
-                            </svg>
-                          </div>
-                          <div
-                            className="px-3"
-                            dangerouslySetInnerHTML={{
-                              __html: linkedItem.elements.success_text.value,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    )
-                  }
                   default: {
                     return null
                   }
