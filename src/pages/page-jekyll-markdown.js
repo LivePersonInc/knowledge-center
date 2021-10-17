@@ -117,46 +117,64 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                   }
                   case "image__widget": {
                     return (
-                      <div className="my-6 w-full" key={linkedItem.system.id}>
-                        <ImageElement
-                          image={linkedItem.elements.image.value[0]}
-                          className="w-full"
-                          alt={
-                            linkedItem.elements.image.description
-                              ? linkedItem.elements.image.description
-                              : linkedItem.elements.image.name
-                          }
-                          width={750}
-                          height={398}
-                        />
-                        <p className="text-center my-2">
-                          {linkedItem.elements.description.value}
-                        </p>
-                      </div>
-                    )
-                  }
-                  case "image_small__widget": {
-                    return (
                       <div
-                        className="my-6 text-center"
+                        className={
+                          "my-6 " +
+                          linkedItem.elements.orientation.value[0].codename +
+                          " flex p-4"
+                        }
+                        className="my-6 w-full text-center"
                         key={linkedItem.system.id}
                       >
-                        <ImageElement
-                          image={linkedItem.elements.image.value[0]}
-                          alt={
-                            linkedItem.elements.image.description
-                              ? linkedItem.elements.image.description
-                              : linkedItem.elements.image.name
-                          }
-                          width={320}
-                          height={569}
-                        />
+                        {linkedItem.elements.orientation.value[0].codename ===
+                          "vertical" && (
+                          <ImageElement
+                            className="mx-auto"
+                            image={linkedItem.elements.image.value[0]}
+                            width={320}
+                            height={569}
+                            backgroundColor="#bbbbbb"
+                            alt={
+                              linkedItem.elements.image.description
+                                ? linkedItem.elements.image.description
+                                : linkedItem.elements.image.name
+                            }
+                          />
+                        )}
+                        {linkedItem.elements.orientation.value[0].codename ===
+                          "horizontal" && (
+                          <ImageElement
+                            image={linkedItem.elements.image.value[0]}
+                            alt={
+                              linkedItem.elements.image.description
+                                ? linkedItem.elements.image.description
+                                : linkedItem.elements.image.name
+                            }
+                            width={800}
+                            height={600}
+                            backgroundColor="#bbbbbb"
+                          />
+                        )}
+                        {linkedItem.elements.orientation.value[0].codename ===
+                          "square" && (
+                          <ImageElement
+                            image={linkedItem.elements.image.value[0]}
+                            alt={
+                              linkedItem.elements.image.description
+                                ? linkedItem.elements.image.description
+                                : linkedItem.elements.image.name
+                            }
+                            width={800}
+                            height={800}
+                          />
+                        )}
                         <p className="text-center my-2">
                           {linkedItem.elements.description.value}
                         </p>
                       </div>
                     )
                   }
+
                   case "code_sample": {
                     return (
                       <div
