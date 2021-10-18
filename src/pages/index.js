@@ -70,7 +70,13 @@ const HomePage = ({ data }) => {
         />
       </div>
 
-      <div className="card my-8 shadow-2xl lg:card-side text-button-text bg-cta-background">
+      <div
+        data-sal="slide-up"
+        data-sal-duration="2000"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+        className="card my-8 shadow-2xl lg:card-side text-button-text bg-cta-background"
+      >
         <div className="cta card-body flex-row justify-between sm:flex-col sm:items-center">
           <div className="flex flex-col">
             <h3 className="card-title text-button-text">

@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import {
   RichTextElement,
   ImageElement,
 } from "@kentico/gatsby-kontent-components"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import get from "lodash/get"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
@@ -91,6 +92,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
               //     >
               //       {domNode.children[0].data}
               //     </Link>
+
               //   )
               // }}
               resolveLinkedItem={linkedItem => {
@@ -116,6 +118,10 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                     )
                   }
                   case "image__widget": {
+                    // const image = getImage(
+                    //   linkedItem.elements.image.value[0].url
+                    // )
+                    // console.log(image)
                     return (
                       <div
                         className={
@@ -129,6 +135,15 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                         {linkedItem.elements.orientation.value[0].codename ===
                           "horizontal" && (
                           <div className="aspect-w-16 aspect-h-9">
+                            {/* <GatsbyImage
+                              image={image}
+                              alt={
+                                linkedItem.elements.image.description
+                                  ? linkedItem.elements.image.description
+                                  : linkedItem.elements.image.name
+                              }
+                            /> */}
+
                             <ImageElement
                               image={linkedItem.elements.image.value[0]}
                               alt={

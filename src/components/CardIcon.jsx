@@ -4,6 +4,9 @@ import React from "react"
 const CardIcon = ({ icon, title, desc, link }) => {
   return (
     <Link
+      data-sal="fade"
+      data-sal-duration="2000"
+      data-sal-easing="ease"
       to={link}
       className="card border border-card-border shadow-lg hover:shadow-xl transition duration-300 ease-in-out compact side bg-card-background xl:w-5/12 w-full flex-grow p-7"
     >

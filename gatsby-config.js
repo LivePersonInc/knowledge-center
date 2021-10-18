@@ -42,6 +42,7 @@ module.exports = {
         queries: require("./src/utils/algolia-queries"),
       },
     },
+    `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-image`,

@@ -4,6 +4,9 @@ import React from "react"
 const Card = ({ title, desc, link, icon, homeimg }) => {
   return (
     <Link
+      data-sal="fade"
+      data-sal-duration="2000"
+      data-sal-easing="ease"
       to={link}
       style={{
         background: `url(${homeimg}) no-repeat center center fixed`,
