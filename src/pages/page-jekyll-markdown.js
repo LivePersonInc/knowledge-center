@@ -192,6 +192,9 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                           whiteSpace: "pre",
                         }}
                       >
+                        <h5 className="text-card-text text-sm mb-1 uppercase">
+                          {linkedItem.elements.language.value[0].codename}:
+                        </h5>
                         <div className="code_sample border p-4">
                           <code>{linkedItem.elements.code.value}</code>
                         </div>
@@ -359,6 +362,11 @@ export const query = graphql`
               elements {
                 code {
                   value
+                }
+                language {
+                  value {
+                    codename
+                  }
                 }
               }
             }
