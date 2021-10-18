@@ -97,7 +97,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                 switch (get(linkedItem, "system.type")) {
                   case "video___widget": {
                     return (
-                      <div className="my-6">
+                      <div className="my-6 aspect-w-16 aspect-h-9">
                         <iframe
                           title={linkedItem.elements.video_id.value}
                           className="mx-auto w-full"
@@ -123,50 +123,58 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                           linkedItem.elements.orientation.value[0].codename +
                           " flex p-4"
                         }
-                        className="my-6 w-full text-center"
+                        className="my-6 text-center"
                         key={linkedItem.system.id}
                       >
                         {linkedItem.elements.orientation.value[0].codename ===
-                          "vertical" && (
-                          <ImageElement
-                            className="mx-auto"
-                            image={linkedItem.elements.image.value[0]}
-                            width={320}
-                            height={569}
-                            backgroundColor="#bbbbbb"
-                            alt={
-                              linkedItem.elements.image.description
-                                ? linkedItem.elements.image.description
-                                : linkedItem.elements.image.name
-                            }
-                          />
-                        )}
-                        {linkedItem.elements.orientation.value[0].codename ===
                           "horizontal" && (
-                          <ImageElement
-                            image={linkedItem.elements.image.value[0]}
-                            alt={
-                              linkedItem.elements.image.description
-                                ? linkedItem.elements.image.description
-                                : linkedItem.elements.image.name
-                            }
-                            width={800}
-                            height={600}
-                            backgroundColor="#bbbbbb"
-                          />
+                          <div className="aspect-w-16 aspect-h-9">
+                            <ImageElement
+                              image={linkedItem.elements.image.value[0]}
+                              alt={
+                                linkedItem.elements.image.description
+                                  ? linkedItem.elements.image.description
+                                  : linkedItem.elements.image.name
+                              }
+                              width={1000}
+                              height={1000}
+                              backgroundColor="#bbbbbb"
+                            />
+                          </div>
                         )}
+
+                        {linkedItem.elements.orientation.value[0].codename ===
+                          "vertical" && (
+                          <div>
+                            <ImageElement
+                              className="mx-auto"
+                              image={linkedItem.elements.image.value[0]}
+                              width={320}
+                              height={569}
+                              backgroundColor="#bbbbbb"
+                              alt={
+                                linkedItem.elements.image.description
+                                  ? linkedItem.elements.image.description
+                                  : linkedItem.elements.image.name
+                              }
+                            />
+                          </div>
+                        )}
+
                         {linkedItem.elements.orientation.value[0].codename ===
                           "square" && (
-                          <ImageElement
-                            image={linkedItem.elements.image.value[0]}
-                            alt={
-                              linkedItem.elements.image.description
-                                ? linkedItem.elements.image.description
-                                : linkedItem.elements.image.name
-                            }
-                            width={800}
-                            height={800}
-                          />
+                          <div className="aspect-w-1 aspect-h-1">
+                            <ImageElement
+                              image={linkedItem.elements.image.value[0]}
+                              alt={
+                                linkedItem.elements.image.description
+                                  ? linkedItem.elements.image.description
+                                  : linkedItem.elements.image.name
+                              }
+                              width={750}
+                              height={422}
+                            />
+                          </div>
                         )}
                         <p className="text-center my-2">
                           {linkedItem.elements.description.value}
