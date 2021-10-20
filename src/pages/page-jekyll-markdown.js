@@ -84,10 +84,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
               //   )
               // }}
               resolveLink={(link, domNode) => {
-                const parentItemType =
-                  knowledgeCenterMarkdown?.elements?.body.type // It is possible to use external data for resolution
+                // const parentItemType =
+                //   knowledgeCenterMarkdown?.elements?.body.type
+                // It is possible to use external data for resolution
                 return (
-                  <Link to={`/${link?.url_slug}`}>
+                  <Link to={`/${link?.url_slug || "#"}`}>
                     {domNode.children[0].data}
                   </Link>
                 )
@@ -132,6 +133,10 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                         {linkedItem.elements.orientation.value[0].codename ===
                           "horizontal" && (
                           <ImageElement
+                            imgStyle={{ objectFit: `contain` }}
+                            options={{
+                              fit: "clip",
+                            }}
                             image={linkedItem.elements.image.value[0]}
                             alt={
                               linkedItem.elements.image.description
@@ -139,7 +144,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                                 : linkedItem.elements.image.name
                             }
                             width={1000}
-                            height={1000}
+                            height={500}
                             backgroundColor="#bbbbbb"
                           />
                         )}
