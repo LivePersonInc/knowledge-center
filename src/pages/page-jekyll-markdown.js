@@ -83,18 +83,15 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
               //     />
               //   )
               // }}
-              // resolveLink={(link, domNode) => {
-              //   const parentItemType =
-              //     knowledgeCenterMarkdown?.elements?.body.type // It is possible to use external data for resolution
-              //   return (
-              //     <Link
-              //       to={`/${link.type}/partner/${parentItemType}/${link.url_slug}`}
-              //     >
-              //       {domNode.children[0].data}
-              //     </Link>
-
-              //   )
-              // }}
+              resolveLink={(link, domNode) => {
+                const parentItemType =
+                  knowledgeCenterMarkdown?.elements?.body.type // It is possible to use external data for resolution
+                return (
+                  <Link to={`/${link?.url_slug}`}>
+                    {domNode.children[0].data}
+                  </Link>
+                )
+              }}
               resolveLinkedItem={linkedItem => {
                 switch (get(linkedItem, "system.type")) {
                   case "video___widget": {
@@ -134,28 +131,17 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                       >
                         {linkedItem.elements.orientation.value[0].codename ===
                           "horizontal" && (
-                          <div className="aspect-w-16 aspect-h-9">
-                            {/* <GatsbyImage
-                              image={image}
-                              alt={
-                                linkedItem.elements.image.description
-                                  ? linkedItem.elements.image.description
-                                  : linkedItem.elements.image.name
-                              }
-                            /> */}
-
-                            <ImageElement
-                              image={linkedItem.elements.image.value[0]}
-                              alt={
-                                linkedItem.elements.image.description
-                                  ? linkedItem.elements.image.description
-                                  : linkedItem.elements.image.name
-                              }
-                              width={1000}
-                              height={1000}
-                              backgroundColor="#bbbbbb"
-                            />
-                          </div>
+                          <ImageElement
+                            image={linkedItem.elements.image.value[0]}
+                            alt={
+                              linkedItem.elements.image.description
+                                ? linkedItem.elements.image.description
+                                : linkedItem.elements.image.name
+                            }
+                            width={1000}
+                            height={1000}
+                            backgroundColor="#bbbbbb"
+                          />
                         )}
 
                         {linkedItem.elements.orientation.value[0].codename ===
@@ -178,18 +164,16 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
 
                         {linkedItem.elements.orientation.value[0].codename ===
                           "square" && (
-                          <div className="aspect-w-1 aspect-h-1">
-                            <ImageElement
-                              image={linkedItem.elements.image.value[0]}
-                              alt={
-                                linkedItem.elements.image.description
-                                  ? linkedItem.elements.image.description
-                                  : linkedItem.elements.image.name
-                              }
-                              width={750}
-                              height={422}
-                            />
-                          </div>
+                          <ImageElement
+                            image={linkedItem.elements.image.value[0]}
+                            alt={
+                              linkedItem.elements.image.description
+                                ? linkedItem.elements.image.description
+                                : linkedItem.elements.image.name
+                            }
+                            width={750}
+                            height={750}
+                          />
                         )}
                         <p className="text-center my-2">
                           {linkedItem.elements.description.value}
@@ -417,6 +401,9 @@ export const query = graphql`
         channels_supported {
           taxonomy_group
           name
+        }
+        permalink {
+          value
         }
       }
     }
