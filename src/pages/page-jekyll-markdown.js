@@ -170,24 +170,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                             />
                           </div>
                         )}
-
-                        {linkedItem.elements.orientation.value[0].codename ===
-                          "square" && (
-                          <ImageElement
-                            imgStyle={{ objectFit: `contain` }}
-                            options={{
-                              fit: "clip",
-                            }}
-                            image={linkedItem.elements.image.value[0]}
-                            alt={
-                              linkedItem.elements.image.description
-                                ? linkedItem.elements.image.description
-                                : linkedItem.elements.image.name
-                            }
-                            width={750}
-                            height={750}
-                          />
-                        )}
                         <p className="text-center my-2">
                           {linkedItem.elements.description.value}
                         </p>
