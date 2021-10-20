@@ -153,6 +153,10 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                           "vertical" && (
                           <div>
                             <ImageElement
+                              imgStyle={{ objectFit: `contain` }}
+                              options={{
+                                fit: "clip",
+                              }}
                               className="mx-auto"
                               image={linkedItem.elements.image.value[0]}
                               width={320}
@@ -170,6 +174,10 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                         {linkedItem.elements.orientation.value[0].codename ===
                           "square" && (
                           <ImageElement
+                            imgStyle={{ objectFit: `contain` }}
+                            options={{
+                              fit: "clip",
+                            }}
                             image={linkedItem.elements.image.value[0]}
                             alt={
                               linkedItem.elements.image.description
