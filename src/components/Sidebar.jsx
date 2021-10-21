@@ -5,18 +5,27 @@ import { Disclosure } from "@headlessui/react"
 import { PlusIcon, MinusIcon } from "@heroicons/react/outline"
 
 const SidebarStyles = styled.div`
+  .menu ul {
+    padding-left: 0;
+  }
   .nav_item {
     color: var(--sidebar-text);
     margin-bottom: 20px;
-    a {
-      text-decoration: underline;
-    }
+
     .nav-title {
       font-size: 16px;
       line-height: 24px;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0;
       padding-top: 0;
     }
+  }
+  li.subcategories,
+  li.subcategoryfolder {
+    margin-top: 0.4rem;
+  }
+  li.page,
+  li.pagesfolder {
+    padding-left: 2.4rem;
   }
 `
 
@@ -125,7 +134,7 @@ const Sidebar = () => {
 
       <ul
         id="mysidebar"
-        className="menu p-8 lg:pl-14 overflow-y-auto w-80 ld:bg-body-background h-full"
+        className="menu pt-8 lg:pl-14 overflow-y-auto w-80 ld:bg-body-background h-full"
         data-testid="sidebar"
       >
         <StaticQuery

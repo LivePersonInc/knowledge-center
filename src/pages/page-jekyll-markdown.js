@@ -5,7 +5,6 @@ import {
   RichTextElement,
   ImageElement,
 } from "@kentico/gatsby-kontent-components"
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import get from "lodash/get"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
@@ -18,13 +17,13 @@ const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   display: grid;
   grid-template-areas: "sidebar content";
-  grid-template-columns: 6fr 3fr;
+  grid-template-columns: repeat(auto-fit, minmax(75%, 1fr));
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
   }
 `
 
-const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
+const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const contentRef = useRef()
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {
@@ -74,15 +73,15 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
               linkedItems={
                 knowledgeCenterMarkdown?.elements?.body.modular_content
               }
-              // resolveImage={image => {
-              //   return (
-              //     <ImageElement
-              //       image={image}
-              //       alt="{image.description ? image.description : image.name}"
-              //       width={200}
-              //     />
-              //   )
-              // }}
+              resolveImage={image => {
+                return (
+                  <ImageElement
+                    image={image}
+                    alt="{image.description ? image.description : image.name}"
+                    width={200}
+                  />
+                )
+              }}
               resolveLink={(link, domNode) => {
                 // const parentItemType =
                 //   knowledgeCenterMarkdown?.elements?.body.type
@@ -185,7 +184,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                         className="my-6"
                         style={{
                           background: "var(--card-background)",
-                          whiteSpace: "pre",
+                          whiteSpace: "break-spaces",
                         }}
                       >
                         <h5 className="text-card-text text-sm mb-1 uppercase">
