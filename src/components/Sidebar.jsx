@@ -36,24 +36,6 @@ const Sidebar = () => {
     return map
   }
 
-  // // toggle function
-  // const Toggle = () => {
-  //   const [show, toggleShow] = React.useState(true)
-
-  //   return (
-  //     <div>
-  //       <button onClick={() => toggleShow(!show)}>
-  //         toggle: {show ? "show" : "hide"}
-  //       </button>
-  //       {show && <div>Hi there</div>}
-  //     </div>
-  //   )
-  // }
-
-  // <svg className="mr-2 w-8 h-8">
-  //   <use xlinkHref={`./icons.svg#icon-getting-started`} />
-  // </svg>
-
   const SidebarItem = ({ item, url, level }) => {
     if (item.system.type === "navigation_item") {
       const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]

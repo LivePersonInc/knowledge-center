@@ -133,6 +133,7 @@ export default function Header() {
           Sign in
         </a>
         <a
+          target="_blank"
           href="https://developers.liveperson.com/register.html"
           className="btn btn-secondary rounded-full px-5 sm:hidden"
         >

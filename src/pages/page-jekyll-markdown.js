@@ -119,7 +119,9 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext, title }) => {
                     // const image = getImage(
                     //   linkedItem.elements.image.value[0].url
                     // )
-                    // console.log(image)
+                    console.log(
+                      linkedItem.elements.orientation.value[0].codename
+                    )
                     return (
                       <div
                         className={
