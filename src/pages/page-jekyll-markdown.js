@@ -41,7 +41,12 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   // Nav page
   const navPageLink =
     data?.allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
-  // const bodyContent = postMarkup(body_content, "post-content")
+
+  const cjecl = knowledgeCenterMarkdown?.elements?.channels_supported.value
+
+  console.log("itay")
+  console.log(cjecl)
+
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
       <Seo title={pageTitle} />
@@ -63,11 +68,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
             {knowledgeCenterMarkdown?.elements?.subtitle?.value}
           </div>
           <div id="indicators">
-            <Tags
-              tags={(
-                knowledgeCenterMarkdown?.elements?.indicator?.value || []
-              ).map(({ name }) => name)}
-            />
+            <Tags tags={(cjecl || []).map(({ name }) => name)} />
             {/* {console.log(knowledgeCenterMarkdown?.elements?.channels_supported)} */}
           </div>
         </div>
@@ -122,9 +123,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                     )
                   }
                   case "image__widget": {
-                    // const image = getImage(
-                    //   linkedItem.elements.image.value[0].url
-                    // )
                     return (
                       <div
                         className={
@@ -401,6 +399,9 @@ export const query = graphql`
         channels_supported {
           taxonomy_group
           name
+          value {
+            name
+          }
         }
         permalink {
           value

@@ -8,20 +8,16 @@ const NavPage = ({ data }) => {
 
   const allKontentItemNavigationItem = data?.allKontentItemNavigationItem
   const navPageData =
-    data?.allKontentItemNavigationItem?.nodes[0]?.elements?.subitems.value[0]
-      .elements
+    data?.allKontentItemNavigationItem?.nodes[0]?.elements?.subitems.value
 
   console.log(navPageData)
   // console.log(navPageDataSubitems)
   return (
     <Layout>
       <div>
-        <h2>
-          {navPageData?.title.value}
-          {allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value}
-        </h2>
+        <h2>{allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value}</h2>
         <ul>
-          {navPageData?.elements?.subitems?.value.map(node => (
+          {navPageData.map(node => (
             <li key={node?.elements?.url?.value}>
               <Link to={`/${node?.elements?.url?.value}`}>
                 {node?.elements?.title?.value}
