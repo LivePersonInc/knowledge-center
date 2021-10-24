@@ -41,6 +41,9 @@ const ContentStyles = styled.div`
   .cta p {
     margin-bottom: 0;
   }
+  @media (max-width: 767px) {
+    padding: 2rem;
+  }
 `
 
 const HomeLayout = ({ children }) => (
