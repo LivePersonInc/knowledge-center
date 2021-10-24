@@ -91,29 +91,6 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
-
-      {/* <ul>
-        {productOverviews.map(node => (
-          <li key={node?.elements?.url_slug?.value}>
-            <Link to={`/product_overview/${node?.elements?.url_slug?.value}`}>
-              {node?.elements?.title?.value}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <br />
-      <h2>knowledge center docs</h2>
-      <ul>
-        {knowledgeCenterMarkdowns.map(node => (
-          <li key={node?.elements?.url_slug?.value}>
-            <Link
-              to={`/knowledge_markdowns/${node?.elements?.permalink?.value}`}
-            >
-              {node?.elements?.pagename?.value}
-            </Link>
-          </li>
-        ))}
-      </ul> */}
     </HomeLayout>
   )
 }

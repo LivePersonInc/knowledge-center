@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const BreadcrumbsStyles = styled.ul`
@@ -15,12 +15,12 @@ const BreadcrumbsStyles = styled.ul`
   }
 `
 
-const Breadcrumbs = ({ breadCrumbs }) => {
+const Breadcrumbs = ({ breadCrumbs, breadLink }) => {
   const createBreadCrumbs = () => {
     return breadCrumbs?.map((crumb, i) => {
       return i < breadCrumbs.length - 1 ? (
         <li key={crumb} className="breadcrumb-item">
-          {crumb}ssss
+          <Link to={`/${breadLink}`}>{crumb}</Link>
         </li>
       ) : (
         <li key={crumb} className="breadcrumb-item no-after">

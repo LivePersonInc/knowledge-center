@@ -16,6 +16,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 ...recursiveFolder
               }
             }
+            url {
+              value
+            }
           }
         }
       }
@@ -102,6 +105,7 @@ exports.createPages = async ({ graphql, actions }) => {
     fragment recursiveFolder on kontent_item_navigation_item {
       system {
         type
+        codename
       }
       elements {
         subitems {
@@ -156,6 +160,14 @@ exports.createPages = async ({ graphql, actions }) => {
       item.elements.subitems.value.forEach(item =>
         walkTree(item, newUrl, folderCrumbs)
       )
+      createPage({
+        // path: `/${url}-${item.elements.url_slug.value}`,
+        path: `/${item.elements.url.value}`,
+        component: path.resolve(`./src/pages/nav-page.js`),
+        context: {
+          systemId: item.system.id,
+        },
+      })
     } else if (item.system.type === "kc_product_overview") {
       // console.log("URL List:")
       // console.log(`/${url}-${item.elements.url_slug.value}`)

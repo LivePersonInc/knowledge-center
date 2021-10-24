@@ -33,11 +33,15 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
     }
   }, [data])
 
+  // general template
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
-  // const bodyContent = postMarkup(body_content, "post-content")
 
+  // Nav page
+  const navPageLink =
+    data?.allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
+  // const bodyContent = postMarkup(body_content, "post-content")
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
       <Seo title={pageTitle} />
@@ -49,7 +53,10 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
             marginBottom: "1.5rem",
           }}
         >
-          <Breadcrumbs breadCrumbs={pageContext.breadCrumbs} />
+          <Breadcrumbs
+            breadCrumbs={pageContext.breadCrumbs}
+            breadLink={navPageLink}
+          />
           <h1 className="h1">{pageTitle}</h1>
 
           <div className="text-body-text" id="subtitle">
@@ -118,9 +125,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                     // const image = getImage(
                     //   linkedItem.elements.image.value[0].url
                     // )
-                    console.log(
-                      linkedItem.elements.orientation.value[0].codename
-                    )
                     return (
                       <div
                         className={
@@ -400,6 +404,15 @@ export const query = graphql`
         }
         permalink {
           value
+        }
+      }
+    }
+    allKontentItemNavigationItem {
+      nodes {
+        elements {
+          url {
+            value
+          }
         }
       }
     }
