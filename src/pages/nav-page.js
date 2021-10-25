@@ -2,28 +2,55 @@ import React from "react"
 
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
+import NavLinks from "../components/NavLinks"
 
 const NavPage = ({ data }) => {
   //console.log(data)
 
   const allKontentItemNavigationItem = data?.allKontentItemNavigationItem
+  const navPageDataNodes = data?.allKontentItemNavigationItem?.nodes
   const navPageData =
     data?.allKontentItemNavigationItem?.nodes[0]?.elements?.subitems.value
 
-  console.log(navPageData)
-  // console.log(navPageDataSubitems)
+  const items = []
+  const title = allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
+  const Navitems = data?.allKontentItemNavigationItem?.nodes
+  Navitems.forEach(navitem => {
+    items.push(<NavLinks data={navitem} key={navitem.elements.url.value} />)
+  })
+
   return (
     <Layout>
       <div>
-        <h2>{allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value}</h2>
+        <h2>{title}</h2>
+        <div className="flex flex-col">
+          <h4>pagename</h4> <h4>subtitle</h4> <h4>pagename</h4>{" "}
+          <h4>subtitle</h4>
+        </div>
         <ul>
+          {items}
+          {/* {navPageDataNodes.map(node => (
+            <Link
+              to={`/${node?.elements?.url?.value}`}
+              key={node?.elements?.url?.value}
+            >
+              {node?.elements?.title?.value}
+              {navPageData.map(node => (
+                <li key={node?.elements?.url?.value}>
+                  <Link to={`/${node?.elements?.url?.value}`}>
+                    {node?.elements?.title?.value}
+                  </Link>
+                </li>
+              ))}
+            </Link>
+          ))}
           {navPageData.map(node => (
             <li key={node?.elements?.url?.value}>
               <Link to={`/${node?.elements?.url?.value}`}>
                 {node?.elements?.title?.value}
               </Link>
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
     </Layout>
@@ -34,171 +61,33 @@ export default NavPage
 
 export const query = graphql`
   {
-    allKontentItemNavigationItem(
-      filter: { system: { codename: { eq: "root" } } }
-    ) {
+    allKontentItemNavigationItem {
       nodes {
         elements {
+          url {
+            value
+          }
+          title {
+            value
+          }
           subitems {
             value {
-              ... on kontent_item_kc_product_overview {
-                id
-                elements {
-                  title {
-                    value
-                  }
-                  url_slug {
-                    value
-                  }
-                }
+              system {
+                type
               }
+              id
               ... on kontent_item_knowledge_center_markdown_page {
                 id
                 elements {
-                  pagename {
-                    value
-                  }
                   permalink {
                     value
                   }
-                }
-                system {
-                  type
-                }
-              }
-              ... on kontent_item_navigation_item {
-                id
-                elements {
-                  title {
+                  pagename {
                     value
                   }
-                  url {
+                  subtitle {
                     value
                   }
-                  subitems {
-                    value {
-                      ... on kontent_item_kc_product_overview {
-                        id
-                        elements {
-                          title {
-                            value
-                          }
-                          url_slug {
-                            value
-                          }
-                        }
-                      }
-                      ... on kontent_item_knowledge_center_markdown_page {
-                        id
-                        elements {
-                          pagename {
-                            value
-                          }
-                          permalink {
-                            value
-                          }
-                        }
-                        system {
-                          type
-                        }
-                      }
-                      ... on kontent_item_navigation_item {
-                        id
-                        elements {
-                          subitems {
-                            value {
-                              ... on kontent_item_kc_product_overview {
-                                id
-                                elements {
-                                  title {
-                                    value
-                                  }
-                                  url_slug {
-                                    value
-                                  }
-                                }
-                              }
-                              ... on kontent_item_knowledge_center_markdown_page {
-                                id
-                                elements {
-                                  pagename {
-                                    value
-                                  }
-                                  permalink {
-                                    value
-                                  }
-                                }
-                                system {
-                                  type
-                                }
-                              }
-                              ... on kontent_item_navigation_item {
-                                id
-                                elements {
-                                  title {
-                                    value
-                                  }
-                                  url {
-                                    value
-                                  }
-                                  subitems {
-                                    value {
-                                      ... on kontent_item_kc_product_overview {
-                                        id
-                                        elements {
-                                          title {
-                                            value
-                                          }
-                                          url_slug {
-                                            value
-                                          }
-                                        }
-                                        system {
-                                          type
-                                        }
-                                      }
-                                      ... on kontent_item_knowledge_center_markdown_page {
-                                        id
-                                        elements {
-                                          pagename {
-                                            value
-                                          }
-                                          permalink {
-                                            value
-                                          }
-                                        }
-                                        system {
-                                          type
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                                system {
-                                  type
-                                }
-                              }
-                            }
-                          }
-                          title {
-                            value
-                          }
-                          url {
-                            value
-                          }
-                        }
-                        system {
-                          type
-                        }
-                      }
-                      system {
-                        type
-                      }
-                    }
-                  }
-                }
-                system {
-                  type
                 }
               }
             }

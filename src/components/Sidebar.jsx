@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { Disclosure } from "@headlessui/react"
 import { PlusIcon, MinusIcon } from "@heroicons/react/outline"
+import Globe from "./icons/gettingStarted"
 
 const SidebarStyles = styled.div`
   .menu ul {
@@ -63,12 +64,8 @@ const Sidebar = () => {
                     <div className="flex itemdetails canOpen relative">
                       {level === 0 ? (
                         <div className="w-6 h-6 flex flex-col justify-center pr-2">
-                          {open ? <MinusIcon /> : <PlusIcon />}
-                          {/* <svg className="mr-2 w-8 h-8">
-                            <use
-                              xlinkHref={`./icons.svg#icon-getting-started`}
-                            />
-                          </svg> */}
+                          {console.log("itay" + item.elements.url.value)}
+                          <Globe />
                         </div>
                       ) : level === 1 ? (
                         <div className="w-6 h-6 flex flex-col justify-center pr-2">

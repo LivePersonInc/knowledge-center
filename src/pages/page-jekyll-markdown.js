@@ -36,20 +36,19 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   // general template
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
+  const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
 
   // Nav page
   const navPageLink =
     data?.allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
 
-  const cjecl = knowledgeCenterMarkdown?.elements?.channels_supported.value
-
-  console.log("itay")
-  console.log(cjecl)
+  // Tags
+  const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
-      <Seo title={pageTitle} />
+      <Seo title={pageTitle} description={pageSubTitle} />
       <div ref={contentRef}>
         <div
           className="documenttitlecontainer"
@@ -65,11 +64,10 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
           <h1 className="h1">{pageTitle}</h1>
 
           <div className="text-body-text" id="subtitle">
-            {knowledgeCenterMarkdown?.elements?.subtitle?.value}
+            {pageSubTitle}
           </div>
           <div id="indicators">
-            <Tags tags={(cjecl || []).map(({ name }) => name)} />
-            {/* {console.log(knowledgeCenterMarkdown?.elements?.channels_supported)} */}
+            <Tags tags={(pageTags || []).map(({ name }) => name)} />
           </div>
         </div>
         <InnerSiteLayoutStyles>
@@ -93,6 +91,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
               resolveLink={(link, domNode) => {
                 // const parentItemType =
                 //   knowledgeCenterMarkdown?.elements?.body.type
+
                 // It is possible to use external data for resolution
                 return (
                   <Link to={`/${link?.url_slug || "#"}`}>

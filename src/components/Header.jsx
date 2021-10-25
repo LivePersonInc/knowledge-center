@@ -150,7 +150,7 @@ const Hit = props => {
     <div>
       {props?.hits?.length > 0
         ? props.hits.map((pP, index) => {
-            console.log(pP, index)
+            // console.log(pP, index)
             return (
               <div
                 style={{
