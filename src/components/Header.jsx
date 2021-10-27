@@ -73,6 +73,24 @@ export default function Header() {
             searchable={true}
           >
             <SearchBox
+              submit={
+                <svg
+                  width={16}
+                  height={16}
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity={0.9} fill="#494B51">
+                    <path d="M7 3.5a.5.5 0 01.5-.5c1.163 0 2.283.576 3.104 1.396C11.424 5.216 12 6.337 12 7.5a.5.5 0 01-1 0c0-.837-.424-1.717-1.104-2.396C9.216 4.424 8.337 4 7.5 4a.5.5 0 01-.5-.5z" />
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M12.326 11.855a6.5 6.5 0 10-.716.682.501.501 0 00.056.066l3.043 3.043a.5.5 0 10.707-.707l-3.043-3.043a.514.514 0 00-.047-.041zM7.5 13a5.5 5.5 0 100-11 5.5 5.5 0 000 11z"
+                    />
+                  </g>
+                </svg>
+              }
               style={{ borderRadius: `32px` }}
               type="text"
               placeholder="SEARCH"
@@ -128,14 +146,14 @@ export default function Header() {
         </label>
         <a
           href="https://liveengage.liveperson.net/"
-          className="btn btn-ghost rounded-full sm:hidden"
+          className="btn btn-ghost normal-case rounded-full sm:hidden"
         >
           Sign in
         </a>
         <a
           target="_blank"
           href="https://developers.liveperson.com/register.html"
-          className="btn btn-secondary rounded-full px-5 sm:hidden"
+          className="btn btn-secondary normal-case rounded-full px-5 sm:hidden"
         >
           Free trial
         </a>
