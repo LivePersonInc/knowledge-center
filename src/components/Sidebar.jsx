@@ -3,7 +3,14 @@ import styled from "styled-components"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { Disclosure } from "@headlessui/react"
 import { PlusIcon, MinusIcon } from "@heroicons/react/outline"
-import Globe from "./icons/gettingStarted"
+import HouseIcon from "./icons/HouseIcon"
+import MessageIcon from "./icons/MessageIcon"
+import RobotIcon from "./icons/RobotIcon"
+import ContactIcon from "./icons/ContactIcon"
+import AgentIcon from "./icons/AgentIcon"
+import ReportingIcon from "./icons/ReportingIcon"
+import ArrowRight from "./icons/ArrowRight"
+import ArrowDown from "./icons/ArrowDown"
 
 const SidebarStyles = styled.div`
   .menu ul {
@@ -63,13 +70,32 @@ const Sidebar = () => {
                   <Disclosure.Button>
                     <div className="flex itemdetails canOpen relative">
                       {level === 0 ? (
-                        <div className="w-6 h-6 flex flex-col justify-center pr-2">
-                          {console.log("itay" + item.elements.url.value)}
-                          <Globe />
+                        <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
+                          {/* view sidebar items */}
+                          {/* {console.log(item.elements.url.value)} */}
+                          {(() => {
+                            switch (item.elements.url.value) {
+                              case "getting-started":
+                                return <HouseIcon />
+                              case "messaging-channels":
+                                return <MessageIcon />
+                              case "ai-bots-automation":
+                                return <RobotIcon />
+                              case "contact-center-management":
+                                return <ContactIcon />
+                              case "agent-manager-workspace":
+                                return <AgentIcon />
+                              case "data-reporting":
+                                return <ReportingIcon />
+
+                              default:
+                                return "-"
+                            }
+                          })()}
                         </div>
                       ) : level === 1 ? (
-                        <div className="w-6 h-6 flex flex-col justify-center pr-2">
-                          {open ? <MinusIcon /> : <PlusIcon />}
+                        <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-2">
+                          {open ? <ArrowDown /> : <ArrowRight />}
                         </div>
                       ) : null}
                       <span
