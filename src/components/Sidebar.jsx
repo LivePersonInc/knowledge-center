@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { Disclosure } from "@headlessui/react"
-import { PlusIcon, MinusIcon } from "@heroicons/react/outline"
+
 import HouseIcon from "./icons/HouseIcon"
 import MessageIcon from "./icons/MessageIcon"
 import RobotIcon from "./icons/RobotIcon"
