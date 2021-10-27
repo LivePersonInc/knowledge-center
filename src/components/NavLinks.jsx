@@ -11,11 +11,11 @@ class NavLinks extends React.Component {
     const itemId = _.get(this.props, "data.system.id")
     console.log(subitems)
     return (
-      <div className="NavLinks" data-kontent-item-id={itemId}>
-        <div className="article__meta">
-          <span className="article__meta-divider" />
-        </div>
-        <h2 className="article__title" data-kontent-element-codename="title">
+      <div className="NavLinks border-b pb-6" data-kontent-item-id={itemId}>
+        <h2
+          className="article__title mb-0"
+          data-kontent-element-codename="title"
+        >
           <Link className="article__title-link" to={slug}>
             {title}
           </Link>
@@ -24,6 +24,7 @@ class NavLinks extends React.Component {
           className="article__description"
           data-kontent-element-codename="subitems"
         >
+          information about article 2 or 4 lines of information
           {/* {subitems.map(category => {
             return (
               // <span

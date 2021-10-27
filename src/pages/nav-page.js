@@ -23,10 +23,7 @@ const NavPage = ({ data }) => {
     <Layout>
       <div>
         <h2>{title}</h2>
-        <div className="flex flex-col">
-          <h4>pagename</h4> <h4>subtitle</h4> <h4>pagename</h4>{" "}
-          <h4>subtitle</h4>
-        </div>
+
         <ul>
           {items}
           {/* {navPageDataNodes.map(node => (
