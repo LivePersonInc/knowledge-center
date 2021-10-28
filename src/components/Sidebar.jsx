@@ -3,25 +3,25 @@ import styled from "styled-components"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { Disclosure } from "@headlessui/react"
 
-import HouseIcon from "./icons/HouseIcon"
-import MessageIcon from "./icons/MessageIcon"
-import RobotIcon from "./icons/RobotIcon"
-import ContactIcon from "./icons/ContactIcon"
-import AgentIcon from "./icons/AgentIcon"
-import ReportingIcon from "./icons/ReportingIcon"
-
-import MarketplaceIcon from "./icons/MarketplaceIcon"
-import AdminIcon from "./icons/AdminIcon"
-import SecurityIcon from "./icons/SecurityIcon"
-import DeveloperIcon from "./icons/DeveloperIcon"
-import NewIcon from "./icons/NewIcon"
-import ReleaseIcon from "./icons/ReleaseIcon"
-import TroubleshootingIcon from "./icons/TroubleshootingIcon"
-import FaqsIcon from "./icons/FaqsIcon"
-import StatusIcon from "./icons/StatusIcon"
-
-import ArrowRight from "./icons/ArrowRight"
-import ArrowDown from "./icons/ArrowDown"
+import {
+  HouseIcon,
+  MessageIcon,
+  RobotIcon,
+  ContactIcon,
+  AgentIcon,
+  ReportingIcon,
+  MarketplaceIcon,
+  AdminIcon,
+  SecurityIcon,
+  DeveloperIcon,
+  ReleaseIcon,
+  TroubleshootingIcon,
+  NewIcon,
+  FaqsIcon,
+  StatusIcon,
+  ArrowRight,
+  ArrowDown,
+} from "./icons/"
 
 const SidebarStyles = styled.div`
   .menu ul {

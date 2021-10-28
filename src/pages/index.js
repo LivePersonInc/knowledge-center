@@ -4,8 +4,6 @@ import HomeLayout from "../components/HomeLayout"
 import Card from "../components/Card"
 import CardIcon from "../components/CardIcon"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
-// import { resolveItemInRichText } from "../itemResolver"
-// import { resolveContentLink } from "../linkResolver"
 // Icons
 import learnMoreIcon from "../assets/images/home/ic_learn_more.svg"
 import messagingIcon from "../assets/images/home/ic_get_started.svg"
