@@ -46,6 +46,15 @@ const SidebarStyles = styled.div`
   li.pagesfolder {
     padding-left: 2.4rem;
   }
+  li.nav_item:nth-last-child(5) {
+    padding-top: 24px;
+    border-top: 1px solid #dbdce1;
+  }
+
+  li.nav_item:nth-last-child(4) {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #dbdce1;
+  }
 `
 
 const Sidebar = () => {
