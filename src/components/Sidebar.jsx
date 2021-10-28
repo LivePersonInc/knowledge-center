@@ -72,7 +72,7 @@ const Sidebar = () => {
                       {level === 0 ? (
                         <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
                           {/* view sidebar items */}
-                          {/* {console.log(item.elements.url.value)} */}
+                          {console.log(item.elements.url.value)}
                           {(() => {
                             switch (item.elements.url.value) {
                               case "getting-started":

@@ -182,6 +182,9 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                   case "code_sample": {
                     return (
                       <div
+                        data-sal="fade"
+                        data-sal-duration="2000"
+                        data-sal-easing="ease"
                         className="my-6"
                         style={{
                           background: "var(--card-background)",
@@ -199,7 +202,13 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                   }
                   case "contentbox": {
                     return (
-                      <div className="my-6" key={linkedItem.elements.id}>
+                      <div
+                        data-sal="fade"
+                        data-sal-duration="2000"
+                        data-sal-easing="ease"
+                        className="my-6"
+                        key={linkedItem.elements.id}
+                      >
                         <div
                           className={
                             "content-widget " +

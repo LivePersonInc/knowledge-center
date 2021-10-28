@@ -2,7 +2,12 @@ import React from "react"
 import { QuestionMarkCircleIcon } from "@heroicons/react/outline"
 const AlertComponent = () => {
   return (
-    <div className="mt-6 pt-6 border-t">
+    <div
+      data-sal="fade"
+      data-sal-duration="2000"
+      data-sal-easing="ease"
+      className="mt-6 pt-6 border-t"
+    >
       <h4>Missing something?</h4>
       <div className="content-widget missing-something p-4">
         <p>

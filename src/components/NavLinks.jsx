@@ -24,7 +24,7 @@ class NavLinks extends React.Component {
           className="article__description"
           data-kontent-element-codename="subitems"
         >
-          information about article 2 or 4 lines of information
+          Two or four lines of information about article 2 or 4
           {/* {subitems.map(category => {
             return (
               // <span
