@@ -9,6 +9,17 @@ import RobotIcon from "./icons/RobotIcon"
 import ContactIcon from "./icons/ContactIcon"
 import AgentIcon from "./icons/AgentIcon"
 import ReportingIcon from "./icons/ReportingIcon"
+
+import MarketplaceIcon from "./icons/MarketplaceIcon"
+import AdminIcon from "./icons/AdminIcon"
+import SecurityIcon from "./icons/SecurityIcon"
+import DeveloperIcon from "./icons/DeveloperIcon"
+import NewIcon from "./icons/NewIcon"
+import ReleaseIcon from "./icons/ReleaseIcon"
+import TroubleshootingIcon from "./icons/TroubleshootingIcon"
+import FaqsIcon from "./icons/FaqsIcon"
+import StatusIcon from "./icons/StatusIcon"
+
 import ArrowRight from "./icons/ArrowRight"
 import ArrowDown from "./icons/ArrowDown"
 
@@ -87,6 +98,24 @@ const Sidebar = () => {
                                 return <AgentIcon />
                               case "data-reporting":
                                 return <ReportingIcon />
+                              case "marketplace-solutions":
+                                return <MarketplaceIcon />
+                              case "admin-settings":
+                                return <AdminIcon />
+                              case "security-regulations":
+                                return <SecurityIcon />
+                              case "developer-tools":
+                                return <DeveloperIcon />
+                              case "what-s-new":
+                                return <NewIcon />
+                              case "release-notes":
+                                return <ReleaseIcon />
+                              case "troubleshooting":
+                                return <TroubleshootingIcon />
+                              case "faqs":
+                                return <FaqsIcon />
+                              case "service-status-dashboard":
+                                return <StatusIcon />
 
                               default:
                                 return "-"

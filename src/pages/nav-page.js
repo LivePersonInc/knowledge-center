@@ -9,8 +9,8 @@ const NavPage = ({ data }) => {
 
   const allKontentItemNavigationItem = data?.allKontentItemNavigationItem
   const navPageDataNodes = data?.allKontentItemNavigationItem?.nodes
-  const navPageData =
-    data?.allKontentItemNavigationItem?.nodes[0]?.elements?.subitems.value
+  // const navPageData =
+  //   data?.allKontentItemNavigationItem?.nodes[0]?.elements?.subitems.value
 
   const items = []
   const title = allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
