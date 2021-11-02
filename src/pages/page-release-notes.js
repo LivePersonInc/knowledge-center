@@ -4,8 +4,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Article from "../components/Article"
-import Breadcrumbs from "../components/Breadbrumbs"
-import AlertComponent from "../components/AlertComponent"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -48,10 +46,16 @@ const ReleaseNotesPageTemplate = ({ data, pageContext }) => {
             marginBottom: "1.5rem",
           }}
         >
-          <Breadcrumbs
-            breadCrumbs={pageContext.breadCrumbs}
-            breadLink={navPageLink}
-          />
+          <div className="text-sm breadcrumbs">
+            <ul>
+              <li className="breadcrumb-item">
+                <Link to="/">Knowledge Center</Link>
+              </li>
+
+              <li className="breadcrumb-item no-after">News & Releases</li>
+            </ul>
+          </div>
+
           <h1 className="h1">{pageTitle}</h1>
         </div>
         <InnerSiteLayoutStyles>
