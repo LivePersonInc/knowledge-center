@@ -35,7 +35,7 @@ class Article extends React.Component {
           }}
           data-kontent-element-codename="subitems"
         >
-          {subTitle} Two or four lines of information about article 2 or 4
+          {subTitle || "Two or four lines of information about article 2 or 4"}
         </p>
       </div>
     )
