@@ -92,7 +92,7 @@ const Sidebar = () => {
                       {level === 0 ? (
                         <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
                           {/* view sidebar items */}
-                          {console.log(item.elements.url.value)}
+                          {/* {console.log(item.elements.url.value)} */}
                           {(() => {
                             switch (item.elements.url.value) {
                               case "getting-started":
@@ -171,6 +171,15 @@ const Sidebar = () => {
           </span>
         </li>
       )
+    } else if (item.system.type === "release_notes") {
+      const newUrl = item.elements.url_slug.value
+      return (
+        <li className={LEAF_NAME[level]}>
+          <span className="nav-title">
+            <Link to={`/${newUrl}`}>{item.elements.title?.value}</Link>
+          </span>
+        </li>
+      )
     } else if (item?.system?.type === "knowledge_center_markdown_page") {
       const newUrl = item.elements.permalink.value
       return (
@@ -232,6 +241,7 @@ const Sidebar = () => {
             }
             fragment page on kontent_item {
               ...PO
+              ...RN
               ...KCMD
             }
             fragment KCMD on kontent_item_knowledge_center_markdown_page {
@@ -240,6 +250,20 @@ const Sidebar = () => {
                   value
                 }
                 permalink {
+                  value
+                }
+              }
+              system {
+                id
+                type
+              }
+            }
+            fragment RN on kontent_item_release_notes {
+              elements {
+                title {
+                  value
+                }
+                url_slug {
                   value
                 }
               }

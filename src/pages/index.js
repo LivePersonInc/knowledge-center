@@ -129,6 +129,20 @@ export const query = graphql`
                   type
                 }
               }
+              ... on kontent_item_release_notes {
+                id
+                elements {
+                  title {
+                    value
+                  }
+                  url_slug {
+                    value
+                  }
+                }
+                system {
+                  type
+                }
+              }
               ... on kontent_item_navigation_item {
                 id
                 elements {
@@ -158,6 +172,20 @@ export const query = graphql`
                             value
                           }
                           permalink {
+                            value
+                          }
+                        }
+                        system {
+                          type
+                        }
+                      }
+                      ... on kontent_item_release_notes {
+                        id
+                        elements {
+                          title {
+                            value
+                          }
+                          url_slug {
                             value
                           }
                         }

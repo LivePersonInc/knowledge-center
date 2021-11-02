@@ -50,6 +50,20 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allKontentItemReleaseNotes {
+        nodes {
+          system {
+            codename
+            id
+          }
+          elements {
+            url_slug {
+              value
+              name
+            }
+          }
+        }
+      }
     }
 
     fragment folder on kontent_item_navigation_item {
@@ -69,6 +83,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     fragment page on kontent_item {
       ...PO
+      ...RN
       ...KCMD
     }
 
@@ -78,6 +93,21 @@ exports.createPages = async ({ graphql, actions }) => {
           value
         }
         permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment RN on kontent_item_release_notes {
+      elements {
+        title {
+          value
+        }
+        url_slug {
           value
         }
       }
@@ -177,6 +207,20 @@ exports.createPages = async ({ graphql, actions }) => {
         // path: `/${url}-${item.elements.url_slug.value}`,
         path: `/${item.elements.url_slug.value}`,
         component: path.resolve(`./src/pages/page-overview.js`),
+        context: {
+          breadCrumbs: pageCrumbs,
+          systemId: item.system.id,
+        },
+      })
+    } else if (item.system.type === "release_notes") {
+      // console.log("URL List:")
+      // console.log(`/${url}-${item.elements.url_slug.value}`)
+      const pageCrumbs = [...crumbs]
+      pageCrumbs.push(item.elements.title.value)
+      createPage({
+        // path: `/${url}-${item.elements.url_slug.value}`,
+        path: `/${item.elements.url_slug.value}`,
+        component: path.resolve(`./src/pages/page-release-notes.js`),
         context: {
           breadCrumbs: pageCrumbs,
           systemId: item.system.id,

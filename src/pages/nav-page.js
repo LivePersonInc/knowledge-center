@@ -87,6 +87,17 @@ export const query = graphql`
                   }
                 }
               }
+              ... on kontent_item_release_notes {
+                id
+                elements {
+                  url_slug {
+                    value
+                  }
+                  title {
+                    value
+                  }
+                }
+              }
             }
           }
         }
