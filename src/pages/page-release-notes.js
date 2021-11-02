@@ -55,10 +55,7 @@ const ReleaseNotesPageTemplate = ({ data, pageContext }) => {
           <h1 className="h1">{pageTitle}</h1>
         </div>
         <InnerSiteLayoutStyles>
-          <div className="maincontent">
-            {items}
-            <AlertComponent />
-          </div>
+          <div className="maincontent">{items}</div>
         </InnerSiteLayoutStyles>
       </div>
     </Layout>
