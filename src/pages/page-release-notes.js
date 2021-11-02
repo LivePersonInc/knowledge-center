@@ -15,7 +15,7 @@ const InnerSiteLayoutStyles = styled.main`
   }
 `
 
-const ReleaseNotesPageTemplate = ({ data, pageContext }) => {
+const ReleaseNotesPageTemplate = ({ data }) => {
   // general template
   const releaseNotes = data?.releaseNotes
   const pageTitle = releaseNotes?.elements?.title?.value
@@ -28,12 +28,6 @@ const ReleaseNotesPageTemplate = ({ data, pageContext }) => {
       <Article data={article} key={article.elements.permalink.value} />
     )
   })
-  // const pageSubTitle = releaseNotes?.elements?.subtitle?.value
-  // const body_content = releaseNotes?.elements?.body?.value
-
-  // Nav page
-  const navPageLink =
-    data?.allKontentItemNavigationItem?.nodes[0]?.elements?.url_slug?.value
 
   return (
     <Layout title={pageTitle}>
@@ -82,6 +76,7 @@ export const query = graphql`
     }
     markdownPage: allKontentItemKnowledgeCenterMarkdownPage(
       filter: { elements: { categoryname: { value: { eq: "Release notes" } } } }
+      sort: { order: DESC, fields: elements___date___value }
     ) {
       nodes {
         elements {
