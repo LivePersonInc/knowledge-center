@@ -176,15 +176,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pages =
     result.data.allKontentItemNavigationItem.nodes[0].elements.subitems.value
-  // result?.data.allKontentItemNavigationItem.nodes[0].elements.subitems.value
 
   const walkTree = (item, url, crumbs) => {
     if (item.system.type === "navigation_item") {
       const newUrl =
-        url !== ""
-          ? // ? `${url}-${item.elements.url.value}`
-            `${item.elements.url.value}`
-          : item.elements.url.value
+        url !== "" ? `${item.elements.url.value}` : item.elements.url.value
       const folderCrumbs = crumbs
       folderCrumbs.push(item.elements.title.value)
       item.elements.subitems.value.forEach(item =>
@@ -199,12 +195,9 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     } else if (item.system.type === "kc_product_overview") {
-      // console.log("URL List:")
-      // console.log(`/${url}-${item.elements.url_slug.value}`)
       const pageCrumbs = [...crumbs]
       pageCrumbs.push(item.elements.title.value)
       createPage({
-        // path: `/${url}-${item.elements.url_slug.value}`,
         path: `/${item.elements.url_slug.value}`,
         component: path.resolve(`./src/pages/page-overview.js`),
         context: {
@@ -213,26 +206,17 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     } else if (item.system.type === "release_notes") {
-      // console.log("URL List:")
-      // console.log(`/${url}-${item.elements.url_slug.value}`)
-      const pageCrumbs = [...crumbs]
-      pageCrumbs.push(item.elements.title.value)
       createPage({
-        // path: `/${url}-${item.elements.url_slug.value}`,
         path: `/${item.elements.url_slug.value}`,
         component: path.resolve(`./src/pages/page-release-notes.js`),
         context: {
-          breadCrumbs: pageCrumbs,
           systemId: item.system.id,
         },
       })
     } else if (item.system.type === "knowledge_center_markdown_page") {
-      // console.log("URL List:")
-      // console.log(`/${url}-${item.elements.permalink.value}`)
       const pageCrumbs = [...crumbs]
       pageCrumbs.push(item.elements.pagename.value)
       createPage({
-        // path: `/${url}-${item.elements.permalink.value}`,
         path: `/${item.elements.permalink.value}`,
         component: path.resolve(`./src/pages/page-jekyll-markdown.js`),
         context: {
