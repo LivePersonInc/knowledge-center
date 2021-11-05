@@ -203,10 +203,14 @@ exports.createPages = ({ graphql, actions }) => {
       // })
 
       _.each(result.data.allKontentItemNavigationItem.nodes, node => {
-        createPage({
+        const contentPage = node.elements.subitems.value[0]
+        contentPage && createPage({
           path: `/${node.elements.url.value}/`,
           component: slash(navPagePath),
-          context: { slug: `${node.elements.url.value}` },
+          context: {
+            slug: `${node.elements.url.value}`,
+            codename: `${contentPage.system.codename}`,
+          },
         })
       })
 
@@ -232,6 +236,7 @@ exports.createPages = ({ graphql, actions }) => {
       _.each(
         result.data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
         node => {
+
           createPage({
             path: `/${node.elements.permalink.value}/`,
             component: slash(PageGeneralPath),

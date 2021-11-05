@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Link, StaticQuery, graphql } from "gatsby"
-import { Disclosure } from "@headlessui/react"
+import { Disclosure, Transition } from "@headlessui/react"
 
 import {
   HouseIcon,
@@ -20,7 +20,6 @@ import {
   FaqsIcon,
   StatusIcon,
   ArrowRight,
-  ArrowDown,
 } from "./icons/"
 
 const SidebarStyles = styled.div`
@@ -74,6 +73,9 @@ const Sidebar = () => {
   }
 
   const SidebarItem = ({ item, url, level }) => {
+    const [isOpen, setIsOpen] = useState("defaultOpen")
+    const ToggleVisible = () => setIsOpen(!isOpen)
+
     if (item.system.type === "navigation_item") {
       const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]
       const newUrl =
@@ -83,7 +85,7 @@ const Sidebar = () => {
           : item.elements.url.value
       return (
         <li className={folder}>
-          <Disclosure as="div">
+          <Disclosure as="div" onClick={ToggleVisible}>
             {({ open }) => (
               <>
                 <dt className="">
@@ -132,13 +134,18 @@ const Sidebar = () => {
                           })()}
                         </div>
                       ) : level === 1 ? (
-                        <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-2">
-                          {open ? <ArrowDown /> : <ArrowRight />}
+                        <div
+                          className={
+                            "w-6 h-6 flex flex-col justify-center mr-2 pr-2 transform transition " +
+                            `${open ? "rotate-90" : ""}`
+                          }
+                        >
+                          <ArrowRight />
                         </div>
                       ) : null}
                       <span
                         className={`nav-title  ${open ? "font-bold" : " "}
-                          ${level === 1 ? "text-link-color" : " "}
+                          ${level === 1 && open ? "" : " "}
                         `}
                       >
                         {item.elements.title?.value}
@@ -146,8 +153,16 @@ const Sidebar = () => {
                     </div>
                   </Disclosure.Button>
                 </dt>
-                <Disclosure.Panel as="dd">
-                  {item.elements.subitems && (
+                <Transition
+                  show={open}
+                  enter="transition duration-100 ease-out"
+                  enterFrom="transform scale-95 opacity-0"
+                  enterTo="transform scale-100 opacity-100"
+                  leave="transition duration-75 ease-out"
+                  leaveFrom="transform scale-100 opacity-100"
+                  leaveTo="transform scale-95 opacity-0"
+                >
+                  <Disclosure.Panel as="dd" static>
                     <ul>
                       <SidebarItems
                         items={item.elements.subitems.value}
@@ -155,8 +170,8 @@ const Sidebar = () => {
                         level={level + 1}
                       />
                     </ul>
-                  )}
-                </Disclosure.Panel>
+                  </Disclosure.Panel>
+                </Transition>
               </>
             )}
           </Disclosure>
@@ -185,7 +200,9 @@ const Sidebar = () => {
       return (
         <li className={LEAF_NAME[level]}>
           <span className="nav-title">
-            <Link to={`/${newUrl}`}>{item.elements.pagename.value}</Link>
+            <Link activeClassName="font-bold text-link-color" to={`/${newUrl}`}>
+              {item.elements.pagename.value}
+            </Link>
           </span>
         </li>
       )
@@ -204,7 +221,7 @@ const Sidebar = () => {
 
       <ul
         id="mysidebar"
-        className="menu pt-8 lg:pl-14 overflow-y-auto w-80 ld:bg-body-background h-full"
+        className="menu pt-8 lg:pl-8 overflow-y-auto w-80 ld:bg-body-background h-full"
         data-testid="sidebar"
       >
         <StaticQuery
