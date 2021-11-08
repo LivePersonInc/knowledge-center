@@ -281,7 +281,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                   // For options - check https://www.npmjs.com/package/html-react-parser#options
                   return (
                     <div className="overflow-x-auto">
-                      <div className="table w-full table-compact">
+                      <div className="tablelp w-full table-compact">
                         {domToReact([domNode])}
                       </div>
                     </div>
