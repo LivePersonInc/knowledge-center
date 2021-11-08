@@ -85,7 +85,7 @@ const Sidebar = () => {
           : item.elements.url.value
       return (
         <li className={folder}>
-          <Disclosure as="div" onClick={ToggleVisible}>
+          <Disclosure as="div" defaultOpen onClick={ToggleVisible}>
             {({ open }) => (
               <>
                 <dt className="">
@@ -162,7 +162,7 @@ const Sidebar = () => {
                   leaveFrom="transform scale-100 opacity-100"
                   leaveTo="transform scale-95 opacity-0"
                 >
-                  <Disclosure.Panel as="dd" static>
+                  <Disclosure.Panel as="dd">
                     <ul>
                       <SidebarItems
                         items={item.elements.subitems.value}

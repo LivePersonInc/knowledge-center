@@ -13,7 +13,7 @@ const NavPage = ({ data }) => {
   //   data?.allKontentItemNavigationItem?.nodes[0]?.elements?.subitems.value
 
   const items = []
-  const title = allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
+  const title = allKontentItemNavigationItem?.nodes[0]?.elements?.title?.value
   const Navitems = navPageDataNodes
   Navitems.forEach(navitem => {
     items.push(<NavLinks data={navitem} key={navitem.elements.url.value} />)

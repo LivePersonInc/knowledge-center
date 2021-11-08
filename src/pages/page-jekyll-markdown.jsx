@@ -24,6 +24,7 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
+  console.log(data)
   const contentRef = useRef()
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {
@@ -36,12 +37,13 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   // general template
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
+  const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
   const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
 
   // Nav page
-  const navPageLink =
-    data?.allKontentItemNavigationItem?.nodes[0]?.elements?.url?.value
+
+  const navPageLink = data?.allKontentItemNavigationItem
 
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
@@ -57,6 +59,17 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
             marginBottom: "1.5rem",
           }}
         >
+          <div className="text-sm breadcrumbs">
+            <ul>
+              <li className="breadcrumb-item">
+                <Link to="/">Knowledge Center</Link>
+              </li>
+              <li className="breadcrumb-item">
+                <Link to="/">{pageCategory}</Link>
+              </li>
+              <li className="breadcrumb-item no-after">{pageTitle}</li>
+            </ul>
+          </div>
           <Breadcrumbs
             breadCrumbs={pageContext.breadCrumbs}
             breadLink={navPageLink}
@@ -416,10 +429,14 @@ export const query = graphql`
         }
       }
     }
+
     allKontentItemNavigationItem {
       nodes {
         elements {
           url {
+            value
+          }
+          title {
             value
           }
         }
