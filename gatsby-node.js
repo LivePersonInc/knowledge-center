@@ -204,14 +204,15 @@ exports.createPages = ({ graphql, actions }) => {
 
       _.each(result.data.allKontentItemNavigationItem.nodes, node => {
         const contentPage = node.elements.subitems.value[0]
-        contentPage && createPage({
-          path: `/${node.elements.url.value}/`,
-          component: slash(navPagePath),
-          context: {
-            slug: `${node.elements.url.value}`,
-            codename: `${contentPage.system.codename}`,
-          },
-        })
+        contentPage &&
+          createPage({
+            path: `/${node.elements.url.value}/`,
+            component: slash(navPagePath),
+            context: {
+              slug: `${node.elements.url.value}`,
+              codename: `${contentPage.system.codename}`,
+            },
+          })
       })
 
       _.each(result.data.allKontentItemKcProductOverview.nodes, node => {
@@ -220,7 +221,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: slash(PageOverviewPath),
           context: {
             systemId: node.system.id,
-            slug: `${node.elements.url_slug.value}`
+            slug: `${node.elements.url_slug.value}`,
           },
         })
       })
@@ -236,13 +237,12 @@ exports.createPages = ({ graphql, actions }) => {
       _.each(
         result.data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
         node => {
-
           createPage({
             path: `/${node.elements.permalink.value}/`,
             component: slash(PageGeneralPath),
             context: {
               systemId: node.system.id,
-              slug: `${node.elements.permalink.value}`
+              slug: `${node.elements.permalink.value}`,
             },
           })
         }

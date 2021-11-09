@@ -146,12 +146,15 @@ export default function Header() {
         </label>
         <a
           href="https://liveengage.liveperson.net/"
+          target="_blank"
+          rel="noreferrer"
           className="btn btn-ghost normal-case rounded-full sm:hidden"
         >
           Sign in
         </a>
         <a
           target="_blank"
+          rel="noreferrer"
           href="https://developers.liveperson.com/register.html"
           className="btn btn-secondary normal-case rounded-full px-5 sm:hidden"
         >
