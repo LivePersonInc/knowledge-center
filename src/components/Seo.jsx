@@ -34,6 +34,34 @@ export default function Seo({ children, location, description, title, image }) {
         key="ogsitename"
       />
       <meta property="og:description" content={description} key="ogdesc" />
+      {/* Hotjar */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2647075,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+          })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
+        }}
+      />
+      {/* Google Analytics
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=UA-149858-1`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-149858-1');
+          `,
+        }}
+      /> */}
       {children}
     </Helmet>
   )
