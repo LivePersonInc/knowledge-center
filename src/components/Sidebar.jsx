@@ -85,7 +85,7 @@ const Sidebar = () => {
           : item.elements.url.value
       return (
         <li className={folder}>
-          <Disclosure as="div" defaultOpen onClick={ToggleVisible}>
+          <Disclosure as="div" onClick={ToggleVisible}>
             {({ open }) => (
               <>
                 <dt className="">
