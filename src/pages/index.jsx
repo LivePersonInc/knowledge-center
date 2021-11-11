@@ -129,7 +129,7 @@ export const query = graphql`
                   type
                 }
               }
-              ... on kontent_item_release_notes {
+              ... on kontent_item_release_notes_page {
                 id
                 elements {
                   title {
@@ -179,7 +179,7 @@ export const query = graphql`
                           type
                         }
                       }
-                      ... on kontent_item_release_notes {
+                      ... on kontent_item_release_notes_page {
                         id
                         elements {
                           title {

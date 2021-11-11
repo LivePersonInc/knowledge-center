@@ -275,7 +275,7 @@ const Sidebar = () => {
                 type
               }
             }
-            fragment RN on kontent_item_release_notes {
+            fragment RN on kontent_item_release_notes_page {
               elements {
                 title {
                   value

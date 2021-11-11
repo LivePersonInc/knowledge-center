@@ -61,17 +61,20 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allKontentItemReleaseNotes {
+        allKontentItemReleaseNotesPage {
           nodes {
-            system {
-              codename
-              id
-            }
             elements {
               url_slug {
                 value
                 name
               }
+              title {
+                value
+              }
+            }
+            system {
+              codename
+              id
             }
           }
         }
@@ -113,7 +116,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
 
-      fragment RN on kontent_item_release_notes {
+      fragment RN on kontent_item_release_notes_page {
         elements {
           title {
             value
@@ -226,7 +229,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
-      _.each(result.data.allKontentItemReleaseNotes.nodes, node => {
+      _.each(result.data.allKontentItemReleaseNotesPage.nodes, node => {
         createPage({
           path: `/${node.elements.url_slug.value}/`,
           component: slash(PageReleaseNotesPath),

@@ -64,7 +64,9 @@ export default ReleaseNotesPageTemplate
 
 export const query = graphql`
   query ($systemId: String) {
-    releaseNotes: kontentItemReleaseNotes(system: { id: { eq: $systemId } }) {
+    releaseNotes: kontentItemReleaseNotesPage(
+      system: { id: { eq: $systemId } }
+    ) {
       elements {
         title {
           value
