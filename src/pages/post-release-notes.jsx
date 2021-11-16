@@ -36,14 +36,10 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   // general template
   const releaseNotesPage = data?.releaseNotesPage
   console.log(releaseNotesPage)
-  const allReleaseNotesPage = data?.allReleaseNotesPage?.nodes[0]
+
   const pageTitle = releaseNotesPage?.elements?.pagename?.value
-  const pageCategory = releaseNotesPage?.elements?.categoryname?.value
+  // const pageCategory = releaseNotesPage?.elements?.categoryname?.value
   const pageSubTitle = releaseNotesPage?.elements?.subtitle?.value
-
-  // Nav page
-
-  const navPageLink = data?.allKontentItemNavigationItem
 
   // Tags
   // const pageTags = releaseNotesPage?.elements?.channels_supported.value
