@@ -9,7 +9,7 @@ import get from "lodash/get"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Tags from "../components/Tags"
-import Breadcrumbs from "../components/Breadbrumbs"
+
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 
@@ -40,10 +40,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
 
-  // Nav page
-
-  const navPageLink = data?.allKontentItemNavigationItem
-
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
@@ -69,10 +65,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
               <li className="breadcrumb-item no-after">{pageTitle}</li>
             </ul>
           </div>
-          <Breadcrumbs
-            breadCrumbs={pageContext.breadCrumbs}
-            breadLink={navPageLink}
-          />
+
           <h1 className="h1">{pageTitle}</h1>
 
           <div className="text-body-text" id="subtitle">

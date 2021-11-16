@@ -1,16 +1,13 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
-
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Tags from "../components/Tags"
 import {
   RichTextElement,
   ImageElement,
 } from "@kentico/gatsby-kontent-components"
 import get from "lodash/get"
-// import Breadcrumbs from "../components/Breadbrumbs"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 
@@ -39,7 +36,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   const pageTitle = releaseNotes?.elements?.pagename?.value
   const pageCategory = releaseNotes?.elements?.categoryname?.value
   const pageSubTitle = releaseNotes?.elements?.subtitle?.value
-  const body_content = releaseNotes?.elements?.body?.value
 
   // Nav page
 
@@ -76,12 +72,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           /> */}
           <h1 className="h1">{pageTitle}</h1>
 
-          <div
-            className="text-body-text"
-            id="subtitle"
-            dangerouslySetInnerHTML={{ __html: pageSubTitle }}
-          ></div>
-
           {/* <div id="indicators">
             <Tags tags={(pageTags || []).map(({ name }) => name)} />
           </div> */}
@@ -89,10 +79,10 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
         <InnerSiteLayoutStyles>
           <div className="maincontent">
             <RichTextElement
-              value={body_content}
-              images={releaseNotes?.elements?.body.images}
-              links={releaseNotes?.elements?.body.links}
-              linkedItems={releaseNotes?.elements?.body.modular_content}
+              value={pageSubTitle}
+              images={releaseNotes?.elements?.subtitle.images}
+              links={releaseNotes?.elements?.subtitle.links}
+              linkedItems={releaseNotes?.elements?.subtitle.modular_content}
               resolveImage={image => {
                 return (
                   <ImageElement
@@ -313,13 +303,10 @@ export const query = graphql`
         permalink {
           value
         }
-        subtitle {
-          value
-        }
         date {
           value
         }
-        body {
+        subtitle {
           value
           modular_content {
             id

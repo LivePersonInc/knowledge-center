@@ -15,7 +15,7 @@ const InnerSiteLayoutStyles = styled.main`
   }
 `
 
-const ReleaseNotesPageTemplate = ({ data }) => {
+const BlogReleaseNotesTemplate = ({ data }) => {
   // general template
   const allReleaseNotesPage = data?.allReleaseNotesPage
   const pageTitle = allReleaseNotesPage?.elements?.pagename?.value
@@ -59,7 +59,7 @@ const ReleaseNotesPageTemplate = ({ data }) => {
   )
 }
 
-export default ReleaseNotesPageTemplate
+export default BlogReleaseNotesTemplate
 
 export const query = graphql`
   query ($systemId: String) {
