@@ -28,15 +28,20 @@ class Article extends React.Component {
         >
           {moment(date).format("MMMM YY, HH:mmA")}
         </time>
+
         <p
           style={{
             color: "var(--body-text)",
             marginTop: "5px",
           }}
-          data-kontent-element-codename="subitems"
-        >
-          {subTitle || "Two or four lines of information about article 2 or 4"}
-        </p>
+          className="text-body-text"
+          id="subtitle"
+          dangerouslySetInnerHTML={{
+            __html:
+              subTitle ||
+              "Two or four lines of information about article 2 or 4",
+          }}
+        ></p>
       </div>
     )
   }

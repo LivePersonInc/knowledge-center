@@ -132,10 +132,10 @@ export const query = graphql`
               ... on kontent_item_release_notes_page {
                 id
                 elements {
-                  title {
+                  pagename {
                     value
                   }
-                  url_slug {
+                  permalink {
                     value
                   }
                 }
@@ -182,10 +182,10 @@ export const query = graphql`
                       ... on kontent_item_release_notes_page {
                         id
                         elements {
-                          title {
+                          pagename {
                             value
                           }
-                          url_slug {
+                          permalink {
                             value
                           }
                         }

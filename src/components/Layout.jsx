@@ -55,6 +55,10 @@ const Layout = ({ children }) => {
     }
   })
 
+  useEffect(() => {
+    console.log("render layout")
+  }, [])
+
   return (
     <StaticQuery
       query={graphql`

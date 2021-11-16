@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { Link, StaticQuery, graphql } from "gatsby"
 import { Disclosure, Transition } from "@headlessui/react"
@@ -73,8 +73,8 @@ const Sidebar = () => {
   }
 
   const SidebarItem = ({ item, url, level }) => {
-    const [isOpen, setIsOpen] = useState("defaultOpen")
-    const ToggleVisible = () => setIsOpen(!isOpen)
+    // const [isOpen, setIsOpen] = useState("defaultOpen")
+    // const ToggleVisible = () => setIsOpen(!isOpen)
 
     if (item.system.type === "navigation_item") {
       const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]
@@ -85,7 +85,7 @@ const Sidebar = () => {
           : item.elements.url.value
       return (
         <li className={folder}>
-          <Disclosure as="div" onClick={ToggleVisible}>
+          <Disclosure as="div">
             {({ open }) => (
               <>
                 <dt className="">
@@ -186,12 +186,21 @@ const Sidebar = () => {
           </span>
         </li>
       )
-    } else if (item.system.type === "release_notes") {
-      const newUrl = item.elements.url_slug.value
+    } else if (item.system.type === "blog_release_notes") {
+      const newUrl = item.elements.permalink.value
       return (
         <li className={LEAF_NAME[level]}>
           <span className="nav-title">
-            <Link to={`/${newUrl}`}>{item.elements.title?.value}</Link>
+            <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
+          </span>
+        </li>
+      )
+    } else if (item.system.type === "release_notes_page") {
+      const newUrl = item.elements.permalink.value
+      return (
+        <li className={LEAF_NAME[level]}>
+          <span className="nav-title">
+            <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
           </span>
         </li>
       )
@@ -242,6 +251,7 @@ const Sidebar = () => {
                 }
               }
             }
+
             fragment folder on kontent_item_navigation_item {
               system {
                 id
@@ -256,11 +266,14 @@ const Sidebar = () => {
                 }
               }
             }
+
             fragment page on kontent_item {
-              ...PO
-              ...RN
               ...KCMD
+              ...BRN
+              ...RN
+              ...PO
             }
+
             fragment KCMD on kontent_item_knowledge_center_markdown_page {
               elements {
                 pagename {
@@ -275,12 +288,13 @@ const Sidebar = () => {
                 type
               }
             }
-            fragment RN on kontent_item_release_notes_page {
+
+            fragment BRN on kontent_item_blog_release_notes {
               elements {
-                title {
+                pagename {
                   value
                 }
-                url_slug {
+                permalink {
                   value
                 }
               }
@@ -289,6 +303,22 @@ const Sidebar = () => {
                 type
               }
             }
+
+            fragment RN on kontent_item_release_notes_page {
+              elements {
+                pagename {
+                  value
+                }
+                permalink {
+                  value
+                }
+              }
+              system {
+                id
+                type
+              }
+            }
+
             fragment PO on kontent_item_kc_product_overview {
               elements {
                 title {
@@ -303,6 +333,7 @@ const Sidebar = () => {
                 type
               }
             }
+
             fragment recursiveFolder on kontent_item_navigation_item {
               system {
                 id

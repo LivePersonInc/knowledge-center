@@ -24,7 +24,6 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
-  console.log(data)
   const contentRef = useRef()
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {

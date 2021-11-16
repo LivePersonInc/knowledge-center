@@ -17,12 +17,11 @@ const InnerSiteLayoutStyles = styled.main`
 
 const ReleaseNotesPageTemplate = ({ data }) => {
   // general template
-  const releaseNotes = data?.releaseNotes
-  const pageTitle = releaseNotes?.elements?.title?.value
+  const allReleaseNotesPage = data?.allReleaseNotesPage
+  const pageTitle = allReleaseNotesPage?.elements?.pagename?.value
 
-  const markdownPage = data?.markdownPage
   const items = []
-  const articles = markdownPage.nodes
+  const articles = allReleaseNotesPage.nodes
   articles.forEach(article => {
     items.push(
       <Article data={article} key={article.elements.permalink.value} />
@@ -68,30 +67,32 @@ export const query = graphql`
       system: { id: { eq: $systemId } }
     ) {
       elements {
-        title {
+        pagename {
           value
         }
-        url_slug {
+        permalink {
+          value
+        }
+        subtitle {
           value
         }
       }
     }
-    markdownPage: allKontentItemKnowledgeCenterMarkdownPage(
-      filter: { elements: { categoryname: { value: { eq: "Release notes" } } } }
+    allReleaseNotesPage: allKontentItemReleaseNotesPage(
       sort: { order: DESC, fields: elements___date___value }
     ) {
       nodes {
         elements {
-          pagename {
-            value
-          }
           date {
             value
           }
-          subtitle {
+          pagename {
             value
           }
           permalink {
+            value
+          }
+          subtitle {
             value
           }
         }

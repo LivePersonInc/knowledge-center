@@ -10,173 +10,203 @@ exports.createPages = ({ graphql, actions }) => {
     const navPagePath = path.resolve("./src/pages/nav-page.jsx")
     const PageOverviewPath = path.resolve("./src/pages/page-overview.jsx")
     const PageReleaseNotesPath = path.resolve(
+      "./src/pages/post-release-notes.jsx"
+    )
+    const BlogReleaseNotesPath = path.resolve(
       "./src/pages/page-release-notes.jsx"
     )
     const PageGeneralPath = path.resolve("./src/pages/page-jekyll-markdown.jsx")
 
     graphql(`
-      {
-        allKontentItemNavigationItem(
-          filter: { system: { codename: { eq: "root" } } }
-        ) {
-          nodes {
-            elements {
-              subitems {
-                value {
-                  ...folder
-                  ...recursiveFolder
-                }
-              }
-              url {
-                value
-              }
-            }
+    {
+  allKontentItemNavigationItem(filter: {system: {codename: {eq: "root"}}}) {
+    nodes {
+      elements {
+        subitems {
+          value {
+            ...folder
+            ...recursiveFolder
           }
         }
-        allKontentItemKcProductOverview {
-          nodes {
-            system {
-              codename
-              id
-            }
-            elements {
-              url_slug {
-                name
-                value
-              }
-            }
-          }
-        }
-        allKontentItemKnowledgeCenterMarkdownPage {
-          nodes {
-            system {
-              codename
-              id
-            }
-            elements {
-              permalink {
-                name
-                value
-              }
-            }
-          }
-        }
-        allKontentItemReleaseNotesPage {
-          nodes {
-            elements {
-              url_slug {
-                value
-                name
-              }
-              title {
-                value
-              }
-            }
-            system {
-              codename
-              id
-            }
-          }
+        url {
+          value
         }
       }
-
-      fragment folder on kontent_item_navigation_item {
-        system {
-          type
-          id
-        }
-        elements {
-          url {
-            value
-          }
-          title {
-            value
-          }
+    }
+  }
+  allKontentItemKcProductOverview {
+    nodes {
+      system {
+        codename
+        id
+      }
+      elements {
+        url_slug {
+          name
+          value
         }
       }
-
-      fragment page on kontent_item {
-        ...PO
-        ...RN
-        ...KCMD
+    }
+  }
+  allKontentItemKnowledgeCenterMarkdownPage {
+    nodes {
+      system {
+        codename
+        id
       }
-
-      fragment KCMD on kontent_item_knowledge_center_markdown_page {
-        elements {
-          pagename {
-            value
-          }
-          permalink {
-            value
-          }
-        }
-        system {
-          id
-          type
+      elements {
+        permalink {
+          name
+          value
         }
       }
-
-      fragment RN on kontent_item_release_notes_page {
-        elements {
-          title {
-            value
-          }
-          url_slug {
-            value
-          }
+    }
+  }
+  allKontentItemReleaseNotesPage {
+    nodes {
+      elements {
+        permalink {
+          value
+          name
         }
-        system {
-          id
-          type
+        pagename {
+          value
         }
       }
-
-      fragment PO on kontent_item_kc_product_overview {
-        elements {
-          title {
-            value
-          }
-          url_slug {
-            value
-          }
+      system {
+        codename
+        id
+      }
+    }
+  }
+  allKontentItemBlogReleaseNotes {
+    nodes {
+      elements {
+        pagename {
+          value
         }
-        system {
-          id
-          type
+        permalink {
+          value
         }
       }
+      system {
+        codename
+        id
+      }
+    }
+  }
+}
 
-      fragment recursiveFolder on kontent_item_navigation_item {
-        system {
-          type
-          codename
-        }
-        elements {
-          subitems {
-            value {
-              ...page
-              ...folder
-              ... on kontent_item_navigation_item {
-                system {
-                  type
-                }
-                elements {
-                  subitems {
-                    value {
-                      ...page
-                      ...folder
-                      ... on kontent_item_navigation_item {
-                        system {
-                          type
-                        }
-                        elements {
-                          subitems {
-                            value {
-                              ...page
-                              ...folder
-                            }
-                          }
-                        }
+fragment folder on kontent_item_navigation_item {
+  system {
+    type
+    id
+  }
+  elements {
+    url {
+      value
+    }
+    title {
+      value
+    }
+  }
+}
+
+fragment page on kontent_item {
+  ...KCMD
+  ...BRN
+  ...RN
+  ...PO
+}
+
+fragment KCMD on kontent_item_knowledge_center_markdown_page {
+  elements {
+    pagename {
+      value
+    }
+    permalink {
+      value
+    }
+  }
+  system {
+    id
+    type
+  }
+}
+
+fragment BRN on kontent_item_blog_release_notes {
+  elements {
+    pagename {
+      value
+    }
+    permalink {
+      value
+    }
+  }
+  system {
+    id
+    type
+  }
+}
+
+fragment RN on kontent_item_release_notes_page {
+  elements {
+    pagename {
+      value
+    }
+    permalink {
+      value
+    }
+  }
+  system {
+    id
+    type
+  }
+}
+
+fragment PO on kontent_item_kc_product_overview {
+  elements {
+    title {
+      value
+    }
+    url_slug {
+      value
+    }
+  }
+  system {
+    id
+    type
+  }
+}
+
+fragment recursiveFolder on kontent_item_navigation_item {
+  system {
+    type
+    codename
+  }
+  elements {
+    subitems {
+      value {
+        ...page
+        ...folder
+        ... on kontent_item_navigation_item {
+          system {
+            type
+          }
+          elements {
+            subitems {
+              value {
+                ...page
+                ...folder
+                ... on kontent_item_navigation_item {
+                  system {
+                    type
+                  }
+                  elements {
+                    subitems {
+                      value {
+                        ...page
+                        ...folder
                       }
                     }
                   }
@@ -186,6 +216,9 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+    }
+  }
+}
     `).then(result => {
       if (result.errors) {
         console.error(result.errors)
@@ -229,11 +262,19 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
+      _.each(result.data.allKontentItemBlogReleaseNotes.nodes, node => {
+        createPage({
+          path: `/${node.elements.permalink.value}/`,
+          component: slash(BlogReleaseNotesPath),
+          context: { slug: `${node.elements.permalink.value}` },
+        })
+      })
+
       _.each(result.data.allKontentItemReleaseNotesPage.nodes, node => {
         createPage({
-          path: `/${node.elements.url_slug.value}/`,
+          path: `/${node.elements.permalink.value}/`,
           component: slash(PageReleaseNotesPath),
-          context: { slug: `${node.elements.url_slug.value}` },
+          context: { slug: `${node.elements.permalink.value}` },
         })
       })
 

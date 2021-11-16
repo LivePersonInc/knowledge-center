@@ -90,10 +90,10 @@ export const query = graphql`
               ... on kontent_item_release_notes_page {
                 id
                 elements {
-                  url_slug {
+                  permalink {
                     value
                   }
-                  title {
+                  pagename {
                     value
                   }
                 }
