@@ -4,6 +4,7 @@ import {
   RichTextElement,
   ImageElement,
 } from "@kentico/gatsby-kontent-components"
+import { postMarkup } from "../utils"
 import get from "lodash/get"
 import moment from "moment"
 import * as _ from "lodash"
@@ -16,6 +17,7 @@ class Article extends React.Component {
     const subTitle = _.get(this.props, "data.elements.subtitle.value", "N/A")
     const slug = `${_.get(this.props, "data.elements.permalink.value", "N/A")}`
     const itemId = _.get(this.props, "data.system.id")
+
     return (
       <div className="NavLinks border-b py-6" data-kontent-item-id={itemId}>
         <h6 className="mb-0 font-bold" data-kontent-element-codename="title">
@@ -43,7 +45,8 @@ class Article extends React.Component {
           className="text-body-text"
           id="subtitle"
         >
-          <RichTextElement
+          {postMarkup(subTitle, "post-content")}
+          {/* <RichTextElement
             value={subTitle}
             images={subTitlePar.images}
             links={subTitlePar.links}
@@ -244,7 +247,7 @@ class Article extends React.Component {
                 )
               }
             }}
-          />
+          /> */}
         </div>
       </div>
     )

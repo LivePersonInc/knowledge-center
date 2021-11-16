@@ -77,7 +77,7 @@ export const postMarkup = (unsanitiedHtml, classDiv) => {
       "th",
       "thead",
       "tr",
-      "object",
+
     ],
     allowedAttributes: {
       "*": [
