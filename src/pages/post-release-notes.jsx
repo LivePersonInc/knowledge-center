@@ -61,7 +61,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 <Link to="/">Knowledge Center</Link>
               </li>
               <li className="breadcrumb-item">
-                <Link to="/">{pageCategory}</Link>
+                <Link to="/blog-release-notes">Release Notes</Link>
               </li>
               <li className="breadcrumb-item no-after">{pageTitle}</li>
             </ul>
