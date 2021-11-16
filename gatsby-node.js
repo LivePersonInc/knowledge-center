@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const navPagePath = path.resolve("./src/pages/nav-page.jsx")
     const PageOverviewPath = path.resolve("./src/pages/page-overview.jsx")
-    const PageReleaseNotesPath = path.resolve(
+    const PostReleaseNotesPath = path.resolve(
       "./src/pages/post-release-notes.jsx"
     )
     const BlogReleaseNotesPath = path.resolve(
@@ -275,8 +275,10 @@ exports.createPages = ({ graphql, actions }) => {
       _.each(result.data.allKontentItemReleaseNotesPage.nodes, node => {
         createPage({
           path: `/${node.elements.permalink.value}/`,
-          component: slash(PageReleaseNotesPath),
-          context: { slug: `${node.elements.permalink.value}` },
+          component: slash(PostReleaseNotesPath),
+          context: {
+            systemId: node.system.id, slug: `${node.elements.permalink.value}`
+          },
         })
       })
 
@@ -300,7 +302,7 @@ exports.createPages = ({ graphql, actions }) => {
       //   const tagTitle = tag.elements.title.value
       //   createPage({
       //     path: `/tags/${tag.elements.slug.value}/`,
-      //     component: PageReleaseNotesPath,
+      //     component: PostReleaseNotesPath,
       //     context: { tagCodename, tagTitle },
       //   })
       // })

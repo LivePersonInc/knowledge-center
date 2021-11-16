@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
+
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Article from "../components/Article"
@@ -18,7 +19,9 @@ const InnerSiteLayoutStyles = styled.main`
 const BlogReleaseNotesTemplate = ({ data }) => {
   // general template
   const allReleaseNotesPage = data?.allReleaseNotesPage
-  const pageTitle = allReleaseNotesPage?.elements?.pagename?.value
+  const releaseNotes = data?.releaseNotes
+  console.log(allReleaseNotesPage)
+  const pageTitle = releaseNotes?.elements?.pagename?.value
 
   const items = []
   const articles = allReleaseNotesPage.nodes

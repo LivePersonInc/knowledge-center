@@ -22,6 +22,8 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
+  console.log("itay")
+  console.log(data)
   const contentRef = useRef()
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {
@@ -32,17 +34,19 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   }, [data])
 
   // general template
-  const releaseNotes = data?.releaseNotes
-  const pageTitle = releaseNotes?.elements?.pagename?.value
-  const pageCategory = releaseNotes?.elements?.categoryname?.value
-  const pageSubTitle = releaseNotes?.elements?.subtitle?.value
+  const releaseNotesPage = data?.releaseNotesPage
+  console.log(releaseNotesPage)
+  const allReleaseNotesPage = data?.allReleaseNotesPage?.nodes[0]
+  const pageTitle = releaseNotesPage?.elements?.pagename?.value
+  const pageCategory = releaseNotesPage?.elements?.categoryname?.value
+  const pageSubTitle = releaseNotesPage?.elements?.subtitle?.value
 
   // Nav page
 
   const navPageLink = data?.allKontentItemNavigationItem
 
   // Tags
-  // const pageTags = releaseNotes?.elements?.channels_supported.value
+  // const pageTags = releaseNotesPage?.elements?.channels_supported.value
 
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
@@ -80,9 +84,9 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           <div className="maincontent">
             <RichTextElement
               value={pageSubTitle}
-              images={releaseNotes?.elements?.subtitle.images}
-              links={releaseNotes?.elements?.subtitle.links}
-              linkedItems={releaseNotes?.elements?.subtitle.modular_content}
+              images={releaseNotesPage?.elements?.subtitle.images}
+              links={releaseNotesPage?.elements?.subtitle.links}
+              linkedItems={releaseNotesPage?.elements?.subtitle.modular_content}
               resolveImage={image => {
                 return (
                   <ImageElement
@@ -94,7 +98,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               }}
               resolveLink={(link, domNode) => {
                 // const parentItemType =
-                //   releaseNotes?.elements?.body.type
+                //   releaseNotesPage?.elements?.body.type
 
                 // It is possible to use external data for resolution
                 return (
@@ -293,7 +297,7 @@ export default ReleaseNotesPostTemplate
 
 export const query = graphql`
   query ($systemId: String) {
-    releaseNotes: kontentItemReleaseNotesPage(
+    releaseNotesPage: kontentItemReleaseNotesPage(
       system: { id: { eq: $systemId } }
     ) {
       elements {
@@ -407,7 +411,7 @@ export const query = graphql`
         }
       }
     }
-    releaseNotesPage: allKontentItemReleaseNotesPage(
+    allReleaseNotesPage: allKontentItemReleaseNotesPage(
       sort: { order: DESC, fields: elements___date___value }
     ) {
       nodes {

@@ -59,9 +59,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
               <li className="breadcrumb-item">
                 <Link to="/">Knowledge Center</Link>
               </li>
-              <li className="breadcrumb-item">
-                <Link to="/">{pageCategory}</Link>
-              </li>
+              <li className="breadcrumb-item">{pageCategory}</li>
               <li className="breadcrumb-item no-after">{pageTitle}</li>
             </ul>
           </div>
