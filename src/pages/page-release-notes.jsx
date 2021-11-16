@@ -19,9 +19,9 @@ const InnerSiteLayoutStyles = styled.main`
 const BlogReleaseNotesTemplate = ({ data }) => {
   // general template
   const allReleaseNotesPage = data?.allReleaseNotesPage
-  const releaseNotes = data?.releaseNotes
-  console.log(allReleaseNotesPage)
-  const pageTitle = releaseNotes?.elements?.pagename?.value
+  const kontentItemBlogReleaseNotes = data?.kontentItemBlogReleaseNotes
+
+  const pageTitle = kontentItemBlogReleaseNotes?.elements?.pagename?.value
 
   const items = []
   const articles = allReleaseNotesPage.nodes
@@ -98,6 +98,13 @@ export const query = graphql`
           subtitle {
             value
           }
+        }
+      }
+    }
+    kontentItemBlogReleaseNotes {
+      elements {
+        pagename {
+          value
         }
       }
     }
