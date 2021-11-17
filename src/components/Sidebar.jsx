@@ -230,7 +230,7 @@ const Sidebar = () => {
 
       <ul
         id="mysidebar"
-        className="menu pt-8 lg:pl-8 overflow-y-auto w-80 ld:bg-body-background h-full"
+        className="menu pt-8 lg:pl-16 overflow-y-auto w-80 ld:bg-body-background h-full"
         data-testid="sidebar"
       >
         <StaticQuery

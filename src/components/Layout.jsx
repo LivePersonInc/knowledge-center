@@ -37,6 +37,9 @@ const SiteLayoutStyles = styled.main`
 
 const ContentStyles = styled.div`
   padding: 1.75rem;
+  @media (min-width: 1024px) {
+    padding-right: 4rem;
+  }
   @media (max-width: 767px) {
     padding: 0;
     & > div {

@@ -277,7 +277,8 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/${node.elements.permalink.value}/`,
           component: slash(PostReleaseNotesPath),
           context: {
-            systemId: node.system.id, slug: `${node.elements.permalink.value}`
+            systemId: node.system.id,
+            slug: `${node.elements.permalink.value}`,
           },
         })
       })
