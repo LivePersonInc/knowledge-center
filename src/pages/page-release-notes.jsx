@@ -38,11 +38,10 @@ const BlogReleaseNotesTemplate = ({ data }) => {
         <div
           className="documenttitlecontainer"
           style={{
-            borderBottom: "1px solid var(--card-border)",
             marginBottom: "1.5rem",
           }}
         >
-          <div className="text-sm breadcrumbs">
+          <div className="text-sm breadcrumbs pb-4">
             <ul>
               <li className="breadcrumb-item">
                 <Link to="/">Knowledge Center</Link>
