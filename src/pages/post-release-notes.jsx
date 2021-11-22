@@ -80,19 +80,15 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
             {product_release_notes.map(node => (
               <div
-                className="border my-6"
+                className="mt-6 mb-10"
                 key={node?.elements?.release_version_number?.value}
               >
                 <div className="release-notes-item flex items-center gap-2 ">
                   {/* Title  */}
                   <h3 className="h3" style={{ margin: 0 }}>
-                    Title -{" "}
-                    {console.log(node?.elements?.product_name?.value[0])}
-                    {/* {node?.elements?.product_name?.value.map(node => (
-                      <div key={node?.elements?.product_name?.value}>
-                        {node?.elements?.title?.value}
-                      </div>
-                    ))} */}
+                    {node?.elements?.product_name?.value.map(node => (
+                      <div key={node?.system?.name}>{node?.system?.name}</div>
+                    ))}
                   </h3>
 
                   <time
@@ -109,15 +105,15 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 </div>
 
                 {/* Features */}
-                <h5 className="h5 my-3">Features</h5>
+                <h5 className="h5 mt-6 mb-2">Features</h5>
                 <LpRichTextElement
                   body_content={node?.elements?.features?.value}
                   bodyfield={node?.elements?.features}
                 />
-                {node?.elements?.release_version_number?.value}
+                {/* {node?.elements?.release_version_number?.value} */}
 
                 {/* Fixes */}
-                <h5 className="h5 my-2">Fixes</h5>
+                <h5 className="h5 mt-6 mb-2">Fixes</h5>
                 <LpRichTextElement
                   body_content={node?.elements?.fixes?.value}
                   bodyfield={node?.elements?.fixes}
