@@ -36,20 +36,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allKontentItemKcProductOverview {
-          nodes {
-            system {
-              codename
-              id
-            }
-            elements {
-              url_slug {
-                name
-                value
-              }
-            }
-          }
-        }
         allKontentItemKnowledgeCenterMarkdownPage {
           nodes {
             system {
@@ -251,17 +237,6 @@ exports.createPages = ({ graphql, actions }) => {
               codename: `${contentPage.system.codename}`,
             },
           })
-      })
-
-      _.each(result.data.allKontentItemKcProductOverview.nodes, node => {
-        createPage({
-          path: `/${node.elements.url_slug.value}/`,
-          component: slash(PageOverviewPath),
-          context: {
-            systemId: node.system.id,
-            slug: `${node.elements.url_slug.value}`,
-          },
-        })
       })
 
       _.each(result.data.allKontentItemBlogReleaseNotes.nodes, node => {

@@ -55,6 +55,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent">{items}</div>
+          <div>Subscribe for updates</div>
         </InnerSiteLayoutStyles>
       </div>
     </Layout>

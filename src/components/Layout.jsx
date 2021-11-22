@@ -58,9 +58,9 @@ const Layout = ({ children }) => {
     }
   })
 
-  useEffect(() => {
-    console.log("render layout")
-  }, [])
+  // useEffect(() => {
+  //   console.log("render layout")
+  // }, [])
 
   return (
     <StaticQuery
