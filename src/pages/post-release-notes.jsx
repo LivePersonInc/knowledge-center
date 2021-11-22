@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
-
+import moment from "moment"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
-import LpRichTextElemenet from "../components/LpRichTextElemenet"
+import LpRichTextElement from "../components/LpRichTextElement"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -19,8 +19,6 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
-  console.log("itay")
-  console.log(data)
   const contentRef = useRef()
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {
@@ -32,12 +30,13 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
   // general template
   const releaseNotesPage = data?.releaseNotesPage
-  console.log(releaseNotesPage)
 
   const pageTitle = releaseNotesPage?.elements?.pagename?.value
   // const pageCategory = releaseNotesPage?.elements?.categoryname?.value
   const pageSubTitle = releaseNotesPage?.elements?.subtitle?.value
 
+  const product_release_notes =
+    releaseNotesPage?.elements?.product_release_notes?.value
   // Tags
   // const pageTags = releaseNotesPage?.elements?.channels_supported.value
 
@@ -63,10 +62,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               <li className="breadcrumb-item no-after">{pageTitle}</li>
             </ul>
           </div>
-          {/* <Breadcrumbs
-            breadCrumbs={pageContext.breadCrumbs}
-            breadLink={navPageLink}
-          /> */}
+
           <h1 className="h1">{pageTitle}</h1>
 
           {/* <div id="indicators">
@@ -75,10 +71,65 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent">
-            <LpRichTextElemenet
+            <LpRichTextElement
               body_content={pageSubTitle}
               bodyfield={releaseNotesPage?.elements?.subtitle}
             />
+
+            {/* {console.log(product_release_notes)} */}
+
+            {product_release_notes.map(node => (
+              <div
+                className="border my-6"
+                key={node?.elements?.release_version_number?.value}
+              >
+                <div className="release-notes-item flex items-center gap-2 ">
+                  {/* Title  */}
+                  <h3 className="h3" style={{ margin: 0 }}>
+                    Title -{" "}
+                    {console.log(node?.elements?.product_name?.value[0])}
+                    {/* {node?.elements?.product_name?.value.map(node => (
+                      <div key={node?.elements?.product_name?.value}>
+                        {node?.elements?.title?.value}
+                      </div>
+                    ))} */}
+                  </h3>
+
+                  <time
+                    className="release-notes-item-time flex items-center"
+                    dateTime={moment(
+                      node?.elements?.release_date?.value
+                    ).format("MMMM D, YYYY HH:mm")}
+                    data-kontent-element-codename="date"
+                  >
+                    {moment(node?.elements?.release_date?.value).format(
+                      "MMMM YY"
+                    )}
+                  </time>
+                </div>
+
+                {/* Features */}
+                <h5 className="h5 my-3">Features</h5>
+                <LpRichTextElement
+                  body_content={node?.elements?.features?.value}
+                  bodyfield={node?.elements?.features}
+                />
+                {node?.elements?.release_version_number?.value}
+
+                {/* Fixes */}
+                <h5 className="h5 my-2">Fixes</h5>
+                <LpRichTextElement
+                  body_content={node?.elements?.fixes?.value}
+                  bodyfield={node?.elements?.fixes}
+                />
+              </div>
+            ))}
+
+            {/* <h5 className="h5">Fixes</h5>
+            <LpRichTextElement
+              body_content={pageSubTitle}
+              bodyfield={releaseNotesPage?.elements?.subtitle}
+            /> */}
 
             <AlertComponent />
           </div>
@@ -203,6 +254,49 @@ export const query = graphql`
             type
             codename
             link_id
+          }
+        }
+        product_release_notes {
+          value {
+            id
+            ... on kontent_item_product_release_notes {
+              id
+              elements {
+                release_version_number {
+                  value
+                }
+                release_date {
+                  value
+                }
+                product_name {
+                  value {
+                    system {
+                      name
+                    }
+                    ... on kontent_item_product_release_notes {
+                      id
+                      system {
+                        name
+                      }
+                    }
+                  }
+                }
+                fixes {
+                  value
+                }
+                features {
+                  value
+                }
+                enhancements {
+                  value
+                }
+                channels_supported {
+                  value {
+                    name
+                  }
+                }
+              }
+            }
           }
         }
       }

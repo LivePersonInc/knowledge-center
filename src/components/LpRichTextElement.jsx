@@ -5,7 +5,7 @@ import {
 } from "@kentico/gatsby-kontent-components"
 import get from "lodash/get"
 import { Link } from "gatsby"
-const LpRichTextElemenet = ({ body_content, bodyfield }) => {
+const LpRichTextElement = ({ body_content, bodyfield }) => {
   // if (tags[0] === "Both") {
   //   tags = ["Chat", "Messaging"]
   // }
@@ -215,4 +215,4 @@ const LpRichTextElemenet = ({ body_content, bodyfield }) => {
     />
   )
 }
-export default LpRichTextElemenet
+export default LpRichTextElement

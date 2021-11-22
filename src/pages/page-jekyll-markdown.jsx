@@ -8,7 +8,7 @@ import Tags from "../components/Tags"
 
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
-import LpRichTextElemenet from "../components/LpRichTextElemenet"
+import LpRichTextElement from "../components/LpRichTextElement"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -72,7 +72,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent">
-            <LpRichTextElemenet
+            <LpRichTextElement
               body_content={body_content}
               bodyfield={knowledgeCenterMarkdown?.elements?.body}
             />

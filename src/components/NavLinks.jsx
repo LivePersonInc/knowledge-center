@@ -6,10 +6,10 @@ class NavLinks extends React.Component {
   render() {
     const title = _.get(this.props, "data.elements.title.value", "N/A")
 
-    const subitems = _.get(this.props, "data.elements.subitems", "N/A")
+    // const subitems = _.get(this.props, "data.elements.subitems", "N/A")
     const slug = `${_.get(this.props, "data.elements.url.value", "N/A")}`
     const itemId = _.get(this.props, "data.system.id")
-    console.log(subitems)
+
     return (
       <div className="NavLinks border-b pb-6" data-kontent-item-id={itemId}>
         <h2
