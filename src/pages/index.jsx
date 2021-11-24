@@ -104,17 +104,6 @@ export const query = graphql`
         elements {
           subitems {
             value {
-              ... on kontent_item_kc_product_overview {
-                id
-                elements {
-                  title {
-                    value
-                  }
-                  url_slug {
-                    value
-                  }
-                }
-              }
               ... on kontent_item_knowledge_center_markdown_page {
                 id
                 elements {
@@ -143,6 +132,20 @@ export const query = graphql`
                   type
                 }
               }
+              ... on kontent_item_post___whatsnew {
+                id
+                elements {
+                  pagename {
+                    value
+                  }
+                  permalink {
+                    value
+                  }
+                }
+                system {
+                  type
+                }
+              }
               ... on kontent_item_navigation_item {
                 id
                 elements {
@@ -154,17 +157,6 @@ export const query = graphql`
                   }
                   subitems {
                     value {
-                      ... on kontent_item_kc_product_overview {
-                        id
-                        elements {
-                          title {
-                            value
-                          }
-                          url_slug {
-                            value
-                          }
-                        }
-                      }
                       ... on kontent_item_knowledge_center_markdown_page {
                         id
                         elements {
@@ -193,22 +185,25 @@ export const query = graphql`
                           type
                         }
                       }
+                      ... on kontent_item_post___whatsnew {
+                        id
+                        elements {
+                          pagename {
+                            value
+                          }
+                          permalink {
+                            value
+                          }
+                        }
+                        system {
+                          type
+                        }
+                      }
                       ... on kontent_item_navigation_item {
                         id
                         elements {
                           subitems {
                             value {
-                              ... on kontent_item_kc_product_overview {
-                                id
-                                elements {
-                                  title {
-                                    value
-                                  }
-                                  url_slug {
-                                    value
-                                  }
-                                }
-                              }
                               ... on kontent_item_knowledge_center_markdown_page {
                                 id
                                 elements {
@@ -234,20 +229,6 @@ export const query = graphql`
                                   }
                                   subitems {
                                     value {
-                                      ... on kontent_item_kc_product_overview {
-                                        id
-                                        elements {
-                                          title {
-                                            value
-                                          }
-                                          url_slug {
-                                            value
-                                          }
-                                        }
-                                        system {
-                                          type
-                                        }
-                                      }
                                       ... on kontent_item_knowledge_center_markdown_page {
                                         id
                                         elements {

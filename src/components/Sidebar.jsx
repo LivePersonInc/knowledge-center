@@ -177,16 +177,16 @@ const Sidebar = () => {
           </Disclosure>
         </li>
       )
-    } else if (item.system.type === "kc_product_overview") {
-      const newUrl = item.elements.url_slug.value
+    } else if (item.system.type === "blog_release_notes") {
+      const newUrl = item.elements.permalink.value
       return (
         <li className={LEAF_NAME[level]}>
           <span className="nav-title">
-            <Link to={`/${newUrl}`}>{item.elements.title?.value}</Link>
+            <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
           </span>
         </li>
       )
-    } else if (item.system.type === "blog_release_notes") {
+    } else if (item.system.type === "blog_whats_new") {
       const newUrl = item.elements.permalink.value
       return (
         <li className={LEAF_NAME[level]}>
@@ -270,8 +270,9 @@ const Sidebar = () => {
             fragment page on kontent_item {
               ...KCMD
               ...BRN
+              ...BWN
               ...RN
-              ...PO
+              ...WN
             }
 
             fragment KCMD on kontent_item_knowledge_center_markdown_page {
@@ -304,6 +305,21 @@ const Sidebar = () => {
               }
             }
 
+            fragment BWN on kontent_item_blog_whats_new {
+              elements {
+                pagename {
+                  value
+                }
+                permalink {
+                  value
+                }
+              }
+              system {
+                id
+                type
+              }
+            }
+
             fragment RN on kontent_item_release_notes_page {
               elements {
                 pagename {
@@ -319,12 +335,12 @@ const Sidebar = () => {
               }
             }
 
-            fragment PO on kontent_item_kc_product_overview {
+            fragment WN on kontent_item_post___whatsnew {
               elements {
-                title {
+                pagename {
                   value
                 }
-                url_slug {
+                permalink {
                   value
                 }
               }

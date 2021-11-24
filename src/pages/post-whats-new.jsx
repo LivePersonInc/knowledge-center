@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
-import moment from "moment"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import AlertComponent from "../components/AlertComponent"
@@ -29,16 +28,15 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   }, [data])
 
   // general template
-  const releaseNotesPage = data?.releaseNotesPage
+  const whatsNew = data?.whatsNew
 
-  const pageTitle = releaseNotesPage?.elements?.pagename?.value
-  // const pageCategory = releaseNotesPage?.elements?.categoryname?.value
-  const pageSubTitle = releaseNotesPage?.elements?.subtitle?.value
+  const pageTitle = whatsNew?.elements?.pagename?.value
+  const pageBody = whatsNew?.elements?.body?.value
+  // const pageCategory = whatsNew?.elements?.categoryname?.value
+  const pageSubTitle = whatsNew?.elements?.subtitle?.value
 
-  const product_release_notes =
-    releaseNotesPage?.elements?.product_release_notes?.value
   // Tags
-  // const pageTags = releaseNotesPage?.elements?.channels_supported.value
+  // const pageTags = whatsNew?.elements?.channels_supported.value
 
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
@@ -73,60 +71,13 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           <div className="maincontent mb-10">
             <LpRichTextElement
               body_content={pageSubTitle}
-              bodyfield={releaseNotesPage?.elements?.subtitle}
+              bodyfield={whatsNew?.elements?.subtitle}
             />
 
-            {/* {console.log(product_release_notes)} */}
-
-            {product_release_notes.map(node => (
-              <div
-                className="mt-10"
-                key={node?.elements?.release_version_number?.value}
-              >
-                <div className="release-notes-item flex items-center gap-3">
-                  {/* Title  */}
-                  <h3 className="h3" style={{ margin: 0 }}>
-                    {node?.elements?.product_name?.value.map(node => (
-                      <div key={node?.system?.name}>{node?.system?.name}</div>
-                    ))}
-                  </h3>
-                  {"-"}
-                  <time
-                    className="release-notes-item-time flex items-center"
-                    dateTime={moment(
-                      node?.elements?.release_date?.value
-                    ).format("MMMM D, YYYY HH:mm")}
-                    data-kontent-element-codename="date"
-                  >
-                    {moment(node?.elements?.release_date?.value).format(
-                      "MMMM YY"
-                    )}
-                  </time>
-                </div>
-
-                {/* Features */}
-                <h5 className="h5 mt-6 mb-2">Features</h5>
-                <LpRichTextElement
-                  body_content={node?.elements?.features?.value}
-                  bodyfield={node?.elements?.features}
-                />
-                {/* {node?.elements?.release_version_number?.value} */}
-
-                {/* Fixes */}
-                <h5 className="h5 mt-6 mb-2">Fixes</h5>
-                <LpRichTextElement
-                  body_content={node?.elements?.fixes?.value}
-                  bodyfield={node?.elements?.fixes}
-                />
-
-                {/* enhancements */}
-                <h5 className="h5 mt-6 mb-2">Enhancements</h5>
-                <LpRichTextElement
-                  body_content={node?.elements?.enhancements?.value}
-                  bodyfield={node?.elements?.enhancements}
-                />
-              </div>
-            ))}
+            <LpRichTextElement
+              body_content={pageBody}
+              bodyfield={whatsNew?.elements?.body}
+            />
 
             <AlertComponent />
           </div>
@@ -141,9 +92,7 @@ export default ReleaseNotesPostTemplate
 
 export const query = graphql`
   query ($systemId: String) {
-    releaseNotesPage: kontentItemReleaseNotesPage(
-      system: { id: { eq: $systemId } }
-    ) {
+    whatsNew: kontentItemPostWhatsnew(system: { id: { eq: $systemId } }) {
       elements {
         pagename {
           value
@@ -253,47 +202,103 @@ export const query = graphql`
             link_id
           }
         }
-        product_release_notes {
-          value {
+        body {
+          value
+          modular_content {
             id
-            ... on kontent_item_product_release_notes {
+            system {
+              type
+              codename
+              id
+            }
+            ... on kontent_item_video___widget {
               id
               elements {
-                release_version_number {
+                video_id {
                   value
                 }
-                release_date {
+              }
+              system {
+                codename
+                type
+              }
+            }
+            ... on kontent_item_image__widget {
+              id
+              system {
+                type
+              }
+              elements {
+                description {
                   value
                 }
-                product_name {
+                image {
                   value {
-                    system {
-                      name
-                    }
-                    ... on kontent_item_product_release_notes {
-                      id
-                      system {
-                        name
-                      }
-                    }
+                    url
+                    name
+                    description
+                  }
+                  name
+                }
+                orientation {
+                  value {
+                    codename
                   }
                 }
-                fixes {
-                  value
-                }
-                features {
-                  value
-                }
-                enhancements {
-                  value
-                }
-                channels_supported {
+                product {
                   value {
-                    name
+                    id
+                    system {
+                      id
+                    }
                   }
                 }
               }
             }
+            ... on kontent_item_code_sample {
+              id
+              system {
+                type
+                codename
+              }
+              elements {
+                code {
+                  value
+                }
+                language {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+            ... on kontent_item_contentbox {
+              id
+              system {
+                codename
+                type
+              }
+              elements {
+                notice_text {
+                  value
+                }
+                type {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+          }
+          images {
+            url
+            image_id
+          }
+          links {
+            url_slug
+            type
+            codename
+            link_id
           }
         }
       }

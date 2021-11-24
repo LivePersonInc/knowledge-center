@@ -8,13 +8,14 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const navPagePath = path.resolve("./src/pages/nav-page.jsx")
-    const PageOverviewPath = path.resolve("./src/pages/page-overview.jsx")
     const PostReleaseNotesPath = path.resolve(
       "./src/pages/post-release-notes.jsx"
     )
     const BlogReleaseNotesPath = path.resolve(
       "./src/pages/page-release-notes.jsx"
     )
+    const BlogWhatsNewPath = path.resolve("./src/pages/page-whats-new.jsx")
+    const PostWhatsNewPath = path.resolve("./src/pages/post-whats-new.jsx")
     const PageGeneralPath = path.resolve("./src/pages/page-jekyll-markdown.jsx")
 
     graphql(`
@@ -67,7 +68,40 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allKontentItemPostWhatsnew {
+          nodes {
+            elements {
+              permalink {
+                value
+                name
+              }
+              pagename {
+                value
+              }
+            }
+            system {
+              codename
+              id
+            }
+          }
+        }
         allKontentItemBlogReleaseNotes {
+          nodes {
+            elements {
+              pagename {
+                value
+              }
+              permalink {
+                value
+              }
+            }
+            system {
+              codename
+              id
+            }
+          }
+        }
+        allKontentItemBlogWhatsNew {
           nodes {
             elements {
               pagename {
@@ -103,8 +137,9 @@ exports.createPages = ({ graphql, actions }) => {
       fragment page on kontent_item {
         ...KCMD
         ...BRN
+        ...BWN
         ...RN
-        ...PO
+        ...WN
       }
 
       fragment KCMD on kontent_item_knowledge_center_markdown_page {
@@ -137,6 +172,21 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
 
+      fragment BWN on kontent_item_blog_whats_new {
+        elements {
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+        }
+        system {
+          id
+          type
+        }
+      }
+
       fragment RN on kontent_item_release_notes_page {
         elements {
           pagename {
@@ -152,12 +202,12 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
 
-      fragment PO on kontent_item_kc_product_overview {
+      fragment WN on kontent_item_post___whatsnew {
         elements {
-          title {
+          pagename {
             value
           }
-          url_slug {
+          permalink {
             value
           }
         }
@@ -258,6 +308,25 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
+      _.each(result.data.allKontentItemBlogWhatsNew.nodes, node => {
+        createPage({
+          path: `/${node.elements.permalink.value}/`,
+          component: slash(BlogWhatsNewPath),
+          context: { slug: `${node.elements.permalink.value}` },
+        })
+      })
+
+      _.each(result.data.allKontentItemPostWhatsnew.nodes, node => {
+        createPage({
+          path: `/${node.elements.permalink.value}/`,
+          component: slash(PostWhatsNewPath),
+          context: {
+            systemId: node.system.id,
+            slug: `${node.elements.permalink.value}`,
+          },
+        })
+      })
+
       _.each(
         result.data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
         node => {
@@ -271,28 +340,6 @@ exports.createPages = ({ graphql, actions }) => {
           })
         }
       )
-
-      // const tags = result.data.allKontentItemTag.nodes
-      // _.each(tags, tag => {
-      //   const tagCodename = tag.system.codename
-      //   const tagTitle = tag.elements.title.value
-      //   createPage({
-      //     path: `/tags/${tag.elements.slug.value}/`,
-      //     component: PostReleaseNotesPath,
-      //     context: { tagCodename, tagTitle },
-      //   })
-      // })
-
-      // const categories = result.data.allKontentItemCategory.nodes
-      // _.each(categories, category => {
-      //   const categoryCodename = category.system.codename
-      //   const categoryTitle = category.elements.title.value
-      //   createPage({
-      //     path: `/categories/${category.elements.slug.value}/`,
-      //     component: categoryTemplate,
-      //     context: { categoryCodename, categoryTitle },
-      //   })
-      // })
 
       resolve()
     })
