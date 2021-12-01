@@ -6,6 +6,7 @@ import Seo from "../components/Seo"
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
+import PostSidebar from "../components/postSidebar"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -81,7 +82,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
             <AlertComponent />
           </div>
-          <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
+          <PostSidebar />
         </InnerSiteLayoutStyles>
       </div>
     </Layout>
