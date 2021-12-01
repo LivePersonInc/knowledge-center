@@ -7,3 +7,8 @@ body {
     border-color: currentColor;
   }
 }
+body.dark {
+  header {
+    box-shadow: inset 0px -1px 0px rgb(167 172 190 / 30%);
+  }
+}
