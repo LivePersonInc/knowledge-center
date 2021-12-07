@@ -41,7 +41,7 @@ const ContentStyles = styled.div`
     padding-right: 4rem;
   }
   @media (max-width: 767px) {
-    padding: 0;
+    padding: 1rem 0 0 0;
     & > div {
       padding: 0 25px;
     }

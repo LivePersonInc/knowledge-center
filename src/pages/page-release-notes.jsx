@@ -11,9 +11,11 @@ const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   display: grid;
   grid-template-areas: "sidebar content";
-  grid-template-columns: repeat(auto-fit, minmax(75%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(70%, 30%));
   @media (max-width: 1100px) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
   }
 `
 

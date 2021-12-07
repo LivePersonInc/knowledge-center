@@ -3,7 +3,7 @@ import React from "react"
 const PostSidebar = ({}) => {
   return (
     <div className="flex flex-col">
-      <div>Subscribe for updates</div>
+      <div style={{ textAlign: "center" }}>Subscribe for updates</div>
       <div className="social-icons flex justify-center mt-3 gap-2">
         {/* twitter */}
         <a

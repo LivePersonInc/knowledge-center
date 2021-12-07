@@ -7,14 +7,17 @@ import Seo from "../components/Seo"
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
+import Breadcrumbs from "../components/Breadbrumbs"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   display: grid;
   grid-template-areas: "sidebar content";
-  grid-template-columns: repeat(auto-fit, minmax(75%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(70%, 30%));
   @media (max-width: 1100px) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
   }
 `
 
@@ -51,20 +54,12 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
             marginBottom: "1.5rem",
           }}
         >
-          <div className="text-sm breadcrumbs">
-            <ul>
-              <li className="breadcrumb-item">
-                <Link to="/">Knowledge Center</Link>
-              </li>
-              <li className="breadcrumb-item">
-                <Link to="/news-releases">News & Releases</Link>
-              </li>
-              <li className="breadcrumb-item no-after">{pageTitle}</li>
-            </ul>
-          </div>
-
+          <Breadcrumbs
+            secondCrumbLink="news-releases"
+            secondCrumbTitle="News & Releases"
+            thirdCrumb={pageTitle}
+          />
           <h1 className="h1">{pageTitle}</h1>
-
           {/* <div id="indicators">
             <Tags tags={(pageTags || []).map(({ name }) => name)} />
           </div> */}

@@ -9,6 +9,7 @@ import Tags from "../components/Tags"
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
+import Breadcrumbs from "../components/Breadbrumbs"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -51,15 +52,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
             marginBottom: "1.5rem",
           }}
         >
-          <div className="text-sm breadcrumbs">
-            <ul>
-              <li className="breadcrumb-item">
-                <Link to="/">Knowledge Center</Link>
-              </li>
-              <li className="breadcrumb-item">{pageCategory}</li>
-              <li className="breadcrumb-item no-after">{pageTitle}</li>
-            </ul>
-          </div>
+          <Breadcrumbs
+            secondCrumbLink=""
+            secondCrumbTitle={pageCategory}
+            thirdCrumb={pageTitle}
+          />
 
           <h1 className="h1">{pageTitle}</h1>
 
