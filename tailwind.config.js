@@ -52,6 +52,7 @@ module.exports = {
         "card-border": "var(--card-border)",
         "cta-background": "var(--cta-background)",
         "cta-text": "var(--cta-text)",
+        "sidebar-color": "var(--sidebar-color)",
         "button-background": "var(--button-background)",
         "button-text": "var(--button-text)",
         "button-background-secondary": "var(--button-background-secondary)",

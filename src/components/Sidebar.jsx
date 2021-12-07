@@ -209,7 +209,10 @@ const Sidebar = () => {
       return (
         <li className={LEAF_NAME[level]}>
           <span className="nav-title">
-            <Link activeClassName="font-bold text-link-color" to={`/${newUrl}`}>
+            <Link
+              activeClassName="font-bold text-sidebar-color"
+              to={`/${newUrl}`}
+            >
               {item.elements.pagename.value}
             </Link>
           </span>
