@@ -30,7 +30,7 @@ const JumpTo = ({ title, jumpToItems }) => {
             <span className="text-button-text text-xs">On this page:</span>
           </li> */}
           <li
-            className="anchoritem hover-bordered"
+            className="anchoritem hover-bordered mb-0"
             id="jumptotop"
             tabIndex="-1"
             onClick={() => window[`scrollTo`]({ top: 0, behavior: `smooth` })}
@@ -47,7 +47,7 @@ const JumpTo = ({ title, jumpToItems }) => {
             return (
               <li
                 key={anchor.textContent}
-                className="anchoritem hover-bordered"
+                className="anchoritem hover-bordered mb-0"
                 tabIndex="-1"
                 onClick={() => scrollTo(anchor)}
               >
