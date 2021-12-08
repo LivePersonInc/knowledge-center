@@ -31,8 +31,10 @@ class Article extends React.Component {
           {moment(date).format("MMMM YY, HH:mmA")}
         </time>
 
-        <div
+        <Link
+          to={`/${slug || "#"}`}
           style={{
+            textDecoration: "none",
             color: "var(--body-text)",
             marginTop: "5px",
           }}
@@ -40,7 +42,7 @@ class Article extends React.Component {
           id="subtitle"
         >
           {postMarkup(subTitle, "post-content")}
-        </div>
+        </Link>
       </div>
     )
   }
