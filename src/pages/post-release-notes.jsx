@@ -60,9 +60,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
             thirdCrumb={pageTitle}
           />
           <h1 className="h1">{pageTitle}</h1>
-          {/* <div id="indicators">
-            <Tags tags={(pageTags || []).map(({ name }) => name)} />
-          </div> */}
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent mb-10">
@@ -70,9 +67,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               body_content={pageSubTitle}
               bodyfield={releaseNotesPage?.elements?.subtitle}
             />
-
-            {/* {console.log(product_release_notes)} */}
-
             {product_release_notes.map(node => (
               <div
                 className="mt-10"
@@ -80,23 +74,24 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               >
                 <div className="release-notes-item flex items-center gap-3">
                   {/* Title  */}
-                  <h3 className="h3" style={{ margin: 0 }}>
+                  <h4 className="h4" style={{ margin: 0 }}>
                     {node?.elements?.product_name?.value.map(node => (
                       <div key={node?.system?.name}>{node?.system?.name}</div>
                     ))}
-                  </h3>
-                  {"-"}
-                  <time
-                    className="release-notes-item-time flex items-center"
-                    dateTime={moment(
-                      node?.elements?.release_date?.value
-                    ).format("MMMM D, YYYY HH:mm")}
-                    data-kontent-element-codename="date"
-                  >
-                    {moment(node?.elements?.release_date?.value).format(
-                      "MMMM YY"
-                    )}
-                  </time>
+                  </h4>{" "}
+                  <h4 className="h4" style={{ margin: 0 }}>
+                    <time
+                      className="release-notes-item-time flex items-center"
+                      dateTime={moment(
+                        node?.elements?.release_date?.value
+                      ).format("MMMM D, YYYY HH:mm")}
+                      data-kontent-element-codename="date"
+                    >
+                      {moment(node?.elements?.release_date?.value).format(
+                        "MMMM YY"
+                      )}
+                    </time>
+                  </h4>
                 </div>
 
                 {/* Features */}

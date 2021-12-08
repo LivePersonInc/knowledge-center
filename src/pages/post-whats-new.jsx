@@ -60,10 +60,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
             thirdCrumb={pageTitle}
           />
           <h1 className="h1">{pageTitle}</h1>
-
-          {/* <div id="indicators">
-            <Tags tags={(pageTags || []).map(({ name }) => name)} />
-          </div> */}
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent mb-10">
