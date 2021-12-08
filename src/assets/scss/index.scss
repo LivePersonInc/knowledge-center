@@ -30,7 +30,9 @@ body.light {
   --card-border: rgba(0, 0, 0, 0.12);
   --cta-background: #0f0943;
   --cta-text: var(--button-text);
-  --sidebar-color: #020627;
+  --sidebar-color: #ebecef;
+  --tags-background: #ebecef;
+  --tags-color: #020627;
   --button-background: #005ef4;
   --button-background-hover: #0249bb;
   --button-text: #fcfcfd;
@@ -71,6 +73,8 @@ body.dark {
   --cta-background: #005ef4;
   --cta-text: var(--button-text);
   --sidebar-color: #020627;
+  --tags-background: #3f4c73;
+  --tags-color: #fff;
   --button-background: #005ef4;
   --button-background-hover: #091043;
   --button-text: #fcfcfd;

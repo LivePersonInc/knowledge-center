@@ -9,6 +9,7 @@ import PostSidebar from "../components/postSidebar"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
+  display: -ms-grid;
   display: grid;
   grid-template-areas: "sidebar content";
   grid-template-columns: repeat(auto-fit, minmax(70%, 30%));

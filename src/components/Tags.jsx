@@ -8,7 +8,10 @@ const Tags = ({ tags }) => {
   return (
     <ul data-testid="tags" className="indicators flex my-4">
       {tags.map(tag => (
-        <li key={tag} className="tag badge bg-gray-lightest mr-2">
+        <li
+          key={tag}
+          className="tag badge bg-tags-background text-tags-color border-transparent mr-2"
+        >
           {tag}
         </li>
       ))}
