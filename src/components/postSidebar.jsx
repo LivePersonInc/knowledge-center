@@ -1,6 +1,6 @@
 import React from "react"
 
-const PostSidebar = ({}) => {
+const PostSidebar = () => {
   return (
     <div className="flex flex-col">
       <div style={{ textAlign: "center" }}>Subscribe for updates</div>

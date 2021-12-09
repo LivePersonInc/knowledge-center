@@ -98,7 +98,7 @@ module.exports = {
     //                       value
     //                     }
     //                   }
-    //                   fields { 
+    //                   fields {
     //                     slug
     //                     date
     //                     tags
