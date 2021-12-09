@@ -83,9 +83,15 @@ const HomePage = ({ data }) => {
             <p>{kontentItemHomepage?.elements?.cta_perk_1?.value}</p>
           </div>
           <div className="flex items-center sm:mt-4">
-            <button className="btn btn-primary rounded-full">
-              Start Free Trial
-            </button>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://developers.liveperson.com/register.html"
+            >
+              <button className="btn btn-primary rounded-full">
+                Start Free Trial
+              </button>
+            </a>
           </div>
         </div>
       </div>
