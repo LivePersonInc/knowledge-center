@@ -74,7 +74,7 @@ const HomeLayout = ({ children }) => (
         <Seo title={data.site.siteMetadata.title} />
         <GlobalStyles />
         <Header />
-        <div className="min-h-screen shadow drawer drawer-mobile  ">
+        <div className="min-h-screen drawer drawer-mobile  ">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="flex flex-col items-center justify-start drawer-content">
             <HomeStyles>
