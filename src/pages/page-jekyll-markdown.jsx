@@ -214,7 +214,6 @@ export const query = graphql`
         }
       }
     }
-
     allKontentItemNavigationItem {
       nodes {
         elements {

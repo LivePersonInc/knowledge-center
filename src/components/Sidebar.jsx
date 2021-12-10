@@ -163,7 +163,7 @@ const Sidebar = () => {
                   leaveTo="transform scale-95 opacity-0"
                 >
                   <Disclosure.Panel as="dd">
-                    <ul>
+                    <ul className="mt-2">
                       <SidebarItems
                         items={item.elements.subitems.value}
                         url={newUrl}
