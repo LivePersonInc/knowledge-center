@@ -78,16 +78,28 @@ body.dark {
       justify-content: space-between;
       td {
         flex: 1;
+        &:first-child {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
       }
       &:first-child {
         td {
-          background: #d6dae6;
+          background: var(--table-top-background);
+          color: var(--sidebar-text);
           font-weight: 500;
         }
       }
       &:nth-child(odd):not(:first-child) {
         td {
-          background: #f0f2fa;
+          background: var(--table-odd-background);
+        }
+      }
+      &:nth-child(even):not(:first-child) {
+        td {
+          background: var(--table-even-background);
         }
       }
     }
