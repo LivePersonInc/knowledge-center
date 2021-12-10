@@ -45,7 +45,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
           }}
         >
           <div className="text-sm breadcrumbs pb-4">
-            <ul>
+            <ul className="flex-wrap">
               <li className="breadcrumb-item">
                 <Link to="/">Knowledge Center</Link>
               </li>

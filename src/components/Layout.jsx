@@ -38,7 +38,7 @@ const SiteLayoutStyles = styled.main`
 const ContentStyles = styled.div`
   padding: 1.75rem;
   @media (min-width: 1024px) {
-    padding-right: 4rem;
+    padding-right: 0;
   }
   @media (max-width: 767px) {
     padding: 1rem 0 0 0;
@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
           <Seo title={data.site.siteMetadata.title} />
           <GlobalStyles />
           <Header />
-          <div className="min-h-screen drawer drawer-mobile overflow-y-visible">
+          <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="flex flex-col items-center justify-start drawer-content">
               <SiteLayoutStyles>

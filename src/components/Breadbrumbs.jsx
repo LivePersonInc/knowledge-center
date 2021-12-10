@@ -18,7 +18,7 @@ import { Link } from "gatsby"
 const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
   return (
     <div className="text-sm breadcrumbs">
-      <ul>
+      <ul className="flex-wrap">
         <li className="breadcrumb-item">
           <Link to="/">Knowledge Center</Link>
         </li>
