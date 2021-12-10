@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import HomeLayout from "../components/HomeLayout"
-import Card from "../components/Card"
+import Card from "../components/widgets/Card"
 import CardIcon from "../components/CardIcon"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
 // Icons

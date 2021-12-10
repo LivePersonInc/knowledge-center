@@ -29,7 +29,7 @@ const HomeStyles = styled.div`
   }
 `
 const ContentStyles = styled.div`
-  padding: 2rem 4rem 2rem 2rem;
+  padding: 2rem 0 2rem 2rem;
   .first-card {
     background-repeat: no-repeat;
     background-position: center;
