@@ -37,13 +37,16 @@ const SidebarStyles = styled.div`
       padding-top: 0;
     }
   }
+  .subcategoryfolder {
+    padding-left: 1.5625rem;
+  }
   li.subcategories,
   li.subcategoryfolder {
     margin-top: 0.4rem;
   }
   li.page,
   li.pagesfolder {
-    padding-left: 2.4rem;
+    padding-left: 1.5625rem;
   }
   li.nav_item:nth-last-child(5) {
     padding-top: 24px;
@@ -79,12 +82,11 @@ const Sidebar = () => {
     if (item.system.type === "navigation_item") {
       const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]
       const newUrl =
-        level > 0
-          ? // ? `${url}-${item.elements.url.value}`
-            `${item.elements.url.value}`
-          : item.elements.url.value
+        level > 0 ? `${item.elements.url.value}` : item.elements.url.value
       return (
         <li className={folder}>
+          {/* {console.log("itay")}
+          {console.log(item.elements.title?.value)} */}
           <Disclosure as="div">
             {({ open }) => (
               <>
@@ -136,7 +138,7 @@ const Sidebar = () => {
                       ) : level === 1 ? (
                         <div
                           className={
-                            "w-6 h-6 flex flex-col justify-center mr-2 pr-2 transform transition " +
+                            "w-5 h-5 flex flex-col justify-center mr-2 pr-2 transform transition " +
                             `${open ? "rotate-90" : ""}`
                           }
                         >
@@ -145,7 +147,7 @@ const Sidebar = () => {
                       ) : null}
                       <span
                         className={`nav-title  ${open ? "font-bold" : " "}
-                          ${level === 1 && open ? "" : " "}
+                          ${level === 1 && open ? "" : ""}
                         `}
                       >
                         {item.elements.title?.value}
@@ -163,7 +165,7 @@ const Sidebar = () => {
                   leaveTo="transform scale-95 opacity-0"
                 >
                   <Disclosure.Panel as="dd">
-                    <ul className="mt-2">
+                    <ul className="mt-3">
                       <SidebarItems
                         items={item.elements.subitems.value}
                         url={newUrl}
