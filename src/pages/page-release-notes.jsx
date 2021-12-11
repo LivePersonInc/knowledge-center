@@ -42,6 +42,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
         <div
           className="documenttitlecontainer"
           style={{
+            borderBottom: "1px solid var(--card-border)",
             marginBottom: "1.5rem",
           }}
         >

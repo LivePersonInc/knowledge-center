@@ -8,7 +8,6 @@ import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
-import PostSidebar from "../components/postSidebar"
 import Pagination from "../components/Pagination"
 
 const InnerSiteLayoutStyles = styled.main`

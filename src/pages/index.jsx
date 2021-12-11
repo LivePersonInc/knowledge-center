@@ -20,7 +20,10 @@ const HomePage = ({ data }) => {
 
   return (
     <HomeLayout>
-      <div className="flex flex-col border-b pb-4">
+      <div
+        className="flex flex-col pb-4"
+        style={{ borderBottom: "1px solid var(--card-border)" }}
+      >
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
