@@ -7,6 +7,7 @@ import AlertComponent from "../components/AlertComponent"
 import LpRichTextElement from "../components/LpRichTextElement"
 import PostSidebar from "../components/postSidebar"
 import Breadcrumbs from "../components/Breadbrumbs"
+import Pagination from "../components/Pagination"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -33,6 +34,8 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
   // general template
   const whatsNew = data?.whatsNew
+  // Prev and Next Slug ReleaseNotes
+  const { prev, next } = pageContext
 
   const pageTitle = whatsNew?.elements?.pagename?.value
   const pageBody = whatsNew?.elements?.body?.value
@@ -76,6 +79,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           </div>
           <PostSidebar />
         </InnerSiteLayoutStyles>
+        <Pagination prev={prev} next={next} />
       </div>
     </Layout>
   )

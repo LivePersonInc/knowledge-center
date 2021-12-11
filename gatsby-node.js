@@ -6,6 +6,22 @@ const slash = require("slash")
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
+  const getPrevAndNextNodes = (nodes, slug) => {
+    const currentIndex = nodes.findIndex(
+      item => item?.elements.permalink.value === slug
+    )
+    let prev
+    let next
+
+    if (currentIndex < nodes.length - 1) {
+      prev = nodes[currentIndex + 1]
+    }
+    if (currentIndex > 0) {
+      next = nodes[currentIndex - 1]
+    }
+    return [prev, next]
+  }
+
   return new Promise((resolve, reject) => {
     const navPagePath = path.resolve("./src/pages/nav-page.jsx")
     const PostReleaseNotesPath = path.resolve(
@@ -263,6 +279,9 @@ exports.createPages = ({ graphql, actions }) => {
         reject(result.errors)
       }
 
+      const releaseNotesPages = result.data.allKontentItemReleaseNotesPage.nodes
+      const whatsNewPages = result.data.allKontentItemPostWhatsnew.nodes
+
       // _.each(result.data.allKontentItemNavigationItem.nodes, node => {
       //   const contentPage = node.elements.subitems.value[0]
       //   contentPage && createPage({
@@ -297,13 +316,20 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
-      _.each(result.data.allKontentItemReleaseNotesPage.nodes, node => {
+      _.each(releaseNotesPages, node => {
+        const [prev, next] = getPrevAndNextNodes(
+          releaseNotesPages,
+          node.elements.permalink.value
+        )
+
         createPage({
           path: `/${node.elements.permalink.value}/`,
           component: slash(PostReleaseNotesPath),
           context: {
             systemId: node.system.id,
             slug: `${node.elements.permalink.value}`,
+            prev: prev ? prev.elements.permalink.value : null,
+            next: next ? next.elements.permalink.value : null,
           },
         })
       })
@@ -316,13 +342,20 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
-      _.each(result.data.allKontentItemPostWhatsnew.nodes, node => {
+      _.each(whatsNewPages, node => {
+        const [prev, next] = getPrevAndNextNodes(
+          whatsNewPages,
+          node.elements.permalink.value
+        )
+
         createPage({
           path: `/${node.elements.permalink.value}/`,
           component: slash(PostWhatsNewPath),
           context: {
             systemId: node.system.id,
             slug: `${node.elements.permalink.value}`,
+            prev: prev ? prev.elements.permalink.value : null,
+            next: next ? next.elements.permalink.value : null,
           },
         })
       })

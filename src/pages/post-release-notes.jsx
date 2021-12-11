@@ -9,6 +9,7 @@ import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import PostSidebar from "../components/postSidebar"
+import Pagination from "../components/Pagination"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -34,7 +35,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
   // general template
   const releaseNotesPage = data?.releaseNotesPage
-
   const pageTitle = releaseNotesPage?.elements?.pagename?.value
   // const pageCategory = releaseNotesPage?.elements?.categoryname?.value
   const pageSubTitle = releaseNotesPage?.elements?.subtitle?.value
@@ -43,6 +43,9 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
     releaseNotesPage?.elements?.product_release_notes?.value
   // Tags
   // const pageTags = releaseNotesPage?.elements?.channels_supported.value
+
+  // Prev and Next Slug ReleaseNotes
+  const { prev, next } = pageContext
 
   return (
     <Layout title={pageTitle} jumpToItems={jumpToItems}>
@@ -75,12 +78,12 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               >
                 <div className="release-notes-item flex items-center gap-3">
                   {/* Title  */}
-                  <h4 className="h4" style={{ margin: 0 }}>
+                  <h2 className="h4" style={{ margin: 0 }}>
                     {node?.elements?.product_name?.value.map(node => (
                       <div key={node?.system?.name}>{node?.system?.name}</div>
                     ))}
-                  </h4>{" "}
-                  <h4 className="h4" style={{ margin: 0 }}>
+                  </h2>{" "}
+                  <h2 className="h4" style={{ margin: 0 }}>
                     <time
                       className="release-notes-item-time flex items-center"
                       dateTime={moment(
@@ -92,7 +95,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                         "MMMM YY"
                       )}
                     </time>
-                  </h4>
+                  </h2>
                 </div>
 
                 {/* Features */}
@@ -121,9 +124,9 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
             <AlertComponent />
           </div>
-          <PostSidebar />
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
+        <Pagination prev={prev} next={next} />
       </div>
     </Layout>
   )
