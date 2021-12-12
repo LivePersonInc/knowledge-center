@@ -45,7 +45,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
             marginBottom: "0.5rem",
           }}
         >
-          <div className="text-sm breadcrumbs pb-4">
+          <div className="text-sm breadcrumbs">
             <ul className="flex-wrap">
               <li className="breadcrumb-item">
                 <Link to="/">Knowledge Center</Link>

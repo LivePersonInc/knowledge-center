@@ -109,6 +109,15 @@ body.dark {
       word-break: break-all;
     }
   }
+  // make subtitle data have the same font size
+  #subtitle {
+    .post-content {
+      & > * {
+        margin-bottom: 0;
+        font-size: 1rem;
+      }
+    }
+  }
   time.article__meta-time {
     font-size: 0.8125rem;
     color: #6f737c;
