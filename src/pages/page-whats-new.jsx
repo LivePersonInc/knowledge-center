@@ -42,7 +42,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
           className="documenttitlecontainer"
           style={{
             borderBottom: "1px solid var(--card-border)",
-            marginBottom: "0.5rem",
+            marginBottom: "1.5rem",
           }}
         >
           <div className="text-sm breadcrumbs">
