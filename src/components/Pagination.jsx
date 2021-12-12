@@ -21,7 +21,9 @@ const Pagination = ({ prev, next }) => {
   const needsPagination = Boolean(prev) || Boolean(next)
 
   return (
-    <>
+    <div
+      style={{ borderTop: "1px solid var(--card-border)", paddingTop: "2rem" }}
+    >
       {needsPagination && (
         <PrevNext>
           {prev && (
@@ -56,7 +58,7 @@ const Pagination = ({ prev, next }) => {
           )}
         </PrevNext>
       )}
-    </>
+    </div>
   )
 }
 

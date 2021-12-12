@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import moment from "moment"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
@@ -120,8 +119,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 />
               </div>
             ))}
-
-            <AlertComponent />
           </div>
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
