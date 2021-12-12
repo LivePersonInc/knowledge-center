@@ -147,7 +147,6 @@ const Sidebar = () => {
                         <Link
                           to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
                           className={`nav-title  ${open ? "font-bold" : " "}
-                          ${level === 1 && open ? "" : ""}
                         `}
                         >
                           {item.elements.title?.value}
@@ -155,7 +154,6 @@ const Sidebar = () => {
                       ) : (
                         <span
                           className={`nav-title  ${open ? "font-bold" : " "}
-                          ${level === 1 && open ? "" : ""}
                         `}
                         >
                           {item.elements.title?.value}
