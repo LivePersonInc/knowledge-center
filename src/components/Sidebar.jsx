@@ -29,7 +29,6 @@ const SidebarStyles = styled.div`
   .nav_item {
     color: var(--sidebar-text);
     margin-bottom: 20px;
-
     .nav-title {
       font-size: 16px;
       line-height: 24px;
@@ -52,7 +51,6 @@ const SidebarStyles = styled.div`
     padding-top: 24px;
     border-top: 1px solid #dbdce1;
   }
-
   li.nav_item:nth-last-child(4) {
     padding-bottom: 24px;
     border-bottom: 1px solid #dbdce1;
@@ -78,7 +76,6 @@ const Sidebar = () => {
   const SidebarItem = ({ item, url, level }) => {
     // const [isOpen, setIsOpen] = useState("defaultOpen")
     // const ToggleVisible = () => setIsOpen(!isOpen)
-
     if (item.system.type === "navigation_item") {
       const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]
       const newUrl =
@@ -145,13 +142,25 @@ const Sidebar = () => {
                           <ArrowRight />
                         </div>
                       ) : null}
-                      <span
-                        className={`nav-title  ${open ? "font-bold" : " "}
+                      {item.elements.url.value === "what-s-new" ||
+                      item.elements.url.value === "release-notes" ? (
+                        <Link
+                          to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
+                          className={`nav-title  ${open ? "font-bold" : " "}
                           ${level === 1 && open ? "" : ""}
                         `}
-                      >
-                        {item.elements.title?.value}
-                      </span>
+                        >
+                          {item.elements.title?.value}
+                        </Link>
+                      ) : (
+                        <span
+                          className={`nav-title  ${open ? "font-bold" : " "}
+                          ${level === 1 && open ? "" : ""}
+                        `}
+                        >
+                          {item.elements.title?.value}
+                        </span>
+                      )}
                     </div>
                   </Disclosure.Button>
                 </dt>
@@ -180,24 +189,6 @@ const Sidebar = () => {
         </li>
       )
     } else if (item.system.type === "blog_release_notes") {
-      const newUrl = item.elements.permalink.value
-      return (
-        <li className={LEAF_NAME[level]}>
-          <span className="nav-title">
-            <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
-          </span>
-        </li>
-      )
-    } else if (item.system.type === "blog_whats_new") {
-      const newUrl = item.elements.permalink.value
-      return (
-        <li className={LEAF_NAME[level]}>
-          <span className="nav-title">
-            <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
-          </span>
-        </li>
-      )
-    } else if (item.system.type === "release_notes_page") {
       const newUrl = item.elements.permalink.value
       return (
         <li className={LEAF_NAME[level]}>
@@ -256,7 +247,6 @@ const Sidebar = () => {
                 }
               }
             }
-
             fragment folder on kontent_item_navigation_item {
               system {
                 id
@@ -271,7 +261,6 @@ const Sidebar = () => {
                 }
               }
             }
-
             fragment page on kontent_item {
               ...KCMD
               ...BRN
@@ -279,7 +268,6 @@ const Sidebar = () => {
               ...RN
               ...WN
             }
-
             fragment KCMD on kontent_item_knowledge_center_markdown_page {
               elements {
                 pagename {
@@ -294,7 +282,6 @@ const Sidebar = () => {
                 type
               }
             }
-
             fragment BRN on kontent_item_blog_release_notes {
               elements {
                 pagename {
@@ -309,7 +296,6 @@ const Sidebar = () => {
                 type
               }
             }
-
             fragment BWN on kontent_item_blog_whats_new {
               elements {
                 pagename {
@@ -324,7 +310,6 @@ const Sidebar = () => {
                 type
               }
             }
-
             fragment RN on kontent_item_release_notes_page {
               elements {
                 pagename {
@@ -339,7 +324,6 @@ const Sidebar = () => {
                 type
               }
             }
-
             fragment WN on kontent_item_post___whatsnew {
               elements {
                 pagename {
@@ -354,7 +338,6 @@ const Sidebar = () => {
                 type
               }
             }
-
             fragment recursiveFolder on kontent_item_navigation_item {
               system {
                 id

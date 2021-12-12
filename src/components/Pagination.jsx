@@ -1,26 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import LpRichTextElement from "./LpRichTextElement"
 
 const PrevNext = styled.section`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `
-const Button = styled.button`
-  text-decoration: none;
+const Span = styled.span`
   display: inline-block;
-  padding: 8px 16px;
-  background-color: #04aa6d;
-  margin-right: 16px;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
+  color: blue;
   font-weight: bold;
-  &:hover {
-    transition: all ease-in-out 0.2s;
-    background-color: #ddd;
-    color: black;
-  }
+  font-size: 23px;
+`
+const Flex = styled.div`
+  display: flex;
 `
 
 const Pagination = ({ prev, next }) => {
@@ -31,13 +25,33 @@ const Pagination = ({ prev, next }) => {
       {needsPagination && (
         <PrevNext>
           {prev && (
-            <Link to={`/${prev}`}>
-              <Button>← Prev</Button>
+            <Link to={`/${prev?.permalink.value}`}>
+              <Flex>
+                <Span>← </Span>
+                <div>
+                  <h3>{prev?.pagename.value}</h3>
+                  <p>{prev?.date.value}</p>
+                  {/* <LpRichTextElement
+                    body_content={prev?.subtitle.value}
+                    bodyfield={prev?.subtitle}
+                  /> */}
+                </div>
+              </Flex>
             </Link>
           )}
           {next && (
-            <Link to={`/${next}`}>
-              <Button>Next →</Button>
+            <Link to={`/${next?.permalink.value}`}>
+              <Flex>
+                <div>
+                  <h3>{next?.pagename.value}</h3>
+                  <p>{next?.date.value}</p>
+                  {/* <LpRichTextElement
+                    body_content={next?.subtitle.value}
+                    bodyfield={next?.subtitle}
+                  /> */}
+                </div>
+                <Span> →</Span>
+              </Flex>
             </Link>
           )}
         </PrevNext>

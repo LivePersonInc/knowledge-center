@@ -12,9 +12,6 @@ const pageQuery = `
         subcategoryname {
           value
         }
-        redirects {
-          value
-        }
         permalink {
           value
         }
@@ -26,6 +23,36 @@ const pageQuery = `
         }
       }
       id
+    }
+  }
+  allKontentItemReleaseNotesPage {
+    nodes {
+      elements {
+        subtitle {
+          value
+        }
+        pagename {
+          value
+        }
+      }
+    }
+  }
+  allKontentItemPostWhatsnew {
+    nodes {
+      elements {
+        body {
+          value
+        }
+        pagename {
+          value
+        }
+        subtitle {
+          value
+        }
+        permalink {
+          value
+        }
+      }
     }
   }
 }

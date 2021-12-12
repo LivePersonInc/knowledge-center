@@ -67,7 +67,9 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allKontentItemReleaseNotesPage {
+        allKontentItemReleaseNotesPage(
+          sort: { order: DESC, fields: elements___date___value }
+        ) {
           nodes {
             elements {
               permalink {
@@ -76,6 +78,108 @@ exports.createPages = ({ graphql, actions }) => {
               }
               pagename {
                 value
+              }
+              date {
+                value
+              }
+              subtitle {
+                value
+                modular_content {
+                  id
+                  system {
+                    type
+                    codename
+                    id
+                  }
+                  ... on kontent_item_video___widget {
+                    id
+                    elements {
+                      video_id {
+                        value
+                      }
+                    }
+                    system {
+                      codename
+                      type
+                    }
+                  }
+                  ... on kontent_item_image__widget {
+                    id
+                    system {
+                      type
+                    }
+                    elements {
+                      description {
+                        value
+                      }
+                      image {
+                        value {
+                          url
+                          name
+                          description
+                        }
+                        name
+                      }
+                      orientation {
+                        value {
+                          codename
+                        }
+                      }
+                      product {
+                        value {
+                          id
+                          system {
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_code_sample {
+                    id
+                    system {
+                      type
+                      codename
+                    }
+                    elements {
+                      code {
+                        value
+                      }
+                      language {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_contentbox {
+                    id
+                    system {
+                      codename
+                      type
+                    }
+                    elements {
+                      notice_text {
+                        value
+                      }
+                      type {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                }
+                images {
+                  url
+                  image_id
+                }
+                links {
+                  url_slug
+                  type
+                  codename
+                  link_id
+                }
               }
             }
             system {
@@ -84,7 +188,9 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allKontentItemPostWhatsnew {
+        allKontentItemPostWhatsnew(
+          sort: { order: DESC, fields: elements___date___value }
+        ) {
           nodes {
             elements {
               permalink {
@@ -92,6 +198,108 @@ exports.createPages = ({ graphql, actions }) => {
                 name
               }
               pagename {
+                value
+              }
+              subtitle {
+                value
+                modular_content {
+                  id
+                  system {
+                    type
+                    codename
+                    id
+                  }
+                  ... on kontent_item_video___widget {
+                    id
+                    elements {
+                      video_id {
+                        value
+                      }
+                    }
+                    system {
+                      codename
+                      type
+                    }
+                  }
+                  ... on kontent_item_image__widget {
+                    id
+                    system {
+                      type
+                    }
+                    elements {
+                      description {
+                        value
+                      }
+                      image {
+                        value {
+                          url
+                          name
+                          description
+                        }
+                        name
+                      }
+                      orientation {
+                        value {
+                          codename
+                        }
+                      }
+                      product {
+                        value {
+                          id
+                          system {
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_code_sample {
+                    id
+                    system {
+                      type
+                      codename
+                    }
+                    elements {
+                      code {
+                        value
+                      }
+                      language {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_contentbox {
+                    id
+                    system {
+                      codename
+                      type
+                    }
+                    elements {
+                      notice_text {
+                        value
+                      }
+                      type {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                }
+                images {
+                  url
+                  image_id
+                }
+                links {
+                  url_slug
+                  type
+                  codename
+                  link_id
+                }
+              }
+              date {
                 value
               }
             }
@@ -134,7 +342,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-
       fragment folder on kontent_item_navigation_item {
         system {
           type
@@ -149,7 +356,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-
       fragment page on kontent_item {
         ...KCMD
         ...BRN
@@ -157,7 +363,6 @@ exports.createPages = ({ graphql, actions }) => {
         ...RN
         ...WN
       }
-
       fragment KCMD on kontent_item_knowledge_center_markdown_page {
         elements {
           pagename {
@@ -172,7 +377,6 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
-
       fragment BRN on kontent_item_blog_release_notes {
         elements {
           pagename {
@@ -187,7 +391,6 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
-
       fragment BWN on kontent_item_blog_whats_new {
         elements {
           pagename {
@@ -202,7 +405,6 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
-
       fragment RN on kontent_item_release_notes_page {
         elements {
           pagename {
@@ -217,7 +419,6 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
-
       fragment WN on kontent_item_post___whatsnew {
         elements {
           pagename {
@@ -232,7 +433,6 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
-
       fragment recursiveFolder on kontent_item_navigation_item {
         system {
           type
@@ -328,8 +528,8 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             systemId: node.system.id,
             slug: `${node.elements.permalink.value}`,
-            prev: prev ? prev.elements.permalink.value : null,
-            next: next ? next.elements.permalink.value : null,
+            prev: prev ? prev.elements : null,
+            next: next ? next.elements : null,
           },
         })
       })
@@ -354,8 +554,8 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             systemId: node.system.id,
             slug: `${node.elements.permalink.value}`,
-            prev: prev ? prev.elements.permalink.value : null,
-            next: next ? next.elements.permalink.value : null,
+            prev: prev ? prev.elements : null,
+            next: next ? next.elements : null,
           },
         })
       })
