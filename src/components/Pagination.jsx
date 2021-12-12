@@ -29,7 +29,7 @@ const Pagination = ({ prev, next }) => {
               <Flex>
                 <Span>← </Span>
                 <div>
-                  <h3>{prev?.pagename.value}</h3>
+                  <h4>{prev?.pagename.value}</h4>
                   <p>{prev?.date.value}</p>
                   {/* <LpRichTextElement
                     body_content={prev?.subtitle.value}
@@ -43,7 +43,7 @@ const Pagination = ({ prev, next }) => {
             <Link to={`/${next?.permalink.value}`}>
               <Flex>
                 <div>
-                  <h3>{next?.pagename.value}</h3>
+                  <h4>{next?.pagename.value}</h4>
                   <p>{next?.date.value}</p>
                   {/* <LpRichTextElement
                     body_content={next?.subtitle.value}

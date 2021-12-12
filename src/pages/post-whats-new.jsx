@@ -75,7 +75,8 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               bodyfield={whatsNew?.elements?.body}
             />
 
-            <AlertComponent />
+            {/* <AlertComponent /> */}
+            {/* {products_mentioned */}
           </div>
           <PostSidebar />
         </InnerSiteLayoutStyles>
