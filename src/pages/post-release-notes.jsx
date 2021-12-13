@@ -8,6 +8,7 @@ import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import Pagination from "../components/Pagination"
+import { customBodyContent } from "../utils"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -114,7 +115,9 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 {/* enhancements */}
                 <h5 className="h5 mt-6 mb-2">Enhancements</h5>
                 <LpRichTextElement
-                  body_content={node?.elements?.enhancements?.value}
+                  body_content={customBodyContent(
+                    node?.elements?.enhancements?.value
+                  )}
                   bodyfield={node?.elements?.enhancements}
                 />
               </div>

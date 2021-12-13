@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   html {
     scrollbar-width: thin;
     scrollbar-color: var(--secondary) var(--white);
+    scroll-behavior: smooth;
   }
   body::-webkit-scrollbar-track {
     background: var(--body-background);
@@ -17,7 +18,26 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 6px;
     border: 3px solid var(--body-background);
   }
-
+  .anchor-link {
+    display: flex;
+    align-items: center;
+    a {
+      display: none;
+      margin-left: 8px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &:hover {
+      a {
+        display: block;
+      }
+    }
+  }
 `
 
 export default GlobalStyles

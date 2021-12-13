@@ -10,6 +10,7 @@ import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
+import { customBodyContent } from "../utils"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -26,7 +27,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {
     if (contentRef.current && data) {
-      const headerQuery = contentRef.current.querySelectorAll("h2,h3")
+      const headerQuery = contentRef.current.querySelectorAll("h2")
       setJumpToItems([...headerQuery])
     }
   }, [data])
@@ -68,9 +69,9 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
           </div>
         </div>
         <InnerSiteLayoutStyles>
-          <div className="maincontent">
+          <div className="maincontent" id="scroll-smooth">
             <LpRichTextElement
-              body_content={body_content}
+              body_content={customBodyContent(body_content)}
               bodyfield={knowledgeCenterMarkdown?.elements?.body}
             />
 
