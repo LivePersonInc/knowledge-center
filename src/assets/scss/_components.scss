@@ -56,6 +56,8 @@ body.dark {
     display: flex;
     align-items: center;
     width: 100%;
+    background-color: transparent;
+    border-color: var(--card-border);
   }
 }
 .maincontent {

@@ -95,7 +95,7 @@ export default function Header() {
                 style={{ borderRadius: `32px` }}
                 type="text"
                 placeholder="SEARCH"
-                className="input input-card-border input-bordered w-full rounded-full"
+                className="input border-card-border input-bordered w-full rounded-full"
               />
 
               <Index indexName="helpcenter_gatsby">
