@@ -18,10 +18,10 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 6px;
     border: 3px solid var(--body-background);
   }
-  .anchor-link {
+  .anchor-address {
     display: flex;
     align-items: center;
-    a {
+    .anchor-link {
       display: none;
       margin-left: 8px;
       width: 25px;
@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
       }
     }
     &:hover {
-      a {
+      .anchor-link {
         display: block;
       }
     }

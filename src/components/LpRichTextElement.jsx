@@ -5,11 +5,9 @@ import {
 } from "@kentico/gatsby-kontent-components"
 import get from "lodash/get"
 import { Link } from "gatsby"
-const LpRichTextElement = ({ body_content, bodyfield }) => {
-  // if (tags[0] === "Both") {
-  //   tags = ["Chat", "Messaging"]
-  // }
+import AnchorIcon from "../assets/images/anchor.png"
 
+const LpRichTextElement = ({ body_content, bodyfield }) => {
   return (
     <RichTextElement
       value={body_content}
@@ -209,6 +207,21 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                 {domToReact([domNode])}
               </div>
             </div>
+          )
+        }
+        if (domNode.attribs?.id === "anchor-link") {
+          console.log("href: ", domNode.attribs?.href)
+          return (
+            <a
+              data-tip="Click to copy direct link to this section"
+              className="anchor-link tooltip tooltip-bottom tooltip-primary"
+              href={domNode.attribs?.href}
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href)
+              }}
+            >
+              <img src={AnchorIcon} alt="anchor link" />
+            </a>
           )
         }
       }}

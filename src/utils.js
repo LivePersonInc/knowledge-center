@@ -2,7 +2,6 @@ import React from "react"
 import sanitizeHtml from "sanitize-html"
 // Imports your new content item resolver.
 // fix me import { resolveItemInRichText } from "./utils/itemResolver"
-import AnchorIcon from "./assets/images/anchor.png"
 
 export const postMarkup = (unsanitiedHtml, classDiv) => {
   const options = {
@@ -132,11 +131,11 @@ export const customBodyContent = body_content => {
 
     function (tag, select1) {
       if (idx === h2Len - 1) {
-        return `<h2 id="${innerHTMLarr[idx]}">${select1}</h2>`
+        return `<h2 class="anchor-address" id="${innerHTMLarr[idx]}">${select1}<a href="#${innerHTMLarr[idx]}" id='anchor-link'></a></h2>`
       }
-      const res = `<h2 class="anchor-link" id="${innerHTMLarr[idx]}">${select1}
-    <a href="#${innerHTMLarr[idx + 1]
-        }"><img src=${AnchorIcon} alt='anchor link'/></a>
+      const res = `<h2 class="anchor-address" id="${
+        innerHTMLarr[idx]
+      }">${select1}<a href="#${innerHTMLarr[idx + 1]}" id='anchor-link'></a>
     </h2>`
       idx++
 

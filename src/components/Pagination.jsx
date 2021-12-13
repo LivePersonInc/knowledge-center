@@ -25,7 +25,6 @@ const Flex = styled.div`
 `
 
 const Pagination = ({ prev, next }) => {
-  const date = prev?.date.value
   const needsPagination = Boolean(prev) || Boolean(next)
 
   return (
