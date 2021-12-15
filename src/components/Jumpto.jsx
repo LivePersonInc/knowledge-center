@@ -17,7 +17,7 @@ const JumpTo = ({ title, jumpToItems }) => {
 
   const jumptoList = {
     position: "sticky",
-    top: "80px",
+    top: "120px",
     listStyleType: "none",
     maxWidth: "100%",
   }

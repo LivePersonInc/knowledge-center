@@ -45,6 +45,7 @@ const ContentStyles = styled.div`
     padding: 2rem;
   }
 `
+const MainContent = styled.div``
 
 const HomeLayout = ({ children }) => (
   <StaticQuery
@@ -74,13 +75,13 @@ const HomeLayout = ({ children }) => (
         <Seo title={data.site.siteMetadata.title} />
         <GlobalStyles />
         <Header />
-        <div className="max-width min-h-screen drawer drawer-mobile  ">
+        <div className="max-width min-h-screen drawer drawer-mobile relative">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="flex flex-col items-center justify-start drawer-content">
+          <MainContent className="flex flex-col items-center justify-start drawer-content">
             <HomeStyles>
               <ContentStyles>{children}</ContentStyles>
             </HomeStyles>
-          </div>
+          </MainContent>
           <Sidebar />
         </div>
         <Footer />

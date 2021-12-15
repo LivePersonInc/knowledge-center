@@ -120,23 +120,16 @@ export const postMarkup = (unsanitiedHtml, classDiv) => {
 
 export const customBodyContent = body_content => {
   const innerHTMLarr = body_content
-    .match(/<h2>.*(?=<\/h2>)/g)
+    .match(/<h[23]>.*(?=<\/h[23]>)/g)
     ?.map(x => encodeURI(x.substring(4)))
 
   let idx = 0
-  const h2Len = innerHTMLarr?.length
 
   const custom_body_content = body_content.replace(
-    /<h2>(.*)(?=<\/h2>)/g,
-
-    function (tag, select1) {
-      if (idx === h2Len - 1) {
-        return `<h2 class="anchor-address" id="${innerHTMLarr[idx]}">${select1}<a href="#${innerHTMLarr[idx]}" id='anchor-link'></a></h2>`
-      }
-      const res = `<h2 class="anchor-address" id="${
-        innerHTMLarr[idx]
-      }">${select1}<a href="#${innerHTMLarr[idx + 1]}" id='anchor-link'></a>
-    </h2>`
+    /<(h[23])>(.*)(?=<\/h[23]>)/g,
+    function (tag, select1, select2) {
+      const res = `<${select1} class="anchor-address" id="${innerHTMLarr[idx]}">${select2}<a href="#${innerHTMLarr[idx]}" id='anchor-link'></a>
+      </${select1}>`
       idx++
 
       return res

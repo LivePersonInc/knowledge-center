@@ -210,14 +210,17 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
           )
         }
         if (domNode.attribs?.id === "anchor-link") {
-          console.log("href: ", domNode.attribs?.href)
           return (
             <a
               data-tip="Click to copy direct link to this section"
               className="anchor-link tooltip tooltip-bottom tooltip-primary"
               href={domNode.attribs?.href}
               onClick={() => {
-                navigator.clipboard.writeText(window.location.href)
+                navigator.clipboard.writeText(
+                  window.location.origin +
+                    window.location.pathname +
+                    domNode.attribs?.href
+                )
               }}
             >
               <img src={AnchorIcon} alt="anchor link" />

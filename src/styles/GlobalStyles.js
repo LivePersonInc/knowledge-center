@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
   .anchor-address {
     display: flex;
     align-items: center;
+    scroll-margin-top: 4em;
+    @media (max-width: 1024px) {
+      scroll-margin-top: 5em;
+    }
     .anchor-link {
       display: none;
       margin-left: 8px;

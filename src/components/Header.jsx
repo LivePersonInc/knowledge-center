@@ -24,7 +24,7 @@ export default function Header() {
         : null
   )
   return (
-    <header className="py-5 z-50">
+    <header className="py-5 z-50 sticky top-0 w-full bg-body-background">
       <div className="navbar max-width">
         <div className="px-2 mx-2 navbar-start sm:hidden lg:pl-0 lg:ml-0">
           <Link to="/">

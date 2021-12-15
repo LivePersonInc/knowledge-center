@@ -27,8 +27,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const [jumpToItems, setJumpToItems] = useState([])
   useEffect(() => {
     if (contentRef.current && data) {
-      const headerQuery = contentRef.current.querySelectorAll("h2")
+      const headerQuery = contentRef.current.querySelectorAll("h2,h3")
       setJumpToItems([...headerQuery])
+      contentRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
     }
   }, [data])
 
