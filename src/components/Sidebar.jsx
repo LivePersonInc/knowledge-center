@@ -142,6 +142,7 @@ const Sidebar = () => {
                           <ArrowRight />
                         </div>
                       ) : null}
+
                       {item.elements.url.value === "what-s-new" ||
                       item.elements.url.value === "release-notes" ? (
                         <Link

@@ -34,6 +34,7 @@ const JumpTo = ({ title, jumpToItems }) => {
             id="jumptotop"
             tabIndex="-1"
             onClick={() => window[`scrollTo`]({ top: 0, behavior: `smooth` })}
+            role="presentation"
           >
             <Link
               style={{
@@ -50,6 +51,7 @@ const JumpTo = ({ title, jumpToItems }) => {
                 className="anchoritem hover-bordered mb-0"
                 tabIndex="-1"
                 onClick={() => scrollTo(anchor)}
+                role="presentation"
               >
                 <Link>{anchor.textContent}</Link>
               </li>

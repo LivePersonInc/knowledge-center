@@ -21,7 +21,7 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const BlogReleaseNotesTemplate = ({ data }) => {
-  // general template
+  // // Blog - Release notes template
   const allReleaseNotesPage = data?.allReleaseNotesPage
   const kontentItemBlogReleaseNotes = data?.kontentItemBlogReleaseNotes
 

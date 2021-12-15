@@ -20,7 +20,7 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const BlogWhatsNewTemplate = ({ data }) => {
-  // general template
+  // Blog - What's new template
   const allWhatsnewPage = data?.allWhatsnewPage
   const kontentItemBlogWhatsNew = data?.kontentItemBlogWhatsNew
 
