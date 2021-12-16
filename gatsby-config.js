@@ -68,10 +68,8 @@ module.exports = {
                 title: edge.node.elements.pagename.value,
                 description: edge.node.elements.subtitle.value,
                 date: edge.node.elements.date.value,
-                url:
-                  edge.node.elements.permalink.value,
-                guid:
-                  edge.node.elements.permalink.value,
+                url: edge.node.elements.permalink.value,
+                guid: edge.node.elements.permalink.value,
               }))
             },
             query: `
