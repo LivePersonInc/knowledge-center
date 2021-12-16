@@ -62,61 +62,46 @@ module.exports = {
         feeds: [
           {
             serialize: ({
-              query: { kontentItemHome, allKontentItemArticle },
+              query: { kontentItemHome, allKontentItemReleaseNotesPage },
             }) => {
-              return allKontentItemArticle.edges.map((edge) => ({
-                title: edge.node.elements.title.value,
-                description: edge.node.elements.metadata__description.value,
-                categories: edge.node.fields.tags,
-                date: edge.node.fields.date,
+              return allKontentItemReleaseNotesPage.edges.map(edge => ({
+                title: edge.node.elements.pagename.value,
+                description: edge.node.elements.subtitle.value,
+                date: edge.node.elements.date.value,
                 url:
-                  kontentItemHome.elements.base_url.value +
-                  "/articles/" +
-                  edge.node.fields.slug,
+                  edge.node.elements.permalink.value,
                 guid:
-                  kontentItemHome.elements.base_url.value +
-                  "/articles/" +
-                  edge.node.fields.slug,
-              }));
+                  edge.node.elements.permalink.value,
+              }))
             },
             query: `
-              {
-                allKontentItemArticle (
-                  limit: 10,
-                  sort: { fields: [fields___date], order: DESC }
-                ) {
-                  edges {
-                    node {
-                      elements {
-                        metadata__description {
-                          value
-                        }
-                        body {
-                          value
-                        }
-                        title {
-                          value
-                        }
-                      }
-                      fields {
-                        slug
-                        date
-                        tags
-                      }
-                    }
-                  }
-                },
-                kontentItemHome {
-                  elements {
-                    base_url {
-                      value
-                    }
-                  }
-                }
-              }
-            `,
+               {
+  allKontentItemReleaseNotesPage(
+    limit: 10
+    sort: {order: DESC, fields: elements___date___value}
+  ) {
+    edges {
+      node {
+        elements {
+          date {
+            value
+          }
+          pagename {
+            value
+          }
+          subtitle {
+            value
+          }
+          permalink {
+            value
+          }
+        }
+      }
+    }
+  }
+}`,
             output: "/rss.xml",
-            title: "Feed for collier.cz",
+            title: "Feed for liveperson knowledge center",
           },
         ],
       },
