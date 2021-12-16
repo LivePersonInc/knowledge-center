@@ -56,71 +56,71 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
-    //     feeds: [
-    //       {
-    //         serialize: ({
-    //           query: { kontentItemHome, allKontentItemArticle },
-    //         }) => {
-    //           return allKontentItemArticle.edges.map((edge) => ({
-    //             title: edge.node.elements.title.value,
-    //             description: edge.node.elements.metadata__description.value,
-    //             categories: edge.node.fields.tags,
-    //             date: edge.node.fields.date,
-    //             url:
-    //               kontentItemHome.elements.base_url.value +
-    //               "/articles/" +
-    //               edge.node.fields.slug,
-    //             guid:
-    //               kontentItemHome.elements.base_url.value +
-    //               "/articles/" +
-    //               edge.node.fields.slug,
-    //           }));
-    //         },
-    //         query: `
-    //           {
-    //             allKontentItemArticle (
-    //               limit: 10,
-    //               sort: { fields: [fields___date], order: DESC }
-    //             ) {
-    //               edges {
-    //                 node {
-    //                   elements {
-    //                     metadata__description {
-    //                       value
-    //                     }
-    //                     body {
-    //                       value
-    //                     }
-    //                     title {
-    //                       value
-    //                     }
-    //                   }
-    //                   fields {
-    //                     slug
-    //                     date
-    //                     tags
-    //                   }
-    //                 }
-    //               }
-    //             },
-    //             kontentItemHome {
-    //               elements {
-    //                 base_url {
-    //                   value
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         `,
-    //         output: "/rss.xml",
-    //         title: "Feed for collier.cz",
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({
+              query: { kontentItemHome, allKontentItemArticle },
+            }) => {
+              return allKontentItemArticle.edges.map((edge) => ({
+                title: edge.node.elements.title.value,
+                description: edge.node.elements.metadata__description.value,
+                categories: edge.node.fields.tags,
+                date: edge.node.fields.date,
+                url:
+                  kontentItemHome.elements.base_url.value +
+                  "/articles/" +
+                  edge.node.fields.slug,
+                guid:
+                  kontentItemHome.elements.base_url.value +
+                  "/articles/" +
+                  edge.node.fields.slug,
+              }));
+            },
+            query: `
+              {
+                allKontentItemArticle (
+                  limit: 10,
+                  sort: { fields: [fields___date], order: DESC }
+                ) {
+                  edges {
+                    node {
+                      elements {
+                        metadata__description {
+                          value
+                        }
+                        body {
+                          value
+                        }
+                        title {
+                          value
+                        }
+                      }
+                      fields {
+                        slug
+                        date
+                        tags
+                      }
+                    }
+                  }
+                },
+                kontentItemHome {
+                  elements {
+                    base_url {
+                      value
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Feed for collier.cz",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {

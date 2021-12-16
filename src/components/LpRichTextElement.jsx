@@ -135,6 +135,13 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
               </div>
             )
           }
+
+          // case "reporting_metrics_table___widget": {
+          //   return (
+          //    <Tablecomplex />
+          //   )
+          // }
+
           case "contentbox": {
             return (
               <div

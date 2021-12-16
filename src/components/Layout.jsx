@@ -92,7 +92,7 @@ const Layout = ({ children }) => {
           <Seo title={data.site.siteMetadata.title} />
           <GlobalStyles />
           <Header />
-          <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible relative">
+          <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <MainContent className="flex flex-col items-center justify-start drawer-content">
               <SiteLayoutStyles>
