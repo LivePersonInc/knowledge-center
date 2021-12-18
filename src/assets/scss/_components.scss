@@ -60,6 +60,9 @@ body.dark {
   }
 }
 .maincontent {
+  p {
+    color: var(--body-text);
+  }
   figure {
     img {
       margin: 2rem auto 1rem;

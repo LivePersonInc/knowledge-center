@@ -66,6 +66,10 @@ const queries = [
     // add
     // allKontentItemPostWhatsnew
     // allKontentItemReleaseNotesPage
+    // data.allKontentItemPostWhatsnew.nodes,
+    // data.allKontentItemReleaseNotesPage.nodes,
+
+
   },
 ]
 

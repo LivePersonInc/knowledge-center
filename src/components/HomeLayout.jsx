@@ -75,7 +75,7 @@ const HomeLayout = ({ children }) => (
         <Seo title={data.site.siteMetadata.title} />
         <GlobalStyles />
         <Header />
-        <div className="max-width min-h-screen drawer drawer-mobile relative">
+        <div className="max-width min-h-screen drawer drawer-mobile">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <MainContent className="flex flex-col items-center justify-start drawer-content">
             <HomeStyles>

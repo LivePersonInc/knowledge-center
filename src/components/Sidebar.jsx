@@ -49,11 +49,11 @@ const SidebarStyles = styled.div`
   }
   li.nav_item:nth-last-child(5) {
     padding-top: 24px;
-    border-top: 1px solid #dbdce1;
+    border-top: 1px solid var(--card-border);
   }
   li.nav_item:nth-last-child(4) {
     padding-bottom: 24px;
-    border-bottom: 1px solid #dbdce1;
+    border-bottom: 1px solid var(--card-border);
   }
 `
 

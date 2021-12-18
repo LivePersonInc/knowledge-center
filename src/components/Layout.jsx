@@ -43,12 +43,10 @@ const ContentStyles = styled.div`
   @media (max-width: 767px) {
     padding: 1rem 0 0 0;
     & > div {
-      padding: 0 1.5625rem;
+      padding: 0 25px;
     }
   }
 `
-
-const MainContent = styled.div``
 
 const Layout = ({ children }) => {
   useEffect(() => {
@@ -94,11 +92,11 @@ const Layout = ({ children }) => {
           <Header />
           <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <MainContent className="flex flex-col items-center justify-start drawer-content">
+            <div className="flex flex-col items-center justify-start drawer-content">
               <SiteLayoutStyles>
                 <ContentStyles>{children}</ContentStyles>
               </SiteLayoutStyles>
-            </MainContent>
+            </div>
             <Sidebar />
           </div>
           <Footer />
