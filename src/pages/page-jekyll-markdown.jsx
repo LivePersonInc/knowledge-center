@@ -29,9 +29,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
     if (contentRef.current && data) {
       const headerQuery = contentRef.current.querySelectorAll("h2,h3")
       setJumpToItems([...headerQuery])
-      contentRef.current.scrollIntoView({
-        behavior: "smooth",
-      })
     }
   }, [data])
 
