@@ -58,16 +58,18 @@ const pageQuery = `
 }
 `
 
+const allData = (data) => {
+  return ({
+    ...data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
+    ...data.allKontentItemPostWhatsnew.nodes,
+    ...data.allKontentItemReleaseNotesPage.nodes,
+  })
+}
+
 const queries = [
   {
     query: pageQuery,
-    //transformer: ({ data }) =>
-    //data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
-    // add
-    // allKontentItemPostWhatsnew
-    // allKontentItemReleaseNotesPage
-    // data.allKontentItemPostWhatsnew.nodes,
-    // data.allKontentItemReleaseNotesPage.nodes,
+    transformer: ({ data }) => allData(data)
   },
 ]
 
