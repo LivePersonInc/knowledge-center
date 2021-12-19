@@ -1,11 +1,11 @@
 body.light {
   header {
-    box-shadow: inset 0px -1px 0px rgba(167, 172, 190, 0.3);
+    box-shadow: inset 0px -0.0625rem 0px rgba(167, 172, 190, 0.3);
   }
 }
 body.dark {
   header {
-    box-shadow: inset 0px -1px 0px rgb(167 172 190 / 30%);
+    box-shadow: inset 0px -0.0625rem 0px rgb(167 172 190 / 30%);
   }
 }
 .content-widget {
@@ -117,13 +117,17 @@ body.dark {
   #subtitle {
     .post-content {
       & > * {
-        margin-bottom: 0;
+        margin: 0.5rem 0 0 0;
         font-size: 1rem;
+      }
+      // delete title from subtitle
+      h2 {
+        display: none;
       }
     }
   }
   time.article__meta-time {
     font-size: 0.8125rem;
-    color: #6f737c;
+    color: var(--text-lighter);
   }
 }

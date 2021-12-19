@@ -28,10 +28,11 @@ const SidebarStyles = styled.div`
   }
   .nav_item {
     color: var(--sidebar-text);
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     .nav-title {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-transform: capitalize;
       padding-bottom: 0;
       padding-top: 0;
     }
@@ -48,11 +49,11 @@ const SidebarStyles = styled.div`
     padding-left: 1.5625rem;
   }
   li.nav_item:nth-last-child(5) {
-    padding-top: 24px;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--card-border);
   }
   li.nav_item:nth-last-child(4) {
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--card-border);
   }
 `

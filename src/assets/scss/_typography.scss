@@ -11,6 +11,7 @@
   letter-spacing: -0.0156rem;
   margin: 0 0 var(--space4) 0;
   font-family: "Roboto", sans-serif;
+  color: var(--title-text);
 }
 @mixin h2 {
   font-style: normal;
@@ -20,6 +21,7 @@
   font-family: "Roboto", sans-serif;
   margin: 1em 0;
   line-height: 1.3333333;
+  color: var(--title-text);
 }
 @mixin h3 {
   font-style: normal;
