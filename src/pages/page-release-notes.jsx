@@ -48,11 +48,11 @@ const BlogReleaseNotesTemplate = ({ data }) => {
         >
           <div className="text-sm breadcrumbs">
             <ul className="flex-wrap">
-              <li className="breadcrumb-item">
+              <li className="breadcrumb-item m-0">
                 <Link to="/">Knowledge Center</Link>
               </li>
 
-              <li className="breadcrumb-item no-after">News & Releases</li>
+              <li className="breadcrumb-item no-after m-0">News & Releases</li>
             </ul>
           </div>
 

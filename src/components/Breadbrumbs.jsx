@@ -1,32 +1,25 @@
 import React from "react"
 import { Link } from "gatsby"
-// import styled from "styled-components"
+import styled from "styled-components"
 
-// const BreadcrumbsStyles = styled.ul`
-//   flex-wrap: wrap;
-//   @media (max-width: 767px) {
-//     flex-wrap: wrap;
-//     flex-directon: column;
-//     align-items: flex-start;
-
-//     li.breadcrumb-item.no-after {
-//       color: var(--card-text);
-//     }
-//   }
-// `
+const BreadcrumbsStyles = styled.ul`
+  li.breadcrumb-item.no-after {
+    color: var(--text-lighter);
+  }
+`
 
 const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
   return (
     <div className="text-sm breadcrumbs">
-      <ul className="flex-wrap">
-        <li className="breadcrumb-item">
+      <BreadcrumbsStyles className="flex-wrap">
+        <li className="breadcrumb-item m-0">
           <Link to="/">Knowledge Center</Link>
         </li>
-        <li className="breadcrumb-item">
+        <li className="breadcrumb-item m-0">
           <Link to={`/${secondCrumbLink}`}>{secondCrumbTitle}</Link>
         </li>
-        <li className="breadcrumb-item no-after">{thirdCrumb}</li>
-      </ul>
+        <li className="breadcrumb-item no-after m-0">{thirdCrumb}</li>
+      </BreadcrumbsStyles>
     </div>
   )
 }

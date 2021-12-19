@@ -28,7 +28,7 @@ const SidebarStyles = styled.div`
   }
   .nav_item {
     color: var(--sidebar-text);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     .nav-title {
       font-size: 1rem;
       line-height: 1.5rem;
@@ -39,10 +39,6 @@ const SidebarStyles = styled.div`
   }
   .subcategoryfolder {
     padding-left: 1.5625rem;
-  }
-  li.subcategories,
-  li.subcategoryfolder {
-    margin-top: 0.4rem;
   }
   li.page,
   li.pagesfolder {
@@ -88,7 +84,7 @@ const Sidebar = () => {
           <Disclosure as="div">
             {({ open }) => (
               <>
-                <dt className="">
+                <dt className="flex items-center">
                   <Disclosure.Button>
                     <div className="flex itemdetails canOpen relative">
                       {level === 0 ? (

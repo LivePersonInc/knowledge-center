@@ -5,7 +5,6 @@ import {
 } from "@kentico/gatsby-kontent-components"
 import get from "lodash/get"
 import { Link } from "gatsby"
-import AnchorIcon from "../assets/images/anchor.svg"
 
 const LpRichTextElement = ({ body_content, bodyfield }) => {
   return (
