@@ -1,12 +1,19 @@
 body.light {
   header {
-    box-shadow: inset 0px -0.0625rem 0px rgba(167, 172, 190, 0.3);
+    box-shadow: inset 0 -0.0625rem 0 rgba(167, 172, 190, 0.3);
   }
 }
 body.dark {
   header {
-    box-shadow: inset 0px -0.0625rem 0px rgb(167 172 190 / 30%);
+    box-shadow: inset 0 -0.0625rem 0 rgb(167 172 190 / 30%);
   }
+}
+.lpbtn {
+  padding: 0.75rem 1.875rem;
+  border-radius: 6.25rem;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 .content-widget {
   border-left-width: 0.25rem;
@@ -76,10 +83,11 @@ body.dark {
     }
   }
   h3.anchor-address {
-    margin-top: 3rem;
+    margin-top: var(--space12);
   }
   .tablelp {
     text-align: center;
+    margin-top: var(--space8);
     tr {
       display: flex;
       justify-content: space-between;

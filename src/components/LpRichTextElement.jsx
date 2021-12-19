@@ -37,7 +37,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         switch (get(linkedItem, "system.type")) {
           case "video___widget": {
             return (
-              <div className="my-6 aspect-w-16 aspect-h-9">
+              <div className="my-8 aspect-w-16 aspect-h-9">
                 <iframe
                   title={linkedItem.elements.video_id.value}
                   className="mx-auto w-full"

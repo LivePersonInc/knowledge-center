@@ -8,7 +8,9 @@ const AlertComponent = () => {
       data-sal-easing="ease"
       className="mt-6 pt-6 border-t border-card-border"
     >
-      <h4>Missing something?</h4>
+      <h4 className="h2" style={{ marginTop: 0 }}>
+        Missing something?
+      </h4>
       <div className="content-widget missing-something p-4">
         <p>
           <QuestionMarkCircleIcon
