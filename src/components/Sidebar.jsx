@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Disclosure, Transition } from "@headlessui/react"
 
 import {
@@ -62,6 +62,158 @@ const Sidebar = () => {
     "level3folder",
   ]
   const LEAF_NAME = ["categoryname", "subcategories", "page", "level3"]
+
+  const sidebarData = useStaticQuery(graphql`
+    {
+      allKontentItemNavigationItem(
+        filter: { system: { codename: { eq: "root" } } }
+      ) {
+        nodes {
+          elements {
+            subitems {
+              value {
+                ...folder
+                ...recursiveFolder
+              }
+            }
+          }
+        }
+      }
+    }
+    fragment folder on kontent_item_navigation_item {
+      system {
+        id
+        type
+      }
+      elements {
+        url {
+          value
+        }
+        title {
+          value
+        }
+      }
+    }
+    fragment page on kontent_item {
+      ...KCMD
+      ...BRN
+      ...BWN
+      ...RN
+      ...WN
+    }
+    fragment KCMD on kontent_item_knowledge_center_markdown_page {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+    fragment BRN on kontent_item_blog_release_notes {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+    fragment BWN on kontent_item_blog_whats_new {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+    fragment RN on kontent_item_release_notes_page {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+    fragment WN on kontent_item_post___whatsnew {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+    fragment recursiveFolder on kontent_item_navigation_item {
+      system {
+        id
+        type
+      }
+      elements {
+        subitems {
+          value {
+            ...page
+            ...folder
+            ... on kontent_item_navigation_item {
+              system {
+                id
+                type
+              }
+              elements {
+                subitems {
+                  value {
+                    ...page
+                    ...folder
+                    ... on kontent_item_navigation_item {
+                      system {
+                        id
+                        type
+                      }
+                      elements {
+                        subitems {
+                          value {
+                            ...page
+                            ...folder
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
   const SidebarItems = ({ items, url, level }) => {
     const map = items?.map(item => (
@@ -225,170 +377,13 @@ const Sidebar = () => {
         className="menu pt-8 overflow-y-auto w-80 ld:bg-body-background h-full"
         data-testid="sidebar"
       >
-        <StaticQuery
-          query={graphql`
-            {
-              allKontentItemNavigationItem(
-                filter: { system: { codename: { eq: "root" } } }
-              ) {
-                nodes {
-                  elements {
-                    subitems {
-                      value {
-                        ...folder
-                        ...recursiveFolder
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            fragment folder on kontent_item_navigation_item {
-              system {
-                id
-                type
-              }
-              elements {
-                url {
-                  value
-                }
-                title {
-                  value
-                }
-              }
-            }
-            fragment page on kontent_item {
-              ...KCMD
-              ...BRN
-              ...BWN
-              ...RN
-              ...WN
-            }
-            fragment KCMD on kontent_item_knowledge_center_markdown_page {
-              elements {
-                pagename {
-                  value
-                }
-                permalink {
-                  value
-                }
-              }
-              system {
-                id
-                type
-              }
-            }
-            fragment BRN on kontent_item_blog_release_notes {
-              elements {
-                pagename {
-                  value
-                }
-                permalink {
-                  value
-                }
-              }
-              system {
-                id
-                type
-              }
-            }
-            fragment BWN on kontent_item_blog_whats_new {
-              elements {
-                pagename {
-                  value
-                }
-                permalink {
-                  value
-                }
-              }
-              system {
-                id
-                type
-              }
-            }
-            fragment RN on kontent_item_release_notes_page {
-              elements {
-                pagename {
-                  value
-                }
-                permalink {
-                  value
-                }
-              }
-              system {
-                id
-                type
-              }
-            }
-            fragment WN on kontent_item_post___whatsnew {
-              elements {
-                pagename {
-                  value
-                }
-                permalink {
-                  value
-                }
-              }
-              system {
-                id
-                type
-              }
-            }
-            fragment recursiveFolder on kontent_item_navigation_item {
-              system {
-                id
-                type
-              }
-              elements {
-                subitems {
-                  value {
-                    ...page
-                    ...folder
-                    ... on kontent_item_navigation_item {
-                      system {
-                        id
-                        type
-                      }
-                      elements {
-                        subitems {
-                          value {
-                            ...page
-                            ...folder
-                            ... on kontent_item_navigation_item {
-                              system {
-                                id
-                                type
-                              }
-                              elements {
-                                subitems {
-                                  value {
-                                    ...page
-                                    ...folder
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          `}
-          render={data => {
-            return (
-              <SidebarItems
-                items={
-                  data.allKontentItemNavigationItem.nodes[0].elements.subitems
-                    .value
-                }
-                url=""
-                level={0}
-              />
-            )
-          }}
+        <SidebarItems
+          items={
+            sidebarData.allKontentItemNavigationItem.nodes[0].elements.subitems
+              .value
+          }
+          url=""
+          level={0}
         />
       </ul>
     </SidebarStyles>
