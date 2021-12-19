@@ -1,11 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import Header from "./Header"
-import Footer from "./Footer"
-import GlobalStyles from "../styles/GlobalStyles"
-import Sidebar from "./Sidebar"
-import Seo from "./Seo"
 
 const BodyStyles = styled.div`
   min-height: 100vh;
