@@ -61,9 +61,8 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                 className={
                   "my-6 " +
                   linkedItem.elements.orientation.value[0].codename +
-                  " flex p-4"
+                  " flex flex-col p-4 text-center"
                 }
-                className="my-6 text-center"
                 key={linkedItem.system.id}
               >
                 {linkedItem.elements.orientation.value[0].codename ===
@@ -87,7 +86,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
                 {linkedItem.elements.orientation.value[0].codename ===
                   "vertical" && (
-                  <div>
+                  <div className="my-6 flex flex-col p-4 text-center">
                     <ImageElement
                       imgStyle={{ objectFit: `contain` }}
                       options={{
