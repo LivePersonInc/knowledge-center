@@ -25,7 +25,7 @@ const JumpTo = ({ title, jumpToItems }) => {
   return (
     <div className="inner-menu full-width sm:hidden">
       <div className="anchorlist shadow-none">
-        <ul className="menu py-4 ml-8" style={jumptoList}>
+        <ul className="menu ml-8" style={jumptoList}>
           {/* <li>
             <span className="text-button-text text-xs">On this page:</span>
           </li> */}

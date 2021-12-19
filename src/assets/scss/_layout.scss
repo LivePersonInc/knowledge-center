@@ -10,6 +10,16 @@ body {
       padding-left: 4rem;
       padding-right: 4rem;
     }
+    .inner-menu {
+      .menu {
+        li {
+          margin-bottom: 12px;
+          a {
+            padding: 4px 12px;
+          }
+        }
+      }
+    }
   }
   .drawer-content {
     max-height: inherit !important;
