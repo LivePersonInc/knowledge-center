@@ -45,7 +45,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   // const pageTags = whatsNew?.elements?.channels_supported.value
 
   return (
-    <Layout title={pageTitle} jumpToItems={jumpToItems}>
+    <div title={pageTitle} jumpToItems={jumpToItems}>
       <Seo title={pageTitle} description={pageSubTitle} />
       <div ref={contentRef}>
         <div
@@ -81,7 +81,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
         </InnerSiteLayoutStyles>
         <Pagination prev={prev} next={next} />
       </div>
-    </Layout>
+    </div>
   )
 }
 

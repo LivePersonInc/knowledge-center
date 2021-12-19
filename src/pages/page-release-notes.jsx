@@ -36,7 +36,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
   })
 
   return (
-    <Layout title={pageTitle}>
+    <div title={pageTitle}>
       <Seo title={pageTitle} description={pageTitle} />
       <div>
         <div
@@ -63,7 +63,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
           <PostSidebar />
         </InnerSiteLayoutStyles>
       </div>
-    </Layout>
+    </div>
   )
 }
 

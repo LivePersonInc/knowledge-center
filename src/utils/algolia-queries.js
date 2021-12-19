@@ -61,8 +61,8 @@ const pageQuery = `
 const queries = [
   {
     query: pageQuery,
-    transformer: ({ data }) =>
-      data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
+    //transformer: ({ data }) =>
+    //data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
     // add
     // allKontentItemPostWhatsnew
     // allKontentItemReleaseNotesPage

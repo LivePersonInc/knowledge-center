@@ -35,7 +35,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
   })
 
   return (
-    <Layout title={pageTitle}>
+    <div title={pageTitle}>
       <Seo title={pageTitle} description={pageTitle} />
       <div>
         <div
@@ -62,7 +62,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
           <PostSidebar />
         </InnerSiteLayoutStyles>
       </div>
-    </Layout>
+    </div>
   )
 }
 

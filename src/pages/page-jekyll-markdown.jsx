@@ -43,7 +43,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
   return (
-    <Layout title={pageTitle} jumpToItems={jumpToItems}>
+    <div title={pageTitle} jumpToItems={jumpToItems}>
       <Seo title={pageTitle} description={pageSubTitle} />
       <div ref={contentRef}>
         <div
@@ -80,7 +80,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
       </div>
-    </Layout>
+    </div>
   )
 }
 
