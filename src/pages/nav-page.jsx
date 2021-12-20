@@ -1,7 +1,7 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+
 import NavLinks from "../components/NavLinks"
 
 const NavPage = ({ data }) => {
@@ -20,13 +20,12 @@ const NavPage = ({ data }) => {
   })
 
   return (
-    <Layout>
-      <div>
-        <h2>{title}</h2>
+    <div>
+      <h2>{title}</h2>
 
-        <ul>
-          {items}
-          {/* {navPageDataNodes.map(node => (
+      <ul>
+        {items}
+        {/* {navPageDataNodes.map(node => (
             <Link
               to={`/${node?.elements?.url?.value}`}
               key={node?.elements?.url?.value}
@@ -48,9 +47,8 @@ const NavPage = ({ data }) => {
               </Link>
             </li>
           ))} */}
-        </ul>
-      </div>
-    </Layout>
+      </ul>
+    </div>
   )
 }
 

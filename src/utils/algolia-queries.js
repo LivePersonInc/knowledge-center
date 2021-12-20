@@ -71,8 +71,6 @@ const queries = [
 
 module.exports = queries
 
-
-
 // const allData = (data) => {
 //   return ({
 //     ...data.allKontentItemKnowledgeCenterMarkdownPage.nodes,

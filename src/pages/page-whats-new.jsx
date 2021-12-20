@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Article from "../components/Article"
 import PostSidebar from "../components/postSidebar"
@@ -35,7 +34,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
   })
 
   return (
-    <Layout title={pageTitle}>
+    <>
       <Seo title={pageTitle} description={pageTitle} />
       <div>
         <div
@@ -62,7 +61,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
           <PostSidebar />
         </InnerSiteLayoutStyles>
       </div>
-    </Layout>
+    </>
   )
 }
 

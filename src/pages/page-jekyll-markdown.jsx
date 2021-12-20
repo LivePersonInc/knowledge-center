@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Tags from "../components/Tags"
 
@@ -43,7 +42,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
   return (
-    <Layout title={pageTitle} jumpToItems={jumpToItems}>
+    <>
       <Seo title={pageTitle} description={pageSubTitle} />
       <div ref={contentRef}>
         <div
@@ -80,7 +79,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
       </div>
-    </Layout>
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import HomeLayout from "../components/HomeLayout"
+
 import Card from "../components/widgets/Card"
 import CardIcon from "../components/CardIcon"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
@@ -19,7 +19,7 @@ const HomePage = ({ data }) => {
   const bodyTextHomepage = kontentItemHomepage?.elements?.body?.value
 
   return (
-    <HomeLayout>
+    <>
       <div
         className="flex flex-col pb-4"
         style={{ borderBottom: "1px solid var(--card-border)" }}
@@ -98,7 +98,7 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
-    </HomeLayout>
+    </>
   )
 }
 

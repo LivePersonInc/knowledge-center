@@ -12,6 +12,7 @@ module.exports = {
     description: "Manage, measure, and scale messaging conversations",
   },
   plugins: [
+    `gatsby-plugin-layout`,
     {
       resolve: "@kentico/gatsby-source-kontent",
       options: {
