@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import moment from "moment"
+import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
@@ -46,7 +47,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   const { prev, next } = pageContext
 
   return (
-    <div title={pageTitle} jumpToItems={jumpToItems}>
+    <Layout title={pageTitle} jumpToItems={jumpToItems}>
       <Seo title={pageTitle} description={pageSubTitle} />
       <div ref={contentRef}>
         <div
@@ -126,7 +127,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
         </InnerSiteLayoutStyles>
         <Pagination prev={prev} next={next} />
       </div>
-    </div>
+    </Layout>
   )
 }
 

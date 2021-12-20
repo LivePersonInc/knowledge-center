@@ -48,8 +48,7 @@ const ContentStyles = styled.div`
   }
 `
 
-const LocaleContext = React.createContext()
-const Layout = ({ children, pageContext: { locale } }) => {
+const Layout = ({ children }) => {
   useEffect(() => {
     const plugin = KontentSmartLink.initialize({
       queryParam: "preview-mode",
@@ -59,58 +58,52 @@ const Layout = ({ children, pageContext: { locale } }) => {
     }
   })
 
-  useEffect(() => {
-    console.log("render layout")
-  }, [])
+  // useEffect(() => {
+  //   console.log("render layout")
+  // }, [])
 
   return (
-    <LocaleContext.Provider value={{ locale }}>
-      <StaticQuery
-        query={graphql`
-          {
-            sitePlugin(name: { eq: "@kentico/gatsby-source-kontent" }) {
-              pluginOptions {
-                projectId
-                languageCodenames
-              }
-            }
-            site {
-              siteMetadata {
-                title
-              }
+    <StaticQuery
+      query={graphql`
+        {
+          sitePlugin(name: { eq: "@kentico/gatsby-source-kontent" }) {
+            pluginOptions {
+              projectId
+              languageCodenames
             }
           }
-        `}
-        render={data => (
-          <BodyStyles
-            className="layout"
-            data-kontent-project-id={data.sitePlugin.pluginOptions.projectId}
-            data-kontent-language-codename={
-              data.sitePlugin.pluginOptions.languageCodenames[0]
+          site {
+            siteMetadata {
+              title
             }
-          >
-            <Seo title={data.site.siteMetadata.title} />
-            <GlobalStyles />
-            <Header />
-            <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible">
-              <input
-                id="my-drawer-2"
-                type="checkbox"
-                className="drawer-toggle"
-              />
-              <div className="flex flex-col items-center justify-start drawer-content">
-                <SiteLayoutStyles>
-                  <ContentStyles>{children}</ContentStyles>
-                </SiteLayoutStyles>
-              </div>
-              <Sidebar />
+          }
+        }
+      `}
+      render={data => (
+        <BodyStyles
+          className="layout"
+          data-kontent-project-id={data.sitePlugin.pluginOptions.projectId}
+          data-kontent-language-codename={
+            data.sitePlugin.pluginOptions.languageCodenames[0]
+          }
+        >
+          <Seo title={data.site.siteMetadata.title} />
+          <GlobalStyles />
+          <Header />
+          <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible">
+            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="flex flex-col items-center justify-start drawer-content">
+              <SiteLayoutStyles>
+                <ContentStyles>{children}</ContentStyles>
+              </SiteLayoutStyles>
             </div>
-            <Footer />
-          </BodyStyles>
-        )}
-      ></StaticQuery>
-    </LocaleContext.Provider>
+            <Sidebar />
+          </div>
+          <Footer />
+        </BodyStyles>
+      )}
+    ></StaticQuery>
   )
 }
 
-export { Layout, LocaleContext }
+export default Layout

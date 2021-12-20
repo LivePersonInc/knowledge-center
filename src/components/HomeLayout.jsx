@@ -1,6 +1,11 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import Header from "./Header"
+import Footer from "./Footer"
+import GlobalStyles from "../styles/GlobalStyles"
+import Sidebar from "./Sidebar"
+import Seo from "./Seo"
 
 const BodyStyles = styled.div`
   min-height: 100vh;
@@ -24,6 +29,7 @@ const HomeStyles = styled.div`
   }
 `
 const ContentStyles = styled.div`
+  padding: 2rem 0 2rem 2rem;
   .first-card {
     background-repeat: no-repeat;
     background-position: center;
@@ -66,11 +72,19 @@ const HomeLayout = ({ children }) => (
           data.sitePlugin.pluginOptions.languageCodenames[0]
         }
       >
-        <MainContent className="flex flex-col items-center justify-start drawer-content">
-          <HomeStyles>
-            <ContentStyles>{children}</ContentStyles>
-          </HomeStyles>
-        </MainContent>
+        <Seo title={data.site.siteMetadata.title} />
+        <GlobalStyles />
+        <Header />
+        <div className="max-width w-full min-h-screen drawer drawer-mobile overflow-y-visible">
+          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+          <MainContent className="flex flex-col items-center justify-start drawer-content">
+            <HomeStyles>
+              <ContentStyles>{children}</ContentStyles>
+            </HomeStyles>
+          </MainContent>
+          <Sidebar />
+        </div>
+        <Footer />
       </BodyStyles>
     )}
   ></StaticQuery>

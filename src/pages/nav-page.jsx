@@ -1,6 +1,7 @@
 import React from "react"
 
 import { graphql } from "gatsby"
+import Layout from "../components/Layout"
 import NavLinks from "../components/NavLinks"
 
 const NavPage = ({ data }) => {
@@ -19,7 +20,7 @@ const NavPage = ({ data }) => {
   })
 
   return (
-    <>
+    <Layout>
       <div>
         <h2>{title}</h2>
 
@@ -49,7 +50,7 @@ const NavPage = ({ data }) => {
           ))} */}
         </ul>
       </div>
-    </>
+    </Layout>
   )
 }
 

@@ -1,3 +1,1 @@
-import CustomLayout from "./wrapPageElement"
-
-export const wrapPageElement = CustomLayout
+import "./src/assets/scss/index.scss"
