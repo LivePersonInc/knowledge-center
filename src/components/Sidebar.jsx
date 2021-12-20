@@ -223,7 +223,7 @@ const Sidebar = ({ location }) => {
         maxHeight: "100%",
       }}
     >
-      <label htmlFor="my-drawer-2" className="drawer-overlay" />
+      {/* <label htmlFor="my-drawer-2" className="drawer-overlay" /> */}
       <ul
         id="mysidebar"
         className="menu pt-8 overflow-y-auto w-80 ld:bg-body-background h-full"
@@ -290,7 +290,7 @@ const isActive = ({ elements, location }) => {
 
 const InContextActiveComponent = ({ open, close, isOpen }) => {
   React.useEffect(() => {
-    if (close && !isOpen && open) {
+    if (!isOpen) {
       close()
     }
   }, [isOpen])
@@ -299,7 +299,6 @@ const InContextActiveComponent = ({ open, close, isOpen }) => {
 }
 
 const SidebarItem = ({ item, level, location }) => {
-  // const ToggleVisible = () => setIsOpen(!isOpen)
   if (item.system.type === "navigation_item") {
     const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]
     const newUrl =

@@ -2,6 +2,7 @@ const pageQuery = `
 {
   allKontentItemKnowledgeCenterMarkdownPage {
     nodes {
+      id
       elements {
         body {
           value
@@ -22,11 +23,12 @@ const pageQuery = `
           value
         }
       }
-      id
+     
     }
   }
   allKontentItemReleaseNotesPage {
     nodes {
+      id
       elements {
         subtitle {
           value
@@ -39,6 +41,7 @@ const pageQuery = `
   }
   allKontentItemPostWhatsnew {
     nodes {
+      id
       elements {
         body {
           value
@@ -58,11 +61,21 @@ const pageQuery = `
 }
 `
 
+const createObjectIdMap = (nodeSet) => {
+  return nodeSet.map(x => {
+    x.objectID = x.id;
+    delete x.id;
+  })
+}
+
 const queries = [
   {
     query: pageQuery,
-    transformer: ({ data }) =>
-      data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
+    transformer: ({ data }) => [
+      ...data?.allKontentItemKnowledgeCenterMarkdownPage?.nodes,
+      ...data?.allKontentItemPostWhatsnew?.nodes,
+      ...data?.allKontentItemReleaseNotesPage?.nodes
+    ]
     // add
     // allKontentItemPostWhatsnew
     // allKontentItemReleaseNotesPage

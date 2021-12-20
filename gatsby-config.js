@@ -75,32 +75,32 @@ module.exports = {
             },
             query: `
                {
-  allKontentItemReleaseNotesPage(
-    limit: 10
-    sort: {order: DESC, fields: elements___date___value}
-  ) {
-    edges {
-      node {
-        elements {
-          date {
-            value
-          }
-          pagename {
-            value
-          }
-          subtitle {
-            value
-          }
-          permalink {
-            value
-          }
-        }
-      }
-    }
-  }
-}`,
+                allKontentItemReleaseNotesPage(
+                  limit: 10
+                  sort: {order: DESC, fields: elements___date___value}
+                ) {
+                  edges {
+                    node {
+                      elements {
+                        date {
+                          value
+                        }
+                        pagename {
+                          value
+                        }
+                        subtitle {
+                          value
+                        }
+                        permalink {
+                          value
+                        }
+                      }
+                    }
+                  }
+                }
+              }`,
             output: "/rss.xml",
-            title: "Feed for liveperson knowledge center",
+            title: "Feed for LivePerson Knowledge Center",
           },
         ],
       },
