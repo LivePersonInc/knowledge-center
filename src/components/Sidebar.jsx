@@ -223,7 +223,7 @@ const Sidebar = ({ location }) => {
         maxHeight: "100%",
       }}
     >
-      {/* <label htmlFor="my-drawer-2" className="drawer-overlay" /> */}
+      <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
         className="menu pt-8 overflow-y-auto w-80 ld:bg-body-background h-full"
