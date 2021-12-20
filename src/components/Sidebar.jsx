@@ -238,6 +238,10 @@ const Sidebar = ({ location }) => {
           level={0}
           location={location}
         />
+        <a href={`https://status.liveperson.com`}>
+          <StatusIcon />
+          <span className="nav-item">Service Status Dashboard</span>
+        </a>
       </ul>
     </SidebarStyles>
   )
@@ -288,12 +292,12 @@ const isActive = ({ elements, location }) => {
   return false
 }
 
-const InContextActiveComponent = ({ open, close, isOpen }) => {
+const InContextActiveComponent = ({ close, isOpen }) => {
   React.useEffect(() => {
     if (!isOpen) {
       close()
     }
-  }, [isOpen])
+  }, [isOpen, close])
 
   return null
 }

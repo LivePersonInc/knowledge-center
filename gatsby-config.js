@@ -63,25 +63,48 @@ module.exports = {
         feeds: [
           {
             serialize: ({
-              query: { kontentItemHome, allKontentItemReleaseNotesPage },
+              query: {
+                site,
+                allKontentItemPostWhatsnew,
+                allKontentItemReleaseNotesPage,
+              },
             }) => {
-              return allKontentItemReleaseNotesPage.edges.map(edge => ({
-                title: edge.node.elements.pagename.value,
-                description: edge.node.elements.subtitle.value,
-                date: edge.node.elements.date.value,
-                url: edge.node.elements.permalink.value,
-                guid: edge.node.elements.permalink.value,
+              const stripKentico = content =>
+                content.replace(/(&nbsp;|<([^>]+)>)/gi, "")
+
+              let releaseNotes = allKontentItemReleaseNotesPage.nodes.map(
+                node => ({
+                  title: `${node.elements.pagename.value} - Release Notes`,
+                  description: stripKentico(node.elements.subtitle.value),
+                  date: node.elements.date.value,
+                  url: `${site.siteMetadata.siteUrl}/${node.elements.permalink.value}`,
+                  guid: node.elements.permalink.value,
+                })
+              )
+
+              let whatsNew = allKontentItemPostWhatsnew.nodes.map(node => ({
+                title: `${node.elements.pagename.value} - What's New`,
+                description: stripKentico(node.elements.subtitle.value),
+                date: node.elements.date.value,
+                url: `${site.siteMetadata.siteUrl}/${node.elements.permalink.value}`,
+                guid: node.elements.permalink.value,
               }))
+
+              return releaseNotes
+                .concat(whatsNew)
+                .sort((a, b) =>
+                  a.date < b.date ? -1 : a.date > b.date ? 1 : 0
+                )
             },
-            query: `
-               {
-                allKontentItemReleaseNotesPage(
-                  limit: 10
-                  sort: {order: DESC, fields: elements___date___value}
-                ) {
-                  edges {
-                    node {
-                      elements {
+            query: `{
+                site {
+                  siteMetadata {
+                    siteUrl
+                  }
+                }
+                 allKontentItemReleaseNotesPage(sort: {order: DESC, fields: elements___date___value}) {
+                  nodes {
+                    elements {
                         date {
                           value
                         }
@@ -95,12 +118,29 @@ module.exports = {
                           value
                         }
                       }
-                    }
+                  }
+                }
+                allKontentItemPostWhatsnew(sort: {order: DESC, fields: elements___date___value}) {
+                  nodes {
+                    elements {
+                        date {
+                          value
+                        }
+                        pagename {
+                          value
+                        }
+                        subtitle {
+                          value
+                        }
+                        permalink {
+                          value
+                        }
+                      }
                   }
                 }
               }`,
             output: "/rss.xml",
-            title: "Feed for LivePerson Knowledge Center",
+            title: "LivePerson Knowledge Center - Feed",
           },
         ],
       },

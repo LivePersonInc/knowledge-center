@@ -61,10 +61,11 @@ const pageQuery = `
 }
 `
 
-const createObjectIdMap = (nodeSet) => {
+const createObjectIdMap = (nodeSet, category) => {
   return nodeSet.map(x => {
     x.objectID = x.id;
-    delete x.id;
+    x.category = category;
+    return x
   })
 }
 
@@ -72,9 +73,9 @@ const queries = [
   {
     query: pageQuery,
     transformer: ({ data }) => [
-      ...data?.allKontentItemKnowledgeCenterMarkdownPage?.nodes,
-      ...data?.allKontentItemPostWhatsnew?.nodes,
-      ...data?.allKontentItemReleaseNotesPage?.nodes
+      ...createObjectIdMap(data?.allKontentItemKnowledgeCenterMarkdownPage?.nodes, "knowledge-center"),
+      ...createObjectIdMap(data?.allKontentItemPostWhatsnew?.nodes, "whats-new"),
+      ...createObjectIdMap(data?.allKontentItemReleaseNotesPage?.nodes, "release-notes")
     ]
     // add
     // allKontentItemPostWhatsnew
