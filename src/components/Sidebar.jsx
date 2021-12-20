@@ -47,12 +47,14 @@ const SidebarStyles = styled.div`
   li.nav_item:nth-last-child(5) {
     padding-top: 1.5rem;
     border-top: 1px solid var(--card-border);
+    dd#headlessui-disclosure-panel-23 {
+      display: none;
+    }
   }
   li.nav_item:nth-last-child(4) {
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--card-border);
-    dd#headlessui-disclosure-panel-23,
-    dd#headlessui-disclosure-panel-24 {
+    dd#headlessui-disclosure-panel-25 {
       display: none;
     }
   }
