@@ -238,9 +238,20 @@ const Sidebar = ({ location }) => {
           level={0}
           location={location}
         />
-        <a href={`https://status.liveperson.com`}>
-          <StatusIcon />
-          <span className="nav-item">Service Status Dashboard</span>
+
+        <a
+          href={`https://status.liveperson.com`}
+          class="flex itemdetails canOpen relative"
+        >
+          <div class="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
+            <StatusIcon />
+          </div>
+          <span
+            class="nav-title text-sidebar-color   
+                        "
+          >
+            Service Status Dashboard
+          </span>
         </a>
       </ul>
     </SidebarStyles>
@@ -405,7 +416,7 @@ const SidebarItem = ({ item, level, location }) => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="dd">
-                  <ul className="mt-3">
+                  <ul className="mt-3 text-sidebar-color">
                     <SidebarItems
                       items={item.elements.subitems.value}
                       url={newUrl}
@@ -435,7 +446,7 @@ const SidebarItem = ({ item, level, location }) => {
       <li className={LEAF_NAME[level]}>
         <span className="nav-title">
           <Link
-            activeClassName="font-bold text-sidebar-color"
+            activeClassName="font-bold text-sidebar-color-active"
             to={`/${newUrl}`}
           >
             {item.elements.pagename.value}

@@ -53,6 +53,7 @@ module.exports = {
         "cta-background": "var(--cta-background)",
         "cta-text": "var(--cta-text)",
         "sidebar-color": "var(--sidebar-color)",
+        "sidebar-color-active": "var(--sidebar-color-active)",
         "tags-background": "var(--tags-background)",
         "tags-color": "var(--tags-color)",
         "button-background": "var(--button-background)",
