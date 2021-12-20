@@ -45,9 +45,12 @@ const SidebarStyles = styled.div`
     padding-left: 1.5625rem;
   }
   li.nav_item:nth-last-child(5) {
+    & > div > div {
+      display: none;
+    }
     padding-top: 1.5rem;
     border-top: 1px solid var(--card-border);
-    dd#headlessui-disclosure-panel-23 {
+    dd#headlessui-disclosure-panel-22 {
       display: none;
     }
   }

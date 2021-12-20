@@ -19,6 +19,9 @@ const InnerSiteLayoutStyles = styled.main`
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
   }
+  .breadcrumbs li.breadcrumb-item:nth-child(2) {
+    pointer-events: none;
+  }
 `
 
 const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
