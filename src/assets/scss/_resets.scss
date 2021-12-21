@@ -21,12 +21,13 @@
   -ms-text-size-adjust: none;
 }
 
-/* Remove list styles (bullets/numbers) */
-// ul {
-//   list-style: none;
-// }
+/* UnRemove list styles (bullets/numbers) */
+ol,
+ul {
+  list-style: revert;
+}
 
-ol {
+.maincontent ol {
   list-style-type: decimal;
 }
 
