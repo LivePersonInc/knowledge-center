@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
@@ -22,14 +22,14 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
-  const contentRef = useRef()
-  const [jumpToItems, setJumpToItems] = useState([])
-  useEffect(() => {
-    if (contentRef.current && data) {
-      const headerQuery = contentRef.current.querySelectorAll("h2,h3")
-      setJumpToItems([...headerQuery])
-    }
-  }, [data])
+  // const contentRef = useRef()
+  // const [jumpToItems, setJumpToItems] = useState([])
+  // useEffect(() => {
+  //   if (contentRef.current && data) {
+  //     const headerQuery = contentRef.current.querySelectorAll("h2,h3")
+  //     setJumpToItems([...headerQuery])
+  //   }
+  // }, [data])
 
   // general template
   const whatsNew = data?.whatsNew
@@ -47,7 +47,8 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   return (
     <>
       <Seo title={pageTitle} description={pageSubTitle} />
-      <div ref={contentRef}>
+      {/* <div ref={contentRef}> */}
+      <div>
         <div
           className="documenttitlecontainer"
           style={{
