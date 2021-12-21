@@ -3,7 +3,12 @@ import React from "react"
 export default function Footer() {
   return (
     <>
-      <footer className="py-8 footer border-card-border flex flex-col gap-4">
+      <footer
+        data-sal="fade"
+        data-sal-duration="2000"
+        data-sal-easing="ease"
+        className="py-8 footer border-card-border flex flex-col gap-4"
+      >
         <div className="flex items-center sm:flex-col">
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
