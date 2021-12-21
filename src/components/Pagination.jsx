@@ -15,6 +15,7 @@ const Span = styled.span`
 `
 const Flex = styled.div`
   display: flex;
+  gap: 0.5rem;
   h4 {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -41,7 +42,10 @@ const Pagination = ({ prev, next }) => {
       {needsPagination && (
         <PrevNext>
           {prev && (
-            <Link to={`/${prev?.permalink.value}`}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/${prev?.permalink.value}`}
+            >
               <Flex>
                 <Span>
                   <svg
@@ -78,7 +82,10 @@ const Pagination = ({ prev, next }) => {
             </Link>
           )}
           {next && (
-            <Link to={`/${next?.permalink.value}`}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/${next?.permalink.value}`}
+            >
               <Flex>
                 <div>
                   <h4>{next?.pagename.value}</h4>
