@@ -10,6 +10,7 @@ import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import { customBodyContent } from "../utils"
+import Footer from "../components/Footer"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -82,6 +83,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
       </div>
+      <Footer />
     </>
   )
 }

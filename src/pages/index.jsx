@@ -11,6 +11,7 @@ import exploreIcon from "../assets/images/home/ic_API_SDK.svg"
 import whatsnewIcon from "../assets/images/home/ic_Whats_new.svg"
 import supportIcon from "../assets/images/home/ic_support.svg"
 import releasenotesIcon from "../assets/images/home/ic_release_notes.svg"
+import Footer from "../components/Footer"
 
 const HomePage = ({ data }) => {
   //console.log(data)
@@ -98,6 +99,7 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

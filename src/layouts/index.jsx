@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import KontentSmartLink from "@kentico/kontent-smart-link"
 import Header from "../components/Header"
-import Footer from "../components/Footer"
 import GlobalStyles from "../styles/GlobalStyles"
 import Sidebar from "../components/Sidebar"
 import Seo from "../components/Seo"
@@ -131,7 +130,6 @@ const Layout = ({ children, location }) => {
         </div>
         <Sidebar location={location} />
       </div>
-      <Footer />
     </BodyStyles>
   )
 }

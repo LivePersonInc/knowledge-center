@@ -5,6 +5,7 @@ import { graphql, Link } from "gatsby"
 import Seo from "../components/Seo"
 import Article from "../components/Article"
 import PostSidebar from "../components/postSidebar"
+import Footer from "../components/Footer"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -62,6 +63,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
           <PostSidebar />
         </InnerSiteLayoutStyles>
       </div>
+      <Footer />
     </>
   )
 }

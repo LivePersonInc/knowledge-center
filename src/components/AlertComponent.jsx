@@ -3,6 +3,12 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/outline"
 const AlertComponent = () => {
   return (
     <div
+      style={{
+        borderBottom: "1px solid var(--card-border)",
+        marginTop: "2rem",
+        paddingTop: "2rem",
+        paddingBottom: "2rem",
+      }}
       data-sal="fade"
       data-sal-duration="2000"
       data-sal-easing="ease"

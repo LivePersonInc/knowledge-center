@@ -7,6 +7,7 @@ import LpRichTextElement from "../components/LpRichTextElement"
 import PostSidebar from "../components/postSidebar"
 import Breadcrumbs from "../components/Breadbrumbs"
 import Pagination from "../components/Pagination"
+import Footer from "../components/Footer"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -82,6 +83,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           <PostSidebar />
         </InnerSiteLayoutStyles>
       </div>
+      <Footer />
     </>
   )
 }

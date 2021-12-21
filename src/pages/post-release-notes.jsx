@@ -9,6 +9,7 @@ import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import Pagination from "../components/Pagination"
 import { customBodyContent } from "../utils"
+import Footer from "../components/Footer"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -127,6 +128,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
       </div>
+      <Footer />
     </>
   )
 }
