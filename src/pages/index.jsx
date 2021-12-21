@@ -35,13 +35,13 @@ const HomePage = ({ data }) => {
       <div className="flex flex-wrap justify-between gap-4 mt-8">
         <Card
           title={kontentItemHomepage?.elements?.box_title_1?.value}
-          link="getting-started-getting-started-with-live-chat.html"
+          link={kontentItemHomepage?.elements?.link_1?.value}
           icon={learnMoreIcon}
           desc={kontentItemHomepage?.elements?.box_description_1?.value}
           homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
         />
         <CardIcon
-          link="getting-started-getting-started-with-live-chat.html"
+          link={kontentItemHomepage?.elements?.link_2?.value}
           icon={messagingIcon}
           title={kontentItemHomepage?.elements?.box_title_2?.value}
           desc={kontentItemHomepage?.elements?.box_description_2?.value}
@@ -49,23 +49,23 @@ const HomePage = ({ data }) => {
         <CardIcon
           icon={whatsnewIcon}
           title={kontentItemHomepage?.elements?.box_title_3?.value}
-          link="getting-started-getting-started-with-live-chat.html"
+          link={kontentItemHomepage?.elements?.link_3?.value}
           desc={kontentItemHomepage?.elements?.box_description_3?.value}
         />
         <CardIcon
-          link="getting-started-getting-started-with-live-chat.html"
+          link={kontentItemHomepage?.elements?.link_4?.value}
           icon={releasenotesIcon}
           title={kontentItemHomepage?.elements?.box_title_4?.value}
           desc={kontentItemHomepage?.elements?.box_description_4?.value}
         />
         <CardIcon
-          link="getting-started-getting-started-with-live-chat.html"
+          link={kontentItemHomepage?.elements?.link_5?.value}
           icon={exploreIcon}
           title={kontentItemHomepage?.elements?.box_title_5?.value}
           desc={kontentItemHomepage?.elements?.box_description_5?.value}
         />
         <CardIcon
-          link="getting-started-getting-started-with-live-chat.html"
+          link={kontentItemHomepage?.elements?.link_6?.value}
           icon={supportIcon}
           title={kontentItemHomepage?.elements?.box_title_6?.value}
           desc={kontentItemHomepage?.elements?.box_description_6?.value}
@@ -346,6 +346,24 @@ export const query = graphql`
           value {
             url
           }
+        }
+        link_1 {
+          value
+        }
+        link_2 {
+          value
+        }
+        link_3 {
+          value
+        }
+        link_4 {
+          value
+        }
+        link_5 {
+          value
+        }
+        link_6 {
+          value
         }
       }
     }
