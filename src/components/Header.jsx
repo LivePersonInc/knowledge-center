@@ -183,14 +183,14 @@ const Hit = props => {
                 }}
                 key={index}
               >
-                <Link to={`/${pP.elements.permalink.value}`}>
+                <Link to={`/${pP.permalink}`}>
                   <div className="hit-name">
                     <p className="font-bold" attribute="name">
-                      {pP.elements.pagename.value}
+                      {pP.title}
                     </p>
                   </div>
                   <div className="hit-description text-body-text">
-                    <RichTextElement value={pP.elements.subtitle.value} />
+                    <RichTextElement value={pP.subtitle} />
                   </div>
                 </Link>
               </div>

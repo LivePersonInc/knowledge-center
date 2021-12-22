@@ -33,6 +33,9 @@ const pageQuery = `
         subtitle {
           value
         }
+        permalink {
+          value
+        }
         pagename {
           value
         }
@@ -46,26 +49,33 @@ const pageQuery = `
         body {
           value
         }
-        pagename {
-          value
-        }
         subtitle {
           value
         }
         permalink {
           value
         }
+        pagename {
+          value
+        }
+       
       }
     }
   }
 }
 `
 
-const createObjectIdMap = (nodeSet, category) => {
+const createObjectIdMap = (nodeSet, type) => {
   return nodeSet.map(x => {
-    x.objectID = x.id;
-    x.category = category;
-    return x
+    return {
+      objectID: x.id,
+      type: type,
+      title: x.elements.pagename.value,
+      link: x.elements.permalink.value,
+      categoryName: x?.elements?.categoryname?.value ? x?.elements?.categoryname?.value : null,
+      subCategoryName: x?.elements?.subcategoryname?.value ? x.elements.subcategoryname.value : null,
+      body: x?.elements?.body?.value ? x.elements.body.value : null
+    }
   })
 }
 
