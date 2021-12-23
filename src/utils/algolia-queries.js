@@ -71,6 +71,7 @@ const createObjectIdMap = (nodeSet, type) => {
       objectID: x.id,
       type: type,
       title: x.elements.pagename.value,
+      subtitle: x.elements.subtitle.value,
       link: x.elements.permalink.value,
       categoryName: x?.elements?.categoryname?.value ? x?.elements?.categoryname?.value : null,
       subCategoryName: x?.elements?.subcategoryname?.value ? x.elements.subcategoryname.value : null,
