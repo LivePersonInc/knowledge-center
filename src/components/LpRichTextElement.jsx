@@ -17,7 +17,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         console.log("itayko")
         return (
           <ImageElement
-            image={image.value[0]}
+            image={image}
             width={image.width}
             height={image.height}
             backgroundColor="#bbbbbb"
@@ -104,6 +104,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                           ? linkedItem.elements.image.description
                           : linkedItem.elements.image.name
                       }
+                      image={linkedItem.elements.image.value[0]}
                     />
                   </div>
                 )}
