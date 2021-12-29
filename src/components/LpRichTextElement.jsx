@@ -18,7 +18,8 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
           <ImageElement
             image={image}
             alt="{image.description ? image.description : image.name}"
-            width={200}
+            width={image.width}
+            height={image.height}
           />
         )
       }}
@@ -78,7 +79,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                         ? linkedItem.elements.image.description
                         : linkedItem.elements.image.name
                     }
-                    width={1000}
+                    width={linkedItem.elements.image.width}
                     height={linkedItem.elements.image.height}
                     backgroundColor="#bbbbbb"
                   />
@@ -93,8 +94,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                         fit: "clip",
                       }}
                       className="mx-auto"
-                      image={linkedItem.elements.image.value[0]}
-                      width={320}
+                      width={linkedItem.elements.image.width}
                       height={linkedItem.elements.image.height}
                       backgroundColor="#bbbbbb"
                       alt={
