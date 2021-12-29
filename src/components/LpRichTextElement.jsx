@@ -19,7 +19,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
             image={image}
             alt="{image.description ? image.description : image.name}"
             width={image.width}
-            height={image.height}
           />
         )
       }}
