@@ -14,11 +14,14 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
       links={bodyfield.links}
       linkedItems={bodyfield.modular_content}
       resolveImage={image => {
+        console.log("itayko")
         return (
           <ImageElement
-            image={image}
-            alt={image.description ? image.description : image.name}
+            image={image.value[0]}
             width={image.width}
+            height={image.height}
+            backgroundColor="#bbbbbb"
+            alt={image.description ? image.description : image.name}
           />
         )
       }}
