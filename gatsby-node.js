@@ -118,7 +118,7 @@ exports.createPages = ({ graphql, actions }) => {
                           name
                           description
                           height
-                    width
+                          width
                         }
                         name
                       }
