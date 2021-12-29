@@ -143,6 +143,8 @@ export const query = graphql`
                     url
                     name
                     description
+                    height
+                    width
                   }
                   name
                 }

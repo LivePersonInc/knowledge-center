@@ -79,7 +79,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                         : linkedItem.elements.image.name
                     }
                     width={1000}
-                    height={500}
+                    height={linkedItem.elements.image.height}
                     backgroundColor="#bbbbbb"
                   />
                 )}
@@ -95,7 +95,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                       className="mx-auto"
                       image={linkedItem.elements.image.value[0]}
                       width={320}
-                      height={569}
+                      height={linkedItem.elements.image.height}
                       backgroundColor="#bbbbbb"
                       alt={
                         linkedItem.elements.image.description
