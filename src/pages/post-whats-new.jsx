@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-
 import Seo from "../components/Seo"
 import LpRichTextElement from "../components/LpRichTextElement"
 import PostSidebar from "../components/postSidebar"
