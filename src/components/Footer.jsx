@@ -1,9 +1,16 @@
 import React from "react"
+import styled from "styled-components"
+
+const FooterStyles = styled.footer`
+  @media (max-width: 767px) {
+    padding: 25px;
+  }
+`
 
 export default function Footer() {
   return (
     <>
-      <footer
+      <FooterStyles
         data-sal="fade"
         data-sal-duration="2000"
         data-sal-easing="ease"
@@ -150,7 +157,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </footer>
+      </FooterStyles>
     </>
   )
 }
