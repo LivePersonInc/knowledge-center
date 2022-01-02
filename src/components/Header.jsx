@@ -129,7 +129,7 @@ export default function Header() {
           </div>
           <label
             htmlFor="my-drawer-2"
-            className="my-4 btn btn-primary rounded-full drawer-button lg:hidden"
+            className="my-4 mr-2 drawer-button lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
