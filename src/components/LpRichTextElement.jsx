@@ -13,18 +13,10 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
       images={bodyfield.images}
       links={bodyfield.links}
       linkedItems={bodyfield.modular_content}
-      resolveImage={image => {
-        console.log("itayko")
-        return (
-          <ImageElement
-            image={image}
-            width={image.width}
-            height={image.height}
-            backgroundColor="#bbbbbb"
-            alt={image.description ? image.description : image.name}
-          />
-        )
-      }}
+      // resolveImage={image => {
+      //   console.log(image)
+      //   return <ImageElement />
+      // }}
       resolveLink={(link, domNode) => {
         // const parentItemType =
         //   bodyfield.type
