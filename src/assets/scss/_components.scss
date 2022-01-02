@@ -67,6 +67,15 @@ body.dark {
   }
 }
 .maincontent {
+  ul,
+  ol {
+    li {
+      margin-left: 1.875rem;
+      &:last-child {
+        margin-bottom: 0.875rem;
+      }
+    }
+  }
   p {
     color: var(--body-text);
   }
