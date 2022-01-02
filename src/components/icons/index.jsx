@@ -14,6 +14,7 @@ export { default as ReleaseIcon } from "./ReleaseIcon"
 export { default as TroubleshootingIcon } from "./TroubleshootingIcon"
 export { default as FaqsIcon } from "./FaqsIcon"
 export { default as StatusIcon } from "./StatusIcon"
+export { default as QuestionMarkIcon } from "./QuestionMarkIcon"
 
 export { default as ArrowRight } from "./ArrowRight"
 export { default as ArrowDown } from "./ArrowDown"

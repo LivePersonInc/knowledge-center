@@ -243,7 +243,7 @@ const Sidebar = ({ location }) => {
           href={`https://status.liveperson.com`}
           class="flex itemdetails canOpen relative"
         >
-          <div class="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
+          <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
             <StatusIcon />
           </div>
           <span
