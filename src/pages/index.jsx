@@ -77,11 +77,15 @@ const HomePage = ({ data }) => {
         data-sal-duration="2000"
         data-sal-delay="300"
         data-sal-easing="ease"
-        className="card my-8 shadow-2xl lg:card-side text-button-text bg-cta-background"
+        className="my-8 lg:card-side"
+        style={{
+          background:
+            "linear-gradient(90deg, #F9C1C1 0%, #F9CAAF 50.01%, #F3E1AF 100%)",
+        }}
       >
-        <div className="cta card-body flex-row justify-between sm:flex-col sm:items-center">
+        <div className="card-body flex-row justify-between sm:flex-col sm:items-center">
           <div className="flex flex-col">
-            <h3 className="card-title text-button-text">
+            <h3 className="card-title">
               {kontentItemHomepage?.elements?.cta_title?.value}
             </h3>
             <p>{kontentItemHomepage?.elements?.cta_perk_1?.value}</p>

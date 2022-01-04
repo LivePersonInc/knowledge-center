@@ -3,9 +3,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      roboto: ["Roboto", "Helvetica"],
-      "roboto-mono": ["Roboto Mono", "monospace"],
-      "roboto-slab": ["Roboto Slab", "serif"],
+      Inter: ["Inter", "Helvetica"],
+      "Inter": ["Inter", "sans-serif"],
+      "Space Grotesk": ["Space Grotesk", "sans-serif"],
     },
     fontWeight: {
       light: 300,
@@ -121,8 +121,8 @@ module.exports = {
     themes: [
       {
         lpthemedark: {
-          primary: "#ff6900",
-          "primary-focus": "#db5a00",
+          primary: "#3863e5",
+          "primary-focus": "#1d4ee2",
           "primary-content": "#ffffff",
 
           secondary: "#005ef4",

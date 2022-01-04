@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
 
 import { QuestionMarkIcon } from "./icons/"

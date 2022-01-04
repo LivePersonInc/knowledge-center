@@ -1,6 +1,6 @@
 body {
   .max-width {
-    max-width: 111.5rem;
+    max-width: var(--max-width);
     margin: 0 auto;
     @media (max-width: 1024px) {
       max-width: 100%;
