@@ -10,7 +10,7 @@
 @tailwind utilities;
 
 body.light {
-  --primary: #03011d;
+  --primary: #3863e5;
   --primary-hover: #0d0480;
   --primary-focus: #1207a1;
   --primary-content: #03011d;
@@ -43,7 +43,7 @@ body.light {
   --button-text: #fcfcfd;
   --button-background-secondary: transparent;
   --button-text-secondary: #2dbae6;
-  --sidebar-text: #3f4c73;
+  --sidebar-text: var(--primary);
   --content-widget-text: #090c43;
   --missing-something-background: #f8f8f8;
   --missing-something-text: #000;
@@ -57,7 +57,7 @@ body.light {
   --hr: hsla(0, 0%, 0, 0.2);
 }
 body.dark {
-  --primary: #03011d;
+  --primary: #3863e5;
   --primary-hover: #0d0480;
   --primary-focus: #0d0480;
   --primary-content: #2a79ff;
@@ -90,7 +90,7 @@ body.dark {
   --button-text: #fcfcfd;
   --button-background-secondary: transparent;
   --button-text-secondary: #2dbae6;
-  --sidebar-text: #d6dae6;
+  --sidebar-text: var(--primary);
   --content-widget-text: #dadbe6;
   --missing-something-background: var(--card-background);
   --missing-something-color: #fff;

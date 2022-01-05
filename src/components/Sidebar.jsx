@@ -247,7 +247,7 @@ const Sidebar = ({ location }) => {
             <StatusIcon />
           </div>
           <span
-            class="nav-title text-sidebar-color   
+            class="nav-title text-sidebar-text   
                         "
           >
             Service Status Dashboard
