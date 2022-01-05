@@ -32,44 +32,61 @@ const HomePage = ({ data }) => {
           <RichTextElement value={bodyTextHomepage} />
         </p>
       </div>
-      <div className="flex flex-wrap justify-between gap-4 mt-8">
-        <Card
-          title={kontentItemHomepage?.elements?.box_title_1?.value}
-          link={kontentItemHomepage?.elements?.link_1?.value}
-          icon={learnMoreIcon}
-          desc={kontentItemHomepage?.elements?.box_description_1?.value}
-          homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
-        />
-        <CardIcon
-          link={kontentItemHomepage?.elements?.link_2?.value}
-          icon={messagingIcon}
-          title={kontentItemHomepage?.elements?.box_title_2?.value}
-          desc={kontentItemHomepage?.elements?.box_description_2?.value}
-        />
-        <CardIcon
-          icon={whatsnewIcon}
-          title={kontentItemHomepage?.elements?.box_title_3?.value}
-          link={kontentItemHomepage?.elements?.link_3?.value}
-          desc={kontentItemHomepage?.elements?.box_description_3?.value}
-        />
-        <CardIcon
-          link={kontentItemHomepage?.elements?.link_4?.value}
-          icon={releasenotesIcon}
-          title={kontentItemHomepage?.elements?.box_title_4?.value}
-          desc={kontentItemHomepage?.elements?.box_description_4?.value}
-        />
-        <CardIcon
-          link={kontentItemHomepage?.elements?.link_5?.value}
-          icon={exploreIcon}
-          title={kontentItemHomepage?.elements?.box_title_5?.value}
-          desc={kontentItemHomepage?.elements?.box_description_5?.value}
-        />
-        <CardIcon
-          link={kontentItemHomepage?.elements?.link_6?.value}
-          icon={supportIcon}
-          title={kontentItemHomepage?.elements?.box_title_6?.value}
-          desc={kontentItemHomepage?.elements?.box_description_6?.value}
-        />
+      <div className="flex sm:flex-col sm:justify-between sm:items-center mt-8">
+        <div className="flex flex-col justify-between gap-4">
+          <Card
+            // Getting Started
+            title={kontentItemHomepage?.elements?.box_title_1?.value}
+            link={kontentItemHomepage?.elements?.link_1?.value}
+            icon={learnMoreIcon}
+            desc={kontentItemHomepage?.elements?.box_description_1?.value}
+            homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
+          />
+          <CardIcon
+            // Messaging
+            link={kontentItemHomepage?.elements?.link_2?.value}
+            icon={messagingIcon}
+            title={kontentItemHomepage?.elements?.box_title_2?.value}
+            desc={kontentItemHomepage?.elements?.box_description_2?.value}
+          />
+          <CardIcon
+            // Developer Center
+            link={kontentItemHomepage?.elements?.link_5?.value}
+            icon={exploreIcon}
+            title={kontentItemHomepage?.elements?.box_title_5?.value}
+            desc={kontentItemHomepage?.elements?.box_description_5?.value}
+          />
+          <CardIcon
+            // Release notes
+            link={kontentItemHomepage?.elements?.link_4?.value}
+            icon={releasenotesIcon}
+            title={kontentItemHomepage?.elements?.box_title_4?.value}
+            desc={kontentItemHomepage?.elements?.box_description_4?.value}
+          />
+          <CardIcon
+            // customer support
+            link={kontentItemHomepage?.elements?.link_6?.value}
+            icon={supportIcon}
+            title={kontentItemHomepage?.elements?.box_title_6?.value}
+            desc={kontentItemHomepage?.elements?.box_description_6?.value}
+          />
+        </div>
+        <div className="flex flex-col justify-between gap-4">
+          <CardIcon
+            // What's new
+            icon={whatsnewIcon}
+            title={kontentItemHomepage?.elements?.box_title_3?.value}
+            link={kontentItemHomepage?.elements?.link_3?.value}
+            desc={kontentItemHomepage?.elements?.box_description_3?.value}
+          />
+          <CardIcon
+            // Release notes
+            link={kontentItemHomepage?.elements?.link_4?.value}
+            icon={releasenotesIcon}
+            title={kontentItemHomepage?.elements?.box_title_4?.value}
+            desc={kontentItemHomepage?.elements?.box_description_4?.value}
+          />
+        </div>
       </div>
 
       <div
