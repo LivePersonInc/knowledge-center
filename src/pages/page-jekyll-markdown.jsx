@@ -117,9 +117,6 @@ export const query = graphql`
         subtitle {
           value
         }
-        introduction {
-          value
-        }
         body {
           value
           modular_content {
@@ -229,6 +226,9 @@ export const query = graphql`
           }
         }
         permalink {
+          value
+        }
+        introduction {
           value
         }
       }
