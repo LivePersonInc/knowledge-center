@@ -34,8 +34,8 @@ body.light {
   --card-border: rgba(0, 0, 0, 0.12);
   --cta-background: #0f0943;
   --cta-text: var(--button-text);
-  --sidebar-color: #3f4c73;
-  --sidebar-color-active: #020627;
+  --sidebar-color: var(--sidebar-text);
+  --sidebar-color-active: #2c2d30;
   --tags-background: #ebecef;
   --tags-color: #020627;
   --button-background: #005ef4;

@@ -36,6 +36,9 @@ const SidebarStyles = styled.div`
       padding-bottom: 0;
       padding-top: 0;
     }
+    .svg-icon-active svg path {
+      fill: var(--sidebar-color-active);
+    }
   }
   .subcategoryfolder {
     padding-left: 1.5625rem;
@@ -246,10 +249,7 @@ const Sidebar = ({ location }) => {
           <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
             <StatusIcon />
           </div>
-          <span
-            class="nav-title text-sidebar-text   
-                        "
-          >
+          <span class="nav-title text-sidebar-text">
             Service Status Dashboard
           </span>
         </a>
@@ -335,7 +335,12 @@ const SidebarItem = ({ item, level, location }) => {
                 <Disclosure.Button>
                   <div className="flex itemdetails canOpen relative">
                     {level === 0 ? (
-                      <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
+                      <div
+                        className={
+                          "w-6 h-6 flex flex-col justify-center mr-2 pr-0.5 " +
+                          `${open ? "svg-icon-active" : ""}`
+                        }
+                      >
                         {/* view sidebar items */}
                         {(() => {
                           switch (item.elements.url.value) {
@@ -379,7 +384,7 @@ const SidebarItem = ({ item, level, location }) => {
                       <div
                         className={
                           "w-5 h-5 flex flex-col justify-center mr-2 pr-2 transform transition " +
-                          `${open ? "rotate-90" : ""}`
+                          `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >
                         <ArrowRight />
@@ -390,14 +395,18 @@ const SidebarItem = ({ item, level, location }) => {
                     item.elements.url.value === "release-notes" ? (
                       <Link
                         to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
-                        className={`nav-title  ${open ? "font-bold" : " "}
+                        className={`nav-title  ${
+                          open ? "font-bold text-sidebar-color-active" : " "
+                        }
                         `}
                       >
                         {item.elements.title?.value}
                       </Link>
                     ) : (
                       <span
-                        className={`nav-title  ${open ? "font-bold" : " "}
+                        className={`nav-title  ${
+                          open ? "font-bold text-sidebar-color-active " : " "
+                        }
                         `}
                       >
                         {item.elements.title?.value}
@@ -416,7 +425,7 @@ const SidebarItem = ({ item, level, location }) => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="dd">
-                  <ul className="mt-3 text-sidebar-color">
+                  <ul className="mt-3 text-sidebar-text">
                     <SidebarItems
                       items={item.elements.subitems.value}
                       url={newUrl}
