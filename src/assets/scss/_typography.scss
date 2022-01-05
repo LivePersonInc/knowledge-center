@@ -6,9 +6,9 @@
 @mixin h1 {
   font-family: "Space Grotesk", sans-serif;
   font-style: normal;
-  font-weight: normal;
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 3.25rem;
   letter-spacing: -0.0156rem;
   margin: 0 0 var(--space4) 0;
   color: var(--title-text);
