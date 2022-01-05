@@ -74,7 +74,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent" id="scroll-smooth">
-            {introduction.length > 0 && (
+            {introduction !== "<p><br></p>" && (
               <LpRichTextElement
                 body_content={introduction}
                 bodyfield={knowledgeCenterMarkdown?.elements?.introduction}
