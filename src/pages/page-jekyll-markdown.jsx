@@ -40,6 +40,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
   const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
   const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
+  const introduction = knowledgeCenterMarkdown?.elements?.introduction?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
 
   // Tags
@@ -73,10 +74,18 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent" id="scroll-smooth">
-            <LpRichTextElement
-              body_content={customBodyContent(body_content)}
-              bodyfield={knowledgeCenterMarkdown?.elements?.body}
-            />
+            {introduction.length > 0 && (
+              <LpRichTextElement
+                body_content={introduction}
+                bodyfield={knowledgeCenterMarkdown?.elements?.introduction}
+              />
+            )}
+            {body_content.length > 0 && (
+              <LpRichTextElement
+                body_content={customBodyContent(body_content)}
+                bodyfield={knowledgeCenterMarkdown?.elements?.body}
+              />
+            )}
 
             <AlertComponent />
           </div>
@@ -106,6 +115,9 @@ export const query = graphql`
           value
         }
         subtitle {
+          value
+        }
+        introduction {
           value
         }
         body {
