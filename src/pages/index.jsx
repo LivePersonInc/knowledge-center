@@ -12,6 +12,7 @@ import whatsnewIcon from "../assets/images/home/ic_Whats_new.svg"
 import supportIcon from "../assets/images/home/ic_support.svg"
 import releasenotesIcon from "../assets/images/home/ic_release_notes.svg"
 import Footer from "../components/Footer"
+import CardWhatsnew from "../components/widgets/CardWhatsnew"
 
 const HomePage = ({ data }) => {
   //console.log(data)
@@ -72,12 +73,12 @@ const HomePage = ({ data }) => {
           />
         </div>
         <div className="flex flex-col justify-between gap-4">
-          <CardIcon
+          <CardWhatsnew
             // What's new
             icon={whatsnewIcon}
             title={kontentItemHomepage?.elements?.box_title_3?.value}
-            link={kontentItemHomepage?.elements?.link_3?.value}
-            desc={kontentItemHomepage?.elements?.box_description_3?.value}
+            // link={kontentItemHomepage?.elements?.link_3?.value}
+            // desc={kontentItemHomepage?.elements?.box_description_3?.value}
           />
           <CardIcon
             // Release notes
