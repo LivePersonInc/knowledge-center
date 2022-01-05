@@ -94,7 +94,7 @@ const HomePage = ({ data }) => {
         data-sal-duration="2000"
         data-sal-delay="300"
         data-sal-easing="ease"
-        className="my-8 lg:card-side"
+        className="my-8 lg:card-side hover:shadow-xl transition-shadow"
         style={{
           background:
             "linear-gradient(90deg, #F9C1C1 0%, #F9CAAF 50.01%, #F3E1AF 100%)",
