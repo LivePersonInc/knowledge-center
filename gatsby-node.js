@@ -553,7 +553,7 @@ exports.createPages = ({ graphql, actions }) => {
         )
 
         createPage({
-          path: `/${node.elements.permalink.value}/`,
+          path: `/whatsnew/${node.elements.permalink.value}/`,
           component: slash(PostWhatsNewPath),
           context: {
             systemId: node.system.id,
