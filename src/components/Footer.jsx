@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import ThemeToggle from "./ThemeToggler"
 
 const FooterStyles = styled.footer`
   @media (max-width: 767px) {
@@ -156,6 +157,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          <ThemeToggle />
         </div>
       </FooterStyles>
     </>

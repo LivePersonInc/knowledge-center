@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
-import ThemeToggle from "./ThemeToggler"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -124,9 +123,6 @@ export default function Header() {
           </div>
         </div>
         <div className="navbar-end gap-2">
-          <div className="sm:hidden">
-            <ThemeToggle />
-          </div>
           <label
             htmlFor="my-drawer-2"
             className="my-4 mr-2 drawer-button lg:hidden"
