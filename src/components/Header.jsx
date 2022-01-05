@@ -24,8 +24,8 @@ export default function Header() {
   )
   return (
     <header className="py-5 z-50 sticky top-0 w-full bg-body-background">
-      <div className="navbar max-width">
-        <div className="px-2 mx-2 navbar-start sm:hidden lg:pl-0 lg:ml-0">
+      <div className="navbar max-width justify-between">
+        <div className="px-2 mx-2 navbar sm:hidden lg:pl-0 lg:ml-0">
           <Link to="/">
             {/* logo svg */}
             <svg
@@ -61,7 +61,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="searchcomponent hidden w-6/12 navbar-center lg:flex">
+        <div className="searchcomponent hidden flex-grow navbar-center lg:flex">
           <div className="flex items-stretch w-full flex-col relative">
             <InstantSearch
               indexName="helpcenter_gatsby"
@@ -122,7 +122,7 @@ export default function Header() {
             </InstantSearch>
           </div>
         </div>
-        <div className="navbar-end gap-2">
+        <div className="gap-2">
           <label
             htmlFor="my-drawer-2"
             className="my-4 mr-2 drawer-button lg:hidden"
