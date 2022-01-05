@@ -12,7 +12,7 @@ const Card = ({ title, desc, link, icon, homeimg }) => {
         background: `url(${homeimg}) no-repeat center center fixed`,
         backgroundSize: "cover",
       }}
-      className="border border-card-border shadow-lg hover:shadow-xl compact side w-full flex-grow p-7"
+      className="border border-card-border hover:shadow-lg compact side w-full flex-grow p-7"
     >
       <div className="flex-row items-center space-x-4 card-body">
         <div className="flex-1">

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Card from "../components/widgets/Card"
-import CardIcon from "../components/CardIcon"
+import CardIcon from "../components/widgets/CardIcon"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
 // Icons
 import learnMoreIcon from "../assets/images/home/ic_learn_more.svg"
@@ -32,7 +32,7 @@ const HomePage = ({ data }) => {
           <RichTextElement value={bodyTextHomepage} />
         </p>
       </div>
-      <div className="flex sm:flex-col sm:justify-between sm:items-center mt-8">
+      <div className="flex sm:flex-col sm:justify-between sm:items-center mt-8 gap-4">
         <div className="flex flex-col justify-between gap-4">
           <Card
             // Getting Started
