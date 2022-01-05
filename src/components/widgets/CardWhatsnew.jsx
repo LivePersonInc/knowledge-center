@@ -15,7 +15,7 @@ const CardWhatsnew = ({ title, icon }) => {
           <h2 className="card-title text-card-title">{title}</h2>
           <Link
             to="/whats-new"
-            className="text-card-title text-opacity-40 mr-auto"
+            className="text-card-title text-opacity-40 mt-auto"
           >
             View all news
           </Link>
