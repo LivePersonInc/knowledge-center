@@ -32,6 +32,10 @@ body.dark {
     border-color: var(--warning-color);
     background-color: var(--warning-background);
   }
+  &.bad {
+    border-color: var(--bad-color);
+    background-color: var(--bad-background);
+  }
   &.success {
     border-color: var(--success-color);
     background-color: var(--success-background);

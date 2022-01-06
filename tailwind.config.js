@@ -143,10 +143,10 @@ module.exports = {
           "base-300": "#6f737c",
           "base-content": "#2a2b2e",
 
-          info: "#4667c8",
-          success: "#a0ca00",
-          warning: "#ff6900",
-          error: "#d72329",
+          info: "var(--notice-backgorund)",
+          success: "var(--success-backgorund)",
+          warning: "var(--warning-backgorund)",
+          error: "var(--bad-backgorund)",
         },
 
         // active
