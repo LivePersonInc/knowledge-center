@@ -12,13 +12,15 @@ import whatsnewIcon from "../assets/images/home/ic_Whats_new.svg"
 import supportIcon from "../assets/images/home/ic_support.svg"
 import releasenotesIcon from "../assets/images/home/ic_release_notes.svg"
 import Footer from "../components/Footer"
-import CardWhatsnew from "../components/widgets/CardWhatsnew"
+import CardLatestPosts from "../components/widgets/CardLatestPosts"
 
 const HomePage = ({ data }) => {
   //console.log(data)
   const kontentItemHomepage = data?.kontentItemHomepage
   const titleHomepage = kontentItemHomepage?.elements?.title?.value
   const bodyTextHomepage = kontentItemHomepage?.elements?.body?.value
+  const allWhatsnewPage = data?.allWhatsnewPage
+  const allReleaseNotesPage = data?.allReleaseNotesPage
 
   return (
     <>
@@ -73,19 +75,23 @@ const HomePage = ({ data }) => {
           />
         </div>
         <div className="flex flex-col justify-between gap-4">
-          <CardWhatsnew
+          <CardLatestPosts
             // What's new
             icon={whatsnewIcon}
             title={kontentItemHomepage?.elements?.box_title_3?.value}
+            alltype={allWhatsnewPage}
+            link="/whats-new"
             // link={kontentItemHomepage?.elements?.link_3?.value}
             // desc={kontentItemHomepage?.elements?.box_description_3?.value}
           />
-          <CardIcon
+          <CardLatestPosts
             // Release notes
-            link={kontentItemHomepage?.elements?.link_4?.value}
             icon={releasenotesIcon}
             title={kontentItemHomepage?.elements?.box_title_4?.value}
-            desc={kontentItemHomepage?.elements?.box_description_4?.value}
+            alltype={allReleaseNotesPage}
+            link="/news-releases"
+            // link={kontentItemHomepage?.elements?.link_4?.value}
+            // desc={kontentItemHomepage?.elements?.box_description_4?.value}
           />
         </div>
       </div>
@@ -386,6 +392,48 @@ export const query = graphql`
         }
         link_6 {
           value
+        }
+      }
+    }
+    allWhatsnewPage: allKontentItemPostWhatsnew(
+      sort: { order: DESC, fields: elements___date___value }
+      limit: 2
+    ) {
+      nodes {
+        elements {
+          date {
+            value
+          }
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+          subtitle {
+            value
+          }
+        }
+      }
+    }
+    allReleaseNotesPage: allKontentItemReleaseNotesPage(
+      sort: { order: DESC, fields: elements___date___value }
+      limit: 2
+    ) {
+      nodes {
+        elements {
+          date {
+            value
+          }
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+          subtitle {
+            value
+          }
         }
       }
     }
