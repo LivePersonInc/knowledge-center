@@ -24,10 +24,7 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-      <div
-        className="flex flex-col pb-4"
-        style={{ borderBottom: "1px solid var(--card-border)" }}
-      >
+      <div className="flex flex-col">
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
