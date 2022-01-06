@@ -57,6 +57,7 @@ body.light {
   --success-color: #008738;
   --box-shadow: #dadbe5e0;
   --hr: hsla(0, 0%, 0, 0.2);
+  --gradient: linear-gradient(90deg, #f9c1c1 0%, #f9caaf 50.01%, #f3e1af 100%);
 }
 body.dark {
   --primary: #3863e5;
@@ -104,4 +105,5 @@ body.dark {
   --success-color: #a0c125;
   --box-shadow: #000000d6;
   --hr: hsla(0, 0%, 100%, 0.2);
+  --gradient: linear-gradient(90deg, #113546 0%, #44132e 100%);
 }
