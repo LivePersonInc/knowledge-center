@@ -22,7 +22,7 @@ const CardLatestPosts = ({ title, icon, link, alltype }) => {
           <img width="48" height="48" className="lp" src={icon} alt="logo" />
           <h2 className="card-title text-card-title">{title}</h2>
           <div className="whatsnewarticles">{items}</div>
-          <Link to={link} className="text-card-title text-opacity-40 mt-auto">
+          <Link to={link} className="text-link-color text-opacity-40 mt-auto">
             View All
           </Link>
         </div>
