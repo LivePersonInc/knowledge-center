@@ -18,8 +18,10 @@ body.dark {
 .content-widget {
   border-left-width: 0.25rem;
   border-left-style: solid;
-
   color: var(--content-widget-text);
+  & > div p {
+    color: var(--content-widget-text);
+  }
   &.missing-something {
     border-color: var(--missing-something-color);
     background-color: var(--missing-something-background);
