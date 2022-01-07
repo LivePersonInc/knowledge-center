@@ -3,6 +3,7 @@ import {
   RichTextElement,
   ImageElement,
 } from "@kentico/gatsby-kontent-components"
+import Table from "../components/Table"
 import get from "lodash/get"
 import { Link } from "gatsby"
 
@@ -129,11 +130,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
             )
           }
 
-          // case "reporting_metrics_table___widget": {
-          //   return (
-          //    <Tablecomplex />
-          //   )
-          // }
+          case "reporting_metrics_table___widget": {
+            return <Table />
+          }
 
           case "contentbox": {
             return (

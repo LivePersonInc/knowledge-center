@@ -15,13 +15,16 @@ let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
 //console.log(appId, apiKey)
 const searchClient = algoliasearch(appId, apiKey)
 
+const IndexResults = connectStateResults(
+  ({ searchState, searchResults, children }) => {
+    console.log(searchState, searchResults, children)
+    return searchResults && searchResults.nbHits !== 0 && searchState.query
+      ? children
+      : null
+  }
+)
+
 export default function Header() {
-  const IndexResults = connectStateResults(
-    ({ searchState, searchResults, children }) =>
-      searchResults && searchResults.nbHits !== 0 && searchState.query
-        ? children
-        : null
-  )
   return (
     <header className="py-5 z-50 sticky top-0 w-full bg-body-background">
       <div className="navbar max-width justify-between">
@@ -113,9 +116,7 @@ export default function Header() {
                       overflowY: "auto",
                     }}
                   >
-                    {/* <CustomHits  /> */}
-                    {/* <Hits hitComponent={Hit} /> */}
-                    <CustomHits />
+                    <CustomHits onClose={() => searchClient.clearCache()} />
                   </div>
                 </IndexResults>
               </Index>
@@ -164,7 +165,7 @@ export default function Header() {
 }
 
 const Hit = props => {
-  // console.log(props.hits)
+  console.log(props)
   return (
     <div>
       {props?.hits?.length > 0
@@ -179,7 +180,7 @@ const Hit = props => {
                 }}
                 key={index}
               >
-                <Link to={`/${pP.permalink}`}>
+                <Link to={`/${pP.link}`} onClick={props.onClose}>
                   <div className="hit-name">
                     <p className="font-bold" attribute="name">
                       {pP.title}
@@ -197,4 +198,4 @@ const Hit = props => {
   )
 }
 
-const CustomHits = connectHits(Hit)
+const CustomHits = connectHits(props => <Hit {...props} />)
