@@ -106,6 +106,9 @@ body.dark {
     tr {
       display: flex;
       justify-content: space-between;
+      align-items: stretch;
+      align-content: center;
+      flex-wrap: wrap;
       td {
         flex: 1;
         &:first-child {

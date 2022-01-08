@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       Inter: ["Inter", "Helvetica"],
-      "Inter": ["Inter", "sans-serif"],
+      Inter: ["Inter", "sans-serif"],
       "Space Grotesk": ["Space Grotesk", "sans-serif"],
     },
     fontWeight: {

@@ -8,7 +8,7 @@ const CardIcon = ({ icon, title, desc, link }) => {
       data-sal-duration="2000"
       data-sal-easing="ease"
       to={link}
-      className="border border-card-border hover:shadow-xl transition-shadow compact side bg-card-background w-full flex-grow p-7"
+      className="border border-card-border hover:shadow-xl transition-shadow compact side bg-card-background w-full flex-grow"
     >
       <div className="flex-row items-center space-x-4 card-body">
         <div className="flex-1">
