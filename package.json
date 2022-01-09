@@ -34,7 +34,7 @@
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^4.2.0",
     "gatsby-plugin-gatsby-cloud": "^3.2.0",
-    "gatsby-plugin-hotjar": "^1.1.1",
+    "gatsby-plugin-hotjar-tracking": "^1.1.0",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-layout": "^3.4.0",
     "gatsby-plugin-sass": "^4.14.0",

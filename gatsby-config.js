@@ -44,9 +44,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-hotjar`,
+      resolve: `gatsby-plugin-hotjar-tracking`,
       options: {
-        includeInDevelopment: true, // optional parameter to include script in development
+        includeInDevelopment: false,
         id: process.env.HOTJAR_ID,
         sv: 6,
       },
