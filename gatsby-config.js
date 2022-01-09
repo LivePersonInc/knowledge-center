@@ -17,10 +17,9 @@ module.exports = {
       resolve: "@kentico/gatsby-source-kontent",
       options: {
         projectId: process.env.KONTENT_PROJECT_ID,
-        usePreviewUrl: !!(
+        usePreviewUrl:
           process.env.KONTENT_PREVIEW_ENABLED &&
-          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
-        ),
+          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
         authorizationKey:
           process.env.KONTENT_PREVIEW_ENABLED &&
             process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
@@ -29,8 +28,9 @@ module.exports = {
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
           ","
         ).map(lang => lang.trim()),
+        includeTaxonomies: true,
         experimental: {
-          managementApiTriggersUpdate: true,
+          managementApiTriggersUpdate: true, // opt-out by default
         },
       },
     },
