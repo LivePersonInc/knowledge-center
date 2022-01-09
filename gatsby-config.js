@@ -17,9 +17,18 @@ module.exports = {
       resolve: "@kentico/gatsby-source-kontent",
       options: {
         projectId: process.env.KONTENT_PROJECT_ID,
+        usePreviewUrl:
+          process.env.KONTENT_PREVIEW_ENABLED &&
+          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
+        authorizationKey:
+          process.env.KONTENT_PREVIEW_ENABLED &&
+            process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
+            ? process.env.KONTENT_PREVIEW_KEY
+            : undefined,
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
           ","
         ).map(lang => lang.trim()),
+        includeTaxonomies: true,
         experimental: {
           managementApiTriggersUpdate: true, // opt-out by default
         },
@@ -43,6 +52,18 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "LivePerson Help Center",
+        short_name: "Help Center",
+        start_url: "/",
+        background_color: "#fafafa",
+        theme_color: "#222",
+        display: "standalone",
+        icon: "src/assets/images/logo.svg",
+      },
+    },
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -57,6 +78,8 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
