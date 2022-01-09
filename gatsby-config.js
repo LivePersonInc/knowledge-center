@@ -28,7 +28,6 @@ module.exports = {
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
           ","
         ).map(lang => lang.trim()),
-        includeTaxonomies: true,
         experimental: {
           managementApiTriggersUpdate: true, // opt-out by default
         },
