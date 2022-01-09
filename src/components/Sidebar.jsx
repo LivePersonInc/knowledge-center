@@ -242,17 +242,19 @@ const Sidebar = ({ location }) => {
           location={location}
         />
 
-        <a
-          href={`https://status.liveperson.com`}
-          class="flex itemdetails canOpen relative"
-        >
-          <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
-            <StatusIcon />
-          </div>
-          <span class="nav-title text-sidebar-text">
-            Service Status Dashboard
-          </span>
-        </a>
+        <li className="nav_item">
+          <a
+            href={`https://status.liveperson.com`}
+            class="flex itemdetails canOpen relative"
+          >
+            <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
+              <StatusIcon />
+            </div>
+            <span class="nav-title text-sidebar-text">
+              Service Status Dashboard
+            </span>
+          </a>
+        </li>
       </ul>
     </SidebarStyles>
   )
