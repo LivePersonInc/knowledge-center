@@ -60,7 +60,7 @@ module.exports = {
         background_color: "#fafafa",
         theme_color: "#222",
         display: "standalone",
-        icon: "src/assets/images/logo.svg",
+        icon: "src/assets/images/lp.png",
       },
     },
     {
