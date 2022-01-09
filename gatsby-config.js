@@ -51,18 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "LivePerson Help Center",
-        short_name: "Help Center",
-        start_url: "/",
-        background_color: "#fafafa",
-        theme_color: "#222",
-        display: "standalone",
-        icon: "src/assets/images/lp.png",
-      },
-    },
-    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -77,8 +65,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
