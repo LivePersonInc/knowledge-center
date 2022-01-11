@@ -5,8 +5,6 @@ import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import { QuestionMarkIcon } from "./icons/"
 
 const AlertComponent = () => {
-  console.log("itay")
-
   const AlertComponentData = useStaticQuery(graphql`
     {
       kontentItemPageFooter {
