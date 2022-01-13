@@ -231,6 +231,9 @@ export const query = graphql`
         introduction {
           value
         }
+        redirects {
+          value
+        }
       }
     }
     allKontentItemNavigationItem {
