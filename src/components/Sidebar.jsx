@@ -341,10 +341,14 @@ const SidebarItem = ({ item, level, location }) => {
                       <div
                         className={
                           "w-6 h-6 flex flex-col justify-center mr-2 pr-0.5 " +
-                          `${open ? "svg-icon-active" : ""}`
+                          +`${
+                            open
+                              ? "rotate-90 text-sidebar-color-active svg-icon-active"
+                              : ""
+                          }`
                         }
                       >
-                        {/* view sidebar items */}
+                        {/*  view sidebar items
                         {(() => {
                           switch (item.elements.url.value) {
                             case "getting-started":
@@ -381,7 +385,8 @@ const SidebarItem = ({ item, level, location }) => {
                             default:
                               return "-"
                           }
-                        })()}
+                        })()} */}
+                        <ArrowRight />
                       </div>
                     ) : level === 1 ? (
                       <div
