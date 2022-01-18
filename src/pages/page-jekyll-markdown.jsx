@@ -43,6 +43,14 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const introduction = knowledgeCenterMarkdown?.elements?.introduction?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
 
+  let redirects = knowledgeCenterMarkdown?.elements?.redirects?.value
+
+  let arr = redirects.split(",").map(function (item) {
+    return item.trim()
+  })
+
+  console.log("itay")
+  console.log(arr)
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 

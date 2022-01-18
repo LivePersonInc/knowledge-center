@@ -17,7 +17,7 @@ const searchClient = algoliasearch(appId, apiKey)
 
 const IndexResults = connectStateResults(
   ({ searchState, searchResults, children }) => {
-    console.log(searchState, searchResults, children)
+    // console.log(searchState, searchResults, children)
     return searchResults && searchResults.nbHits !== 0 && searchState.query
       ? children
       : null
@@ -165,7 +165,7 @@ export default function Header() {
 }
 
 const Hit = props => {
-  console.log(props)
+  // console.log(props)
   return (
     <div>
       {props?.hits?.length > 0
