@@ -22,23 +22,6 @@ exports.createPages = ({ graphql, actions }) => {
     return [prev, next]
   }
 
-  languageCodenames.forEach(language => {
-    createPage({
-      path: `${language}/articles`,
-      component: require.resolve(`./src/templates/articles.js`),
-      context: {
-        language: language,
-      },
-    })
-  });
-
-  createRedirect({
-    fromPath: '/articles',
-    toPath: `/${languageCodenames[0]}/articles`,
-    redirectInBrowser: true,
-    isPermanent: true
-  })
-
   return new Promise((resolve, reject) => {
     const navPagePath = path.resolve("./src/pages/nav-page.jsx")
     const PostReleaseNotesPath = path.resolve(
