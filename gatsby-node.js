@@ -12,7 +12,6 @@ exports.createPages = ({ graphql, actions }) => {
   //   return item.trim()
   // })
 
-
   const getPrevAndNextNodes = (nodes, slug) => {
     const currentIndex = nodes.findIndex(
       item => item?.elements.permalink.value === slug
@@ -42,446 +41,458 @@ exports.createPages = ({ graphql, actions }) => {
     const PageGeneralPath = path.resolve("./src/pages/page-jekyll-markdown.jsx")
 
     graphql(`
-    {
-  allKontentItemNavigationItem(filter: {system: {codename: {eq: "root"}}}) {
-    nodes {
-      elements {
-        subitems {
-          value {
-            ...folder
-            ...recursiveFolder
+      {
+        allKontentItemNavigationItem(
+          filter: { system: { codename: { eq: "root" } } }
+        ) {
+          nodes {
+            elements {
+              subitems {
+                value {
+                  ...folder
+                  ...recursiveFolder
+                }
+              }
+              url {
+                value
+              }
+            }
           }
         }
-        url {
-          value
-        }
-      }
-    }
-  }
-  allKontentItemKnowledgeCenterMarkdownPage {
-    nodes {
-      system {
-        codename
-        id
-      }
-      elements {
-        permalink {
-          name
-          value
-        }
-        redirects {
-          value
-        }
-      }
-    }
-  }
-  allKontentItemReleaseNotesPage(
-    sort: {order: DESC, fields: elements___date___value}
-  ) {
-    nodes {
-      elements {
-        permalink {
-          value
-          name
-        }
-        pagename {
-          value
-        }
-        date {
-          value
-        }
-        subtitle {
-          value
-          modular_content {
-            id
+        allKontentItemKnowledgeCenterMarkdownPage {
+          edges {
+            node {
+              id
+              elements {
+                redirects {
+                  value
+                }
+                permalink {
+                  value
+                }
+              }
+            }
+          }
+          nodes {
             system {
-              type
               codename
               id
             }
-            ... on kontent_item_video___widget {
-              id
-              elements {
-                video_id {
-                  value
-                }
+            elements {
+              permalink {
+                name
+                value
               }
-              system {
-                codename
-                type
-              }
-            }
-            ... on kontent_item_image__widget {
-              id
-              system {
-                type
-              }
-              elements {
-                description {
-                  value
-                }
-                image {
-                  value {
-                    url
-                    name
-                    description
-                    height
-                    width
-                  }
-                  name
-                }
-                orientation {
-                  value {
-                    codename
-                  }
-                }
-                product {
-                  value {
-                    id
-                    system {
-                      id
-                    }
-                  }
-                }
-              }
-            }
-            ... on kontent_item_code_sample {
-              id
-              system {
-                type
-                codename
-              }
-              elements {
-                code {
-                  value
-                }
-                language {
-                  value {
-                    codename
-                  }
-                }
-              }
-            }
-            ... on kontent_item_contentbox {
-              id
-              system {
-                codename
-                type
-              }
-              elements {
-                notice_text {
-                  value
-                }
-                type {
-                  value {
-                    codename
-                  }
-                }
+              redirects {
+                value
               }
             }
           }
-          images {
-            url
-            image_id
-          }
-          links {
-            url_slug
-            type
-            codename
-            link_id
-          }
         }
-      }
-      system {
-        codename
-        id
-      }
-    }
-  }
-  allKontentItemPostWhatsnew(sort: {order: DESC, fields: elements___date___value}) {
-    nodes {
-      elements {
-        permalink {
-          value
-          name
-        }
-        pagename {
-          value
-        }
-        subtitle {
-          value
-          modular_content {
-            id
-            system {
-              type
-              codename
-              id
-            }
-            ... on kontent_item_video___widget {
-              id
-              elements {
-                video_id {
-                  value
-                }
+        allKontentItemReleaseNotesPage(
+          sort: { order: DESC, fields: elements___date___value }
+        ) {
+          nodes {
+            elements {
+              permalink {
+                value
+                name
               }
-              system {
-                codename
-                type
+              pagename {
+                value
               }
-            }
-            ... on kontent_item_image__widget {
-              id
-              system {
-                type
+              date {
+                value
               }
-              elements {
-                description {
-                  value
-                }
-                image {
-                  value {
-                    url
-                    name
-                    description
-                    height
-                    width
-                  }
-                  name
-                }
-                orientation {
-                  value {
-                    codename
-                  }
-                }
-                product {
-                  value {
-                    id
-                    system {
-                      id
-                    }
-                  }
-                }
-              }
-            }
-            ... on kontent_item_code_sample {
-              id
-              system {
-                type
-                codename
-              }
-              elements {
-                code {
-                  value
-                }
-                language {
-                  value {
-                    codename
-                  }
-                }
-              }
-            }
-            ... on kontent_item_contentbox {
-              id
-              system {
-                codename
-                type
-              }
-              elements {
-                notice_text {
-                  value
-                }
-                type {
-                  value {
-                    codename
-                  }
-                }
-              }
-            }
-          }
-          images {
-            url
-            image_id
-          }
-          links {
-            url_slug
-            type
-            codename
-            link_id
-          }
-        }
-        date {
-          value
-        }
-      }
-      system {
-        codename
-        id
-      }
-    }
-  }
-  allKontentItemBlogReleaseNotes {
-    nodes {
-      elements {
-        pagename {
-          value
-        }
-        permalink {
-          value
-        }
-      }
-      system {
-        codename
-        id
-      }
-    }
-  }
-  allKontentItemBlogWhatsNew {
-    nodes {
-      elements {
-        pagename {
-          value
-        }
-        permalink {
-          value
-        }
-      }
-      system {
-        codename
-        id
-      }
-    }
-  }
-}
-
-fragment folder on kontent_item_navigation_item {
-  system {
-    type
-    id
-  }
-  elements {
-    url {
-      value
-    }
-    title {
-      value
-    }
-  }
-}
-
-fragment page on kontent_item {
-  ...KCMD
-  ...BRN
-  ...BWN
-  ...RN
-  ...WN
-}
-
-fragment KCMD on kontent_item_knowledge_center_markdown_page {
-  elements {
-    pagename {
-      value
-    }
-    permalink {
-      value
-    }
-    redirects {
-      value
-    }
-  }
-  system {
-    id
-    type
-  }
-}
-
-fragment BRN on kontent_item_blog_release_notes {
-  elements {
-    pagename {
-      value
-    }
-    permalink {
-      value
-    }
-  }
-  system {
-    id
-    type
-  }
-}
-
-fragment BWN on kontent_item_blog_whats_new {
-  elements {
-    pagename {
-      value
-    }
-    permalink {
-      value
-    }
-  }
-  system {
-    id
-    type
-  }
-}
-
-fragment RN on kontent_item_release_notes_page {
-  elements {
-    pagename {
-      value
-    }
-    permalink {
-      value
-    }
-  }
-  system {
-    id
-    type
-  }
-}
-
-fragment WN on kontent_item_post___whatsnew {
-  elements {
-    pagename {
-      value
-    }
-    permalink {
-      value
-    }
-  }
-  system {
-    id
-    type
-  }
-}
-
-fragment recursiveFolder on kontent_item_navigation_item {
-  system {
-    type
-    codename
-  }
-  elements {
-    subitems {
-      value {
-        ...page
-        ...folder
-        ... on kontent_item_navigation_item {
-          system {
-            type
-          }
-          elements {
-            subitems {
-              value {
-                ...page
-                ...folder
-                ... on kontent_item_navigation_item {
+              subtitle {
+                value
+                modular_content {
+                  id
                   system {
                     type
+                    codename
+                    id
                   }
-                  elements {
-                    subitems {
-                      value {
-                        ...page
-                        ...folder
+                  ... on kontent_item_video___widget {
+                    id
+                    elements {
+                      video_id {
+                        value
+                      }
+                    }
+                    system {
+                      codename
+                      type
+                    }
+                  }
+                  ... on kontent_item_image__widget {
+                    id
+                    system {
+                      type
+                    }
+                    elements {
+                      description {
+                        value
+                      }
+                      image {
+                        value {
+                          url
+                          name
+                          description
+                          height
+                          width
+                        }
+                        name
+                      }
+                      orientation {
+                        value {
+                          codename
+                        }
+                      }
+                      product {
+                        value {
+                          id
+                          system {
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_code_sample {
+                    id
+                    system {
+                      type
+                      codename
+                    }
+                    elements {
+                      code {
+                        value
+                      }
+                      language {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_contentbox {
+                    id
+                    system {
+                      codename
+                      type
+                    }
+                    elements {
+                      notice_text {
+                        value
+                      }
+                      type {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                }
+                images {
+                  url
+                  image_id
+                }
+                links {
+                  url_slug
+                  type
+                  codename
+                  link_id
+                }
+              }
+            }
+            system {
+              codename
+              id
+            }
+          }
+        }
+        allKontentItemPostWhatsnew(
+          sort: { order: DESC, fields: elements___date___value }
+        ) {
+          nodes {
+            elements {
+              permalink {
+                value
+                name
+              }
+              pagename {
+                value
+              }
+              subtitle {
+                value
+                modular_content {
+                  id
+                  system {
+                    type
+                    codename
+                    id
+                  }
+                  ... on kontent_item_video___widget {
+                    id
+                    elements {
+                      video_id {
+                        value
+                      }
+                    }
+                    system {
+                      codename
+                      type
+                    }
+                  }
+                  ... on kontent_item_image__widget {
+                    id
+                    system {
+                      type
+                    }
+                    elements {
+                      description {
+                        value
+                      }
+                      image {
+                        value {
+                          url
+                          name
+                          description
+                          height
+                          width
+                        }
+                        name
+                      }
+                      orientation {
+                        value {
+                          codename
+                        }
+                      }
+                      product {
+                        value {
+                          id
+                          system {
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_code_sample {
+                    id
+                    system {
+                      type
+                      codename
+                    }
+                    elements {
+                      code {
+                        value
+                      }
+                      language {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                  ... on kontent_item_contentbox {
+                    id
+                    system {
+                      codename
+                      type
+                    }
+                    elements {
+                      notice_text {
+                        value
+                      }
+                      type {
+                        value {
+                          codename
+                        }
+                      }
+                    }
+                  }
+                }
+                images {
+                  url
+                  image_id
+                }
+                links {
+                  url_slug
+                  type
+                  codename
+                  link_id
+                }
+              }
+              date {
+                value
+              }
+            }
+            system {
+              codename
+              id
+            }
+          }
+        }
+        allKontentItemBlogReleaseNotes {
+          nodes {
+            elements {
+              pagename {
+                value
+              }
+              permalink {
+                value
+              }
+            }
+            system {
+              codename
+              id
+            }
+          }
+        }
+        allKontentItemBlogWhatsNew {
+          nodes {
+            elements {
+              pagename {
+                value
+              }
+              permalink {
+                value
+              }
+            }
+            system {
+              codename
+              id
+            }
+          }
+        }
+      }
+      fragment folder on kontent_item_navigation_item {
+        system {
+          type
+          id
+        }
+        elements {
+          url {
+            value
+          }
+          title {
+            value
+          }
+        }
+      }
+      fragment page on kontent_item {
+        ...KCMD
+        ...BRN
+        ...BWN
+        ...RN
+        ...WN
+      }
+      fragment KCMD on kontent_item_knowledge_center_markdown_page {
+        elements {
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+          redirects {
+            value
+          }
+        }
+        system {
+          id
+          type
+        }
+      }
+      fragment BRN on kontent_item_blog_release_notes {
+        elements {
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+        }
+        system {
+          id
+          type
+        }
+      }
+      fragment BWN on kontent_item_blog_whats_new {
+        elements {
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+        }
+        system {
+          id
+          type
+        }
+      }
+      fragment RN on kontent_item_release_notes_page {
+        elements {
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+        }
+        system {
+          id
+          type
+        }
+      }
+      fragment WN on kontent_item_post___whatsnew {
+        elements {
+          pagename {
+            value
+          }
+          permalink {
+            value
+          }
+        }
+        system {
+          id
+          type
+        }
+      }
+      fragment recursiveFolder on kontent_item_navigation_item {
+        system {
+          type
+          codename
+        }
+        elements {
+          subitems {
+            value {
+              ...page
+              ...folder
+              ... on kontent_item_navigation_item {
+                system {
+                  type
+                }
+                elements {
+                  subitems {
+                    value {
+                      ...page
+                      ...folder
+                      ... on kontent_item_navigation_item {
+                        system {
+                          type
+                        }
+                        elements {
+                          subitems {
+                            value {
+                              ...page
+                              ...folder
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -491,10 +502,6 @@ fragment recursiveFolder on kontent_item_navigation_item {
           }
         }
       }
-    }
-  }
-}
-
     `).then(result => {
       if (result.errors) {
         console.error(result.errors)
@@ -503,8 +510,6 @@ fragment recursiveFolder on kontent_item_navigation_item {
 
       const releaseNotesPages = result.data.allKontentItemReleaseNotesPage.nodes
       const whatsNewPages = result.data.allKontentItemPostWhatsnew.nodes
-
-
 
       _.each(result.data.allKontentItemNavigationItem.nodes, node => {
         const contentPage = node.elements.subitems.value[0]
@@ -583,13 +588,18 @@ fragment recursiveFolder on kontent_item_navigation_item {
             },
           })
 
-          actions.createRedirect({
-            fromPath: `/blabla`,
-            isPermanent: true,
-            redirectInBrowser: true,
-            toPath: `/loremipsum/`
-          })
+          let redirectPagePaths = node.elements.redirects.value
+          let newRedirectPagePaths = redirectPagePaths.split(",")
 
+          _.each(newRedirectPagePaths, pagePath => {
+            let newPagePath = pagePath.replace(/ /g, '')
+            actions.createRedirect({
+              fromPath: `/${newPagePath}`,
+              isPermanent: true,
+              redirectInBrowser: true,
+              toPath: `/${node.elements.permalink.value}/`,
+            })
+          })
         }
       )
 
