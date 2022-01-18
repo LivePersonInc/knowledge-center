@@ -245,13 +245,13 @@ const Sidebar = ({ location }) => {
         <li className="nav_item">
           <a
             href={`https://status.liveperson.com`}
-            class="flex itemdetails canOpen relative"
+            className="flex itemdetails canOpen relative"
             style={{ padding: "0" }}
           >
             <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
               <StatusIcon />
             </div>
-            <span class="nav-title text-sidebar-text">
+            <span className="nav-title text-sidebar-text">
               Service Status Dashboard
             </span>
           </a>
