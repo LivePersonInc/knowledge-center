@@ -592,7 +592,7 @@ exports.createPages = ({ graphql, actions }) => {
           let newRedirectPagePaths = redirectPagePaths.split(",")
 
           _.each(newRedirectPagePaths, pagePath => {
-            let newPagePath = pagePath.replace(/ /g, '')
+            let newPagePath = pagePath.replace(/ /g, "")
             actions.createRedirect({
               fromPath: `/${newPagePath}`,
               isPermanent: true,
