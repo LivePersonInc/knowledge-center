@@ -4,7 +4,14 @@ const path = require("path")
 const slash = require("slash")
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions
+  const { createPage } = actions
+
+  // let redirects = knowledgeCenterMarkdown?.elements?.redirects?.value
+
+  // let arr = redirects.split(",").map(function (item) {
+  //   return item.trim()
+  // })
+
 
   const getPrevAndNextNodes = (nodes, slug) => {
     const currentIndex = nodes.findIndex(
@@ -576,10 +583,12 @@ fragment recursiveFolder on kontent_item_navigation_item {
             },
           })
 
-          // createRedirect({
-          //   fromPath: `/${node.elements.redirects.value}/`,
-          //   toPath: `/${node.elements.permalink.value}/`,
-          // });
+          actions.createRedirect({
+            fromPath: `/blabla`,
+            isPermanent: true,
+            redirectInBrowser: true,
+            toPath: `/loremipsum/`
+          })
 
         }
       )
