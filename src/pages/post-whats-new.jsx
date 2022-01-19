@@ -26,7 +26,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   // const [jumpToItems, setJumpToItems] = useState([])
   // useEffect(() => {
   //   if (contentRef.current && data) {
-  //     const headerQuery = contentRef.current.querySelectorAll("h2,h3")
+  //     const headerQuery = contentRef.current.querySelectorAll("h2")
   //     setJumpToItems([...headerQuery])
   //   }
   // }, [data])
