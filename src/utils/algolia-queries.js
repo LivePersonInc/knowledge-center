@@ -101,27 +101,7 @@ const queries = [
         "release-notes"
       ),
     ],
-    // add
-    // allKontentItemPostWhatsnew
-    // allKontentItemReleaseNotesPage
   },
 ]
 
 module.exports = queries
-
-// const allData = (data) => {
-//   return ({
-//     ...data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
-//     ...data.allKontentItemPostWhatsnew.nodes,
-//     ...data.allKontentItemReleaseNotesPage.nodes,
-//   })
-// }
-
-// const queries = [
-//   {
-//     query: pageQuery,
-//     transformer: ({ data }) => allData(data)
-//   },
-// ]
-
-// module.exports = queries
