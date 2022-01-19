@@ -3,24 +3,7 @@ import styled from "styled-components"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { Disclosure, Transition } from "@headlessui/react"
 
-import {
-  AdminIcon,
-  AgentIcon,
-  ArrowRight,
-  ContactIcon,
-  DeveloperIcon,
-  FaqsIcon,
-  HouseIcon,
-  MarketplaceIcon,
-  MessageIcon,
-  NewIcon,
-  ReleaseIcon,
-  ReportingIcon,
-  RobotIcon,
-  SecurityIcon,
-  StatusIcon,
-  TroubleshootingIcon,
-} from "./icons/"
+import { ArrowRight, StatusIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
   .menu ul {
@@ -348,44 +331,6 @@ const SidebarItem = ({ item, level, location }) => {
                           }`
                         }
                       >
-                        {/*  view sidebar items
-                        {(() => {
-                          switch (item.elements.url.value) {
-                            case "getting-started":
-                              return <HouseIcon />
-                            case "messaging-channels":
-                              return <MessageIcon />
-                            case "ai-bots-automation":
-                              return <RobotIcon />
-                            case "contact-center-management":
-                              return <ContactIcon />
-                            case "agent-manager-workspace":
-                              return <AgentIcon />
-                            case "data-reporting":
-                              return <ReportingIcon />
-                            case "marketplace-solutions":
-                              return <MarketplaceIcon />
-                            case "admin-settings":
-                              return <AdminIcon />
-                            case "security-regulations":
-                              return <SecurityIcon />
-                            case "developer-tools":
-                              return <DeveloperIcon />
-                            case "what-s-new":
-                              return <NewIcon />
-                            case "release-notes":
-                              return <ReleaseIcon />
-                            case "troubleshooting":
-                              return <TroubleshootingIcon />
-                            case "faqs":
-                              return <FaqsIcon />
-                            case "service-status-dashboard":
-                              return <StatusIcon />
-
-                            default:
-                              return "-"
-                          }
-                        })()} */}
                         <ArrowRight />
                       </div>
                     ) : level === 1 ? (
