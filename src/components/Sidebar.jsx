@@ -212,7 +212,7 @@ const Sidebar = ({ location }) => {
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
-        className="menu pt-8 overflow-y-auto w-80 ld:bg-body-background h-full ld:pl-2"
+        className="menu pt-8 overflow-y-auto w-80 ipad:bg-body-background h-full ipad:pl-2"
         data-testid="sidebar"
       >
         <SidebarItems

@@ -17,7 +17,7 @@ export default function Footer() {
         data-sal-easing="ease"
         className="py-8 footer border-card-border flex flex-col gap-4"
       >
-        <div className="flex items-center sm:flex-col">
+        <div className="flex items-center mobile:flex-col">
           <p>
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.{" "}

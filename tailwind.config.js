@@ -14,14 +14,14 @@ module.exports = {
       black: 900,
     },
     screens: {
-      sm: { max: "767px" },
-      // => @media (min-width: 640px) { ... }
+      mobile: { max: "767px" },
+      // => @media (max-width: 767px) { ... }
 
       md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      ld: { max: "1024px" },
-      // => @media (min-width: 1024px) { ... }
+      ipad: { max: "1024px" },
+      // => @media (max-width: 1024px) { ... }
 
       lg: "1024px",
       // => @media (min-width: 1024px) { ... }

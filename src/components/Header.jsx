@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="py-5 z-50 sticky top-0 w-full bg-body-background">
       <div className="navbar max-width justify-between">
-        <div className="px-2 mx-2 navbar sm:hidden lg:pl-0 lg:ml-0">
+        <div className="px-2 mx-2 navbar mobile:hidden lg:pl-0 lg:ml-0">
           <Link to="/">
             {/* logo svg */}
             <svg
@@ -49,7 +49,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="px-2 mx-2 navbar-start md:hidden sm:visible">
+        <div className="px-2 mx-2 navbar-start md:hidden mobile:visible">
           <Link to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ export default function Header() {
             href="https://liveengage.liveperson.net/"
             target="_blank"
             rel="noreferrer"
-            className="btn btn-ghost normal-case rounded-full sm:hidden"
+            className="btn btn-ghost normal-case rounded-full mobile:hidden"
           >
             Sign in
           </a>
@@ -154,7 +154,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
             href="https://developers.liveperson.com/register.html"
-            className="btn btn-secondary normal-case rounded-full px-5 sm:hidden"
+            className="btn btn-secondary normal-case rounded-full px-5 mobile:hidden"
           >
             Free trial
           </a>

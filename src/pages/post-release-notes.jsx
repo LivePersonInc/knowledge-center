@@ -74,7 +74,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
             {product_release_notes.map(node => (
               <div
                 className="mt-10"
-                key={node?.elements?.release_version_number?.value}
+                key={node?.elements?.version_number?.value}
               >
                 <div className="release-notes-item flex items-center gap-3">
                   {/* Title  */}
@@ -257,7 +257,7 @@ export const query = graphql`
             ... on kontent_item_product_release_notes {
               id
               elements {
-                release_version_number {
+                version_number {
                   value
                 }
                 release_date {

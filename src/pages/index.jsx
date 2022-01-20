@@ -29,11 +29,11 @@ const HomePage = ({ data }) => {
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
-        <p className="text-body-text pr-40 sm:pr-8">
+        <p className="text-body-text pr-40 mobile:pr-8">
           <RichTextElement value={bodyTextHomepage} />
         </p>
       </div>
-      <div className="flex sm:flex-col sm:justify-between sm:items-center mt-8 gap-4">
+      <div className="flex mobile:flex-col mobile:justify-between mobile:items-center mt-8 gap-4">
         <div className="flex flex-col justify-between gap-4">
           <Card
             // Getting Started
@@ -98,7 +98,7 @@ const HomePage = ({ data }) => {
           background: "var(--cta-background-image)",
         }}
       >
-        <div className="card-body flex-row justify-between sm:flex-col sm:items-center">
+        <div className="card-body flex-row justify-between mobile:flex-col mobile:items-center">
           <div className="flex flex-col">
             <h3
               style={{ marginTop: "0" }}
@@ -110,7 +110,7 @@ const HomePage = ({ data }) => {
               {kontentItemHomepage?.elements?.cta_perk_1?.value}
             </p>
           </div>
-          <div className="flex items-center sm:mt-4">
+          <div className="flex items-center mobile:mt-4">
             <a
               rel="noopener noreferrer"
               target="_blank"

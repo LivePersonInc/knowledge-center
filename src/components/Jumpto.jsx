@@ -23,7 +23,7 @@ const JumpTo = ({ title, jumpToItems }) => {
   }
 
   return (
-    <div className="inner-menu full-width sm:hidden">
+    <div className="inner-menu full-width mobile:hidden">
       <div className="anchorlist shadow-none">
         <ul className="menu ml-8" style={jumptoList}>
           {/* <li>
