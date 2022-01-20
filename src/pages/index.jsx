@@ -57,13 +57,7 @@ const HomePage = ({ data }) => {
             title={kontentItemHomepage?.elements?.box_title_5?.value}
             desc={kontentItemHomepage?.elements?.box_description_5?.value}
           />
-          <CardIcon
-            // Release notes
-            link={kontentItemHomepage?.elements?.link_4?.value}
-            icon={releasenotesIcon}
-            title={kontentItemHomepage?.elements?.box_title_4?.value}
-            desc={kontentItemHomepage?.elements?.box_description_4?.value}
-          />
+
           <CardIcon
             // customer support
             link={kontentItemHomepage?.elements?.link_6?.value}

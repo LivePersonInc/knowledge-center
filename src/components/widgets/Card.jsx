@@ -16,7 +16,13 @@ const Card = ({ title, desc, link, icon, homeimg }) => {
     >
       <div className="flex-row items-center space-x-4 card-body">
         <div className="flex-1">
-          <img width="48" height="48" className="lp" src={icon} alt="logo" />
+          <img
+            width="32"
+            height="32"
+            className="lp mb-4"
+            src={icon}
+            alt="logo"
+          />
           <h2 className="card-title text-button-text">{title}</h2>
           <p className="text-button-text text-opacity-40 ">{desc}</p>
         </div>
