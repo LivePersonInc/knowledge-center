@@ -11,6 +11,7 @@ import exploreIcon from "../assets/images/home/ic_API_SDK.svg"
 import whatsnewIcon from "../assets/images/home/ic_Whats_new.svg"
 import supportIcon from "../assets/images/home/ic_support.svg"
 import releasenotesIcon from "../assets/images/home/ic_release_notes.svg"
+import ctaimg from "../assets/images/home/free-trial-banner.jpg"
 import Footer from "../components/Footer"
 import CardLatestPosts from "../components/widgets/CardLatestPosts"
 
@@ -95,15 +96,18 @@ const HomePage = ({ data }) => {
         data-sal-easing="ease"
         className="my-8 lg:card-side hover:shadow-xl transition-shadow"
         style={{
-          background: "var(--gradient)",
+          background: `url(${ctaimg}) no-repeat center center`,
+          backgroundSize: "cover",
         }}
       >
         <div className="card-body flex-row justify-between sm:flex-col sm:items-center">
           <div className="flex flex-col">
-            <h3 className="card-title">
+            <h3 className="card-title text-button-text">
               {kontentItemHomepage?.elements?.cta_title?.value}
             </h3>
-            <p>{kontentItemHomepage?.elements?.cta_perk_1?.value}</p>
+            <p className="text-button-text text-opacity-40 ">
+              {kontentItemHomepage?.elements?.cta_perk_1?.value}
+            </p>
           </div>
           <div className="flex items-center sm:mt-4">
             <a
