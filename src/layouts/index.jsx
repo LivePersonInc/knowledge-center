@@ -17,12 +17,6 @@ const BodyStyles = styled.div`
     height: 100%;
     justify-content: flex-start;
   }
-  .drawer {
-    overflow: visible;
-  }
-  .drawer-toggle ~ .drawer-content {
-    overflow-y: visible;
-  }
 `
 
 const SiteLayoutStyles = styled.main`

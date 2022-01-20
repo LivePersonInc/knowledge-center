@@ -24,6 +24,15 @@ body {
   .drawer-content {
     max-height: inherit !important;
   }
+  .drawer {
+    overflow-y: visible;
+  }
+  .drawer-end {
+    overflow-x: hidden;
+  }
+  .drawer-toggle ~ .drawer-content {
+    overflow-y: visible;
+  }
   .menu li.hover-bordered:focus a,
   .menu li.hover-bordered a:hover {
     border-color: currentColor;
