@@ -115,7 +115,7 @@ const HomePage = ({ data }) => {
               target="_blank"
               href="https://developers.liveperson.com/register.html"
             >
-              <button className="btn btn-primary rounded-full">
+              <button className="btn btn-primary rounded-full hover:shadow-xl transition-shadow">
                 Start Free Trial
               </button>
             </a>
