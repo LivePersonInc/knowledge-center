@@ -9,7 +9,7 @@ const Card = ({ title, desc, link, icon, homeimg }) => {
       data-sal-easing="ease"
       to={link}
       style={{
-        background: `url(${homeimg}) no-repeat center center fixed`,
+        background: `var(--card-bg-background),url(${homeimg}) no-repeat center center fixed`,
         backgroundSize: "cover",
       }}
       className="border border-card-border hover:shadow-xl transition-shadow compact side w-full flex-grow"
