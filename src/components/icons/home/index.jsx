@@ -1,0 +1,6 @@
+export { default as LearnMoreIcon } from "./LearnMoreIcon"
+export { default as MessagingIcon } from "./MessagingIcon"
+export { default as ExploreIcon } from "./ExploreIcon"
+export { default as CustomerSupport } from "./CustomerSupport"
+export { default as WhatsNewIcon } from "./WhatsNewIcon"
+export { default as ReleaseNotesIcon } from "./ReleaseNotesIcon"

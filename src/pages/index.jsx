@@ -1,16 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Card from "../components/widgets/Card"
+import CardBg from "../components/widgets/CardBg"
 import CardIcon from "../components/widgets/CardIcon"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
-// Icons
-import learnMoreIcon from "../assets/images/home/ic_learn_more.svg"
-import messagingIcon from "../assets/images/home/ic_get_started.svg"
-import exploreIcon from "../assets/images/home/ic_API_SDK.svg"
-import whatsnewIcon from "../assets/images/home/ic_Whats_new.svg"
-import supportIcon from "../assets/images/home/ic_support.svg"
-import releasenotesIcon from "../assets/images/home/ic_release_notes.svg"
 import Footer from "../components/Footer"
 import CardLatestPosts from "../components/widgets/CardLatestPosts"
 
@@ -35,33 +28,32 @@ const HomePage = ({ data }) => {
       </div>
       <div className="flex mobile:flex-col mobile:justify-between mobile:items-center mt-8 gap-4">
         <div className="flex flex-col justify-between gap-4">
-          <Card
+          <CardBg
             // Getting Started
             title={kontentItemHomepage?.elements?.box_title_1?.value}
             link={kontentItemHomepage?.elements?.link_1?.value}
-            icon={learnMoreIcon}
+            icon="LearnMoreIcon"
             desc={kontentItemHomepage?.elements?.box_description_1?.value}
             homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
           />
           <CardIcon
             // Messaging
             link={kontentItemHomepage?.elements?.link_2?.value}
-            icon={messagingIcon}
+            icon="MessagingIcon"
             title={kontentItemHomepage?.elements?.box_title_2?.value}
             desc={kontentItemHomepage?.elements?.box_description_2?.value}
           />
           <CardIcon
             // Developer Center
             link={kontentItemHomepage?.elements?.link_5?.value}
-            icon={exploreIcon}
+            icon="ExploreIcon"
             title={kontentItemHomepage?.elements?.box_title_5?.value}
             desc={kontentItemHomepage?.elements?.box_description_5?.value}
           />
-
           <CardIcon
             // customer support
             link={kontentItemHomepage?.elements?.link_6?.value}
-            icon={supportIcon}
+            icon="CustomerSupport"
             title={kontentItemHomepage?.elements?.box_title_6?.value}
             desc={kontentItemHomepage?.elements?.box_description_6?.value}
           />
@@ -69,21 +61,17 @@ const HomePage = ({ data }) => {
         <div className="flex flex-col justify-between gap-4">
           <CardLatestPosts
             // What's new
-            icon={whatsnewIcon}
+            icon="WhatsNewIcon"
             title={kontentItemHomepage?.elements?.box_title_3?.value}
             alltype={allWhatsnewPage}
             link="/whats-new"
-            // link={kontentItemHomepage?.elements?.link_3?.value}
-            // desc={kontentItemHomepage?.elements?.box_description_3?.value}
           />
           <CardLatestPosts
             // Release notes
-            icon={releasenotesIcon}
+            icon="ReleaseNotesIcon"
             title={kontentItemHomepage?.elements?.box_title_4?.value}
             alltype={allReleaseNotesPage}
             link="/news-releases"
-            // link={kontentItemHomepage?.elements?.link_4?.value}
-            // desc={kontentItemHomepage?.elements?.box_description_4?.value}
           />
         </div>
       </div>
