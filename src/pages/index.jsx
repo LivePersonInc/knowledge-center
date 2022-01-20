@@ -94,7 +94,7 @@ const HomePage = ({ data }) => {
         data-sal-duration="2000"
         data-sal-delay="300"
         data-sal-easing="ease"
-        className="my-8 lg:card-side hover:shadow-xl transition-shadow"
+        className="my-8 lg:card-side"
         style={{
           background: `url(${ctaimg}) no-repeat center center`,
           backgroundSize: "cover",
