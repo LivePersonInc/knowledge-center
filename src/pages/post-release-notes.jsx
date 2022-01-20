@@ -104,7 +104,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                   body_content={node?.elements?.features?.value}
                   bodyfield={node?.elements?.features}
                 />
-                {/* {node?.elements?.release_version_number?.value} */}
 
                 {/* Fixes */}
                 <h5 className="h5 mt-6 mb-2">Fixes</h5>
