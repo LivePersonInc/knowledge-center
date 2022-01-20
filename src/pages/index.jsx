@@ -11,7 +11,6 @@ import exploreIcon from "../assets/images/home/ic_API_SDK.svg"
 import whatsnewIcon from "../assets/images/home/ic_Whats_new.svg"
 import supportIcon from "../assets/images/home/ic_support.svg"
 import releasenotesIcon from "../assets/images/home/ic_release_notes.svg"
-import ctaimg from "../assets/images/home/free-trial-banner.jpg"
 import Footer from "../components/Footer"
 import CardLatestPosts from "../components/widgets/CardLatestPosts"
 
@@ -96,13 +95,15 @@ const HomePage = ({ data }) => {
         data-sal-easing="ease"
         className="my-8 lg:card-side"
         style={{
-          background: `url(${ctaimg}) no-repeat center center`,
-          backgroundSize: "cover",
+          background: "var(--cta-background-image)",
         }}
       >
         <div className="card-body flex-row justify-between sm:flex-col sm:items-center">
           <div className="flex flex-col">
-            <h3 className="card-title text-button-text">
+            <h3
+              style={{ marginTop: "0" }}
+              className="card-title text-button-text"
+            >
               {kontentItemHomepage?.elements?.cta_title?.value}
             </h3>
             <p className="text-button-text text-opacity-40 ">
