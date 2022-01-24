@@ -4,6 +4,7 @@ import {
   ImageElement,
 } from "@kentico/gatsby-kontent-components"
 import Table from "../components/Table"
+import TableMc from "../components/TableMc"
 import get from "lodash/get"
 import { Link } from "gatsby"
 
@@ -132,6 +133,10 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
           case "reporting_metrics_table___widget": {
             return <Table />
+          }
+
+          case "messaging_channels___widget": {
+            return <TableMc />
           }
 
           case "contentbox": {
