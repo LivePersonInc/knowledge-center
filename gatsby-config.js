@@ -22,7 +22,7 @@ module.exports = {
           process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
         authorizationKey:
           process.env.KONTENT_PREVIEW_ENABLED &&
-          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
+            process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
             ? process.env.KONTENT_PREVIEW_KEY
             : undefined,
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
@@ -41,6 +41,20 @@ module.exports = {
           require("tailwindcss"),
           require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-277946-55",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        //change this when you want it to work
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+
       },
     },
     {

@@ -67,7 +67,7 @@ export default function Header() {
         <div className="searchcomponent hidden flex-grow navbar-center lg:flex">
           <div className="flex items-stretch w-full flex-col relative">
             <InstantSearch
-              indexName="helpcenter_gatsby"
+              indexName="helpcenter"
               searchClient={searchClient}
               onSearchParameters={() => {
                 searchClient.clearCache()
@@ -100,7 +100,7 @@ export default function Header() {
                 className="input border-card-border input-bordered w-full rounded-full"
               />
 
-              <Index indexName="helpcenter_gatsby">
+              <Index indexName="helpcenter">
                 <IndexResults>
                   <div
                     className="right-panel shadow"
