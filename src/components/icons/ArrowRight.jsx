@@ -3,12 +3,17 @@ import React from "react"
 const ArrowRight = () => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      width="5"
+      height="10"
+      viewBox="0 0 5 10"
       fill="none"
-      stroke="currentColor"
-      viewBox="0 0 16 16"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M11 8.034L6 13V3l5 5.034z" fill="currentColor" />
+      <path
+        opacity="0.9"
+        d="M5 5.03382L0 10L-4.37114e-07 0L5 5.03382Z"
+        fill="#3863E5"
+      />
     </svg>
   )
 }

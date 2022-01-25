@@ -35,14 +35,12 @@ const SidebarStyles = styled.div`
       display: none;
     }
     padding-top: 1.5rem;
-    border-top: 1px solid var(--card-border);
     dd#headlessui-disclosure-panel-22 {
       display: none;
     }
   }
   li.nav_item:nth-last-child(4) {
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--card-border);
     dd#headlessui-disclosure-panel-25 {
       display: none;
     }
@@ -231,7 +229,7 @@ const Sidebar = ({ location }) => {
             className="flex itemdetails canOpen relative"
             style={{ padding: "0" }}
           >
-            <div className="w-6 h-6 flex flex-col justify-center mr-2 pr-0.5">
+            <div className="w-6 h-6 flex flex-col justify-center">
               <StatusIcon />
             </div>
             <span className="nav-title text-sidebar-text">
@@ -323,7 +321,7 @@ const SidebarItem = ({ item, level, location }) => {
                     {level === 0 ? (
                       <div
                         className={
-                          "w-6 h-6 flex flex-col justify-center mr-2 pr-0.5 " +
+                          "w-6 h-6 flex flex-col justify-center " +
                           +`${
                             open
                               ? "rotate-90 text-sidebar-color-active svg-icon-active"
@@ -336,7 +334,7 @@ const SidebarItem = ({ item, level, location }) => {
                     ) : level === 1 ? (
                       <div
                         className={
-                          "w-5 h-5 flex flex-col justify-center mr-2 pr-2 transform transition " +
+                          "w-6 h-6 flex items-center flex-col justify-center transform transition " +
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >

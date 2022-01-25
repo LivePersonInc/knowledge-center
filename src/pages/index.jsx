@@ -77,10 +77,10 @@ const HomePage = ({ data }) => {
       </div>
 
       <div
-        data-sal="slide-up"
-        data-sal-duration="2000"
-        data-sal-delay="300"
-        data-sal-easing="ease"
+        // data-sal="slide-up"
+        // data-sal-duration="2000"
+        // data-sal-delay="300"
+        // data-sal-easing="ease"
         className="my-8 lg:card-side"
         style={{
           background: "var(--cta-background-image)",
