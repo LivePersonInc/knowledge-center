@@ -22,12 +22,12 @@ const HomePage = ({ data }) => {
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
-        <p className="text-body-text pr-40 mobile:pr-8">
+        <p className="text-body-text mobile:pr-8">
           <RichTextElement value={bodyTextHomepage} />
         </p>
       </div>
-      <div className="flex mobile:flex-col mobile:justify-between mobile:items-center mt-8 gap-4">
-        <div className="flex flex-col justify-between gap-4">
+      <div className="flex items-start mobile:flex-col justify-between mobile:items-center mt-8 gap-4">
+        <div className="flex flex-col justify-between gap-8">
           <CardBg
             // Getting Started
             title={kontentItemHomepage?.elements?.box_title_1?.value}
@@ -58,7 +58,7 @@ const HomePage = ({ data }) => {
             desc={kontentItemHomepage?.elements?.box_description_6?.value}
           />
         </div>
-        <div className="flex flex-col justify-between gap-4">
+        <div className="flex flex-col justify-between gap-8">
           <CardLatestPosts
             // What's new
             icon="WhatsNewIcon"

@@ -35,7 +35,10 @@ const CardLatestPosts = ({ title, icon, link, alltype }) => {
           </div>
           <h2 className="card-title text-card-title">{title}</h2>
           <div className="whatsnewarticles">{items}</div>
-          <Link to={link} className="text-link-color text-opacity-40 mt-auto">
+          <Link
+            to={link}
+            className="text-link-color text-opacity-40 mt-auto underline"
+          >
             View All
           </Link>
         </div>

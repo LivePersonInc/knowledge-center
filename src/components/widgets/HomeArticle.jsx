@@ -24,13 +24,16 @@ class HomeArticle extends React.Component {
         className="NavLinks py-6"
         data-kontent-item-id={itemId}
       >
-        <h6 className="mb-0 font-bold" data-kontent-element-codename="title">
+        <h6
+          className="mb-2 font-bold text-primary"
+          data-kontent-element-codename="title"
+        >
           <Link style={{ textDecoration: "none" }} to={`/${slug || "#"}`}>
             {title}
           </Link>
         </h6>
         <time
-          className="article__meta-time flex"
+          className="article__meta-time flex mb-2"
           dateTime={moment(date).format("MMMM D, YYYY HH:mm")}
           data-kontent-element-codename="date"
         >
@@ -51,15 +54,10 @@ class HomeArticle extends React.Component {
         </Link>
         <Link
           to={`/${slug || "#"}`}
-          style={{
-            textDecoration: "none",
-            color: "var(--body-text)",
-            marginTop: "5px",
-          }}
-          className="text-body-text"
+          className="text-primary underline"
           id="subtitle"
         >
-          More..
+          More...
         </Link>
       </HomeArticleStyles>
     )
