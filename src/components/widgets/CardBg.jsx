@@ -5,9 +5,6 @@ import { LearnMoreIcon } from "../icons/home"
 const CardBg = ({ title, desc, link, icon, homeimg }) => {
   return (
     <Link
-      data-sal="fade"
-      data-sal-duration="2000"
-      data-sal-easing="ease"
       to={link}
       style={{
         background: `var(--card-bg-background),url(${homeimg}) no-repeat center center`,

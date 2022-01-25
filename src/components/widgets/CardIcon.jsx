@@ -5,9 +5,6 @@ import { CustomerSupport, MessagingIcon, ExploreIcon } from "../icons/home"
 const CardIcon = ({ icon, title, desc, link }) => {
   return (
     <Link
-      data-sal="fade"
-      data-sal-duration="2000"
-      data-sal-easing="ease"
       to={link}
       className="border border-card-border hover:shadow-xl transition-shadow compact side bg-card-background w-full flex-grow"
     >
