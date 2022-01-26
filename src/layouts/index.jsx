@@ -31,6 +31,9 @@ const SiteLayoutStyles = styled.main`
 
 const HomeContentStyles = styled.div`
   padding: 2rem 0 2rem 2rem;
+  .border {
+    border: 2px solid var(--card-border);
+  }
   .first-card {
     background-repeat: no-repeat;
     background-position: center;

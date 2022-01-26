@@ -10,7 +10,7 @@ const CardBg = ({ title, desc, link, icon, homeimg }) => {
         background: `var(--card-bg-background),url(${homeimg}) no-repeat center center`,
         backgroundSize: "cover",
       }}
-      className="border border-card-border compact side w-full flex-grow"
+      className="compact side w-full flex-grow"
     >
       <div className="flex-row items-center space-x-4 card-body">
         <div className="flex-1">

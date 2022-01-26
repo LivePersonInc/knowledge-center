@@ -31,7 +31,7 @@ body.light {
   --card-background: #fcfcfc;
   --card-title: #0f0943;
   --card-text: #767370;
-  --card-border: rgba(0, 0, 0, 0.12);
+  --card-border: #eeeff1;
   --cta-background: #0f0943;
   --cta-text: var(--button-text);
   --sidebar-color: var(--sidebar-text);
@@ -56,6 +56,8 @@ body.light {
   --success-background: #f3f5f1;
   --success-color: #008738;
   --box-shadow: #dadbe5e0;
+  --search-input-background: #eeeff1;
+  --search-input-color: #292b33;
   --hr: hsla(0, 0%, 0, 0.2);
   --gradient: linear-gradient(90deg, #f9c1c1 0%, #f9caaf 50.01%, #f3e1af 100%);
   --card-bg-background: linear-gradient(
@@ -73,7 +75,7 @@ body.dark {
   --secondary-text: #fcfcfd;
   --link-color: #2dbae6;
   --link-color-hover: #86e1fc;
-  --body-background: #03011d;
+  --body-background: #121316;
   --body-text: #a7acbe;
   --secondary-background: #005ef4;
   --secondary-text: #fcfcfd;
@@ -84,10 +86,10 @@ body.dark {
   --table-top-background: #020627;
   --table-odd-background: #16162d;
   --table-even-background: #0a0a22;
-  --card-background: #020627;
+  --card-background: #121316;
   --card-title: #f7f7f9;
   --card-text: #a7acbe;
-  --card-border: #3f4c73;
+  --card-border: #363944;
   --cta-background: #005ef4;
   --cta-text: var(--button-text);
   --sidebar-color: #d6dae6;
@@ -112,6 +114,8 @@ body.dark {
   --success-background: #13171a;
   --success-color: #a0c125;
   --box-shadow: #000000d6;
+  --search-input-color: #81899c;
+  --search-input-background: #24262e;
   --hr: hsla(0, 0%, 100%, 0.2);
   --gradient: linear-gradient(90deg, #113546 0%, #44132e 100%);
   --card-bg-background: linear-gradient(
