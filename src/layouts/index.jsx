@@ -46,7 +46,7 @@ const HomeContentStyles = styled.div`
     margin-bottom: 0;
   }
   @media (max-width: 767px) {
-    padding: 2rem;
+    padding: 1.25rem;
   }
 `
 

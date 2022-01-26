@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { Disclosure, Transition } from "@headlessui/react"
 
-import { ArrowRight, StatusIcon } from "./icons/"
+import { ArrowRight, LinkIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
   .menu ul {
@@ -11,10 +11,12 @@ const SidebarStyles = styled.div`
   }
   .nav_item {
     color: var(--sidebar-text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     .nav-title {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
       text-transform: capitalize;
       padding-bottom: 0;
       padding-top: 0;
@@ -30,18 +32,15 @@ const SidebarStyles = styled.div`
   li.pagesfolder {
     padding-left: 1.5625rem;
   }
-  li.nav_item:nth-last-child(5) {
-    & > div > div {
-      display: none;
-    }
+  li.nav_item:nth-last-child(4) {
     padding-top: 1.5rem;
-    dd#headlessui-disclosure-panel-22 {
+    .inner-nav {
       display: none;
     }
   }
-  li.nav_item:nth-last-child(4) {
+  li.nav_item:nth-last-child(3) {
     padding-bottom: 1.5rem;
-    dd#headlessui-disclosure-panel-25 {
+    .inner-nav {
       display: none;
     }
   }
@@ -225,16 +224,30 @@ const Sidebar = ({ location }) => {
 
         <li className="nav_item">
           <a
-            href={`https://status.liveperson.com`}
-            className="flex itemdetails canOpen relative"
+            href={`https://developers.liveperson.com`}
+            className="flex justify-between itemdetails canOpen relative"
             style={{ padding: "0" }}
           >
+            <span className="nav-title text-sidebar-text">
+              Developer Center
+            </span>
             <div className="w-6 h-6 flex flex-col justify-center">
-              <StatusIcon />
+              <LinkIcon />
             </div>
+          </a>
+        </li>
+        <li className="nav_item">
+          <a
+            href={`https://status.liveperson.com`}
+            className="flex justify-between itemdetails canOpen relative"
+            style={{ padding: "0" }}
+          >
             <span className="nav-title text-sidebar-text">
               Service Status Dashboard
             </span>
+            <div className="w-6 h-6 flex flex-col justify-center">
+              <LinkIcon />
+            </div>
           </a>
         </li>
       </ul>
@@ -367,6 +380,7 @@ const SidebarItem = ({ item, level, location }) => {
                 </Disclosure.Button>
               </dt>
               <Transition
+                className="inner-nav"
                 show={open}
                 enter="transition duration-100 ease-out"
                 enterFrom="transform scale-95 opacity-0"

@@ -12,6 +12,11 @@
   letter-spacing: -0.0156rem;
   margin: 0 0 var(--space4) 0;
   color: var(--title-text);
+  @media screen and (max-width: 768px) {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+  }
 }
 @mixin h2 {
   font-family: "Space Grotesk", sans-serif;
