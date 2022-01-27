@@ -11,8 +11,8 @@ const BreadcrumbsStyles = styled.ul`
 const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
   return (
     <div className="text-sm breadcrumbs">
-      <BreadcrumbsStyles className="flex-wrap">
-        <li className="breadcrumb-item m-0 text-primary">
+      <BreadcrumbsStyles className="flex-wrap text-primary">
+        <li className="breadcrumb-item m-0">
           <Link to="/">Knowledge Center</Link>
         </li>
         <li className="breadcrumb-item m-0">
