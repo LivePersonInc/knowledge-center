@@ -33,12 +33,14 @@ const SidebarStyles = styled.div`
   }
   li.nav_item:nth-last-child(4) {
     padding-top: 1.5rem;
+    .sidebar-arrow,
     .inner-nav {
       display: none;
     }
   }
   li.nav_item:nth-last-child(3) {
     padding-bottom: 1.5rem;
+    .sidebar-arrow,
     .inner-nav {
       display: none;
     }
@@ -333,7 +335,7 @@ const SidebarItem = ({ item, level, location }) => {
                     {level === 0 ? (
                       <div
                         className={
-                          "w-6 h-6 flex flex-col justify-center " +
+                          "sidebar-arrow w-6 h-6 flex flex-col justify-center " +
                           +`${open ? "rotate-90 svg-icon-active" : ""}`
                         }
                       >
