@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
 import Slash from "./widgets/Slash"
 
 const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {

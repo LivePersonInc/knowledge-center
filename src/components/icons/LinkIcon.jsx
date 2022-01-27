@@ -9,7 +9,10 @@ const LinkIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M1 0V2H7.59L0 9.59L1.41 11L9 3.41V10H11V0H1Z" fill="#3863E5" />
+      <path
+        d="M1 0V2H7.59L0 9.59L1.41 11L9 3.41V10H11V0H1Z"
+        fill="var(--primary)"
+      />
     </svg>
   )
 }
