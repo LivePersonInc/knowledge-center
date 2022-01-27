@@ -1,3 +1,4 @@
+// header shadow
 body.light {
   header {
     box-shadow: inset 0 -0.0625rem 0 rgba(167, 172, 190, 0.3);
@@ -16,6 +17,8 @@ body.dark {
   font-size: 1.25rem;
   line-height: 1.5rem;
 }
+
+// component content widget different states
 .content-widget {
   border-left-width: 0.25rem;
   border-left-style: solid;
@@ -54,6 +57,7 @@ body.dark {
     margin-right: 0.625rem;
   }
 }
+// search widget
 header {
   .search-input {
     background: var(--search-input-background);

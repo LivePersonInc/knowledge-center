@@ -6,6 +6,7 @@ import Seo from "../components/Seo"
 import Article from "../components/Article"
 import PostSidebar from "../components/postSidebar"
 import Footer from "../components/Footer"
+import Slash from "../components/widgets/Slash"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -44,15 +45,19 @@ const BlogWhatsNewTemplate = ({ data }) => {
             marginBottom: "var(--space8)",
           }}
         >
-          <div className="text-sm breadcrumbs">
+          <nav className="breadcrumbs text-sm">
             <ul className="flex-wrap text-primary">
-              <li className="breadcrumb-item m-0">
+              <li className="breadcrumbs-item m-0">
                 <Link to="/">Knowledge Center</Link>
               </li>
-
-              <li className="breadcrumb-item no-after m-0">{pageTitle}</li>
+              <li className="m-0">
+                <Slash />
+              </li>
+              <li className="breadcrumbs-item text-body-text m-0">
+                {pageTitle}
+              </li>
             </ul>
-          </div>
+          </nav>
 
           <h1 className="h1">{pageTitle}</h1>
         </div>

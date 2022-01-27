@@ -1,26 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-
-const BreadcrumbsStyles = styled.ul`
-  li.breadcrumb-item.no-after {
-    color: var(--text-lighter);
-  }
-`
+import Slash from "./widgets/Slash"
 
 const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
   return (
-    <div className="text-sm breadcrumbs">
-      <BreadcrumbsStyles className="flex-wrap text-primary">
-        <li className="breadcrumb-item m-0">
+    <nav className="breadcrumbs text-sm">
+      <ul className="bread-crumbs flex-wrap text-primary">
+        <li className="breadcrumbs-item m-0">
           <Link to="/">Knowledge Center</Link>
         </li>
-        <li className="breadcrumb-item m-0">
+        <li className="m-0">
+          <Slash />
+        </li>
+        <li className="breadcrumbs-item m-0">
           <Link to={`/${secondCrumbLink}`}>{secondCrumbTitle}</Link>
         </li>
-        <li className="breadcrumb-item no-after m-0">{thirdCrumb}</li>
-      </BreadcrumbsStyles>
-    </div>
+        <li className="m-0">
+          <Slash />
+        </li>
+        <li className="breadcrumbs-item text-body-text m-0">{thirdCrumb}</li>
+      </ul>
+    </nav>
   )
 }
 

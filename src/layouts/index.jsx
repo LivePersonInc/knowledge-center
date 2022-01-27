@@ -17,6 +17,9 @@ const BodyStyles = styled.div`
     height: 100%;
     justify-content: flex-start;
   }
+  .breadcrumbs > ul > li + :before {
+    display: none;
+  }
 `
 
 const SiteLayoutStyles = styled.main`
