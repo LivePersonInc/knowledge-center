@@ -9,7 +9,7 @@ body {
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 0.0625rem solid #d9d4d0;
+  border: 0.0625rem solid var(--footer-text);
 }
 
 .theme-switch-wrapper input:checked + .slider:before {

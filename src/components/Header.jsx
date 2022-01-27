@@ -87,7 +87,7 @@ export default function Header() {
                   >
                     <path
                       d="M21 19.6L16.5 15C17.5 13.7 18 12.2 18 10.5C18 6.4 14.6 3 10.5 3C6.4 3 3 6.4 3 10.5C3 14.6 6.4 18 10.5 18C12.2 18 13.8 17.4 15 16.5L19.5 21L21 19.6ZM10.5 16C7.5 16 5 13.5 5 10.5C5 7.5 7.5 5 10.5 5C13.5 5 16 7.5 16 10.5C16 13.5 13.5 16 10.5 16Z"
-                      fill="#101040"
+                      fill="var(--search-input-color)"
                     />
                   </svg>
                 }
@@ -136,14 +136,14 @@ export default function Header() {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
-              ></path>{" "}
+              ></path>
             </svg>
           </label>
           <a
             href="https://liveengage.liveperson.net/"
             target="_blank"
             rel="noreferrer"
-            className="btn btn-ghost normal-case rounded-full mobile:hidden"
+            className="btn btn-ghost text-primary normal-case rounded-full mobile:hidden"
           >
             Sign in
           </a>
@@ -151,7 +151,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
             href="https://developers.liveperson.com/register.html"
-            className="btn btn-secondary normal-case rounded-full px-5 mobile:hidden"
+            className="btn btn-primary normal-case rounded-full px-8 mobile:hidden"
           >
             Free trial
           </a>
