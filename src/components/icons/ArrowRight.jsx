@@ -12,7 +12,7 @@ const ArrowRight = () => {
       <path
         opacity="0.9"
         d="M5 5.03382L0 10L-4.37114e-07 0L5 5.03382Z"
-        fill="#3863E5"
+        fill="var(--primary)"
       />
     </svg>
   )

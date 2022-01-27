@@ -14,7 +14,6 @@ const SidebarStyles = styled.div`
     margin-bottom: 1rem;
     .nav-title {
       font-style: normal;
-      font-weight: normal;
       font-size: 1.125rem;
       line-height: 1.75rem;
       text-transform: capitalize;
@@ -335,11 +334,7 @@ const SidebarItem = ({ item, level, location }) => {
                       <div
                         className={
                           "w-6 h-6 flex flex-col justify-center " +
-                          +`${
-                            open
-                              ? "rotate-90 text-sidebar-color-active svg-icon-active"
-                              : ""
-                          }`
+                          +`${open ? "rotate-90 svg-icon-active" : ""}`
                         }
                       >
                         <ArrowRight />
@@ -368,9 +363,7 @@ const SidebarItem = ({ item, level, location }) => {
                       </Link>
                     ) : (
                       <span
-                        className={`nav-title  ${
-                          open ? "font-bold text-sidebar-color-active " : " "
-                        }
+                        className={`nav-title  ${open ? "font-bold " : " "}
                         `}
                       >
                         {item.elements.title?.value}
