@@ -32,11 +32,9 @@ const Pagination = ({ prev, next }) => {
   return (
     <div
       style={{
-        borderTop: "1px solid var(--card-border)",
-        borderBottom: "1px solid var(--card-border)",
+        background: "var(--search-input-background)",
         marginTop: "2rem",
-        paddingTop: "2rem",
-        paddingBottom: "2rem",
+        padding: "1.5rem",
       }}
     >
       {needsPagination && (
