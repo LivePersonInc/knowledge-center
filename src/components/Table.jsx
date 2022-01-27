@@ -24,7 +24,7 @@ function GlobalFilter({
 
   return (
     <input
-      className="w-full px-2"
+      className="w-full px-2 border"
       value={value || ""}
       onChange={e => {
         setValue(e.target.value)
@@ -33,7 +33,6 @@ function GlobalFilter({
       placeholder={`Search by Metric or Dashboard`}
       style={{
         fontSize: "1.1rem",
-        border: "0",
       }}
     />
   )

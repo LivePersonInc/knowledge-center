@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   useAsyncDebounce,
   useFilters,
@@ -7,14 +7,8 @@ import {
 } from "react-table"
 import json from "../assets/capabilities.json"
 import { matchSorter } from "match-sorter"
-import toTitleCase from "../utils/toTitleCase"
-
 // Define a default UI for filtering
-function GlobalFilter({
-  preGlobalFilteredRows,
-  globalFilter,
-  setGlobalFilter,
-}) {
+function GlobalFilter({ globalFilter, setGlobalFilter }) {
   const [value, setValue] = React.useState(globalFilter)
   const onChange = useAsyncDebounce(value => {
     setGlobalFilter(value || undefined)
@@ -22,7 +16,7 @@ function GlobalFilter({
 
   return (
     <input
-      className="w-full px-2"
+      className="w-full px-2 border"
       value={value || ""}
       onChange={e => {
         setValue(e.target.value)
@@ -31,7 +25,6 @@ function GlobalFilter({
       placeholder={`Search by capability name`}
       style={{
         fontSize: "1.1rem",
-        border: "0",
       }}
     />
   )
@@ -46,51 +39,109 @@ fuzzyTextFilterFn.autoRemove = val => !val
  * We're splitting comma-separated values into individual array items so they can be indexed
  *  */
 const preProcessJSON = json => {
-  return json.map(x =>
-    Object.fromEntries(
-      Object.entries(x).map(([key, value]) => {
-        return [key, value ? value : ""]
-        // return [key, value ? toTitleCase(value).trim().split(",") : ""]
+  const arr = []
+  json.map(x => {
+    let add = true
+    if (add) {
+      arr.push({
+        appleBusinessChat: "AA",
+        connectorAPI: "BB",
+        facebook: "CC",
+        featureName: x.categoryName,
+        googleBusinessMessaging: "DD",
+        googleRCS: "EE",
+        kakaoTalk: "FF",
+        line: "GG",
+        messagingWindowAPI: "HH",
+        mobileAppMessaging: "II",
+        sms: "JJ",
+        twitter: "KK",
+        viber: "LL",
+        weChat: "MM",
+        webMessaging: "NN",
+        whatsapp: "OO",
+        search: true,
       })
-    )
-  )
+    }
+    x.features.map(y => {
+      arr.push(Object.assign({}, ...y.channels, { featureName: y.featureName }))
+    })
+    add = false
+  })
+  return arr
 }
 
 const TableMc = () => {
-  const data = React.useMemo(() => preProcessJSON(json), [])
+  const [data, setData] = useState(preProcessJSON(json))
 
   const columns = React.useMemo(
     () => [
       {
         Header: "",
-        accessor: "categoryName", // accessor is the "key" in the data
+        accessor: "featureName", // accessor is the "key" in the data
       },
       {
-        Header: "Analysis Type",
-        accessor: "ANALYSIS_TYPE",
+        Header: "Mobile App Messaging",
+        accessor: "mobileAppMessaging",
         filter: "includes",
       },
       {
-        Header: "Channel",
-        accessor: "CHANNEL",
+        Header: "Web Messaging",
+        accessor: "webMessaging",
         filter: "includes",
       },
       {
-        Header: "Description",
-        accessor: "DESCRIPTION",
+        Header: "Apple Business chat",
+        accessor: "appleBusinessChat",
       },
       {
-        Header: "Dashboard",
-        accessor: "DASHBOARD",
+        Header: "SMS",
+        accessor: "sms",
         filter: "includes",
       },
       {
-        Header: "Filtered By",
-        accessor: "FILTERED_BY",
+        Header: "Facebook",
+        accessor: "facebook",
       },
       {
-        Header: "Formula (Optional)",
-        accessor: "FORMULA",
+        Header: "Twitter",
+        accessor: "twitter",
+      },
+      {
+        Header: "WhatsApp",
+        accessor: "whatsapp",
+      },
+      {
+        Header: "Google RCS",
+        accessor: "googleRCS",
+      },
+      {
+        Header: "LINE",
+        accessor: "line",
+      },
+      {
+        Header: "Messaging Window API",
+        accessor: "messagingWindowAPI",
+      },
+      {
+        Header: "Connector API",
+        accessor: "connectorAPI",
+      },
+      {
+        Header: "WeChat",
+        accessor: "weChat",
+      },
+      {
+        Header: "Viber",
+        accessor: "viber",
+      },
+      {
+        Header: "Google Business Messaging",
+        accessor: "googleBusinessMessaging",
+      },
+      {
+        Header: "KakaoTalk",
+        accessor: "kakaoTalk",
       },
     ],
     []
@@ -152,19 +203,6 @@ const TableMc = () => {
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
         />
-        {headerGroups.map(headerGroup => {
-          return headerGroup.headers.map(column => {
-            if (column.filter) {
-              return (
-                <div className="w-full px-2">
-                  {column.render("Header")}
-                  <div>{column.canFilter ? column.render("Filter") : null}</div>
-                </div>
-              )
-            }
-            return null
-          })
-        })}
       </div>
       <table {...getTableProps()} className="tablelp w-full table-compact">
         <thead className="sticky top-0 bg-white py-5">
@@ -174,7 +212,11 @@ const TableMc = () => {
               className="tr flex w-full"
             >
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()} className="th flex-1">
+                <th
+                  {...column.getHeaderProps()}
+                  className="th flex-1"
+                  style={{ background: "#090c43", color: "white" }}
+                >
                   {column.render("Header")}
                 </th>
               ))}
@@ -184,12 +226,39 @@ const TableMc = () => {
         <tbody {...getTableBodyProps()}>
           {rows.map(row => {
             prepareRow(row)
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                })}
-              </tr>
+            return rows.length === data.length ? (
+              row.original.search ? (
+                <tr {...row.getRowProps()} className="categoryrow">
+                  {row.cells.map(cell => {
+                    return (
+                      <td
+                        {...cell.getCellProps()}
+                        style={{ background: "#162036", color: "white" }}
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    )
+                  })}
+                </tr>
+              ) : (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map(cell => {
+                    return (
+                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    )
+                  })}
+                </tr>
+              )
+            ) : (
+              !row.original.search && (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map(cell => {
+                    return (
+                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    )
+                  })}
+                </tr>
+              )
             )
           })}
         </tbody>
