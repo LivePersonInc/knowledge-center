@@ -41,12 +41,12 @@ const BlogWhatsNewTemplate = ({ data }) => {
         <div
           className="documenttitlecontainer"
           style={{
-            marginBottom: "1.5rem",
+            marginBottom: "var(--space8)",
           }}
         >
           <div className="text-sm breadcrumbs">
             <ul className="flex-wrap">
-              <li className="breadcrumb-item m-0">
+              <li className="breadcrumb-item m-0 text-primary">
                 <Link to="/">Knowledge Center</Link>
               </li>
 

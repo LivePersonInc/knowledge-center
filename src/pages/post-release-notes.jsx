@@ -54,7 +54,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
         <div
           className="documenttitlecontainer"
           style={{
-            marginBottom: "1.5rem",
+            marginBottom: "var(--space8)",
           }}
         >
           <Breadcrumbs

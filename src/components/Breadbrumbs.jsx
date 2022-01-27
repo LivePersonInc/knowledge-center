@@ -12,7 +12,7 @@ const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
   return (
     <div className="text-sm breadcrumbs">
       <BreadcrumbsStyles className="flex-wrap">
-        <li className="breadcrumb-item m-0">
+        <li className="breadcrumb-item m-0 text-primary">
           <Link to="/">Knowledge Center</Link>
         </li>
         <li className="breadcrumb-item m-0">

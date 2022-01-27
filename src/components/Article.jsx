@@ -13,10 +13,7 @@ class Article extends React.Component {
     const itemId = _.get(this.props, "data.system.id")
 
     return (
-      <div
-        className="NavLinks border-b py-6 border-card-border"
-        data-kontent-item-id={itemId}
-      >
+      <div className="NavLinks pb-6" data-kontent-item-id={itemId}>
         <h6 className="mb-0 font-bold" data-kontent-element-codename="title">
           <Link
             style={{ textDecoration: "none" }}
