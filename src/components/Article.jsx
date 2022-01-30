@@ -14,7 +14,7 @@ class Article extends React.Component {
 
     return (
       <div className="NavLinks pb-6" data-kontent-item-id={itemId}>
-        <h6 className="mb-0 font-bold" data-kontent-element-codename="title">
+        <h3 className="mb-0 font-bold" data-kontent-element-codename="title">
           <Link
             style={{ textDecoration: "none" }}
             to={`/${slug || "#"}`}
@@ -22,7 +22,7 @@ class Article extends React.Component {
           >
             {title}
           </Link>
-        </h6>
+        </h3>
         <time
           className="article__meta-time flex"
           dateTime={moment(date).format("MMMM D, YYYY HH:mm")}

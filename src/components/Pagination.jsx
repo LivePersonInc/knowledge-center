@@ -17,8 +17,6 @@ const Flex = styled.div`
   display: flex;
   gap: 0.5rem;
   h4 {
-    font-size: 1rem;
-    line-height: 1.5rem;
     font-weight: bold;
     color: var(--link-color);
     margin: 0;
