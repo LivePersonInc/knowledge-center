@@ -1,15 +1,3 @@
-// header shadow
-body.light {
-  header {
-    box-shadow: inset 0 -0.0625rem 0 rgba(167, 172, 190, 0.3);
-  }
-}
-body.dark {
-  header {
-    box-shadow: inset 0 -0.0625rem 0 rgb(167 172 190 / 30%);
-  }
-}
-
 .lpbtn {
   padding: 0.75rem 1.875rem;
   border-radius: 6.25rem;
@@ -59,6 +47,7 @@ body.dark {
 }
 // search widget
 header {
+  box-shadow: var(--shadow-elevation-low);
   .search-input {
     background: var(--search-input-background);
     color: var(--search-input-color);
