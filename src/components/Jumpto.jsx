@@ -25,12 +25,9 @@ const JumpTo = ({ title, jumpToItems }) => {
   return (
     <div className="inner-menu full-width mobile:hidden">
       <div className="anchorlist shadow-none">
-        <ul className="menu ml-8" style={jumptoList}>
-          {/* <li>
-            <span className="text-button-text text-xs">On this page:</span>
-          </li> */}
+        <ul className="menu ml-8 text-link-color" style={jumptoList}>
           <li
-            className="anchoritem hover-bordered mb-0"
+            className="anchoritem hover-bordered mb-0 focus:text-body-text"
             id="jumptotop"
             tabIndex="-1"
             onClick={() => window[`scrollTo`]({ top: 0, behavior: `smooth` })}
@@ -38,7 +35,10 @@ const JumpTo = ({ title, jumpToItems }) => {
           >
             <Link
               style={{
-                borderLeft: isClicked === false ? "4px solid" : null,
+                borderLeft:
+                  isClicked === false
+                    ? "2px solid var(--jumpto-border-color)"
+                    : null,
               }}
             >
               {title}
@@ -48,7 +48,7 @@ const JumpTo = ({ title, jumpToItems }) => {
             return (
               <li
                 key={anchor.textContent}
-                className="anchoritem hover-bordered mb-0"
+                className="anchoritem hover-bordered mb-0 focus:text-body-text"
                 tabIndex="-1"
                 onClick={() => scrollTo(anchor)}
                 role="presentation"

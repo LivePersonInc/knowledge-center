@@ -25,6 +25,7 @@ body {
     max-height: inherit !important;
   }
   .drawer {
+    overflow: unset;
     overflow-y: visible;
   }
   .drawer-end {
@@ -33,8 +34,14 @@ body {
   .drawer-toggle ~ .drawer-content {
     overflow-y: visible;
   }
-  .menu li.hover-bordered:focus a,
+  .menu li.hover-bordered a {
+    border-left-width: 2px;
+  }
+
   .menu li.hover-bordered a:hover {
-    border-color: currentColor;
+    outline: 1px;
+  }
+  .menu li.hover-bordered:focus a {
+    border-color: var(--jumpto-border-color);
   }
 }

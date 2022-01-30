@@ -27,8 +27,8 @@ body.dark {
     color: var(--content-widget-text);
   }
   &.missing-something {
-    border-color: var(--missing-something-color);
-    background-color: var(--missing-something-background);
+    border-color: var(--body-color);
+    background-color: var(--body-background);
   }
   &.notice {
     border-color: var(--notice-color);

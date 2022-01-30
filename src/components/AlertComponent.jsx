@@ -22,18 +22,12 @@ const AlertComponent = () => {
 
   return (
     <div
-      style={{
-        borderBottom: "1px solid var(--card-border)",
-        marginTop: "2rem",
-        paddingTop: "2rem",
-        paddingBottom: "2rem",
-      }}
       data-sal="fade"
       data-sal-duration="2000"
       data-sal-easing="ease"
-      className="mt-6 pt-6 border-t border-card-border"
+      className="mt-6 pt-6"
     >
-      <h4 className="h2" style={{ marginTop: 0 }}>
+      <h4 className="h4" style={{ marginTop: 0 }}>
         {AlertComponentData.kontentItemPageFooter.elements.title.value}
       </h4>
       <div className="content-widget missing-something p-4">

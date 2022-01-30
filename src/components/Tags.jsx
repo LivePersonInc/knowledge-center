@@ -10,7 +10,7 @@ const Tags = ({ tags }) => {
       {tags.map(tag => (
         <li
           key={tag}
-          className="tag badge bg-tags-background text-tags-color border-transparent mr-2 py-3 px-4"
+          className="tag text-xs badge bg-tags-background text-tags-color border-transparent mr-2 py-3 px-4"
         >
           {tag}
         </li>
