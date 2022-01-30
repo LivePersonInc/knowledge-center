@@ -20,7 +20,6 @@
 }
 @mixin h2 {
   font-family: "Space Grotesk", sans-serif;
-  margin: 1.5rem 0 1rem 0;
   color: var(--title-text);
   font-style: normal;
   font-weight: bold;
@@ -34,7 +33,6 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 32px;
-  margin: 1.5rem 0 1rem 0;
 }
 @mixin h4 {
   font-family: "Space Grotesk", sans-serif;

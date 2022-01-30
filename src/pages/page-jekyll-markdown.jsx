@@ -23,6 +23,15 @@ const InnerSiteLayoutStyles = styled.main`
   .breadcrumbs li.breadcrumb-item:nth-child(2) {
     pointer-events: none;
   }
+  h2 {
+    margin: 3rem 0 1rem 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h3 {
+    margin: 1.5rem 0 1rem 0;
+  }
 `
 
 const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
