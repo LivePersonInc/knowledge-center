@@ -26,7 +26,7 @@ const HomePage = ({ data }) => {
           <RichTextElement value={bodyTextHomepage} />
         </p>
       </div>
-      <div className="flex items-start mobile:flex-col justify-between mobile:items-center mt-8 gap-4">
+      <div className="flex items-start mobile:flex-col justify-between mobile:items-center mt-8 gap-8">
         <div className="flex flex-col justify-between gap-8">
           <CardBg
             // Getting Started

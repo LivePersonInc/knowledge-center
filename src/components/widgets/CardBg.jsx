@@ -7,10 +7,9 @@ const CardBg = ({ title, desc, link, icon, homeimg }) => {
     <Link
       to={link}
       style={{
-        background: `var(--card-bg-background),url(${homeimg}) no-repeat center center`,
-        backgroundSize: "cover",
+        background: `var(--card-bg-background),url(${homeimg})`,
       }}
-      className="compact side w-full flex-grow"
+      className="border border-card-border compact side w-full flex-grow bg-no-repeat bg-cover"
     >
       <div className="flex-row items-center space-x-4 card-body">
         <div className="flex-1">
