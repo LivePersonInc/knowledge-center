@@ -24,7 +24,7 @@ const InnerSiteLayoutStyles = styled.main`
     pointer-events: none;
   }
   h2 {
-    margin: 3rem 0 1rem 0;
+    margin: 3rem 0 1.5rem 0;
     &:first-child {
       margin-top: 0;
     }

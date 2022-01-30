@@ -21,7 +21,7 @@ class HomeArticle extends React.Component {
 
     return (
       <HomeArticleStyles
-        className="NavLinks py-6"
+        className="NavLinks pt-6"
         data-kontent-item-id={itemId}
       >
         <h6
