@@ -39,6 +39,7 @@ const JumpTo = ({ title, jumpToItems }) => {
                   isClicked === false
                     ? "2px solid var(--jumpto-border-color)"
                     : null,
+                color: isClicked === false ? "var(--body-text)" : null,
               }}
             >
               {title}

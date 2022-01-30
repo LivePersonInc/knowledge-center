@@ -3,7 +3,7 @@ import React from "react"
 const QuestionMarkIcon = () => {
   return (
     <svg
-      className="w-6 h-6 float-left mr-1"
+      className="w-6 h-6 float-left mr-2"
       width="24"
       height="24"
       viewBox="0 0 24 24"
