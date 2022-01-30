@@ -257,9 +257,12 @@ const Table = () => {
       <table {...getTableProps()} className="tablelp w-full table-compact">
         <thead className="sticky top-0 bg-white py-5">
           {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()} className="tr">
+            <tr
+              {...headerGroup.getHeaderGroupProps()}
+              className="tr flex flex-nowrap"
+            >
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()} className="th">
+                <th {...column.getHeaderProps()} className="th flex-1">
                   {column.render("Header")}
                 </th>
               ))}
