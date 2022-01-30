@@ -6,6 +6,7 @@ import CardIcon from "../components/widgets/CardIcon"
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import Footer from "../components/Footer"
 import CardLatestPosts from "../components/widgets/CardLatestPosts"
+import Button from "../components/widgets/Button"
 
 const HomePage = ({ data }) => {
   //console.log(data)
@@ -104,9 +105,7 @@ const HomePage = ({ data }) => {
               target="_blank"
               href="https://developers.liveperson.com/register.html"
             >
-              <button className="btn btn-primary rounded-full hover:shadow-xl transition-shadow">
-                Start Free Trial
-              </button>
+              <Button btnText="Start Free Trial" />
             </a>
           </div>
         </div>
