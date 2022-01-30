@@ -55,7 +55,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
                 <Slash />
               </li>
               <li className="breadcrumbs-item text-body-text m-0">
-                News & Releases
+                Release notes
               </li>
             </ul>
           </div>

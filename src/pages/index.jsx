@@ -71,7 +71,7 @@ const HomePage = ({ data }) => {
             icon="ReleaseNotesIcon"
             title={kontentItemHomepage?.elements?.box_title_4?.value}
             alltype={allReleaseNotesPage}
-            link="/news-releases"
+            link="/release-notes"
           />
         </div>
       </div>

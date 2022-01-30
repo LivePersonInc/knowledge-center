@@ -29,6 +29,7 @@ class Article extends React.Component {
           data-kontent-element-codename="date"
         >
           {moment(date).format("MMMM D YY, HH:mmA")}
+          {/* {moment(date).format("MMMM YY")} */}
         </time>
 
         <Link

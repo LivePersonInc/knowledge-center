@@ -161,6 +161,9 @@ header {
   // make subtitle data have the same font size
   #subtitle {
     .post-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       & > * {
         margin: 0.5rem 0 0 0;
         font-size: 1rem;
