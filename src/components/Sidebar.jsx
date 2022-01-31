@@ -206,8 +206,8 @@ const Sidebar = ({ location }) => {
       style={{
         maxHeight: "100vh",
         position: "sticky",
-        top: "80px",
-        paddingBottom: "80px",
+        top: "6.25rem",
+        paddingBottom: "6.25rem",
       }}
     >
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
