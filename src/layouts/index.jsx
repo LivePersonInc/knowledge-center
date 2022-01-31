@@ -56,9 +56,17 @@ const ContentStyles = styled.div`
     padding-right: 0;
   }
   @media (max-width: 767px) {
-    padding: 1rem 0 0 0;
-    & > div {
-      padding: 0 25px;
+    padding: 1.5rem 0 0 0;
+  }
+  .breadcrumbs {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    .bread-crumbs {
+      .breadcrumbs-item {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
     }
   }
 `

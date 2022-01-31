@@ -4,7 +4,7 @@ import Slash from "./widgets/Slash"
 
 const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
   return (
-    <nav className="breadcrumbs text-sm">
+    <nav className="breadcrumbs">
       <ul className="bread-crumbs flex-wrap text-primary">
         <li className="breadcrumbs-item m-0">
           <Link to="/">Knowledge Center</Link>
