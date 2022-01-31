@@ -1,8 +1,8 @@
 import React from "react"
 
-const HeaderMobile = ({ btnText }) => {
+const HeaderMobile = () => {
   return (
-    <div>
+    <div className="lg:hidden">
       <label for="my-modal-2" className="modal-button">
         <svg
           width="18"

@@ -252,6 +252,32 @@ const Sidebar = ({ location }) => {
             </div>
           </a>
         </li>
+
+        {/* Mobile buttons */}
+        <li className="md:hidden mobile:visible text-center">
+          <a
+            href={`https://liveengage.liveperson.net/`}
+            className="justify-center"
+            style={{ padding: "0" }}
+          >
+            <span className="nav-title text-sidebar-text">Sign In</span>
+          </a>
+        </li>
+
+        <li className="md:hidden mobile:visible justify-center text-center">
+          <a
+            href={`https://developers.liveperson.com/register.html`}
+            className="btn btn-primary hover:brn-primary-hover normal-case rounded-full px-8 "
+            style={{
+              padding: "0",
+              color: "white",
+              width: "140px",
+              margin: "0 auto",
+            }}
+          >
+            <span className="nav-title">Free trial</span>
+          </a>
+        </li>
       </ul>
     </SidebarStyles>
   )

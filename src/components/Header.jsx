@@ -146,9 +146,9 @@ export default function Header() {
             </InstantSearch>
           </div>
         </div>
-        <div className="gap-8 lg:hidden relative">
+        <div className="gap-8 relative">
           <HeaderMobile />
-          <label htmlFor="my-drawer-2" className="drawer-button">
+          <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
