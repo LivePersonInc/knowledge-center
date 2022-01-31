@@ -232,7 +232,7 @@ const Sidebar = ({ location }) => {
             <span className="nav-title text-sidebar-text">
               Developer Center
             </span>
-            <div className="w-6 h-6 flex flex-col justify-center">
+            <div className="w-4 h-4 flex flex-col justify-center">
               <LinkIcon />
             </div>
           </a>
@@ -246,7 +246,7 @@ const Sidebar = ({ location }) => {
             <span className="nav-title text-sidebar-text">
               Service Status Dashboard
             </span>
-            <div className="w-6 h-6 flex flex-col justify-center">
+            <div className="w-4 h-4 flex flex-col justify-center">
               <LinkIcon />
             </div>
           </a>
@@ -331,12 +331,12 @@ const SidebarItem = ({ item, level, location }) => {
               />
               <dt className="flex items-center">
                 <Disclosure.Button>
-                  <div className="flex itemdetails canOpen relative">
+                  <div className="flex itemdetails canOpen relative items-center gap-2">
                     {level === 0 ? (
                       <div
                         className={
-                          "sidebar-arrow w-6 h-6 flex flex-col justify-center " +
-                          +`${open ? "rotate-90 svg-icon-active" : ""}`
+                          "sidebar-arrow w-4 h-4 flex items-center flex-col justify-center transform transition " +
+                          `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >
                         <ArrowRight />
@@ -344,7 +344,7 @@ const SidebarItem = ({ item, level, location }) => {
                     ) : level === 1 ? (
                       <div
                         className={
-                          "w-6 h-6 flex items-center flex-col justify-center transform transition " +
+                          "w-4 h-4 flex items-center flex-col justify-center transform transition " +
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >
