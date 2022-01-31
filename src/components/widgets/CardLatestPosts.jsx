@@ -12,7 +12,7 @@ const CardLatestPosts = ({ title, icon, link, alltype }) => {
     )
   })
   return (
-    <div className="flex border border-card-border hover:shadow-xl transition-shadow compact side bg-card-background w-full flex-grow">
+    <div className="flex border border-card-border transition-shadow compact side bg-card-background w-full flex-grow">
       <div className="flex-col  space-x-4 card-body">
         <div className="flex flex-col flex-1">
           <div className="lp mb-4">

@@ -66,7 +66,8 @@ body.light {
     rgba(41, 43, 51, 0.35) 0%,
     rgba(41, 43, 51, 0.7) 100%
   );
-  --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05),
+    inset 0px -1px 0px rgba(167, 172, 190, 0.3);
 }
 
 body.dark {
@@ -126,5 +127,5 @@ body.dark {
     rgba(196, 199, 212, 0.5) 0%,
     #c4c7d4 100%
   );
-  --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.15), inset 0px -1px 0px #1f1f1f;
 }
