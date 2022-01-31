@@ -33,7 +33,7 @@ const SiteLayoutStyles = styled.main`
 `
 
 const HomeContentStyles = styled.div`
-  padding: var(--space8) 0;
+  padding: var(--space8);
   .border {
     border: 2px solid var(--card-border);
   }
@@ -50,9 +50,6 @@ const HomeContentStyles = styled.div`
   }
   @media (min-width: 1280px) {
     padding: var(--space8) 0 var(--space8) var(--space8);
-  }
-  @media (max-width: 767px) {
-    padding: 1.25rem;
   }
 `
 
