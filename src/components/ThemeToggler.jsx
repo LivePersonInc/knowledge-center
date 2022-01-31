@@ -16,6 +16,8 @@ export default function ThemeToggle() {
                 checked={theme === "dark"}
               />
               <div className="slider round"></div>
+              <span className="toggle-title-light">Light theme</span>
+              <span className="toggle-title-dark">Dark theme</span>
             </label>
           </div>
         )

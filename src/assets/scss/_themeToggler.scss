@@ -82,10 +82,9 @@ body {
 .theme-switch-wrapper .slider.round:before {
   border-radius: 50%;
 }
-.theme-switch-wrapper input:checked + .slider:after {
-  content: "text";
-  right: -94%;
-  position: absolute;
+
+.toggle-title-dark,
+.toggle-title-light {
   font-family: Space Grotesk;
   font-style: normal;
   font-weight: bold;
@@ -94,5 +93,27 @@ body {
   display: flex;
   align-items: center;
   color: #5a5f72;
+}
+// .theme-switch-wrapper input + .slider:after {
+//   right: -94%;
+//   position: absolute;
+//   font-family: Space Grotesk;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 16px;
+//   line-height: 20px;
+//   display: flex;
+//   align-items: center;
+//   color: #5a5f72;
+// }
+// .theme-switch-wrapper input:checked + .slider:after {
+//   content: "Dark theme";
+// }
+// .theme-switch-wrapper input + .slider:after {
+//   content: "Light theme";
+// }
+
+.theme-switch-wrapper input:checked + .toggle-title-light {
+  display: none;
 }
 /* toggle end */

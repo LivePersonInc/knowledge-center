@@ -9,7 +9,7 @@ const SidebarStyles = styled.div`
   @media (min-width: 1024px) {
     min-height: 100vh;
     position: sticky;
-    top: 6.25rem;
+    top: 6rem;
     padding-bottom: 6.875rem;
   }
   .menu ul {
@@ -221,7 +221,7 @@ const Sidebar = ({ location }) => {
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
-        className="menu overflow-y-auto w-80 ipad:bg-body-background h-full ipad:p-[20px]"
+        className="menu overflow-y-auto w-80 py-8 ipad:bg-body-background h-full ipad:p-[20px]"
         data-testid="sidebar"
       >
         <SidebarItems
