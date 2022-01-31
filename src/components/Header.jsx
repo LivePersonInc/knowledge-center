@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { Link } from "gatsby"
-import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -17,6 +16,19 @@ export default function Header() {
 
   const searchClient = algoliasearch(appId, apiKey)
   const [redirectStatus, setRedirectStatus] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setRedirectStatus(true)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [ref])
 
   const IndexResults = connectStateResults(
     ({ searchState, searchResults, children }) => {
@@ -100,27 +112,28 @@ export default function Header() {
                 placeholder="SEARCH"
                 className="search-input w-full rounded-full"
               />
-
-              <Index indexName="helpcenter">
-                <IndexResults>
-                  <div
-                    className="right-panel shadow"
-                    style={{
-                      background: "var(--body-background)",
-                      color: "var(--body-text)",
-                      borderRadius: 5,
-                      zIndex: 9999,
-                      position: "absolute",
-                      top: "3rem",
-                      width: "100%",
-                      maxHeight: "75vh",
-                      overflowY: "auto",
-                    }}
-                  >
-                    <CustomHits onClose={() => setRedirectStatus(true)} />
-                  </div>
-                </IndexResults>
-              </Index>
+              <div ref={ref}>
+                <Index indexName="helpcenter">
+                  <IndexResults>
+                    <div
+                      className="right-panel shadow"
+                      style={{
+                        background: "var(--body-background)",
+                        color: "var(--body-text)",
+                        borderRadius: 5,
+                        zIndex: 9999,
+                        position: "absolute",
+                        top: "3rem",
+                        width: "100%",
+                        maxHeight: "75vh",
+                        overflowY: "auto",
+                      }}
+                    >
+                      <CustomHits onClose={() => setRedirectStatus(true)} />
+                    </div>
+                  </IndexResults>
+                </Index>
+              </div>
             </InstantSearch>
           </div>
         </div>
@@ -179,7 +192,6 @@ const Hit = props => {
                       <Highlight attribute="title" hit={pP} />
                     </p>
                   </div>
-                  {/* <RichTextElement value={pP.subtitle} /> */}
                   <Highlight attribute="subtitle" hit={pP} />
                 </Link>
               </div>

@@ -25,11 +25,11 @@ const SidebarStyles = styled.div`
     }
   }
   .subcategoryfolder {
-    padding-left: 1.5625rem;
+    padding-left: 24px;
   }
   li.page,
   li.pagesfolder {
-    padding-left: 1.5625rem;
+    padding-left: 24px;
   }
   li.nav_item:nth-last-child(4) {
     padding-top: 1.5rem;
