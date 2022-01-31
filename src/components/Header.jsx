@@ -67,7 +67,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="px-2 mx-2 navbar-start md:hidden mobile:visible">
+        <div className="navbar-start md:hidden mobile:visible">
           <Link to="/">
             <svg
               width="161"
