@@ -207,7 +207,7 @@ const Sidebar = ({ location }) => {
   `)
 
   return (
-    <SidebarStyles className="drawer-side" style={{ maxHeight: "100%" }}>
+    <SidebarStyles className="drawer-side">
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
