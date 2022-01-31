@@ -19,7 +19,7 @@ export default function Footer() {
         data-sal="fade"
         data-sal-duration="2000"
         data-sal-easing="ease"
-        className="py-8 footer border-card-border flex flex-col gap-4"
+        className="pb-8 footer border-card-border flex flex-col gap-2"
       >
         <div className="flex items-center mobile:flex-col">
           <p className="text-lm">
@@ -51,7 +51,7 @@ export default function Footer() {
             </a>
           </p>
         </div>
-        <div>
+        <div className="gap-4">
           <div className="flex justify-between gap-2">
             <div className="social-icons grid grid-flow-col gap-2">
               {/* twitter */}

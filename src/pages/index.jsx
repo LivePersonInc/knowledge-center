@@ -91,7 +91,7 @@ const HomePage = ({ data }) => {
             >
               {kontentItemHomepage?.elements?.cta_title?.value}
             </h3>
-            <p className="text-button-text text-opacity-40 ">
+            <p className="text-button-text text-opacity-40">
               {kontentItemHomepage?.elements?.cta_perk_1?.value}
             </p>
           </div>

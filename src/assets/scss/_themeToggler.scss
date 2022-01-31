@@ -6,15 +6,16 @@ body {
 
 .theme-switch-wrapper .slider.round:before {
   background-image: url(../images/sun.svg);
-  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 0.0625rem solid var(--footer-text);
+  border: 1px solid var(--footer-text);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
 }
 
 .theme-switch-wrapper input:checked + .slider:before {
   background-image: url(../images/moon.svg);
-  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center center;
   border: 0.0625rem solid rgba(255, 255, 255, 0.15);
@@ -30,9 +31,9 @@ body {
 }
 .theme-switch-wrapper .theme-switch {
   display: inline-block;
-  height: var(--space8);
+  height: 1.5rem;
   position: relative;
-  width: 4rem;
+  width: 3rem;
   text-align: right;
   margin-bottom: 0;
 }
@@ -40,8 +41,8 @@ body {
   display: none;
 }
 .theme-switch-wrapper .slider {
+  border: 1px solid #989eae;
   background-color: var(--body-background);
-  border: 0.0625rem solid #d9d4d0;
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -51,13 +52,13 @@ body {
   transition: 0.4s;
 }
 .theme-switch-wrapper .slider:before {
-  bottom: 0.1875rem;
+  bottom: 2px;
   content: "";
-  height: 1.5rem;
+  height: 18px;
   left: 0.1875rem;
   position: absolute;
   transition: 0.4s;
-  width: 1.5rem;
+  width: 18px;
   background: var(--card-background);
   border: 0.0625rem solid rgba(255, 255, 255, 0.15);
   box-sizing: border-box;
@@ -73,12 +74,25 @@ body {
     drop-shadow(0 0.125rem 0.1875rem rgba(0, 0, 0, 0.12));
 }
 .theme-switch-wrapper input:checked + .slider:before {
-  transform: translateX(2.125rem);
+  transform: translateX(23px);
 }
 .theme-switch-wrapper .slider.round {
   border-radius: 1rem;
 }
 .theme-switch-wrapper .slider.round:before {
   border-radius: 50%;
+}
+.theme-switch-wrapper input:checked + .slider:after {
+  content: "text";
+  right: -94%;
+  position: absolute;
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #5a5f72;
 }
 /* toggle end */

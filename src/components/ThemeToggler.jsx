@@ -7,7 +7,7 @@ export default function ThemeToggle() {
       {({ theme, toggleTheme }) => {
         if (theme == null) return null
         return (
-          <div className="theme-switch-wrapper mt-4">
+          <div className="theme-switch-wrapper">
             <label className="theme-switch">
               <input
                 className="toggle toggle-accent"
