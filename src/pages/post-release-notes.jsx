@@ -65,7 +65,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           <h1 className="h1">{pageTitle}</h1>
         </div>
         <InnerSiteLayoutStyles>
-          <div className="maincontent mb-10">
+          <div className="maincontent mb-8">
             <LpRichTextElement
               body_content={pageSubTitle}
               bodyfield={releaseNotesPage?.elements?.subtitle}
