@@ -62,7 +62,7 @@ const SearchMobile = () => {
         <Index indexName="helpcenter">
           <IndexResults>
             <div
-              className="right-panel shadow"
+              className="right-panel"
               style={{
                 background: "var(--body-background)",
                 color: "var(--body-text)",
@@ -73,6 +73,7 @@ const SearchMobile = () => {
                 width: "100%",
                 maxHeight: "90vh",
                 overflowY: "auto",
+                boxShadow: "inset 0px -1px 1px var(--search-input-background)",
               }}
             >
               <CustomHits onClose={() => setRedirectStatus(true)} />
