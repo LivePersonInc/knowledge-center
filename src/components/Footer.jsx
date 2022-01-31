@@ -7,6 +7,9 @@ const FooterStyles = styled.footer`
   @media (max-width: 767px) {
     padding: 25px;
   }
+  svg {
+    max-width: 18px;
+  }
 `
 
 export default function Footer() {
