@@ -15,6 +15,7 @@
   --space175: calc(17.5 * var(--space-unit)); // 70px
   --space25: calc(25 * var(--space-unit)); // 100px
   --navbar-padding: 24px 0;
+
   --darker-gray: #463e36;
   --dark-gray: #675d55;
   --gray: #847970;
@@ -47,6 +48,7 @@
   --cta-background-image: url("../images/home/free-trial-banner.jpg") center
     center / cover no-repeat;
   --rounded-btn: 100px;
+  --tw-shadow-color: var(--search-input-background);
 }
 
 .divider {

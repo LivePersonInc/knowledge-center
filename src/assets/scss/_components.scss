@@ -84,7 +84,7 @@ header {
   .hit-block {
     z-index: 1;
     padding: 1rem;
-    box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px -1px 1px var(--search-input-background);
     // :hover {
     //   background-color: #c8d2f3;
     // }
