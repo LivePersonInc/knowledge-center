@@ -47,7 +47,7 @@
 }
 // search widget
 header {
-  box-shadow: var(--shadow-elevation-low);
+  box-shadow: var(--shadow-lp);
   .search-input {
     background: var(--search-input-background);
     color: var(--search-input-color);
@@ -77,6 +77,19 @@ header {
     & > *:not(p) {
       display: none;
     }
+  }
+  .hit-block {
+    z-index: 1;
+    padding: 1rem;
+    box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.1);
+    // :hover {
+    //   background-color: #c8d2f3;
+    // }
+  }
+  .ais-Highlight-highlighted {
+    background-color: #b4c3f5;
+    font-weight: bolder;
+    color: #5879da;
   }
 }
 .maincontent {

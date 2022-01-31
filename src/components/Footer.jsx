@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
         <div>
           <div className="flex justify-between gap-2">
-            <div className="social-icons grid grid-flow-col gap-4">
+            <div className="social-icons grid grid-flow-col gap-2">
               {/* twitter */}
               <a
                 target="_blank"

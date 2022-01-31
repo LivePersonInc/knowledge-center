@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import { RichTextElement } from "@kentico/gatsby-kontent-components"
+// import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -8,23 +8,27 @@ import {
   connectStateResults,
   Index,
   SearchBox,
+  Highlight,
 } from "react-instantsearch-dom"
 
-let appId = process.env.GATSBY_ALGOLIA_APP_ID
-let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
-//console.log(appId, apiKey)
-const searchClient = algoliasearch(appId, apiKey)
-
-const IndexResults = connectStateResults(
-  ({ searchState, searchResults, children }) => {
-    // console.log(searchState, searchResults, children)
-    return searchResults && searchResults.nbHits !== 0 && searchState.query
-      ? children
-      : null
-  }
-)
-
 export default function Header() {
+  let appId = process.env.GATSBY_ALGOLIA_APP_ID
+  let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
+
+  const searchClient = algoliasearch(appId, apiKey)
+  const [redirectStatus, setRedirectStatus] = useState(false)
+
+  const IndexResults = connectStateResults(
+    ({ searchState, searchResults, children }) => {
+      if (redirectStatus) {
+        searchState.query = ""
+      }
+      return searchResults && searchResults.nbHits !== 0 && searchState.query
+        ? children
+        : null
+    }
+  )
+
   return (
     <header className="z-50 sticky top-0 w-full bg-body-background">
       <div className="navbar max-width justify-between gap-8">
@@ -70,8 +74,8 @@ export default function Header() {
             <InstantSearch
               indexName="helpcenter"
               searchClient={searchClient}
-              onSearchParameters={() => {
-                searchClient.clearCache()
+              onSearchStateChange={() => {
+                setRedirectStatus(false)
               }}
               refresh={true}
               searchable={true}
@@ -113,7 +117,7 @@ export default function Header() {
                       overflowY: "auto",
                     }}
                   >
-                    <CustomHits onClose={() => searchClient.clearCache()} />
+                    <CustomHits onClose={() => setRedirectStatus(true)} />
                   </div>
                 </IndexResults>
               </Index>
@@ -163,29 +167,22 @@ export default function Header() {
 }
 
 const Hit = props => {
-  // console.log(props)
   return (
     <div>
       {props?.hits?.length > 0
         ? props.hits.map((pP, index) => {
-            // console.log(pP, index)
             return (
-              <div
-                style={{
-                  zIndex: 1,
-                  padding: "1rem",
-                  boxShadow: "inset 0px -1px 1px rgba(0, 0, 0, 0.1)",
-                }}
-                key={index}
-              >
+              <div key={index} className="hit-block">
                 <Link to={`/${pP.link}`} onClick={props.onClose}>
                   <div className="hit-name">
                     <p className="font-bold" attribute="name">
-                      {pP.title}
+                      <Highlight attribute="title" hit={pP} />
                     </p>
                   </div>
                   <div className="hit-description text-body-text">
-                    <RichTextElement value={pP.subtitle} />
+                    {/* <RichTextElement value={pP.subtitle}> */}
+                    <Highlight attribute="subtitle" hit={pP} />
+                    {/* </RichTextElement> */}
                   </div>
                 </Link>
               </div>

@@ -66,10 +66,7 @@ body.light {
     rgba(41, 43, 51, 0.35) 0%,
     rgba(41, 43, 51, 0.7) 100%
   );
-  --shadow-color: 0deg 0% 75%;
-  --shadow-elevation-low: 0px 1px 1.4px hsl(var(--shadow-color) / 0.05),
-    0px 1.7px 2.4px -0.3px hsl(var(--shadow-color) / 0.16),
-    0px 3.3px 4.7px -0.6px hsl(var(--shadow-color) / 0.27);
+  --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05);
 }
 
 body.dark {
@@ -129,9 +126,5 @@ body.dark {
     rgba(196, 199, 212, 0.5) 0%,
     #c4c7d4 100%
   );
-  --shadow-color: 260deg 26% 1%;
-  --shadow-elevation-low: 0px -0.1px 0.1px hsl(var(--shadow-color) / 0.15),
-    0px -0.5px 0.7px -0.4px hsl(var(--shadow-color) / 0.23),
-    0px -1.1px 1.5px -0.8px hsl(var(--shadow-color) / 0.32),
-    0.1px -2.5px 3.3px -1.2px hsl(var(--shadow-color) / 0.41);
+  --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05);
 }
