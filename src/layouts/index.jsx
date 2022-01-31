@@ -36,6 +36,10 @@ const HomeContentStyles = styled.div`
   padding: var(--space8) 0;
   .border {
     border: 2px solid var(--card-border);
+    &:hover {
+      border-width: 4px;
+      margin: -2px;
+    }
   }
   .first-card {
     background-repeat: no-repeat;
