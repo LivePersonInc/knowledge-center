@@ -33,7 +33,9 @@ const SidebarStyles = styled.div`
 
   .subcategoryfolder {
     padding-left: 1.5rem;
-    padding-bottom: 12px;
+    &:not(:last-child) {
+      padding-bottom: 12px;
+    }
   }
   li.page,
   li.pagesfolder {
