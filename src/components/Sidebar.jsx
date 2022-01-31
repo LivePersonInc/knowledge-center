@@ -12,6 +12,19 @@ const SidebarStyles = styled.div`
     top: 6rem;
     padding-bottom: 6.875rem;
   }
+  li {
+    &:hover {
+      color: var(--link-color-hover);
+      svg {
+        path {
+          fill: var(--link-color-hover);
+        }
+      }
+    }
+    &:focus {
+      color: var(--primary-focus);
+    }
+  }
   .menu ul {
     padding-left: 0;
   }
@@ -29,15 +42,12 @@ const SidebarStyles = styled.div`
     .svg-icon-active svg path {
       fill: var(--sidebar-color-active);
     }
-    &:hover {
-      color: var(--link-color-hover);
-    }
   }
 
   .subcategoryfolder {
     padding-left: 1.5rem;
     &:not(:last-child) {
-      padding-bottom: 12px;
+      margin-bottom: 12px;
     }
   }
   li.page,
@@ -424,7 +434,7 @@ const SidebarItem = ({ item, level, location }) => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="dd">
-                  <ul className="mt-3 text-link-color hover:text-link-color-hover">
+                  <ul className="mt-3 text-link-color">
                     <SidebarItems
                       items={item.elements.subitems.value}
                       url={newUrl}
