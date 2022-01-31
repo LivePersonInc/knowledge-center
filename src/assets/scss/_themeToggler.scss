@@ -30,7 +30,7 @@ body {
 }
 .theme-switch-wrapper .theme-switch {
   display: inline-block;
-  height: 2rem;
+  height: var(--space8);
   position: relative;
   width: 4rem;
   text-align: right;

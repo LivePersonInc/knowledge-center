@@ -31,7 +31,7 @@ const Pagination = ({ prev, next }) => {
     <div
       style={{
         background: "var(--search-input-background)",
-        marginTop: "2rem",
+        marginTop: "var(--space8)",
         padding: "1.5rem",
       }}
     >
