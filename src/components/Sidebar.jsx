@@ -30,21 +30,26 @@ const SidebarStyles = styled.div`
       fill: var(--sidebar-color-active);
     }
   }
+
   .subcategoryfolder {
-    padding-left: 24px;
+    padding-left: 1.5rem;
+    padding-bottom: 12px;
   }
   li.page,
   li.pagesfolder {
-    padding-left: 24px;
+    padding-left: 1.5rem;
   }
-  li.nav_item:nth-last-child(4) {
+  li.nav_item:nth-last-child(8) {
+    padding-top: 1.5rem;
+  }
+  li.nav_item:nth-last-child(6) {
     padding-top: 1.5rem;
     .sidebar-arrow,
     .inner-nav {
       display: none;
     }
   }
-  li.nav_item:nth-last-child(3) {
+  li.nav_item:nth-last-child(5) {
     padding-bottom: 1.5rem;
     .sidebar-arrow,
     .inner-nav {
@@ -430,7 +435,7 @@ const SidebarItem = ({ item, level, location }) => {
   } else if (item.system.type === "blog_release_notes") {
     const newUrl = item.elements.permalink.value
     return (
-      <li className={LEAF_NAME[level]}>
+      <li className={"mb-3 " + LEAF_NAME[level]}>
         <span className="nav-title">
           <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
         </span>
@@ -439,7 +444,7 @@ const SidebarItem = ({ item, level, location }) => {
   } else if (item?.system?.type === "knowledge_center_markdown_page") {
     const newUrl = item.elements.permalink.value
     return (
-      <li className={LEAF_NAME[level]}>
+      <li className={"mb-3 " + LEAF_NAME[level]}>
         <span className="nav-title">
           <Link
             activeClassName="font-bold text-sidebar-color-active"
