@@ -179,10 +179,8 @@ const Hit = props => {
                       <Highlight attribute="title" hit={pP} />
                     </p>
                   </div>
-                  <div className="hit-description text-body-text">
-                    <RichTextElement value={pP.subtitle} />
-                    {/* <Highlight attribute="subtitle" hit={pP} /> */}
-                  </div>
+                  {/* <RichTextElement value={pP.subtitle} /> */}
+                  <Highlight attribute="subtitle" hit={pP} />
                 </Link>
               </div>
             )
