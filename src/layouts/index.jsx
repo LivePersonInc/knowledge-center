@@ -33,7 +33,7 @@ const SiteLayoutStyles = styled.main`
 `
 
 const HomeContentStyles = styled.div`
-  padding: var(--space8);
+  padding: var(--space8) 0;
   .border {
     border: 2px solid var(--card-border);
   }

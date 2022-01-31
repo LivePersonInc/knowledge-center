@@ -6,7 +6,7 @@ body {
       max-width: 100%;
       margin: inherit;
     }
-    @media (min-width: 1024px) and (max-width: 1680px) {
+    @media (max-width: 1680px) {
       padding-left: var(--space8);
       padding-right: var(--space8);
     }
