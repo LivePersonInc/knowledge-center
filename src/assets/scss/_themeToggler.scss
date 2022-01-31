@@ -92,7 +92,12 @@ body {
   line-height: 20px;
   display: flex;
   align-items: center;
-  color: #5a5f72;
+  color: var(--footer-text);
+  position: absolute;
+  left: 120%;
+  text-align: left;
+  white-space: nowrap;
+  display: none;
 }
 // .theme-switch-wrapper input + .slider:after {
 //   right: -94%;
@@ -113,7 +118,11 @@ body {
 //   content: "Light theme";
 // }
 
-.theme-switch-wrapper input:checked + .toggle-title-light {
-  display: none;
+.theme-switch-wrapper input:checked + .slider .toggle-title-dark {
+  display: block;
+}
+
+.theme-switch-wrapper input:not(:checked) + .slider .toggle-title-light {
+  display: block;
 }
 /* toggle end */

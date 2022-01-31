@@ -15,9 +15,10 @@ export default function ThemeToggle() {
                 onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
                 checked={theme === "dark"}
               />
-              <div className="slider round"></div>
-              <span className="toggle-title-light">Light theme</span>
-              <span className="toggle-title-dark">Dark theme</span>
+              <div className="slider round">
+                <span className="toggle-title-light">Light theme</span>
+                <span className="toggle-title-dark">Dark theme</span>
+              </div>
             </label>
           </div>
         )
