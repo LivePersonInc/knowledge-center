@@ -22,7 +22,7 @@ export default function Footer() {
         className="py-8 footer border-card-border flex flex-col gap-4"
       >
         <div className="flex items-center mobile:flex-col">
-          <p>
+          <p className="text-lm">
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.{" "}
             <a
