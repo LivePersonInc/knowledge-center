@@ -9,6 +9,7 @@ import {
   SearchBox,
   Highlight,
 } from "react-instantsearch-dom"
+import HeaderMobile from "./widgets/HeaderMobile"
 
 export default function Header() {
   let appId = process.env.GATSBY_ALGOLIA_APP_ID
@@ -137,11 +138,9 @@ export default function Header() {
             </InstantSearch>
           </div>
         </div>
-        <div className="gap-8">
-          <label
-            htmlFor="my-drawer-2"
-            className="my-4 mr-2 drawer-button lg:hidden"
-          >
+        <div className="gap-8 lg:hidden relative">
+          <HeaderMobile />
+          <label htmlFor="my-drawer-2" className="drawer-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -6,9 +6,13 @@ body {
       max-width: 100%;
       margin: inherit;
     }
-    @media (max-width: 1680px) {
+    @media (min-width: 769px) and (max-width: 1680px) {
       padding-left: var(--space8);
       padding-right: var(--space8);
+    }
+    @media (max-width: 768px) {
+      padding-left: 20px;
+      padding-right: 20px;
     }
     .inner-menu {
       .menu {
@@ -25,8 +29,10 @@ body {
     max-height: inherit !important;
   }
   .drawer {
-    overflow: unset;
     overflow-y: visible;
+    @media (min-width: 1024px) {
+      overflow: unset;
+    }
   }
   .drawer-end {
     overflow-x: hidden;

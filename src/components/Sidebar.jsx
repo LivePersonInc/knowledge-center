@@ -6,6 +6,12 @@ import { Disclosure, Transition } from "@headlessui/react"
 import { ArrowRight, LinkIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
+  @media (min-width: 1024px) {
+    max-height: 100vh;
+    position: sticky;
+    top: 6.25rem;
+    padding-bottom: 6.25rem;
+  }
   .menu ul {
     padding-left: 0;
   }
@@ -201,15 +207,7 @@ const Sidebar = ({ location }) => {
   `)
 
   return (
-    <SidebarStyles
-      className="drawer-side"
-      style={{
-        maxHeight: "100vh",
-        position: "sticky",
-        top: "6.25rem",
-        paddingBottom: "6.25rem",
-      }}
-    >
+    <SidebarStyles className="drawer-side" style={{ maxHeight: "100%" }}>
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
