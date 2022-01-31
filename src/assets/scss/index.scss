@@ -11,12 +11,12 @@
 
 body.light {
   --primary: #3863e5;
-  --primary-hover: #0d0480;
-  --primary-focus: #1207a1;
+  --primary-hover: #204ac5;
+  --primary-focus: #204ac5;
   --primary-content: #03011d;
   --secondary-text: #fcfcfd;
   --link-color: var(--primary);
-  --link-color-hover: #1d4ee2;
+  --link-color-hover: var(--primary-hover);
   --body-background: #fcfcfc;
   --body-text: #292b33;
   --secondary-background: #005ef4;
@@ -71,12 +71,12 @@ body.light {
 
 body.dark {
   --primary: #5d80ea;
-  --primary-hover: #0d0480;
-  --primary-focus: #0d0480;
+  --primary-hover: #204ac5;
+  --primary-focus: #204ac5;
   --primary-content: #2a79ff;
   --secondary-text: #fcfcfd;
-  --link-color: #5d80ea;
-  --link-color-hover: #86e1fc;
+  --link-color: var(--primary);
+  --link-color-hover: var(--primary-hover);
   --body-background: #121316;
   --body-text: #afb3c0;
   --secondary-background: #005ef4;

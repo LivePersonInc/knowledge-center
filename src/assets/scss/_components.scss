@@ -39,6 +39,9 @@
     text-decoration: underline;
     margin: 0 0.4rem;
     color: var(--link-color);
+    &:hover {
+      color: var(--link-color-hover);
+    }
   }
   img {
     max-width: 1.5rem;

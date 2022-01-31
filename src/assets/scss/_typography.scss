@@ -123,6 +123,9 @@ body {
       color: var(--link-color);
       text-decoration: underline;
       font-weight: 500;
+      &:hover {
+        color: var(--link-color-hover);
+      }
     }
 
     strong {

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-// import { RichTextElement } from "@kentico/gatsby-kontent-components"
+import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -180,9 +180,8 @@ const Hit = props => {
                     </p>
                   </div>
                   <div className="hit-description text-body-text">
-                    {/* <RichTextElement value={pP.subtitle}> */}
-                    <Highlight attribute="subtitle" hit={pP} />
-                    {/* </RichTextElement> */}
+                    <RichTextElement value={pP.subtitle} />
+                    {/* <Highlight attribute="subtitle" hit={pP} /> */}
                   </div>
                 </Link>
               </div>
