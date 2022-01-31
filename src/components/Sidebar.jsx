@@ -7,10 +7,10 @@ import { ArrowRight, LinkIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
   @media (min-width: 1024px) {
-    max-height: 100vh;
+    min-height: 100vh;
     position: sticky;
     top: 6.25rem;
-    padding-bottom: 6.25rem;
+    padding-bottom: 6.875rem;
   }
   .menu ul {
     padding-left: 0;
