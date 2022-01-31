@@ -48,7 +48,7 @@ const BlogReleaseNotesTemplate = ({ data }) => {
         >
           <div className="breadcrumbs text-sm">
             <ul className="flex-wrap">
-              <li className="breadcrumbs-item m-0 text-primary">
+              <li className="breadcrumbs-item m-0 text-primary hover:text-primary-hover">
                 <Link to="/">Knowledge Center</Link>
               </li>
               <li className="m-0">

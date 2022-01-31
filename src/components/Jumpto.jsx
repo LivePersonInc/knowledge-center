@@ -25,7 +25,10 @@ const JumpTo = ({ title, jumpToItems }) => {
   return (
     <div className="inner-menu full-width mobile:hidden">
       <div className="anchorlist shadow-none">
-        <ul className="menu ml-8 text-link-color" style={jumptoList}>
+        <ul
+          className="menu ml-8 text-link-color hover:text-link-color-hover"
+          style={jumptoList}
+        >
           <li
             className="anchoritem hover-bordered mb-0 focus:text-body-text"
             id="jumptotop"

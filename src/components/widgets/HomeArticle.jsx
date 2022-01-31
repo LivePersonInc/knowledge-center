@@ -25,7 +25,7 @@ class HomeArticle extends React.Component {
         data-kontent-item-id={itemId}
       >
         <h6
-          className="mb-2 font-bold text-primary"
+          className="mb-2 font-bold text-primary hover:text-primary-hover"
           data-kontent-element-codename="title"
         >
           <Link style={{ textDecoration: "none" }} to={`/${slug || "#"}`}>
@@ -54,7 +54,7 @@ class HomeArticle extends React.Component {
         </Link>
         <Link
           to={`/${slug || "#"}`}
-          className="text-primary underline"
+          className="text-primary underline hover:text-primary-hover"
           id="subtitle"
         >
           More...

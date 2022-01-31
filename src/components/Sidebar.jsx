@@ -16,7 +16,7 @@ const SidebarStyles = styled.div`
     padding-left: 0;
   }
   .nav_item {
-    color: var(--sidebar-text);
+    color: var(--link-color);
     margin-bottom: 1rem;
     .nav-title {
       font-style: normal;
@@ -28,6 +28,9 @@ const SidebarStyles = styled.div`
     }
     .svg-icon-active svg path {
       fill: var(--sidebar-color-active);
+    }
+    &:hover {
+      color: var(--link-color-hover);
     }
   }
 
@@ -237,7 +240,7 @@ const Sidebar = ({ location }) => {
             className="flex justify-between itemdetails canOpen relative"
             style={{ padding: "0" }}
           >
-            <span className="nav-title text-sidebar-text">
+            <span className="nav-title text-link-color  hover:text-link-color-hover">
               Developer Center
             </span>
             <div className="w-4 h-4 flex flex-col justify-center">
@@ -251,7 +254,7 @@ const Sidebar = ({ location }) => {
             className="flex justify-between itemdetails canOpen relative"
             style={{ padding: "0" }}
           >
-            <span className="nav-title text-sidebar-text">
+            <span className="nav-title text-link-color  hover:text-link-color-hover">
               Service Status Dashboard
             </span>
             <div className="w-4 h-4 flex flex-col justify-center">
@@ -267,7 +270,9 @@ const Sidebar = ({ location }) => {
             className="justify-center"
             style={{ padding: "0" }}
           >
-            <span className="nav-title text-sidebar-text">Sign In</span>
+            <span className="nav-title text-link-color  hover:text-link-color-hover">
+              Sign In
+            </span>
           </a>
         </li>
 
@@ -419,7 +424,7 @@ const SidebarItem = ({ item, level, location }) => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="dd">
-                  <ul className="mt-3 text-sidebar-text">
+                  <ul className="mt-3 text-link-color hover:text-link-color-hover">
                     <SidebarItems
                       items={item.elements.subitems.value}
                       url={newUrl}
