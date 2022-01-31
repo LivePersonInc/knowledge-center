@@ -96,6 +96,17 @@ header {
   }
 }
 
+//mobile search
+
+.mobile-search-component form.ais-SearchBox-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile-search-component input.ais-SearchBox-input {
+  width: 100%;
+}
+
 .maincontent {
   ul,
   ol {
