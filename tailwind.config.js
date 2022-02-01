@@ -45,6 +45,8 @@ module.exports = {
         primary: "var(--primary)",
         "primary-hover": "var(--primary-hover)",
         "primary-focus": "var(--primary-focus)",
+        "secondary": "var(--secondary)",
+        "secondary-hover": "var(--secondary-hover)",
         "link-color": "var(--link-color)",
         "link-color-hover": "var(--link-color-hover)",
         "body-background": "var(--body-background)",
@@ -131,11 +133,13 @@ module.exports = {
       {
         lpthemedark: {
           primary: "#3863e5",
+          "primary-hover": "#204ac5",
           "primary-focus": "#1d4ee2",
           "primary-content": "#ffffff",
 
-          secondary: "#005ef4",
-          "secondary-focus": "#0040d6",
+          secondary: "#EDEDFA",
+          "secondary-hover": "#FCFCFC",
+          "secondary-focus": "#FCFCFC",
           "secondary-content": "#ffffff",
 
           accent: "#4667c8",

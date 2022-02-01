@@ -50,6 +50,9 @@ const SidebarStyles = styled.div`
       margin-bottom: 12px;
     }
   }
+  .subcategories {
+    padding-left: 1.7rem;
+  }
   li.page,
   li.pagesfolder {
     padding-left: 1.5rem;

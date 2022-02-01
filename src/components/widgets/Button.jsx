@@ -3,9 +3,8 @@ import React from "react"
 const Button = ({ btnText }) => {
   return (
     <button
-      className="btn hover:shadow-xl transition-shadow"
+      className="btn btn-secondary hover:btn-secondary-hover transition-all"
       style={{
-        background: "#EDEDFA",
         border: "1px solid #FCFCFC",
         boxSizing: "border-box",
         borderRadius: "24px",

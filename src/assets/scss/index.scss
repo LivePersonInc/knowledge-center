@@ -14,7 +14,8 @@ body.light {
   --primary-hover: #204ac5;
   --primary-focus: #204ac5;
   --primary-content: #03011d;
-  --secondary-text: #fcfcfd;
+  --secondary: #ededfa;
+  --secondary-hover: #fcfcfc;
   --link-color: var(--primary);
   --link-color-hover: var(--primary-hover);
   --body-background: #fcfcfc;
@@ -72,10 +73,11 @@ body.light {
 
 body.dark {
   --primary: #5d80ea;
-  --primary-hover: #204ac5;
+  --primary-hover: #819cee;
+  --secondary: #ededfa;
+  --secondary-hover: #fcfcfc;
   --primary-focus: #204ac5;
   --primary-content: #2a79ff;
-  --secondary-text: #fcfcfd;
   --link-color: var(--primary);
   --link-color-hover: var(--primary-hover);
   --body-background: #121316;

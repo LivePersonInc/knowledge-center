@@ -179,7 +179,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
             href="https://developers.liveperson.com/register.html"
-            className="btn btn-primary normal-case rounded-full px-8 mobile:hidden"
+            className="btn btn-primary btn-primary-hover normal-case rounded-full px-8 mobile:hidden"
           >
             Free trial
           </a>
