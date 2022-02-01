@@ -53,9 +53,13 @@ textarea {
   white-space: revert;
 }
 
-a {
+a:not(.btn) {
+  color: var(--link-color);
+  font-weight: 500;
   cursor: pointer;
-  word-break: break-word;
+  &:hover {
+    color: var(--link-color-hover);
+  }
 }
 @media (min-width: 1921px) {
   html {
