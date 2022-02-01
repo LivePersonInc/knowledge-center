@@ -13,14 +13,6 @@ const SidebarStyles = styled.div`
     padding-bottom: 6.875rem;
   }
   li {
-    &:hover {
-      color: var(--link-color-hover);
-      svg:first-child {
-        path {
-          fill: var(--link-color-hover);
-        }
-      }
-    }
     &:focus {
       color: var(--primary-focus);
     }
@@ -31,6 +23,15 @@ const SidebarStyles = styled.div`
   .nav_item {
     color: var(--link-color);
     margin-bottom: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: var(--link-color-hover);
+      .sidebar-arrow svg:first-child {
+        path {
+          fill: var(--link-color-hover);
+        }
+      }
+    }
     .nav-title {
       font-style: normal;
       font-size: 1.125rem;
@@ -396,7 +397,7 @@ const SidebarItem = ({ item, level, location }) => {
                     ) : level === 1 ? (
                       <div
                         className={
-                          "w-4 h-4 flex items-center flex-col justify-center transform transition " +
+                          "sidebar-arrow w-4 h-4 flex items-center flex-col justify-center transform transition " +
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >

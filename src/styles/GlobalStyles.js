@@ -5,15 +5,15 @@ const GlobalStyles = createGlobalStyle`
   body::-webkit-scrollbar {
     width: 12px;
   }
-  html {
+  html,.drawer-mobile>.drawer-toggle~.drawer-side {
     scrollbar-width: thin;
     scrollbar-color: var(--secondary) var(--white);
     scroll-behavior: smooth;
   }
-  body::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track,.drawer-mobile>.drawer-toggle~.drawer-side::-webkit-scrollbar-track {
     background: var(--body-background);
   }
-  body::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb,.drawer-mobile>.drawer-toggle~.drawer-side::-webkit-scrollbar-thumb {
     background-color: var(--secondary) ;
     border-radius: 6px;
     border: 3px solid var(--body-background);
