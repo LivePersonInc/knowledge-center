@@ -126,6 +126,9 @@ body {
       &:hover {
         color: var(--link-color-hover);
       }
+      &:visited {
+        color: red;
+      }
     }
 
     strong {

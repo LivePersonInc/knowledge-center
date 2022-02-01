@@ -142,6 +142,9 @@ module.exports = {
           "secondary-focus": "#FCFCFC",
           "secondary-content": "#ffffff",
 
+          visited: "#a381ee",
+          "visited-color-hover": "#b296ee",
+
           accent: "#4667c8",
           "accent-focus": "#3955a7",
           "accent-content": "#ffffff",
