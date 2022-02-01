@@ -53,9 +53,8 @@ textarea {
   white-space: revert;
 }
 
-a {
+a:not(.btn) {
   color: var(--link-color);
-  text-decoration: underline;
   font-weight: 500;
   &:hover {
     color: var(--link-color-hover);
