@@ -53,19 +53,9 @@ textarea {
   white-space: revert;
 }
 
-a:not(.btn) {
-  color: var(--link-color);
-  font-weight: 500;
+a {
   cursor: pointer;
-  &:hover {
-    color: var(--link-color-hover);
-  }
-  &:visited {
-    color: var(--visited-color);
-    &:hover {
-      color: var(--visited-color-hover);
-    }
-  }
+  word-break: break-word;
 }
 @media (min-width: 1921px) {
   html {

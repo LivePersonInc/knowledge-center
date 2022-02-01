@@ -125,11 +125,19 @@ header {
       margin: var(--space8) auto;
     }
   }
+
   a {
     text-decoration: underline;
     color: var(--link-color);
+    cursor: pointer;
     &:hover {
       color: var(--link-color-hover);
+    }
+    &:visited {
+      color: var(--visited-color);
+      &:hover {
+        color: var(--visited-color-hover);
+      }
     }
   }
 
