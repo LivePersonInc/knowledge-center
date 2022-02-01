@@ -25,8 +25,8 @@ const CardIcon = ({ icon, title, desc, link }) => {
               }
             })()}
           </div>
-          <h2 className="card-title text-card-title">{title}</h2>
-          <p className="text-card-text">{desc}</p>
+          <h2 className="card-title text-body-text">{title}</h2>
+          <p className="text-body-text">{desc}</p>
         </div>
       </div>
     </Link>

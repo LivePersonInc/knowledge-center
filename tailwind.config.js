@@ -52,6 +52,7 @@ module.exports = {
         "body-background": "var(--body-background)",
         "link-color-hover": "var(--link-color-hover)",
         "body-text": "var(--body-text)",
+        "body-text-invert": "var(--body-text-invert)",
         "secondary-background": "var(--secondary-background)",
         "secondary-text": "var(--secondary-text)",
         "title-text": "var(--title-text)",

@@ -28,10 +28,7 @@ const CardLatestPosts = ({ title, icon, link, alltype }) => {
               }
             })()}
           </div>
-          <h2
-            className="card-title text-card-title"
-            style={{ marginBottom: 0 }}
-          >
+          <h2 className="card-title text-body-text" style={{ marginBottom: 0 }}>
             {title}
           </h2>
           <div className="whatsnewarticles">{items}</div>

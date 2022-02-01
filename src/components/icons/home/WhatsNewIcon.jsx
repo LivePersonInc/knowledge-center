@@ -11,28 +11,28 @@ const WhatsNewIcon = () => {
     >
       <path
         d="M31.5 7V26C31.5 26.7957 31.1839 27.5587 30.6213 28.1213C30.0587 28.6839 29.2957 29 28.5 29C27.7044 29 26.9413 28.6839 26.3787 28.1213C25.8161 27.5587 25.5 26.7957 25.5 26V3C25.5 2.46957 25.2893 1.96086 24.9142 1.58579C24.5391 1.21071 24.0304 1 23.5 1H3.5C2.96957 1 2.46086 1.21071 2.08579 1.58579C1.71071 1.96086 1.5 2.46957 1.5 3V26C1.5 26.7957 1.81607 27.5587 2.37868 28.1213C2.94129 28.6839 3.70435 29 4.5 29H28.5"
-        stroke="var(--card-title)"
+        stroke="var(--body-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M6.5 19H20.5"
-        stroke="var(--card-title)"
+        stroke="var(--body-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M6.5 23H14.5"
-        stroke="var(--card-title)"
+        stroke="var(--body-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M6.5 6H20.5V14H6.5V6Z"
-        stroke="var(--card-title)"
+        stroke="var(--body-text)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

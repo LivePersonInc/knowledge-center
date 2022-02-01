@@ -16,8 +16,8 @@ const CardBg = ({ title, desc, link, icon, homeimg }) => {
           <div className="lp mb-4">
             <LearnMoreIcon />
           </div>
-          <h2 className="card-title text-button-text">{title}</h2>
-          <p className="text-button-text text-opacity-40 ">{desc}</p>
+          <h2 className="card-title text-body-text-invert">{title}</h2>
+          <p className="text-button-text text-body-text-invert">{desc}</p>
         </div>
       </div>
     </Link>
