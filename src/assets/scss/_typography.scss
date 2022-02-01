@@ -127,7 +127,10 @@ body {
         color: var(--link-color-hover);
       }
       &:visited {
-        color: red;
+        color: var(--visited-color);
+        &:hover {
+          color: var(--visited-color-hover);
+        }
       }
     }
 

@@ -15,7 +15,7 @@ const SidebarStyles = styled.div`
   li {
     &:hover {
       color: var(--link-color-hover);
-      svg {
+      svg:first-child {
         path {
           fill: var(--link-color-hover);
         }

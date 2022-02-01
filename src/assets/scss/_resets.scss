@@ -54,8 +54,18 @@ textarea {
 }
 
 a {
-  cursor: pointer;
-  word-break: break-word;
+  color: var(--link-color);
+  text-decoration: underline;
+  font-weight: 500;
+  &:hover {
+    color: var(--link-color-hover);
+  }
+  &:visited {
+    color: var(--visited-color);
+    &:hover {
+      color: var(--visited-color-hover);
+    }
+  }
 }
 @media (min-width: 1921px) {
   html {
