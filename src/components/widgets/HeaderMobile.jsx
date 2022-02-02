@@ -113,7 +113,7 @@ const CustomHits = connectHits(props => <Hit {...props} />)
 const HeaderMobile = () => {
   return (
     <div className="lg:hidden">
-      <label for="my-modal-2" className="modal-button">
+      <label htmlFor="my-modal-2" className="modal-button">
         <svg
           width="18"
           height="18"
@@ -144,7 +144,7 @@ const HeaderMobile = () => {
           >
             <SearchMobile />
             <label
-              for="my-modal-2"
+              htmlFor="my-modal-2"
               className="modal-button"
               style={{ paddingTop: "18px" }}
             >
@@ -162,15 +162,6 @@ const HeaderMobile = () => {
               </svg>
             </label>
           </div>
-
-          {/* <div className="modal-action">
-            <label for="my-modal-2" className="btn btn-primary">
-              Accept
-            </label>
-            <label for="my-modal-2" className="btn">
-              Close
-            </label>
-          </div> */}
         </div>
       </div>
     </div>

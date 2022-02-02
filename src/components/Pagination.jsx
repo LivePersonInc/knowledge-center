@@ -52,8 +52,8 @@ const Pagination = ({ prev, next }) => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M6.40889 10.5L10.7876 6.12132L8.66625 4L0.88808 11.7782L1.10067 11.9908L1.10049 11.9909L8.87866 19.7691L11 17.6478L6.85218 13.5H16V10.5H6.40889Z"
                       fill="var(--link-color)"
                     />
@@ -108,8 +108,8 @@ const Pagination = ({ prev, next }) => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M9.59111 6.5L5.21243 2.12132L7.33375 0L15.1119 7.77817L14.8993 7.99077L14.8995 7.99095L7.12134 15.7691L5.00002 13.6478L9.14782 9.5H0V6.5H9.59111Z"
                       fill="var(--link-color)"
                     />

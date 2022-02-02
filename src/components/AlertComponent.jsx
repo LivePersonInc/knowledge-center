@@ -31,12 +31,12 @@ const AlertComponent = () => {
         {AlertComponentData.kontentItemPageFooter.elements.title.value}
       </h4>
       <div className="p-4">
-        <p>
+        <div>
           <QuestionMarkIcon />
           <RichTextElement
             value={AlertComponentData.kontentItemPageFooter.elements.body.value}
           />
-        </p>
+        </div>
       </div>
     </div>
   )
