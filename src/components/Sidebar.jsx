@@ -235,7 +235,7 @@ const Sidebar = ({ location }) => {
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
-        className="menu overflow-y-auto w-80 py-8 ipad:bg-body-background h-full ipad:p-[20px]"
+        className="menu scrollbar overflow-y-auto w-80 py-8 ipad:bg-body-background h-full ipad:p-[20px]"
         data-testid="sidebar"
       >
         <SidebarItems

@@ -74,6 +74,7 @@ body.light {
   );
   --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05),
     inset 0px -1px 0px rgba(167, 172, 190, 0.3);
+  --scroll-bg: #e7e8ec;
 }
 
 body.dark {
@@ -141,4 +142,5 @@ body.dark {
     rgba(196, 199, 212, 0.7)
   );
   --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.15), inset 0px -1px 0px #1f1f1f;
+  --scroll-bg: #24262e;
 }

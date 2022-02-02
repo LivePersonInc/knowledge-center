@@ -2,19 +2,19 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   /* Scrollbar Styles */
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar,.menu::-webkit-scrollbar {
     width: 12px;
   }
-  html,.drawer-mobile>.drawer-toggle~.drawer-side {
+  html,.menu {
     scrollbar-width: thin;
-    scrollbar-color: var(--secondary) var(--white);
+    scrollbar-color: var(--scroll-bg) green;
     scroll-behavior: smooth;
   }
-  body::-webkit-scrollbar-track,.drawer-mobile>.drawer-toggle~.drawer-side::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track,.menu::-webkit-scrollbar-track {
     background: var(--body-background);
   }
-  body::-webkit-scrollbar-thumb,.drawer-mobile>.drawer-toggle~.drawer-side::-webkit-scrollbar-thumb {
-    background-color: var(--secondary) ;
+  body::-webkit-scrollbar-thumb,.menu::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bg) ;
     border-radius: 6px;
     border: 3px solid var(--body-background);
   }
