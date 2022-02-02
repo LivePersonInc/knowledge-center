@@ -6,6 +6,10 @@ import moment from "moment"
 const PrevNext = styled.section`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 `
 const Span = styled.span`
   display: inline-block;
