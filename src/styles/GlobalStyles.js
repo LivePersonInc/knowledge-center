@@ -9,13 +9,6 @@ const GlobalStyles = createGlobalStyle`
     padding-right: 12px;
 }
 @media(max-width:767px) {
-.drawer-toggle:checked~.drawer-side {
-    margin-right: -20px;
-        direction: rtl;
-}
-ul#mysidebar {
-    direction: ltr;
-}
   #mysidebar>.nav_item {
     padding: 0 12px;
 }

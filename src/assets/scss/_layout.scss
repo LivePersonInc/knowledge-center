@@ -11,8 +11,8 @@ body {
       padding-right: var(--space8);
     }
     @media (max-width: 768px) {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 0;
+      padding-right: 0;
     }
     .inner-menu {
       .menu {
@@ -33,11 +33,11 @@ body {
     @media (min-width: 1024px) {
       overflow: unset;
     }
-    @media (max-width: 767px) {
-      .drawer-toggle:not(:checked) ~ .drawer-side > .drawer-overlay + * {
-        --tw-translate-x: 110%;
-      }
-    }
+    // @media (max-width: 767px) {
+    //   .drawer-toggle:not(:checked) ~ .drawer-side > .drawer-overlay + * {
+    //     --tw-translate-x: 120%;
+    //   }
+    // }
   }
   .drawer-end {
     overflow-x: hidden;

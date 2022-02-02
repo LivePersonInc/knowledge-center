@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggler"
 const FooterStyles = styled.footer`
   color: var(--footer-text);
   @media (max-width: 767px) {
-    padding: 25px;
+    padding: 0 0 24px 0;
   }
   svg {
     max-width: 18px;

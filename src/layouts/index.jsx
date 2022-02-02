@@ -33,7 +33,6 @@ const SiteLayoutStyles = styled.main`
 `
 
 const HomeContentStyles = styled.div`
-  padding: var(--space8) 0;
   .border:not(.card-bg) {
     border: 2px solid var(--card-border);
     &:hover {
@@ -58,9 +57,6 @@ const ContentStyles = styled.div`
   padding: var(--space8) 0;
   @media (min-width: 1024px) {
     padding-right: 0;
-  }
-  @media (max-width: 767px) {
-    padding: 1.5rem 0 0 0;
   }
   .breadcrumbs {
     padding-top: 0;
@@ -126,7 +122,7 @@ const Layout = ({ children, location }) => {
       <Header />
       <div className="max-width w-full min-h-screen drawer ipad:drawer-end drawer-mobile overflow-y-visible gap-8">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="flex flex-col items-center justify-start drawer-content">
+        <div className="flex flex-col items-center justify-start drawer-content mobile:px-5">
           {location.pathname === "/" ? (
             <HomeStyles>
               <HomeContentStyles>{children}</HomeContentStyles>

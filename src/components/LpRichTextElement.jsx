@@ -56,9 +56,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
             return (
               <div
                 className={
-                  "my-6 " +
+                  "my-8 " +
                   linkedItem.elements.orientation.value[0].codename +
-                  " flex flex-col p-4 text-center"
+                  " flex flex-col text-center"
                 }
                 key={linkedItem.system.id}
               >

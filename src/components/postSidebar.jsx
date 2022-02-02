@@ -2,7 +2,7 @@ import React from "react"
 
 const PostSidebar = () => {
   return (
-    <div className="flex flex-col items-end py-6">
+    <div className="flex flex-col items-end py-6 mobile:hidden">
       <div style={{ textAlign: "center" }}>
         <p>Subscribe for updates</p>
         <div className="social-icons flex justify-center mt-3 gap-2">

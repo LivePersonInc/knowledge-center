@@ -19,7 +19,7 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col mobile:pt-4">
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
