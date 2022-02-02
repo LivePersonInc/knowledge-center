@@ -17,7 +17,7 @@ const CardBg = ({ title, desc, link, icon, homeimg }) => {
             <LearnMoreIcon />
           </div>
           <h2 className="card-title text-body-text-invert">{title}</h2>
-          <p className="text-button-text text-body-text-invert">{desc}</p>
+          <p className="text-body-text-invert">{desc}</p>
         </div>
       </div>
     </Link>
