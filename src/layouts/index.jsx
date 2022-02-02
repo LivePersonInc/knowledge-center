@@ -124,7 +124,7 @@ const Layout = ({ children, location }) => {
       <Seo title={data.site.siteMetadata.title} />
       <GlobalStyles />
       <Header />
-      <div className="max-width w-full min-h-screen drawer mobile:drawer-end drawer-mobile overflow-y-visible gap-8">
+      <div className="max-width w-full min-h-screen drawer ipad:drawer-end drawer-mobile overflow-y-visible gap-8">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="flex flex-col items-center justify-start drawer-content">
           {location.pathname === "/" ? (

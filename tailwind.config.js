@@ -128,7 +128,11 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("daisyui"), require('tailwind-scrollbar'), require("@tailwindcss/aspect-ratio")],
+  plugins: [
+    require("daisyui"),
+    require("tailwind-scrollbar"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
   daisyui: {
     themes: [
       {
