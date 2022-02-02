@@ -42,7 +42,6 @@ export default function Seo({ children, location, description, title, image }) {
     `,
         }}
       />
-
       {/* End LivePerson Monitor. */}
       {children}
     </Helmet>

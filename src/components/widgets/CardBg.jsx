@@ -9,7 +9,7 @@ const CardBg = ({ title, desc, link, icon, homeimg }) => {
       style={{
         background: `var(--card-bg-background),url(${homeimg})`,
       }}
-      className="border border-card-border compact side w-full flex-grow bg-no-repeat bg-cover"
+      className="border card-bg border-card-border compact side w-full flex-grow bg-no-repeat bg-cover"
     >
       <div className="flex-row items-center space-x-4 card-body">
         <div className="flex-1">
