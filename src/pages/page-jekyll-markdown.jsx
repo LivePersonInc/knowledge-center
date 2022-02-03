@@ -24,9 +24,9 @@ const InnerSiteLayoutStyles = styled.main`
     pointer-events: none;
   }
   h2 {
-    &:first-child {
+    &:nth-of-type(1) {
       margin-top: 0;
-      padding-top: 0 !important;
+      padding-top: 0;
     }
   }
   h3:not(.metrics-title) {
