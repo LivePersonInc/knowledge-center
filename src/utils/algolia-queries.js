@@ -1,6 +1,8 @@
 const pageQuery = `
 {
-  allKontentItemKnowledgeCenterMarkdownPage {
+  allKontentItemKnowledgeCenterMarkdownPage(
+    filter: {system: {workflow_step: {eq: "published"}}}
+  ) {
     nodes {
       id
       elements {
@@ -23,10 +25,11 @@ const pageQuery = `
           value
         }
       }
-     
     }
   }
-  allKontentItemReleaseNotesPage {
+  allKontentItemReleaseNotesPage(
+    filter: {system: {workflow_step: {eq: "published"}}}
+  ) {
     nodes {
       id
       elements {
@@ -42,7 +45,7 @@ const pageQuery = `
       }
     }
   }
-  allKontentItemPostWhatsnew {
+  allKontentItemPostWhatsnew(filter: {system: {workflow_step: {eq: "published"}}}) {
     nodes {
       id
       elements {
@@ -58,7 +61,6 @@ const pageQuery = `
         pagename {
           value
         }
-       
       }
     }
   }
