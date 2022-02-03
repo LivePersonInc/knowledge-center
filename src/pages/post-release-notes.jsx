@@ -82,7 +82,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                       <div key={node?.system?.name}>{node?.system?.name}</div>
                     ))}
                   </h2>{" "}
-                  <h4 className="h4" style={{ margin: 0 }}>
+                  {/* <h4 className="h4" style={{ margin: 0 }}>
                     <time
                       className="release-notes-item-time flex items-center"
                       dateTime={moment(
@@ -94,7 +94,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                         "MMMM YY"
                       )}
                     </time>
-                  </h4>
+                  </h4> */}
                 </div>
 
                 {/* Features */}
