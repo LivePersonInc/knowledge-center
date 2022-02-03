@@ -102,7 +102,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                     />
                   </div>
                 )}
-                <p className="text-center my-2">
+                <p className="text-center my-2 opacity-70 italic">
                   {linkedItem.elements.description.value}
                 </p>
               </div>
