@@ -45,11 +45,7 @@ const PostSidebar = () => {
             </svg>
           </a>
           {/* rss */}
-          <a
-            href="https://www.facebook.com/liveperson"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="/rss.xml" target="_blank" rel="noreferrer">
             <svg
               width="13"
               height="13"
