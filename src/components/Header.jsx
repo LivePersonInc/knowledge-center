@@ -44,7 +44,7 @@ export default function Header() {
   )
 
   return (
-    <header className="z-50 sticky top-0 w-full bg-body-background mobile:px-8">
+    <header className="z-50 sticky top-0 w-full bg-body-background smobile:px-5 px-8 lg:px-0">
       <div className="navbar max-width justify-between gap-8">
         <div className="px-2 mobile:hidden lg:pl-0 lg:ml-0 w-80">
           <Link to="/">

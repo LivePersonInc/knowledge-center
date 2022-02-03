@@ -54,7 +54,6 @@ const HomeContentStyles = styled.div`
 `
 
 const ContentStyles = styled.div`
-  padding: var(--space8) 0;
   @media (min-width: 1024px) {
     padding-right: 0;
   }
@@ -125,11 +124,15 @@ const Layout = ({ children, location }) => {
         <div className="flex flex-col items-center justify-start drawer-content smobile:px-5 px-8 lg:px-0">
           {location.pathname === "/" ? (
             <HomeStyles>
-              <HomeContentStyles>{children}</HomeContentStyles>
+              <HomeContentStyles className="smobile:pt-4 pt-8">
+                {children}
+              </HomeContentStyles>
             </HomeStyles>
           ) : (
             <SiteLayoutStyles>
-              <ContentStyles>{children}</ContentStyles>
+              <ContentStyles className="smobile:pt-4 pt-8">
+                {children}
+              </ContentStyles>
             </SiteLayoutStyles>
           )}
         </div>
