@@ -124,13 +124,13 @@ const Layout = ({ children, location }) => {
         <div className="flex flex-col items-center justify-start drawer-content smobile:px-5 px-8 lg:px-0">
           {location.pathname === "/" ? (
             <HomeStyles>
-              <HomeContentStyles className="smobile:pt-4 pt-8">
+              <HomeContentStyles className="smobile:py-4 py-8">
                 {children}
               </HomeContentStyles>
             </HomeStyles>
           ) : (
             <SiteLayoutStyles>
-              <ContentStyles className="smobile:pt-4 pt-8">
+              <ContentStyles className="smobile:py-4 py-8">
                 {children}
               </ContentStyles>
             </SiteLayoutStyles>

@@ -19,7 +19,7 @@ export default function Footer() {
         data-sal="fade"
         data-sal-duration="2000"
         data-sal-easing="ease"
-        className="pb-8 footer border-card-border flex flex-col gap-2"
+        className="footer border-card-border flex flex-col gap-2"
       >
         <div className="flex items-center mobile:flex-col">
           <p className="text-lm">
