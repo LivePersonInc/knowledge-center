@@ -17,7 +17,7 @@ export default function Footer() {
     <>
       <FooterStyles className="footer border-card-border flex flex-col gap-2">
         <div className="flex items-center mobile:flex-col">
-          <p className="text-lm">
+          <p className="text-lm gap-1 text-footer-text">
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.{" "}
             <a
