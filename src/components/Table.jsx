@@ -23,18 +23,18 @@ function GlobalFilter({
   }, 200)
 
   return (
-    <input
-      className="w-full px-2 border"
-      value={value || ""}
-      onChange={e => {
-        setValue(e.target.value)
-        onChange(e.target.value)
-      }}
-      placeholder={`Search by Metric or Dashboard`}
-      style={{
-        fontSize: "1.1rem",
-      }}
-    />
+    <div className="flex w-full justify-between items-center mobile:flex-col mobile:items-start">
+      <h3 className="metrics-title smobile:pt-3 pt-12 pb-6">Metrics list</h3>
+      <input
+        className="table-search-filter w-full px-2 border"
+        value={value || ""}
+        onChange={e => {
+          setValue(e.target.value)
+          onChange(e.target.value)
+        }}
+        placeholder={`Search by Metric or Dashboard`}
+      />
+    </div>
   )
 }
 
@@ -234,54 +234,66 @@ const Table = () => {
 
   return (
     <>
-      <div className="flex w-full pb-6 z-10">
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-        />
-        {headerGroups.map(headerGroup => {
-          return headerGroup.headers.map(column => {
-            if (column.filter) {
-              return (
-                <div className="w-full px-2">
-                  {column.render("Header")}
-                  <div>{column.canFilter ? column.render("Filter") : null}</div>
-                </div>
-              )
-            }
-            return null
-          })
-        })}
-      </div>
-      <table {...getTableProps()} className="tablelp w-full table-compact">
-        <thead className="sticky top-0 bg-white py-5">
-          {headerGroups.map(headerGroup => (
-            <tr
-              {...headerGroup.getHeaderGroupProps()}
-              className="tr flex flex-nowrap"
-            >
-              {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()} className="th flex-1">
-                  {column.render("Header")}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
-            prepareRow(row)
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                })}
+      <div className="table-style flex flex-col w-full pb-6 z-10">
+        <div className="header">
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+          <div className="flex w-full mobile:flex-col">
+            {headerGroups.map(headerGroup => {
+              return headerGroup.headers.map(column => {
+                if (column.filter) {
+                  return (
+                    <div className="w-full px-2">
+                      {column.render("Header")}
+                      <div>
+                        {column.canFilter ? column.render("Filter") : null}
+                      </div>
+                    </div>
+                  )
+                }
+                return null
+              })
+            })}
+          </div>
+        </div>
+
+        <table
+          {...getTableProps()}
+          className="tablelp w-full table-compact table-fixed"
+        >
+          <thead className="sticky top-0 bg-white fixedHeader">
+            {headerGroups.map(headerGroup => (
+              <tr
+                {...headerGroup.getHeaderGroupProps()}
+                className="tr flex flex-nowrap"
+              >
+                {headerGroup.headers.map(column => (
+                  <th {...column.getHeaderProps()} className="th flex-1">
+                    {column.render("Header")}
+                  </th>
+                ))}
               </tr>
-            )
-          })}
-        </tbody>
-      </table>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map(row => {
+              prepareRow(row)
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map(cell => {
+                    return (
+                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    )
+                  })}
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }

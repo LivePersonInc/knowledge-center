@@ -15,18 +15,18 @@ function GlobalFilter({ globalFilter, setGlobalFilter }) {
   }, 200)
 
   return (
-    <input
-      className="w-full px-2 border"
-      value={value || ""}
-      onChange={e => {
-        setValue(e.target.value)
-        onChange(e.target.value)
-      }}
-      placeholder={`Search by capability name`}
-      style={{
-        fontSize: "1.1rem",
-      }}
-    />
+    <div className="flex w-full justify-between items-center mobile:flex-col mobile:items-start">
+      <h3 className="metrics-title smobile:pt-3 pt-12 pb-6">Metrics list</h3>
+      <input
+        className="table-search-filter w-full px-2 border"
+        value={value || ""}
+        onChange={e => {
+          setValue(e.target.value)
+          onChange(e.target.value)
+        }}
+        placeholder={`Search by capability name`}
+      />
+    </div>
   )
 }
 
@@ -197,72 +197,78 @@ const TableMc = () => {
 
   return (
     <>
-      <div className="flex w-full pb-6 z-10">
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-        />
-      </div>
-      <table {...getTableProps()} className="tablelp w-full table-compact">
-        <thead className="sticky top-0 bg-white py-5">
-          {headerGroups.map(headerGroup => (
-            <tr
-              {...headerGroup.getHeaderGroupProps()}
-              className="tr flex w-full"
-            >
-              {headerGroup.headers.map(column => (
-                <th
-                  {...column.getHeaderProps()}
-                  className="th flex-1"
-                  style={{ background: "#090c43", color: "white" }}
-                >
-                  {column.render("Header")}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
-            prepareRow(row)
-            return rows.length === data.length ? (
-              row.original.search ? (
-                <tr {...row.getRowProps()} className="categoryrow">
-                  {row.cells.map(cell => {
-                    return (
-                      <td
-                        {...cell.getCellProps()}
-                        style={{ background: "#162036", color: "white" }}
-                      >
-                        {cell.render("Cell")}
-                      </td>
-                    )
-                  })}
-                </tr>
+      <div className="table-style flex flex-col w-full pb-6 z-10">
+        <div className="header">
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+        </div>
+
+        <table
+          {...getTableProps()}
+          className="tablelp w-full table-compact table-fixed"
+        >
+          <thead className="sticky top-0 bg-white fixedHeader">
+            {headerGroups.map(headerGroup => (
+              <tr
+                {...headerGroup.getHeaderGroupProps()}
+                className="tr flex w-full"
+              >
+                {headerGroup.headers.map(column => (
+                  <th
+                    {...column.getHeaderProps()}
+                    className="th flex-1"
+                    style={{ background: "#090c43", color: "white" }}
+                  >
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map(row => {
+              prepareRow(row)
+              return rows.length === data.length ? (
+                row.original.search ? (
+                  <tr {...row.getRowProps()} className="categoryrow">
+                    {row.cells.map(cell => {
+                      return (
+                        <td
+                          {...cell.getCellProps()}
+                          style={{ background: "#162036", color: "white" }}
+                        >
+                          {cell.render("Cell")}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ) : (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map(cell => {
+                      return (
+                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      )
+                    })}
+                  </tr>
+                )
               ) : (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    )
-                  })}
-                </tr>
+                !row.original.search && (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map(cell => {
+                      return (
+                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      )
+                    })}
+                  </tr>
+                )
               )
-            ) : (
-              !row.original.search && (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    )
-                  })}
-                </tr>
-              )
-            )
-          })}
-        </tbody>
-      </table>
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }
