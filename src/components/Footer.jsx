@@ -15,12 +15,7 @@ const FooterStyles = styled.footer`
 export default function Footer() {
   return (
     <>
-      <FooterStyles
-        data-sal="fade"
-        data-sal-duration="2000"
-        data-sal-easing="ease"
-        className="footer border-card-border flex flex-col gap-2"
-      >
+      <FooterStyles className="footer border-card-border flex flex-col gap-2">
         <div className="flex items-center mobile:flex-col">
           <p className="text-lm">
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights

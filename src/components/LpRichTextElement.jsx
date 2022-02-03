@@ -112,9 +112,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
           case "code_sample": {
             return (
               <div
-                data-sal="fade"
-                data-sal-duration="2000"
-                data-sal-easing="ease"
                 className="my-6"
                 style={{
                   background: "var(--card-background)",
@@ -141,13 +138,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
           case "contentbox": {
             return (
-              <div
-                data-sal="fade"
-                data-sal-duration="2000"
-                data-sal-easing="ease"
-                className="my-6"
-                key={linkedItem.elements.id}
-              >
+              <div className="my-6" key={linkedItem.elements.id}>
                 <div
                   className={
                     "content-widget " +

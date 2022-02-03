@@ -21,12 +21,7 @@ const AlertComponent = () => {
   `)
 
   return (
-    <div
-      data-sal="fade"
-      data-sal-duration="2000"
-      data-sal-easing="ease"
-      className="mt-6 mb-8 pt-6"
-    >
+    <div className="mt-6 mb-8 pt-6">
       <h4 className="h4" style={{ marginTop: 0 }}>
         {AlertComponentData.kontentItemPageFooter.elements.title.value}
       </h4>
