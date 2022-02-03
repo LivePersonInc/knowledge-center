@@ -196,6 +196,10 @@ header {
     }
   }
   .table-style {
+    table {
+      max-width: 70vw;
+      overflow-x: scroll;
+    }
     tr {
       flex-wrap: nowrap;
     }
@@ -221,7 +225,6 @@ header {
       height: 60vh;
       width: 100%;
       overflow-y: auto;
-      overflow-x: hidden;
     }
   }
 

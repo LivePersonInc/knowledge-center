@@ -7,6 +7,24 @@ import {
 } from "react-table"
 import json from "../assets/capabilities.json"
 import { matchSorter } from "match-sorter"
+import {
+  AbcIcon,
+  ConnectorApiIcon,
+  FbMessengerIcon,
+  GcIcon,
+  GoggleRscIcon,
+  KakIcon,
+  LineIcon,
+  MessagingWindowApiIcon,
+  MobileAppMessagingIcon,
+  SmsIcon,
+  TwitterIcon,
+  ViberIcon,
+  WebMessagingIcon,
+  WeChatIcon,
+  WhatsappIcon,
+} from "./icons/metric-table"
+
 // Define a default UI for filtering
 function GlobalFilter({ globalFilter, setGlobalFilter }) {
   const [value, setValue] = React.useState(globalFilter)
@@ -44,22 +62,22 @@ const preProcessJSON = json => {
     let add = true
     if (add) {
       arr.push({
-        appleBusinessChat: "AA",
-        connectorAPI: "BB",
-        facebook: "CC",
+        appleBusinessChat: <AbcIcon />,
+        connectorAPI: <ConnectorApiIcon />,
+        facebook: <FbMessengerIcon />,
         featureName: x.categoryName,
         googleBusinessMessaging: "DD",
-        googleRCS: "EE",
-        kakaoTalk: "FF",
-        line: "GG",
-        messagingWindowAPI: "HH",
-        mobileAppMessaging: "II",
-        sms: "JJ",
-        twitter: "KK",
-        viber: "LL",
-        weChat: "MM",
-        webMessaging: "NN",
-        whatsapp: "OO",
+        googleRCS: <GoggleRscIcon />,
+        kakaoTalk: <KakIcon />,
+        line: <LineIcon />,
+        messagingWindowAPI: <MessagingWindowApiIcon />,
+        mobileAppMessaging: <MobileAppMessagingIcon />,
+        sms: <SmsIcon />,
+        twitter: <TwitterIcon />,
+        viber: <ViberIcon />,
+        weChat: <WeChatIcon />,
+        webMessaging: <WebMessagingIcon />,
+        whatsapp: <WhatsappIcon />,
         search: true,
       })
     }
@@ -208,7 +226,7 @@ const TableMc = () => {
 
         <table
           {...getTableProps()}
-          className="tablelp w-full table-compact table-fixed"
+          className="tablelp w-full table-compact table-auto"
         >
           <thead className="sticky top-0 bg-white fixedHeader">
             {headerGroups.map(headerGroup => (

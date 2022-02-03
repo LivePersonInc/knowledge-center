@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import moment from "moment"
+// import moment from "moment"
 
 import Seo from "../components/Seo"
 import Jumpto from "../components/Jumpto"
