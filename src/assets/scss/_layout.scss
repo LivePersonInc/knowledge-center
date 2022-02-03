@@ -34,11 +34,11 @@ body {
     @media (min-width: 1024px) {
       overflow: unset;
     }
-    // @media (max-width: 767px) {
-    //   .drawer-toggle:not(:checked) ~ .drawer-side > .drawer-overlay + * {
-    //     --tw-translate-x: 120%;
-    //   }
-    // }
+    @media (max-width: 767px) {
+      .drawer-toggle:not(:checked) ~ .drawer-side > .drawer-overlay + * {
+        visibility: hidden;
+      }
+    }
   }
   .drawer-end {
     overflow-x: hidden;
