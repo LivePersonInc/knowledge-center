@@ -26,7 +26,7 @@ const InnerSiteLayoutStyles = styled.main`
   h2 {
     &:first-child {
       margin-top: 0;
-      padding-top: 0;
+      padding-top: 0 !important;
     }
   }
   h3:not(.metrics-title) {
