@@ -10,18 +10,24 @@ const FooterStyles = styled.footer`
   svg {
     max-width: 18px;
   }
+  a {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `
 
 export default function Footer() {
   return (
     <>
       <FooterStyles className="footer border-card-border flex flex-col gap-2">
-        <div className="flex items-center mobile:flex-col">
+        <div className="footer-menu flex items-center mobile:flex-col">
           <p className="text-lm gap-1 text-footer-text">
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.{" "}
             <a
               className="underline"
+              style={{ color: "var(--footer-text)" }}
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.liveperson.com/policies/copyright"
@@ -30,6 +36,7 @@ export default function Footer() {
             </a>{" "}
             <a
               className="underline"
+              style={{ color: "var(--footer-text)" }}
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.liveperson.com/policies/privacy"
@@ -37,6 +44,7 @@ export default function Footer() {
               Privacy Policy
             </a>{" "}
             <a
+              style={{ color: "var(--footer-text)" }}
               className="underline"
               target="_blank"
               rel="noopener noreferrer"
