@@ -226,7 +226,7 @@ const TableMc = () => {
 
         <table
           {...getTableProps()}
-          className="tablelp w-full table-compact table-auto"
+          className="tablelp table w-full table-auto fix-width scroll-inner"
         >
           <thead className="sticky top-0 bg-white fixedHeader">
             {headerGroups.map(headerGroup => (
