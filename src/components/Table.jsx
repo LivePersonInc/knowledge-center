@@ -246,7 +246,7 @@ const Table = () => {
               return headerGroup.headers.map(column => {
                 if (column.filter) {
                   return (
-                    <div className="px-2 flex-1">
+                    <div className="px-2 flex-1 mobile:mt-4">
                       {column.render("Header")}
                       <div>
                         {column.canFilter ? column.render("Filter") : null}
