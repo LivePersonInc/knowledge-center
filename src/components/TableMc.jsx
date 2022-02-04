@@ -224,7 +224,10 @@ const TableMc = () => {
           />
         </div>
         <div className="flex flex-col pb-6 z-10 center-block fix-width scroll-inner tablelp">
-          <table {...getTableProps()} className="table-compact table-fixed">
+          <table
+            {...getTableProps()}
+            className="messaging-channels table-compact table-fixed"
+          >
             <thead className="sticky top-0 bg-body-background fixedHeader">
               {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()} className="tr flex">

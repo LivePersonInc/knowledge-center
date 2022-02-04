@@ -260,13 +260,21 @@ header {
         }
       }
     }
-  }
-  @media (max-width: 769px) {
-    .table-style td,
-    .table-style th {
-      min-width: 96px;
+    .messaging-channels {
+      td,
+      th {
+        &:first-child {
+          flex-grow: 3;
+        }
+      }
     }
   }
+  // @media (max-width: 769px) {
+  //   .table-style td,
+  //   .table-style th {
+  //     min-width: 96px;
+  //   }
+  // }
 
   .table-search-filter {
     background: #ffffff;
