@@ -194,29 +194,26 @@ header {
       font-size: 11px;
       line-height: 14px;
     }
+    thead {
+      display: inline-block;
+      // padding-right: 15px;
+      width: 100%;
+    }
+    tbody {
+      display: block;
+      width: 100%;
+    }
     thead.fixedHeader tr {
       position: relative;
-    }
-    // only for metrics table
-    .metrics {
-      thead {
-        display: inline-block;
-        padding-right: 15px;
-        width: 100%;
-      }
-      tbody {
-        height: 60vh;
-        display: block;
-        width: 100%;
-      }
     }
   }
   .fix-width {
     // column width
     width: 100%;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    height: 60vh;
   }
 
   .table {

@@ -34,7 +34,7 @@ function GlobalFilter({ globalFilter, setGlobalFilter }) {
 
   return (
     <div className="flex justify-between items-center mobile:flex-col mobile:items-start">
-      <h3 className="metrics-title smobile:pt-3 pt-12 pb-6">Metrics list</h3>
+      <h3 className="metrics-title">Metrics list</h3>
       <input
         className="table-search-filter px-2 border"
         value={value || ""}

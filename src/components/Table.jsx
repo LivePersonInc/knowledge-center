@@ -24,7 +24,7 @@ function GlobalFilter({
 
   return (
     <div className="flex justify-between items-center mobile:flex-col mobile:items-start">
-      <h3 className="metrics-title smobile:pt-3 pt-12 pb-6">Metrics list</h3>
+      <h3 className="metrics-title">Metrics list</h3>
       <input
         className="table-search-filter px-2 border"
         value={value || ""}
@@ -64,12 +64,12 @@ function SelectColumnFilter({
   // The styling for this has just been taken from the @headless-ui default Listbox example so feel free to change as you wish.
 
   return (
-    <div className="top-16">
+    <div>
       <Listbox value={filterValue || ""} onChange={setFilter}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full border p-3">
             <span className="block truncate">{filterValue || "All"}</span>
-            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none w-full">
+            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
               <SelectorIcon
                 className="w-5 h-5 text-gray-400"
                 aria-hidden="true"
@@ -82,13 +82,13 @@ function SelectColumnFilter({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none mobile:text-sm z-50">
+            <Listbox.Options className="absolute list-none w-full py-1 mt-1 overflow-hidden text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none mobile:text-sm z-50">
               {options.map((option, idx) => (
                 <Listbox.Option
                   key={idx}
                   className={({ active }) =>
-                    `${active ? "text-amber-900 bg-amber-100" : "text-gray-900"}
-                          cursor-default select-none relative py-2 pl-10 pr-4`
+                    `${active ? "text-body-text bg-amber-100" : "text-gray-900"}
+                          cursor-default select-none relative py-2 text-sm`
                   }
                   value={option === "All" ? "" : option}
                 >
@@ -104,9 +104,9 @@ function SelectColumnFilter({
                       {selected ? (
                         <span
                           className={`${
-                            active ? "text-amber-600" : "text-amber-600"
+                            active ? "text-title-text" : "text-amber-600"
                           }
-                                absolute inset-y-0 left-0 flex items-center pl-3`}
+                                absolute inset-y-0 right-0 flex items-center pr-3`}
                         >
                           <CheckIcon className="w-5 h-5" aria-hidden="true" />
                         </span>
@@ -241,7 +241,7 @@ const Table = () => {
             globalFilter={state.globalFilter}
             setGlobalFilter={setGlobalFilter}
           />
-          <div className="flex mobile:flex-col">
+          <div className="flex mobile:flex-col text-sm">
             {headerGroups.map(headerGroup => {
               return headerGroup.headers.map(column => {
                 if (column.filter) {
@@ -262,7 +262,7 @@ const Table = () => {
         <div className="flex flex-col pb-6 z-10 center-block fix-width scroll-inner tablelp">
           <table
             {...getTableProps()}
-            className="tablelp metrics table-compact table-fixed"
+            className="metrics table-compact table-fixed"
           >
             <thead className="sticky top-0 bg-white fixedHeader">
               {headerGroups.map(headerGroup => (
@@ -271,7 +271,10 @@ const Table = () => {
                   className="tr flex flex-nowrap"
                 >
                   {headerGroup.headers.map(column => (
-                    <th {...column.getHeaderProps()} className="th">
+                    <th
+                      {...column.getHeaderProps()}
+                      className="th  bg-body-background"
+                    >
                       {column.render("Header")}
                     </th>
                   ))}
