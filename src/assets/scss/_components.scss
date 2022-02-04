@@ -264,7 +264,7 @@ header {
       td,
       th {
         &:first-child {
-          flex-grow: 3;
+          min-width: 200px;
         }
       }
     }
