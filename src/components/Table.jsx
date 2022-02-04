@@ -67,9 +67,9 @@ function SelectColumnFilter({
     <div className="top-16">
       <Listbox value={filterValue || ""} onChange={setFilter}>
         <div className="relative mt-1">
-          <Listbox.Button className="relative py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 mobile:text-sm">
+          <Listbox.Button className="relative w-full border p-3">
             <span className="block truncate">{filterValue || "All"}</span>
-            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none w-full">
               <SelectorIcon
                 className="w-5 h-5 text-gray-400"
                 aria-hidden="true"
@@ -235,32 +235,31 @@ const Table = () => {
   return (
     <>
       <div className="table-style">
-        <div className="flex flex-col pb-6 z-10 center-block fix-width scroll-inner tablelp">
-          <div className="header">
-            <GlobalFilter
-              preGlobalFilteredRows={preGlobalFilteredRows}
-              globalFilter={state.globalFilter}
-              setGlobalFilter={setGlobalFilter}
-            />
-            <div className="flex mobile:flex-col">
-              {headerGroups.map(headerGroup => {
-                return headerGroup.headers.map(column => {
-                  if (column.filter) {
-                    return (
-                      <div className="px-2">
-                        {column.render("Header")}
-                        <div>
-                          {column.canFilter ? column.render("Filter") : null}
-                        </div>
+        <div className="header">
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+          <div className="flex mobile:flex-col">
+            {headerGroups.map(headerGroup => {
+              return headerGroup.headers.map(column => {
+                if (column.filter) {
+                  return (
+                    <div className="px-2 flex-1">
+                      {column.render("Header")}
+                      <div>
+                        {column.canFilter ? column.render("Filter") : null}
                       </div>
-                    )
-                  }
-                  return null
-                })
-              })}
-            </div>
+                    </div>
+                  )
+                }
+                return null
+              })
+            })}
           </div>
-
+        </div>
+        <div className="flex flex-col pb-6 z-10 center-block fix-width scroll-inner tablelp">
           <table
             {...getTableProps()}
             className="tablelp metrics table-compact table-fixed"

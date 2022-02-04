@@ -200,13 +200,14 @@ header {
     // only for metrics table
     .metrics {
       thead {
+        display: inline-block;
         padding-right: 15px;
         width: 100%;
       }
       tbody {
         height: 60vh;
+        display: block;
         width: 100%;
-        overflow-y: auto;
       }
     }
   }
@@ -244,12 +245,14 @@ header {
 
   @media (min-width: 769px) {
     .table-style {
+      display: inline-grid;
       tr {
         min-height: 86px;
       }
       td,
       th {
         min-width: 80px;
+        flex: 1;
       }
     }
     .metrics {
