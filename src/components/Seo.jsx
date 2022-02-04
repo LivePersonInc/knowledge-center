@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql, withPrefix, Link } from "gatsby"
+import { useStaticQuery, graphql, withPrefix } from "gatsby"
 
 export default function Seo({ children, location, description, title, image }) {
   const { site } = useStaticQuery(graphql`

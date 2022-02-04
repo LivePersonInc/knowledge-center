@@ -310,12 +310,6 @@ export const query = graphql`
         box_description_2 {
           value
         }
-        box_description_3 {
-          value
-        }
-        box_description_4 {
-          value
-        }
         box_description_5 {
           value
         }
@@ -358,12 +352,6 @@ export const query = graphql`
           value
         }
         link_2 {
-          value
-        }
-        link_3 {
-          value
-        }
-        link_4 {
           value
         }
         link_5 {
