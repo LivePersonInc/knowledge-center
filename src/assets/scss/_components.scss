@@ -1,11 +1,3 @@
-.lpbtn {
-  padding: 0.75rem 1.875rem;
-  border-radius: 6.25rem;
-  font-style: normal;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-}
-
 // component content widget different states
 .content-widget {
   border-left-width: 0.25rem;
@@ -119,6 +111,9 @@ header {
   }
   p {
     color: var(--body-text);
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   figure {
     img {
@@ -144,9 +139,6 @@ header {
   .tablelp {
     text-align: center;
     margin-top: var(--space8);
-    & > tdbody {
-      max-height: 80vh;
-    }
     th {
       font-family: "Space Grotesk", sans-serif;
       font-style: normal;
@@ -158,10 +150,10 @@ header {
     tr {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
       align-content: center;
-      flex-wrap: wrap;
-
+      justify-content: start;
+      flex-grow: 1;
+      flex: 1;
       td {
         &:first-child {
           align-items: center;
@@ -173,7 +165,6 @@ header {
       &:first-child {
         td {
           background: var(--table-top-background);
-          color: var(--link-color);
           font-weight: 500;
         }
       }
@@ -197,35 +188,38 @@ header {
     table th {
       display: flex;
       align-items: center;
-      flex: 1;
-      &:nth-child(4) {
-        flex: 3;
-      }
+      justify-content: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 14px;
     }
     thead.fixedHeader tr {
       position: relative;
     }
-    thead {
-      display: inline-block;
-      padding-right: 15px;
-      width: 100%;
-    }
-    tbody {
-      display: block;
-      height: 60vh;
-      width: 100%;
-      overflow-y: auto;
+    // only for metrics table
+    .metrics {
+      thead {
+        padding-right: 15px;
+        width: 100%;
+      }
+      tbody {
+        height: 60vh;
+        width: 100%;
+        overflow-y: auto;
+      }
     }
   }
   .fix-width {
-    width: 400px;
+    // column width
+    width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .table {
-    width: 700px;
+    width: 100%;
     margin-bottom: 0;
     max-width: none;
   }
@@ -249,15 +243,28 @@ header {
   }
 
   @media (min-width: 769px) {
-    .table-style td,
-    .table-style table th {
-      width: 128.57px;
+    .table-style {
+      tr {
+        min-height: 86px;
+      }
+      td,
+      th {
+        min-width: 80px;
+      }
+    }
+    .metrics {
+      td,
+      th {
+        &:nth-child(4) {
+          flex-grow: 3;
+        }
+      }
     }
   }
   @media (max-width: 769px) {
     .table-style td,
-    .table-style table th {
-      width: 96px;
+    .table-style th {
+      min-width: 96px;
     }
   }
 

@@ -98,9 +98,6 @@ body {
   p,
   .p {
     @include p;
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
   div {
     font-family: "Inter", sans-serif;
