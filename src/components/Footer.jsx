@@ -21,7 +21,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} LivePerson Inc. All rights
             reserved.{" "}
             <a
-              style={{ textDecoration: "underline" }}
+              className="underline"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.liveperson.com/policies/copyright"
@@ -29,7 +29,7 @@ export default function Footer() {
               Copyright
             </a>{" "}
             <a
-              style={{ textDecoration: "underline" }}
+              className="underline"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.liveperson.com/policies/privacy"
@@ -37,7 +37,7 @@ export default function Footer() {
               Privacy Policy
             </a>{" "}
             <a
-              style={{ textDecoration: "underline" }}
+              className="underline"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.liveperson.com/policies/terms-of-use"

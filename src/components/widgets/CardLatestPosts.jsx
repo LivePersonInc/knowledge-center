@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import HomeArticle from "./HomeArticle"
 import { WhatsNewIcon, ReleaseNotesIcon } from "../icons/home"
+import ButtonArrow from "./ButtonArrow"
 
 const CardLatestPosts = ({ title, icon, link, alltype }) => {
   const items = []
@@ -32,11 +33,8 @@ const CardLatestPosts = ({ title, icon, link, alltype }) => {
             {title}
           </h2>
           <div className="whatsnewarticles">{items}</div>
-          <Link
-            to={link}
-            className="text-link-color  hover:text-link-color-hover text-opacity-40 mt-auto underline pt-6"
-          >
-            View All
+          <Link to={link} className="pt-6">
+            <ButtonArrow btnText="View All" />
           </Link>
         </div>
       </div>
