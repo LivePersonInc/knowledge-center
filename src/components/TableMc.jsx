@@ -216,17 +216,16 @@ const TableMc = () => {
   return (
     <>
       <div className="table-style">
+        <div className="header">
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+        </div>
         <div className="flex flex-col pb-6 z-10 center-block fix-width scroll-inner tablelp">
-          <div className="header">
-            <GlobalFilter
-              preGlobalFilteredRows={preGlobalFilteredRows}
-              globalFilter={state.globalFilter}
-              setGlobalFilter={setGlobalFilter}
-            />
-          </div>
-
-          <table {...getTableProps()} className="table table-striped">
-            <thead className="sticky top-0 bg-white fixedHeader">
+          <table {...getTableProps()} className="table-compact table-fixed">
+            <thead className="sticky top-0 bg-body-background fixedHeader">
               {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()} className="tr flex">
                   {headerGroup.headers.map(column => (

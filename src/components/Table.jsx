@@ -264,7 +264,7 @@ const Table = () => {
             {...getTableProps()}
             className="metrics table-compact table-fixed"
           >
-            <thead className="sticky top-0 bg-white fixedHeader">
+            <thead className="sticky top-0 bg-body-background fixedHeader">
               {headerGroups.map(headerGroup => (
                 <tr
                   {...headerGroup.getHeaderGroupProps()}
