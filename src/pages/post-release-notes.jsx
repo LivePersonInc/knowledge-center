@@ -77,11 +77,11 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
               >
                 <div className="release-notes-item flex items-center gap-3">
                   {/* Title  */}
-                  <h2 className="h4" style={{ margin: 0 }}>
+                  <h2 className="h2" style={{ margin: 0 }}>
                     {node?.elements?.product_name?.value.map(node => (
                       <div key={node?.system?.name}>{node?.system?.name}</div>
                     ))}
-                  </h2>{" "}
+                  </h2>
                   {/* <h4 className="h4" style={{ margin: 0 }}>
                     <time
                       className="release-notes-item-time flex items-center"
@@ -98,21 +98,21 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 </div>
 
                 {/* Features */}
-                <h5 className="h5 mt-6 mb-2">Features</h5>
+                <h3 className="h3 mt-4 mb-2">Features</h3>
                 <LpRichTextElement
                   body_content={node?.elements?.features?.value}
                   bodyfield={node?.elements?.features}
                 />
 
                 {/* Fixes */}
-                <h5 className="h5 mt-6 mb-2">Fixes</h5>
+                <h3 className="h3 mt-4 mb-2">Fixes</h3>
                 <LpRichTextElement
                   body_content={node?.elements?.fixes?.value}
                   bodyfield={node?.elements?.fixes}
                 />
 
                 {/* enhancements */}
-                <h5 className="h5 mt-6 mb-2">Enhancements</h5>
+                <h3 className="h3 mt-4 mb-2">Enhancements</h3>
                 <LpRichTextElement
                   body_content={customBodyContent(
                     node?.elements?.enhancements?.value
