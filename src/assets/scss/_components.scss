@@ -261,6 +261,9 @@ header {
       }
     }
     .messaging-channels {
+      svg {
+        width: 24px;
+      }
       td,
       th {
         &:first-child {
