@@ -96,29 +96,39 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                     </time>
                   </h4> */}
                 </div>
-
                 {/* Features */}
-                <h3 className="h3 mt-4 mb-2">Features</h3>
-                <LpRichTextElement
-                  body_content={node?.elements?.features?.value}
-                  bodyfield={node?.elements?.features}
-                />
+                {node.elements.features.value !== "<p><br></p>" && (
+                  <div>
+                    <h3 className="h3 mt-4 mb-2">Features</h3>
+                    <LpRichTextElement
+                      body_content={node?.elements?.features?.value}
+                      bodyfield={node?.elements?.features}
+                    />
+                  </div>
+                )}
 
                 {/* Fixes */}
-                <h3 className="h3 mt-4 mb-2">Fixes</h3>
-                <LpRichTextElement
-                  body_content={node?.elements?.fixes?.value}
-                  bodyfield={node?.elements?.fixes}
-                />
-
+                {node.elements.fixes.value !== "<p><br></p>" && (
+                  <div>
+                    <h3 className="h3 mt-4 mb-2">Fixes</h3>
+                    <LpRichTextElement
+                      body_content={node?.elements?.fixes?.value}
+                      bodyfield={node?.elements?.fixes}
+                    />
+                  </div>
+                )}
                 {/* enhancements */}
-                <h3 className="h3 mt-4 mb-2">Enhancements</h3>
-                <LpRichTextElement
-                  body_content={customBodyContent(
-                    node?.elements?.enhancements?.value
-                  )}
-                  bodyfield={node?.elements?.enhancements}
-                />
+                {node.elements.enhancements.value !== "<p><br></p>" && (
+                  <div>
+                    <h3 className="h3 mt-4 mb-2">Enhancements</h3>
+                    <LpRichTextElement
+                      body_content={customBodyContent(
+                        node?.elements?.enhancements?.value
+                      )}
+                      bodyfield={node?.elements?.enhancements}
+                    />
+                  </div>
+                )}
               </div>
             ))}
             <Pagination prev={prev} next={next} />
@@ -272,6 +282,7 @@ export const query = graphql`
                         name
                       }
                     }
+                    id
                   }
                 }
                 fixes {

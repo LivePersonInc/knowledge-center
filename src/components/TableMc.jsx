@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   useAsyncDebounce,
   useFilters,
@@ -11,7 +11,6 @@ import {
   AbcIcon,
   ConnectorApiIcon,
   FbMessengerIcon,
-  GcIcon,
   GoggleRscIcon,
   KakIcon,
   LineIcon,
@@ -58,7 +57,7 @@ fuzzyTextFilterFn.autoRemove = val => !val
  *  */
 const preProcessJSON = json => {
   const arr = []
-  json.map(x => {
+  for (const x of json) {
     let add = true
     if (add) {
       arr.push({
@@ -81,17 +80,17 @@ const preProcessJSON = json => {
         search: true,
       })
     }
-    x.features.map(y => {
+    for (const y of x.features) {
       arr.push(Object.assign({}, ...y.channels, { featureName: y.featureName }))
-    })
+    }
     add = false
-  })
+  }
   return arr
 }
 
-const TableMc = () => {
-  const [data, setData] = useState(preProcessJSON(json))
+const data = preProcessJSON(json)
 
+const TableMc = () => {
   const columns = React.useMemo(
     () => [
       {
