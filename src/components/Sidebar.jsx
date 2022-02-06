@@ -14,7 +14,7 @@ const SidebarStyles = styled.div`
   }
   button,
   a {
-    &:focus-within {
+    &:focus {
       color: var(--link-color-hover);
       border: 2px dashed var(--link-color-hover);
       border-radius: 4px !important;

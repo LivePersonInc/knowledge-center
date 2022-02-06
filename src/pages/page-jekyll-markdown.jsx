@@ -29,8 +29,7 @@ const InnerSiteLayoutStyles = styled.main`
       padding-top: 0;
     }
   }
-  h3:not(.metrics-title),
-  h3:not(.anchor-address) {
+  h3:not(.metrics-title, .anchor-address) {
     margin: 1.5rem 0 1rem 0;
   }
 `
