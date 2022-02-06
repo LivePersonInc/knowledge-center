@@ -15,7 +15,7 @@ const HomeArticleStyles = styled.div`
 class HomeArticle extends React.Component {
   render() {
     const title = _.get(this.props, "data.elements.pagename.value", "N/A")
-    const date = _.get(this.props, "data.elements.date.value", "N/A")
+    // const date = _.get(this.props, "data.elements.date.value", "N/A")
     const subTitle = _.get(this.props, "data.elements.subtitle.value", "N/A")
     const slug = `${_.get(this.props, "data.elements.permalink.value", "N/A")}`
     const itemId = _.get(this.props, "data.system.id")

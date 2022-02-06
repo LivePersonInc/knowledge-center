@@ -12,6 +12,20 @@ const SidebarStyles = styled.div`
     top: 6rem;
     padding-bottom: 6.875rem;
   }
+  button,
+  a {
+    &:focus,
+    &:focus-within {
+      color: var(--link-color-hover);
+      border: 2px dashed var(--link-color-hover);
+      border-radius: 4px !important;
+      .sidebar-arrow svg:first-child {
+        path {
+          fill: var(--link-color-hover);
+        }
+      }
+    }
+  }
   li {
     &:focus {
       color: var(--primary-focus);
