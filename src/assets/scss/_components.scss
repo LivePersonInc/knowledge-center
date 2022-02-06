@@ -48,6 +48,12 @@ header {
     color: var(--search-input-color);
     border-radius: 24px;
     padding: 12px 20px;
+    &:focus {
+      outline: 1px solid var(--primary-focus);
+    }
+    &:focus-within {
+      outline: 1px solid var(--primary);
+    }
   }
   .searchcomponent {
     form.ais-SearchBox-form {
@@ -75,16 +81,16 @@ header {
   }
   .hit-block {
     z-index: 1;
-    padding: 1rem;
-    box-shadow: inset 0px -1px 1px var(--search-input-background);
-    // :hover {
-    //   background-color: #c8d2f3;
-    // }
+    padding: 8px 32px;
+    &:hover {
+      background-color: var(--search-input-background);
+    }
   }
   .ais-Highlight-highlighted {
-    background-color: #b4c3f5;
+    background-color: var(--primary);
+    color: var(--body-background);
     font-weight: bolder;
-    color: #5879da;
+    padding: 3px 5px;
   }
 }
 

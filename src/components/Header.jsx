@@ -130,15 +130,14 @@ export default function Header() {
                       style={{
                         background: "var(--body-background)",
                         color: "var(--body-text)",
-                        borderRadius: 5,
+                        borderRadius: "2px",
                         zIndex: 9999,
                         position: "absolute",
                         top: "3rem",
                         width: "100%",
                         maxHeight: "75vh",
                         overflowY: "auto",
-                        boxShadow:
-                          "inset 0px -1px 1px var(--search-input-background)",
+                        boxShadow: "0px 2px 8px var(--search-input-background)",
                       }}
                     >
                       <CustomHits onClose={() => setRedirectStatus(true)} />
@@ -198,11 +197,18 @@ const Hit = props => {
               <div key={index} className="hit-block">
                 <Link to={`/${pP.link}`} onClick={props.onClose}>
                   <div className="hit-name">
-                    <p className="font-bold" attribute="name">
+                    <p
+                      className="font-bold text-body-text mb-1"
+                      attribute="name"
+                    >
                       <Highlight attribute="title" hit={pP} />
                     </p>
                   </div>
-                  <Highlight attribute="subtitle" hit={pP} />
+                  <Highlight
+                    className="text-footer-text"
+                    attribute="subtitle"
+                    hit={pP}
+                  />
                 </Link>
               </div>
             )
