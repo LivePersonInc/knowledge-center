@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { postMarkup } from "../../utils"
 // import moment from "moment"
 import * as _ from "lodash"
-import LpRichTextElement from "../LpRichTextElement"
+// import LpRichTextElement from "../LpRichTextElement"
 
 const HomeArticleStyles = styled.div`
   h2 {
