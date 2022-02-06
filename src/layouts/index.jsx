@@ -33,6 +33,15 @@ const SiteLayoutStyles = styled.main`
 `
 
 const HomeContentStyles = styled.div`
+  .home-subtitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
   .border:not(.card-bg) {
     border: 2px solid var(--card-border);
     &:hover {

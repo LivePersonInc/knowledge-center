@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { postMarkup } from "../../utils"
 // import moment from "moment"
 import * as _ from "lodash"
+import LpRichTextElement from "../LpRichTextElement"
 
 const HomeArticleStyles = styled.div`
   h2 {
@@ -21,7 +22,7 @@ class HomeArticle extends React.Component {
 
     return (
       <HomeArticleStyles
-        className="NavLinks pt-6"
+        className="NavLinks pt-6 gap-2"
         data-kontent-item-id={itemId}
       >
         <h6
@@ -47,17 +48,20 @@ class HomeArticle extends React.Component {
               color: "var(--body-text)",
               marginTop: "5px",
             }}
-            className="text-body-text"
+            className="home-subtitle text-body-text"
             id="subtitle"
           >
-            {postMarkup(subTitle, "post-content")}
-            <span
+            <LpRichTextElement
+              body_content={subTitle}
+              bodyfield={_.get(this.props, "data.elements.subtitle", "N/A")}
+            />
+            {/* <span
               to={`/${slug || "#"}`}
-              className="text-primary underline hover:text-primary-hover"
+              className="text-primary underline hover:text-primary-hover inline-block"
               id="subtitle"
             >
               More...
-            </span>
+            </span> */}
           </Link>
         )}
       </HomeArticleStyles>
