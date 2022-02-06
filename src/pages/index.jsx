@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import CardBg from "../components/widgets/CardBg"
 import CardIcon from "../components/widgets/CardIcon"
-import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import Footer from "../components/Footer"
 import CardLatestPosts from "../components/widgets/CardLatestPosts"
 import Button from "../components/widgets/Button"

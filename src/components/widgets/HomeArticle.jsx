@@ -24,6 +24,20 @@ class HomeArticle extends React.Component {
         className="NavLinks pt-6"
         data-kontent-item-id={itemId}
       >
+        {console.log(itemId)}
+        {/* {location.pathname === "/" ? (
+          <HomeStyles>
+            <HomeContentStyles className="smobile:py-4 py-8">
+              {children}
+            </HomeContentStyles>
+          </HomeStyles>
+        ) : (
+          <SiteLayoutStyles>
+            <ContentStyles className="smobile:py-4 py-8">
+              {children}
+            </ContentStyles>
+          </SiteLayoutStyles>
+        )} */}
         <h6
           className="mb-2 font-bold text-primary hover:text-primary-hover"
           data-kontent-element-codename="title"
@@ -39,26 +53,27 @@ class HomeArticle extends React.Component {
         >
           {moment(date).format("MMMM D YY, HH:mmA")}
         </time>
-
-        <Link
-          to={`/${slug || "#"}`}
-          style={{
-            textDecoration: "none",
-            color: "var(--body-text)",
-            marginTop: "5px",
-          }}
-          className="text-body-text"
-          id="subtitle"
-        >
-          {postMarkup(subTitle, "post-content")}
-        </Link>
-        <Link
-          to={`/${slug || "#"}`}
-          className="text-primary underline hover:text-primary-hover"
-          id="subtitle"
-        >
-          More...
-        </Link>
+        {subTitle !== "<p><br></p>" && (
+          <Link
+            to={`/${slug || "#"}`}
+            style={{
+              textDecoration: "none",
+              color: "var(--body-text)",
+              marginTop: "5px",
+            }}
+            className="text-body-text"
+            id="subtitle"
+          >
+            {postMarkup(subTitle, "post-content")}
+            <span
+              to={`/${slug || "#"}`}
+              className="text-primary underline hover:text-primary-hover"
+              id="subtitle"
+            >
+              More...
+            </span>
+          </Link>
+        )}
       </HomeArticleStyles>
     )
   }
