@@ -51,10 +51,11 @@ class HomeArticle extends React.Component {
             className="home-subtitle text-body-text"
             id="subtitle"
           >
-            <LpRichTextElement
+            {postMarkup(subTitle, "post-content")}
+            {/* <LpRichTextElement
               body_content={subTitle}
               bodyfield={_.get(this.props, "data.elements.subtitle", "N/A")}
-            />
+            /> */}
             {/* <span
               to={`/${slug || "#"}`}
               className="text-primary underline hover:text-primary-hover inline-block"
