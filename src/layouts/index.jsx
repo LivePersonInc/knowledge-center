@@ -34,12 +34,14 @@ const SiteLayoutStyles = styled.main`
 
 const HomeContentStyles = styled.div`
   .home-subtitle {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    p:last-child {
-      margin-bottom: 0;
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   .border:not(.card-bg) {
