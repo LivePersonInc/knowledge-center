@@ -287,6 +287,94 @@ export const query = graphql`
                 }
                 fixes {
                   value
+                  modular_content {
+                    id
+                    system {
+                      type
+                      codename
+                      id
+                    }
+                    ... on kontent_item_video___widget {
+                      id
+                      elements {
+                        video_id {
+                          value
+                        }
+                      }
+                      system {
+                        codename
+                        type
+                      }
+                    }
+                    ... on kontent_item_image__widget {
+                      id
+                      system {
+                        type
+                      }
+                      elements {
+                        description {
+                          value
+                        }
+                        image {
+                          value {
+                            url
+                            name
+                            description
+                            height
+                            width
+                          }
+                          name
+                        }
+                        orientation {
+                          value {
+                            codename
+                          }
+                        }
+                        product {
+                          value {
+                            id
+                            system {
+                              id
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_code_sample {
+                      id
+                      system {
+                        type
+                        codename
+                      }
+                      elements {
+                        code {
+                          value
+                        }
+                        language {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_contentbox {
+                      id
+                      system {
+                        codename
+                        type
+                      }
+                      elements {
+                        notice_text {
+                          value
+                        }
+                        type {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
                 features {
                   value

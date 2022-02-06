@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { postMarkup } from "../../utils"
-import moment from "moment"
+// import moment from "moment"
 import * as _ from "lodash"
 
 const HomeArticleStyles = styled.div`
@@ -24,20 +24,6 @@ class HomeArticle extends React.Component {
         className="NavLinks pt-6"
         data-kontent-item-id={itemId}
       >
-        {console.log(itemId)}
-        {/* {location.pathname === "/" ? (
-          <HomeStyles>
-            <HomeContentStyles className="smobile:py-4 py-8">
-              {children}
-            </HomeContentStyles>
-          </HomeStyles>
-        ) : (
-          <SiteLayoutStyles>
-            <ContentStyles className="smobile:py-4 py-8">
-              {children}
-            </ContentStyles>
-          </SiteLayoutStyles>
-        )} */}
         <h6
           className="mb-2 font-bold text-primary hover:text-primary-hover"
           data-kontent-element-codename="title"
@@ -46,13 +32,13 @@ class HomeArticle extends React.Component {
             {title}
           </Link>
         </h6>
-        <time
+        {/* <time
           className="article__meta-time flex mb-2"
           dateTime={moment(date).format("MMMM D, YYYY HH:mm")}
           data-kontent-element-codename="date"
         >
           {moment(date).format("MMMM D YY, HH:mmA")}
-        </time>
+        </time> */}
         {subTitle !== "<p><br></p>" && (
           <Link
             to={`/${slug || "#"}`}
