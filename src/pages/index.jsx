@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, withPrefix } from "gatsby"
 
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import CardBg from "../components/widgets/CardBg"
@@ -35,7 +35,7 @@ const HomePage = ({ data }) => {
             link={kontentItemHomepage?.elements?.link_1?.value}
             icon="LearnMoreIcon"
             desc={kontentItemHomepage?.elements?.box_description_1?.value}
-            homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
+            homeimg={withPrefix("bgkc.jpeg")}
           />
           <CardIcon
             // Messaging
