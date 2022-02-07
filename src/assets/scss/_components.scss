@@ -147,7 +147,22 @@ header {
       border-radius: 4px;
     }
   }
-
+  .kontent-table {
+    table {
+      tr {
+        td {
+          flex: 1;
+        }
+        &:first-child {
+          font-family: Space Grotesk;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
   .tablelp {
     text-align: center;
     margin-top: var(--space8);

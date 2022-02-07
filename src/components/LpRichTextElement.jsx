@@ -201,7 +201,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
           // For options - check https://www.npmjs.com/package/html-react-parser#options
           return (
             <div className="overflow-x-auto">
-              <div className="tablelp w-full table-compact">
+              <div className="tablelp w-full table-compact kontent-table">
                 {domToReact([domNode])}
               </div>
             </div>
