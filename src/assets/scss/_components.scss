@@ -151,7 +151,12 @@ header {
     table {
       tr {
         td {
-          flex: 1;
+          flex-grow: 1;
+          display: flex;
+          flex: 1 1;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
         }
         &:first-child {
           font-family: Space Grotesk;
