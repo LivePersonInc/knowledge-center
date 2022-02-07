@@ -59,6 +59,7 @@ textarea {
 
 a:not(.btn) {
   color: var(--link-color);
+  background: transparent;
   cursor: pointer;
   &:hover {
     color: var(--link-color-hover);

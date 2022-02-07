@@ -15,8 +15,18 @@ body {
       padding-right: 0;
       word-break: break-word;
     }
+    .menu li > :where(a:active),
+    .menu li > :where(button:active) {
+      background: transparent;
+    }
     .inner-menu {
       .menu {
+        li > :where(a:focus),
+        li > :where(a:hover),
+        li > :where(button:focus),
+        li > :where(button:hover) {
+          background: transparent;
+        }
         li {
           margin-bottom: 0.75rem;
           a {
