@@ -350,4 +350,9 @@ header {
     font-size: 0.8125rem;
     color: var(--text-lighter);
   }
+  .gatsby-image-wrapper {
+    img {
+      filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08));
+    }
+  }
 }
