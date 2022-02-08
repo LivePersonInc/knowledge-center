@@ -169,7 +169,7 @@ export default function Header() {
             href="https://liveengage.liveperson.net/"
             target="_blank"
             rel="noreferrer"
-            className="text-primary hover:text-primary-hover normal-case rounded-full ipad:hidden"
+            className="text-primary hover:text-primary-hover normal-case ipad:hidden"
             style={{ fontSize: "1.125rem", lineHeight: "1.75rem" }}
           >
             Sign in
