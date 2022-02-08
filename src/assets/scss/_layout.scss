@@ -19,6 +19,11 @@ body {
     .menu li > :where(button:active) {
       background: transparent;
     }
+    .breadcrumbs > ul > li > a:focus {
+      outline: var(--dashed);
+      outline-offset: 2px;
+      text-decoration: none;
+    }
     .inner-menu {
       .menu {
         li > :where(a:focus),
@@ -31,9 +36,9 @@ body {
           margin-bottom: 0.75rem;
           a {
             padding: 0.25rem 0.75rem;
-            &:focus-within {
+            &:focus {
               color: var(--link-color-hover);
-              border: 2px dashed var(--link-color-hover);
+              border: var(--dashed);
               border-radius: 4px !important;
             }
           }

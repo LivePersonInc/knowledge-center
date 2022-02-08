@@ -12,10 +12,12 @@ const SidebarStyles = styled.div`
     top: 6rem;
     padding-bottom: 6.875rem;
   }
+  .no-outline {
+    outline: none;
+  }
   a {
     &:focus {
       color: var(--link-color-hover);
-      border: 2px dashed var(--link-color-hover);
       border-radius: 4px !important;
       .sidebar-arrow svg:first-child {
         path {
@@ -396,7 +398,7 @@ const SidebarItem = ({ item, level, location }) => {
               />
               <dt className="flex items-center">
                 <Disclosure.Button>
-                  <div className="flex itemdetails canOpen relative items-center gap-2">
+                  <div className="flex itemdetails canOpen relative items-center gap-2 no-outline">
                     {level === 0 ? (
                       <div
                         className={
