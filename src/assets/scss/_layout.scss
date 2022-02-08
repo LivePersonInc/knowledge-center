@@ -38,7 +38,6 @@ body {
             padding: 0.25rem 0.75rem;
             &:focus {
               color: var(--link-color-hover);
-              border: var(--dashed);
               border-radius: 4px !important;
             }
           }
