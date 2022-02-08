@@ -20,7 +20,7 @@ const BodyStyles = styled.div`
   .breadcrumbs > ul > li + :before {
     display: none;
   }
-  *:focus {
+  *:not(button):focus {
     outline: 2px dashed var(--link-color-hover);
     text-decoration: none;
   }
