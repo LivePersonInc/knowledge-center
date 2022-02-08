@@ -20,6 +20,7 @@ const JumpTo = ({ title, jumpToItems }) => {
     top: "120px",
     listStyleType: "none",
     maxWidth: "100%",
+    overflow: "visible",
   }
 
   return (
