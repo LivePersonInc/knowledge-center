@@ -266,7 +266,7 @@ const Sidebar = ({ location }) => {
           <a
             href={`https://developers.liveperson.com`}
             className="flex justify-between itemdetails canOpen relative"
-            style={{ padding: "0" }}
+            style={{ padding: "0", background: "transparent" }}
           >
             <span className="nav-title text-link-color  hover:text-link-color-hover">
               Developer Center
@@ -280,7 +280,7 @@ const Sidebar = ({ location }) => {
           <a
             href={`https://status.liveperson.com`}
             className="flex justify-between itemdetails canOpen relative"
-            style={{ padding: "0" }}
+            style={{ padding: "0", background: "transparent" }}
           >
             <span className="nav-title text-link-color  hover:text-link-color-hover">
               Service Status Dashboard
