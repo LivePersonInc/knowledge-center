@@ -12,7 +12,6 @@ const SidebarStyles = styled.div`
     top: 6rem;
     padding-bottom: 6.875rem;
   }
-  button,
   a {
     &:focus {
       color: var(--link-color-hover);
