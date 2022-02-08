@@ -50,6 +50,12 @@ const HomeContentStyles = styled.div`
       border-width: 4px;
       margin: -2px;
     }
+    &:focus-within {
+      border-style: dashed;
+      border-color: var(--link-color-hover);
+      margin: -2px;
+      border-width: 4px;
+    }
   }
   .first-card {
     background-repeat: no-repeat;
