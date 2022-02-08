@@ -292,7 +292,7 @@ const Sidebar = ({ location }) => {
         </li>
 
         {/* Mobile buttons */}
-        <li className="md:hidden mobile:visible text-center">
+        <li className="lg:hidden mobile:visible text-center">
           <a
             href={`https://liveengage.liveperson.net/`}
             className="justify-center"
@@ -304,7 +304,7 @@ const Sidebar = ({ location }) => {
           </a>
         </li>
 
-        <li className="md:hidden mobile:visible justify-center text-center">
+        <li className="lg:hidden mobile:visible justify-center text-center">
           <a
             href={`https://developers.liveperson.com/register.html`}
             className="btn btn-primary hover:brn-primary-hover normal-case rounded-full px-8 "

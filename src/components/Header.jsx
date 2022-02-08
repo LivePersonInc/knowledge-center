@@ -44,9 +44,9 @@ export default function Header() {
   )
 
   return (
-    <header className="z-50 sticky top-0 w-full bg-body-background smobile:px-5 px-8 lg:px-0">
+    <header className="z-50 sticky top-0 w-full bg-body-background smobile:px-5 px-8 md:px-0">
       <div className="navbar max-width justify-between gap-8">
-        <div className="px-2 mobile:hidden lg:pl-0 lg:ml-0 w-80">
+        <div className="px-2 ipad:hidden md:pl-0 md:ml-0 w-80">
           <Link to="/">
             {/* logo svg */}
             <svg
@@ -68,7 +68,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="navbar-start md:hidden mobile:visible">
+        <div className="navbar-start lg:hidden ipad:visible w-auto">
           <Link to="/">
             <svg
               width="161"
@@ -91,7 +91,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="searchcomponent hidden flex-grow navbar-center lg:flex">
+        <div className="searchcomponent hidden flex-grow navbar-center md:flex">
           <div className="flex items-stretch w-full flex-col relative">
             <InstantSearch
               indexName="helpcenter"
@@ -150,7 +150,7 @@ export default function Header() {
         </div>
         <div className="gap-8 relative">
           <HeaderMobile />
-          <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
+          <label htmlFor="my-drawer-2" className="drawer-button md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

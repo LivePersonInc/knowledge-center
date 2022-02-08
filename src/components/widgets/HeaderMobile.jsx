@@ -112,7 +112,7 @@ const CustomHits = connectHits(props => <Hit {...props} />)
 
 const HeaderMobile = () => {
   return (
-    <div className="lg:hidden">
+    <div className="md:hidden">
       <label htmlFor="my-modal-2" className="modal-button">
         <svg
           width="18"
