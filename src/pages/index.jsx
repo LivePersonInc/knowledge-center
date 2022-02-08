@@ -78,7 +78,7 @@ const HomePage = ({ data }) => {
       </div>
 
       <div
-        className="my-8 lg:card-side"
+        className="my-8 md:card-side"
         style={{
           background: "var(--cta-background-image)",
         }}

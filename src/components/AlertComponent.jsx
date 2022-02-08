@@ -25,7 +25,7 @@ const AlertComponent = () => {
       <h4 className="h4" style={{ marginTop: 0 }}>
         {AlertComponentData.kontentItemPageFooter.elements.title.value}
       </h4>
-      <div className="lg:p-4">
+      <div className="md:p-4">
         <div>
           <QuestionMarkIcon />
           <RichTextElement

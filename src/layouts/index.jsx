@@ -136,7 +136,7 @@ const Layout = ({ children, location }) => {
       <Header />
       <div className="max-width w-full min-h-screen drawer ipad:drawer-end drawer-mobile overflow-y-visible gap-8">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="flex flex-col items-center justify-start drawer-content smobile:px-5 px-8 lg:px-0">
+        <div className="flex flex-col items-center justify-start drawer-content smobile:px-5 px-8 md:px-0">
           {location.pathname === "/" ? (
             <HomeStyles>
               <HomeContentStyles className="smobile:py-4 py-8">
