@@ -19,11 +19,6 @@ body {
     .menu li > :where(button:active) {
       background: transparent;
     }
-    .breadcrumbs > ul > li > a:focus {
-      outline: var(--dashed);
-      outline-offset: 2px;
-      text-decoration: none;
-    }
     .inner-menu {
       .menu {
         li > :where(a:focus),

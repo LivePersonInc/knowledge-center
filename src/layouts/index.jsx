@@ -76,6 +76,7 @@ const ContentStyles = styled.div`
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 1rem;
+    overflow: visible;
     .bread-crumbs {
       .breadcrumbs-item {
         font-size: 0.875rem;
