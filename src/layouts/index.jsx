@@ -1,7 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import KontentSmartLink from "@kentico/kontent-smart-link"
 import Header from "../components/Header"
 import GlobalStyles from "../styles/GlobalStyles"
 import Sidebar from "../components/Sidebar"
@@ -95,14 +94,14 @@ const HomeStyles = styled.div`
 `
 
 const Layout = ({ children, location }) => {
-  useEffect(() => {
-    const plugin = KontentSmartLink.initialize({
-      queryParam: "preview-mode",
-    })
-    return () => {
-      plugin.destroy()
-    }
-  }, [])
+  // useEffect(() => {
+  //   const plugin = KontentSmartLink.initialize({
+  //     queryParam: "preview-mode",
+  //   })
+  //   return () => {
+  //     plugin.destroy()
+  //   }
+  // }, [])
 
   // useEffect(() => {
   //   console.log("render layout")
