@@ -9,8 +9,6 @@ import CardLatestPosts from "../components/widgets/CardLatestPosts"
 import Button from "../components/widgets/Button"
 
 const HomePage = ({ data }) => {
-  //console.log(data)
-
   const kontentItemHomepage = data?.kontentItemHomepage
   const titleHomepage = kontentItemHomepage?.elements?.title?.value
   const bodyTextHomepage = kontentItemHomepage?.elements?.body?.value

@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import { LearnMoreIcon } from "../icons/home"
 
-const CardBg = ({ title, desc, link, icon, homeimg }) => {
+const CardBg = ({ title, desc, link, homeimg }) => {
   return (
     <Link
       to={link}
