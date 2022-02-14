@@ -68,7 +68,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="navbar-start lg:hidden ipad:visible w-auto">
+        <div className="navbar-start lg:hidden sipad:visible w-auto">
           {/* logo */}
           <Link to="/">
             <svg
@@ -170,7 +170,7 @@ export default function Header() {
             href="https://liveengage.liveperson.net/"
             target="_blank"
             rel="noreferrer"
-            className="text-primary hover:text-primary-hover normal-case ipad:hidden"
+            className="text-primary hover:text-primary-hover normal-case sipad:hidden"
             style={{ fontSize: "1.125rem", lineHeight: "1.75rem" }}
           >
             Sign in

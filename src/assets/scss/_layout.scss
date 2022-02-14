@@ -46,7 +46,7 @@ body {
     @media (min-width: 1024px) {
       overflow: unset;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       .drawer-toggle:not(:checked) ~ .drawer-side > .drawer-overlay + * {
         visibility: hidden;
       }
