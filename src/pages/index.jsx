@@ -81,7 +81,7 @@ const HomePage = ({ data }) => {
           background: "var(--cta-background-image)",
         }}
       >
-        <div className="card-body flex-row justify-between ipad:flex-col ipad:items-center">
+        <div className="card-body flex-row justify-between ipad:flex-col ipad:items-center ipad:text-center">
           <div className="flex flex-col">
             <h3
               style={{ marginTop: "0" }}
