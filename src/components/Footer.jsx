@@ -30,6 +30,7 @@ export default function Footer() {
               style={{ color: "var(--footer-text)" }}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="copyright"
               href="https://www.liveperson.com/policies/copyright"
             >
               Copyright
@@ -39,6 +40,7 @@ export default function Footer() {
               style={{ color: "var(--footer-text)" }}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="privacy"
               href="https://www.liveperson.com/policies/privacy"
             >
               Privacy Policy
@@ -48,6 +50,7 @@ export default function Footer() {
               className="underline"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="terms"
               href="https://www.liveperson.com/policies/terms-of-use"
             >
               Terms of Use
@@ -62,6 +65,7 @@ export default function Footer() {
                 target="_blank"
                 href="https://twitter.com/LivePerson"
                 rel="noreferrer"
+                aria-label="twitter icon"
               >
                 <svg
                   width="24"
@@ -88,6 +92,7 @@ export default function Footer() {
                 href="https://www.facebook.com/liveperson"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="facebook icon"
               >
                 <svg
                   width="24"
@@ -107,6 +112,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/liveperson/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="linkedin icon"
               >
                 <svg
                   width="24"
@@ -126,6 +132,7 @@ export default function Footer() {
                 target="_blank"
                 href="https://www.instagram.com/livepersoninc/"
                 rel="noreferrer"
+                aria-label="instagram icon"
               >
                 <svg
                   width="24"

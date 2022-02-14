@@ -170,6 +170,7 @@ export default function Header() {
             href="https://liveengage.liveperson.net/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Sign in"
             className="text-primary hover:text-primary-hover normal-case mobile:hidden"
             style={{ fontSize: "1.125rem", lineHeight: "1.75rem" }}
           >
@@ -178,6 +179,7 @@ export default function Header() {
           <a
             target="_blank"
             rel="noreferrer"
+            aria-label="register"
             href="https://developers.liveperson.com/register.html"
             className="btn btn-primary btn-primary-hover normal-case rounded-full px-8 mobile:hidden"
           >
