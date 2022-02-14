@@ -62,10 +62,9 @@ module.exports = {
         fonts: [
           `Inter\:100,200,300,400,500,600,700,800,900`,
           `Space Grotesk\:100,200,300,400,500,600,700,800,900`,
-
         ],
-        display: 'swap'
-      }
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-plugin-hotjar-tracking`,
@@ -133,6 +132,7 @@ module.exports = {
                 site {
                   siteMetadata {
                     siteUrl
+                    description
                   }
                 }
                  allKontentItemReleaseNotesPage(sort: {order: DESC, fields: elements___date___value}) {
