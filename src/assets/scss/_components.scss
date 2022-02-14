@@ -279,44 +279,36 @@ header {
     }
   }
 
-  @media (min-width: 769px) {
-    .table-style {
-      display: inline-grid;
-      tr {
-        min-height: 86px;
-      }
-      td,
-      th {
-        min-width: 80px;
-        flex: 1;
-      }
+  .table-style {
+    display: inline-grid;
+    tr {
+      min-height: 86px;
     }
-    .metrics {
-      td,
-      th {
-        &:nth-child(4) {
-          flex-grow: 3;
-        }
-      }
+    td,
+    th {
+      min-width: 80px;
+      flex: 1;
     }
-    .messaging-channels {
-      svg {
-        width: 24px;
-      }
-      td,
-      th {
-        &:first-child {
-          min-width: 200px;
-        }
+  }
+  .metrics {
+    td,
+    th {
+      &:nth-child(4) {
+        flex-grow: 3;
       }
     }
   }
-  // @media (max-width: 769px) {
-  //   .table-style td,
-  //   .table-style th {
-  //     min-width: 96px;
-  //   }
-  // }
+  .messaging-channels {
+    svg {
+      width: 24px;
+    }
+    td,
+    th {
+      &:first-child {
+        min-width: 200px;
+      }
+    }
+  }
 
   .table-search-filter {
     background: #ffffff;
