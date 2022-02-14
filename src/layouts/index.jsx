@@ -36,6 +36,9 @@ const SiteLayoutStyles = styled.main`
 `
 
 const HomeContentStyles = styled.div`
+  p {
+    margin-bottom: 0;
+  }
   .home-subtitle {
     p {
       display: -webkit-box;

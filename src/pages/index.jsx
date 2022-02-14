@@ -21,9 +21,9 @@ const HomePage = ({ data }) => {
         <h1 data-kontent-element-codename="title" className="text-title-text">
           {titleHomepage}
         </h1>
-        <p className="text-body-text mobile:pr-8">
+        <div className="text-body-text mobile:pr-8" style={{ marginBottom: 0 }}>
           <RichTextElement value={bodyTextHomepage} />
-        </p>
+        </div>
       </div>
       <div className="flex items-start ipad:flex-col mobile:flex-col justify-between mobile:items-center mt-8 gap-8">
         <div className="flex flex-col justify-between gap-8 w-full">
