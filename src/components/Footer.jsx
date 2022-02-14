@@ -33,7 +33,7 @@ export default function Footer() {
               href="https://www.liveperson.com/policies/copyright"
             >
               Copyright
-            </a>{" "}
+            </a>
             <a
               className="underline"
               style={{ color: "var(--footer-text)" }}
