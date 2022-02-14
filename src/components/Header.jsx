@@ -151,7 +151,7 @@ export default function Header() {
         </div>
         <div className="gap-8 relative">
           <HeaderMobile />
-          <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
+          <label htmlFor="my-drawer-2" className="drawer-button md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -170,7 +170,7 @@ export default function Header() {
             href="https://liveengage.liveperson.net/"
             target="_blank"
             rel="noreferrer"
-            className="text-primary hover:text-primary-hover normal-case sipad:hidden"
+            className="text-primary hover:text-primary-hover normal-case mobile:hidden"
             style={{ fontSize: "1.125rem", lineHeight: "1.75rem" }}
           >
             Sign in
