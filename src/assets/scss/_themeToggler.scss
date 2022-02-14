@@ -119,10 +119,10 @@ body {
 // }
 
 .theme-switch-wrapper input:checked + .slider .toggle-title-dark {
-  display: block;
+  display: flex;
 }
 
 .theme-switch-wrapper input:not(:checked) + .slider .toggle-title-light {
-  display: block;
+  display: flex;
 }
 /* toggle end */

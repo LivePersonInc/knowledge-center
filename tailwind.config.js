@@ -25,6 +25,9 @@ module.exports = {
       smobile: { max: "380px" },
       // => @media (max-width: 360px) { ... }
 
+      lmobile: { max: "767px" },
+      // => @media (max-width: 767px) { ... }
+
       mobile: { max: "768px" },
       // => @media (max-width: 768px) { ... }
 

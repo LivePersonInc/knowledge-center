@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <header className="z-50 sticky top-0 w-full bg-body-background smobile:px-5 px-8 md:px-0">
       <div className="navbar max-width justify-between gap-8">
-        <div className="px-2 sipad:hidden md:pl-0 md:ml-0 w-80">
+        <div className="px-2 lmobile:hidden md:pl-0 md:ml-0 w-80">
           <Link to="/">
             {/* logo svg */}
             <svg
@@ -68,8 +68,8 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="navbar-start lg:hidden sipad:visible w-auto">
-          {/* logo */}
+        <div className="navbar-start hidden lmobile:visible w-auto">
+          {/* logo mobile */}
           <Link to="/">
             <svg
               width="161"
