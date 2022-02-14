@@ -68,7 +68,7 @@ export default function Header() {
             </svg>
           </Link>
         </div>
-        <div className="navbar-start hidden lmobile:visible w-auto">
+        <div className="navbar-start hidden lmobile:visible lmobile:flex w-auto">
           {/* logo mobile */}
           <Link to="/">
             <svg
