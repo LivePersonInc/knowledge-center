@@ -30,7 +30,7 @@ const SiteLayoutStyles = styled.main`
   display: grid;
   grid-template-areas: "content";
   grid-template-columns: 1fr;
-  @media (max-width: 1100px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
   }
 `

@@ -17,7 +17,7 @@ const InnerSiteLayoutStyles = styled.main`
   display: grid;
   grid-template-areas: "sidebar content";
   grid-template-columns: repeat(auto-fit, minmax(75%, 1fr));
-  @media (max-width: 1100px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
   }
   .breadcrumbs li.breadcrumb-item:nth-child(2) {

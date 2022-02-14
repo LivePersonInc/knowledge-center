@@ -14,7 +14,7 @@ const InnerSiteLayoutStyles = styled.main`
   display: grid;
   grid-template-areas: "sidebar content";
   grid-template-columns: repeat(auto-fit, minmax(70%, 30%));
-  @media (max-width: 1100px) {
+  @media (max-width: 1023px) {
     flex-direction: column;
     display: flex;
     gap: 1rem;
