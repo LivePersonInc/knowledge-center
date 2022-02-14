@@ -25,11 +25,11 @@ module.exports = {
       smobile: { max: "380px" },
       // => @media (max-width: 360px) { ... }
 
-      mobile: { max: "767px" },
-      // => @media (max-width: 767px) { ... }
+      mobile: { max: "768px" },
+      // => @media (max-width: 768px) { ... }
 
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
+      md: "769px",
+      // => @media (min-width: 769px) { ... }
 
       sipad: { max: "1023px" },
 
