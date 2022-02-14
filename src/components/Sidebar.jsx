@@ -6,14 +6,11 @@ import { Disclosure, Transition } from "@headlessui/react"
 import { ArrowRight, LinkIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
-  @media (min-width: 1023px) {
+  @media (min-width: 1024px) {
     min-height: 100vh;
     position: sticky;
     top: 6rem;
     padding-bottom: 6.875rem;
-  }
-  .no-outline {
-    outline: none;
   }
   a {
     &:focus {
@@ -398,7 +395,7 @@ const SidebarItem = ({ item, level, location }) => {
               />
               <dt className="flex items-center">
                 <Disclosure.Button>
-                  <div className="flex itemdetails canOpen relative items-center gap-2 no-outline">
+                  <div className="flex itemdetails canOpen relative items-center gap-2">
                     {level === 0 ? (
                       <div
                         className={
