@@ -22,7 +22,7 @@ module.exports = {
           process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
         authorizationKey:
           process.env.KONTENT_PREVIEW_ENABLED &&
-          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
+            process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
             ? process.env.KONTENT_PREVIEW_KEY
             : undefined,
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
@@ -55,6 +55,17 @@ module.exports = {
         anonymize: true,
         // Setting this parameter is also optional
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Inter\:100,200,300,400,500,600,700,800,900`,
+          `Space Grotesk\:100,200,300,400,500,600,700,800,900`,
+
+        ],
+        display: 'swap'
+      }
     },
     {
       resolve: `gatsby-plugin-hotjar-tracking`,

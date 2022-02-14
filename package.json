@@ -35,6 +35,7 @@
     "gatsby-plugin-feed": "^4.2.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
     "gatsby-plugin-google-analytics": "^4.5.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-hotjar-tracking": "^1.1.0",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-layout": "^3.4.0",
