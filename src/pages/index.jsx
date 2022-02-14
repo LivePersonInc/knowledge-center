@@ -78,7 +78,10 @@ const HomePage = ({ data }) => {
       <div
         className="my-8 md:card-side"
         style={{
-          background: "var(--cta-background-image)",
+          background: `url(${withPrefix("/images/free-trial-banner.jpeg")})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="card-body flex-row justify-between ipad:flex-col ipad:items-center ipad:text-center">
