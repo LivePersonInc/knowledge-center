@@ -92,12 +92,9 @@ const HomePage = ({ data }) => {
             >
               {kontentItemHomepage?.elements?.cta_title?.value}
             </h3>
-            <p
-              className="text-button-text text-opacity-40"
-              style={{ marginBottom: "0" }}
-            >
+            <div className="text-button-text text-opacity-40">
               {kontentItemHomepage?.elements?.cta_perk_1?.value}
-            </p>
+            </div>
           </div>
           <div className="flex items-center mobile:mt-4">
             <a
