@@ -128,7 +128,7 @@ export const customBodyContent = body_content => {
   const custom_body_content = body_content.replace(
     /<(h[23])>(.*)(?=<\/h[23]>)/g,
     function (tag, select1, select2) {
-      const res = `<${select1} class="anchor-address smobile:pt-6 pt-12 pb-6" id="${innerHTMLarr[idx]}">${select2}<a href="#${innerHTMLarr[idx]}" id='anchor-link'></a>
+      const res = `<${select1} class="anchor-address smobile:pt-6 pt-12" id="${innerHTMLarr[idx]}">${select2}<a href="#${innerHTMLarr[idx]}" id='anchor-link'></a>
       </${select1}>`
       idx++
 
