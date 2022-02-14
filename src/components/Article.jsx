@@ -14,7 +14,11 @@ class Article extends React.Component {
 
     return (
       <div className="NavLinks pb-6" data-kontent-item-id={itemId}>
-        <h3 className="mb-0 font-bold" data-kontent-element-codename="title">
+        <h3
+          className="mb-0 font-bold"
+          data-kontent-element-codename="title"
+          style={{ marginBottom: 0 }}
+        >
           <Link
             style={{ textDecoration: "none" }}
             to={`/${slug || "#"}`}
