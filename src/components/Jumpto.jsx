@@ -24,7 +24,7 @@ const JumpTo = ({ title, jumpToItems }) => {
   }
 
   return (
-    <div className="inner-menu full-width mobile:hidden">
+    <div className="inner-menu full-width ipad:hidden">
       <div className="anchorlist shadow-none">
         <ul className="menu ml-8 text-link-color" style={jumptoList}>
           <li

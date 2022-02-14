@@ -31,11 +31,18 @@ module.exports = {
       md: "768px",
       // => @media (min-width: 768px) { ... }
 
+      sipad: { max: "1023px" },
+
+      // => @media (max-width: 1023px) { ... }
+
       ipad: { max: "1024px" },
       // => @media (max-width: 1024px) { ... }
 
       lg: "1024px",
       // => @media (min-width: 1024px) { ... }
+
+      llg: "1025px",
+      // => @media (min-width: 1025px) { ... }
 
       xl: "1440px",
       // => @media (min-width: 1280px) { ... }

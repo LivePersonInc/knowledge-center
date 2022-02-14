@@ -6,7 +6,7 @@ import { Disclosure, Transition } from "@headlessui/react"
 import { ArrowRight, LinkIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
-  @media (min-width: 1024px) {
+  @media (min-width: 1023px) {
     min-height: 100vh;
     position: sticky;
     top: 6rem;
