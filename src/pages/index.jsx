@@ -99,7 +99,7 @@ const HomePage = ({ data }) => {
           <div className="flex items-center mobile:mt-4">
             <a
               aria-label="Developer Center link"
-              rel="noopener noreferrer"
+              rel="noreferrer"
               target="_blank"
               href="https://developers.liveperson.com/register.html"
             >

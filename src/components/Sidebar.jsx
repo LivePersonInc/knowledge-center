@@ -262,6 +262,8 @@ const Sidebar = ({ location }) => {
         <li className="nav_item">
           <a
             href={`https://developers.liveperson.com`}
+            rel="noreferrer"
+            target="_blank"
             className="flex justify-between itemdetails canOpen relative"
             style={{ padding: "0", background: "transparent" }}
           >
@@ -276,6 +278,8 @@ const Sidebar = ({ location }) => {
         <li className="nav_item">
           <a
             href={`https://status.liveperson.com`}
+            rel="noreferrer"
+            target="_blank"
             className="flex justify-between itemdetails canOpen relative"
             style={{ padding: "0", background: "transparent" }}
           >
@@ -292,6 +296,8 @@ const Sidebar = ({ location }) => {
         <li className="lg:hidden ipad:visible text-center">
           <a
             href={`https://liveengage.liveperson.net/`}
+            rel="noreferrer"
+            target="_blank"
             className="justify-center"
             style={{ padding: "0" }}
           >
@@ -304,6 +310,8 @@ const Sidebar = ({ location }) => {
         <li className="lg:hidden ipad:visible justify-center text-center">
           <a
             href={`https://developers.liveperson.com/register.html`}
+            rel="noreferrer"
+            target="_blank"
             className="btn btn-primary hover:brn-primary-hover normal-case rounded-full px-8 "
             style={{
               padding: "0",
