@@ -9,12 +9,18 @@ const Breadcrumbs = ({ secondCrumbTitle, secondCrumbLink, thirdCrumb }) => {
         <li className="breadcrumbs-item m-0 hover:text-primary-hover">
           <Link to="/">Knowledge Center</Link>
         </li>
-        <li className="m-0">
-          <Slash />
-        </li>
-        <li className="breadcrumbs-item m-0 hover:text-primary-hover">
-          <Link to={`/${secondCrumbLink}`}>{secondCrumbTitle}</Link>
-        </li>
+        {console.log("itay")}
+        {console.log(secondCrumbTitle)}
+        {secondCrumbTitle.length > 0 && (
+          <>
+            <li className="m-0">
+              <Slash />
+            </li>
+            <li className="breadcrumbs-item m-0 hover:text-primary-hover">
+              <Link to={`/${secondCrumbLink}`}>{secondCrumbTitle}</Link>
+            </li>
+          </>
+        )}
         <li className="m-0">
           <Slash />
         </li>
