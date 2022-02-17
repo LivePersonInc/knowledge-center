@@ -8,6 +8,104 @@ const pageQuery = `
       elements {
         body {
           value
+          modular_content {
+            id
+            system {
+              type
+              codename
+              id
+            }
+            ... on kontent_item_video___widget {
+              id
+              elements {
+                video_id {
+                  value
+                }
+              }
+              system {
+                codename
+                type
+              }
+            }
+            ... on kontent_item_image__widget {
+              id
+              system {
+                type
+              }
+              elements {
+                description {
+                  value
+                }
+                image {
+                  value {
+                    url
+                    name
+                    description
+                    height
+                    width
+                  }
+                  name
+                }
+                orientation {
+                  value {
+                    codename
+                  }
+                }
+                product {
+                  value {
+                    id
+                    system {
+                      id
+                    }
+                  }
+                }
+              }
+            }
+            ... on kontent_item_code_sample {
+              id
+              system {
+                type
+                codename
+              }
+              elements {
+                code {
+                  value
+                }
+                language {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+            ... on kontent_item_contentbox {
+              id
+              system {
+                codename
+                type
+              }
+              elements {
+                notice_text {
+                  value
+                }
+                type {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+          }
+          images {
+            url
+            image_id
+          }
+          links {
+            url_slug
+            type
+            codename
+            link_id
+          }
         }
         subtitle {
           value
@@ -35,12 +133,418 @@ const pageQuery = `
       elements {
         subtitle {
           value
+          modular_content {
+            id
+            system {
+              type
+              codename
+              id
+            }
+            ... on kontent_item_video___widget {
+              id
+              elements {
+                video_id {
+                  value
+                }
+              }
+              system {
+                codename
+                type
+              }
+            }
+            ... on kontent_item_image__widget {
+              id
+              system {
+                type
+              }
+              elements {
+                description {
+                  value
+                }
+                image {
+                  value {
+                    url
+                    name
+                    description
+                    height
+                    width
+                  }
+                  name
+                }
+                orientation {
+                  value {
+                    codename
+                  }
+                }
+                product {
+                  value {
+                    id
+                    system {
+                      id
+                    }
+                  }
+                }
+              }
+            }
+            ... on kontent_item_code_sample {
+              id
+              system {
+                type
+                codename
+              }
+              elements {
+                code {
+                  value
+                }
+                language {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+            ... on kontent_item_contentbox {
+              id
+              system {
+                codename
+                type
+              }
+              elements {
+                notice_text {
+                  value
+                }
+                type {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+          }
+          images {
+            url
+            image_id
+          }
+          links {
+            url_slug
+            type
+            codename
+            link_id
+          }
         }
         permalink {
           value
         }
         pagename {
           value
+        }
+        product_release_notes {
+          value {
+            id
+            ... on kontent_item_product_release_notes {
+              id
+              elements {
+                version_number {
+                  value
+                }
+                release_date {
+                  value
+                }
+                product_name {
+                  value {
+                    system {
+                      name
+                    }
+                    ... on kontent_item_product_release_notes {
+                      id
+                      system {
+                        name
+                      }
+                    }
+                    id
+                  }
+                }
+                fixes {
+                  value
+                  modular_content {
+                    id
+                    system {
+                      type
+                      codename
+                      id
+                    }
+                    ... on kontent_item_video___widget {
+                      id
+                      elements {
+                        video_id {
+                          value
+                        }
+                      }
+                      system {
+                        codename
+                        type
+                      }
+                    }
+                    ... on kontent_item_image__widget {
+                      id
+                      system {
+                        type
+                      }
+                      elements {
+                        description {
+                          value
+                        }
+                        image {
+                          value {
+                            url
+                            name
+                            description
+                            height
+                            width
+                          }
+                          name
+                        }
+                        orientation {
+                          value {
+                            codename
+                          }
+                        }
+                        product {
+                          value {
+                            id
+                            system {
+                              id
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_code_sample {
+                      id
+                      system {
+                        type
+                        codename
+                      }
+                      elements {
+                        code {
+                          value
+                        }
+                        language {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_contentbox {
+                      id
+                      system {
+                        codename
+                        type
+                      }
+                      elements {
+                        notice_text {
+                          value
+                        }
+                        type {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                features {
+                  value
+                  modular_content {
+                    id
+                    system {
+                      type
+                      codename
+                      id
+                    }
+                    ... on kontent_item_video___widget {
+                      id
+                      elements {
+                        video_id {
+                          value
+                        }
+                      }
+                      system {
+                        codename
+                        type
+                      }
+                    }
+                    ... on kontent_item_image__widget {
+                      id
+                      system {
+                        type
+                      }
+                      elements {
+                        description {
+                          value
+                        }
+                        image {
+                          value {
+                            url
+                            name
+                            description
+                            height
+                            width
+                          }
+                          name
+                        }
+                        orientation {
+                          value {
+                            codename
+                          }
+                        }
+                        product {
+                          value {
+                            id
+                            system {
+                              id
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_code_sample {
+                      id
+                      system {
+                        type
+                        codename
+                      }
+                      elements {
+                        code {
+                          value
+                        }
+                        language {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_contentbox {
+                      id
+                      system {
+                        codename
+                        type
+                      }
+                      elements {
+                        notice_text {
+                          value
+                        }
+                        type {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                enhancements {
+                  value
+                  modular_content {
+                    id
+                    system {
+                      type
+                      codename
+                      id
+                    }
+                    ... on kontent_item_video___widget {
+                      id
+                      elements {
+                        video_id {
+                          value
+                        }
+                      }
+                      system {
+                        codename
+                        type
+                      }
+                    }
+                    ... on kontent_item_image__widget {
+                      id
+                      system {
+                        type
+                      }
+                      elements {
+                        description {
+                          value
+                        }
+                        image {
+                          value {
+                            url
+                            name
+                            description
+                            height
+                            width
+                          }
+                          name
+                        }
+                        orientation {
+                          value {
+                            codename
+                          }
+                        }
+                        product {
+                          value {
+                            id
+                            system {
+                              id
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_code_sample {
+                      id
+                      system {
+                        type
+                        codename
+                      }
+                      elements {
+                        code {
+                          value
+                        }
+                        language {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_contentbox {
+                      id
+                      system {
+                        codename
+                        type
+                      }
+                      elements {
+                        notice_text {
+                          value
+                        }
+                        type {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                channels_supported {
+                  value {
+                    name
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -49,22 +553,222 @@ const pageQuery = `
     nodes {
       id
       elements {
-        body {
-          value
-        }
-        subtitle {
+        pagename {
           value
         }
         permalink {
           value
         }
-        pagename {
+        date {
           value
+        }
+        subtitle {
+          value
+          modular_content {
+            id
+            system {
+              type
+              codename
+              id
+            }
+            ... on kontent_item_video___widget {
+              id
+              elements {
+                video_id {
+                  value
+                }
+              }
+              system {
+                codename
+                type
+              }
+            }
+            ... on kontent_item_image__widget {
+              id
+              system {
+                type
+              }
+              elements {
+                description {
+                  value
+                }
+                image {
+                  value {
+                    url
+                    name
+                    description
+                    height
+                    width
+                  }
+                  name
+                }
+                orientation {
+                  value {
+                    codename
+                  }
+                }
+                product {
+                  value {
+                    id
+                    system {
+                      id
+                    }
+                  }
+                }
+              }
+            }
+            ... on kontent_item_code_sample {
+              id
+              system {
+                type
+                codename
+              }
+              elements {
+                code {
+                  value
+                }
+                language {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+            ... on kontent_item_contentbox {
+              id
+              system {
+                codename
+                type
+              }
+              elements {
+                notice_text {
+                  value
+                }
+                type {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+          }
+          images {
+            url
+            image_id
+          }
+          links {
+            url_slug
+            type
+            codename
+            link_id
+          }
+        }
+        body {
+          value
+          modular_content {
+            id
+            system {
+              type
+              codename
+              id
+            }
+            ... on kontent_item_video___widget {
+              id
+              elements {
+                video_id {
+                  value
+                }
+              }
+              system {
+                codename
+                type
+              }
+            }
+            ... on kontent_item_image__widget {
+              id
+              system {
+                type
+              }
+              elements {
+                description {
+                  value
+                }
+                image {
+                  value {
+                    url
+                    name
+                    description
+                    height
+                    width
+                  }
+                  name
+                }
+                orientation {
+                  value {
+                    codename
+                  }
+                }
+                product {
+                  value {
+                    id
+                    system {
+                      id
+                    }
+                  }
+                }
+              }
+            }
+            ... on kontent_item_code_sample {
+              id
+              system {
+                type
+                codename
+              }
+              elements {
+                code {
+                  value
+                }
+                language {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+            ... on kontent_item_contentbox {
+              id
+              system {
+                codename
+                type
+              }
+              elements {
+                notice_text {
+                  value
+                }
+                type {
+                  value {
+                    codename
+                  }
+                }
+              }
+            }
+          }
+          images {
+            url
+            image_id
+          }
+          links {
+            url_slug
+            type
+            codename
+            link_id
+          }
         }
       }
     }
   }
 }
+
 `
 
 const createObjectIdMap = (nodeSet, type) => {
