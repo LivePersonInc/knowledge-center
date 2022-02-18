@@ -22,7 +22,7 @@
     "@kentico/kontent-smart-link": "^2.1.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "@tailwindcss/aspect-ratio": "^0.3.0",
-    "@tailwindcss/typography": "^0.4.1",
+    "@tailwindcss/typography": "^0.5.0",
     "algoliasearch": "^4.10.5",
     "autoprefixer": "^10.3.1",
     "axios": "^0.21.1",
