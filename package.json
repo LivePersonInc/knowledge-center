@@ -30,7 +30,7 @@
     "daisyui": "^1.11.1",
     "dotenv": "^10.0.0",
     "gatsby": "^3.14.2",
-    "gatsby-plugin-algolia": "^0.22.2",
+    "gatsby-plugin-algolia": "^0.25.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^4.2.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
