@@ -67,7 +67,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
             {/* <AlertComponent /> */}
             {/* {products_mentioned */}
-            <Pagination prev={prev} next={next} />
+            {/* <Pagination prev={prev} next={next} /> */}
           </div>
           <PostSidebar />
         </InnerSiteLayoutStyles>

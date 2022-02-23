@@ -131,7 +131,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 )}
               </div>
             ))}
-            <Pagination prev={prev} next={next} />
+            {/* <Pagination prev={prev} next={next} /> */}
           </div>
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
