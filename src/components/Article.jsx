@@ -21,7 +21,7 @@ class Article extends React.Component {
         >
           <Link
             style={{ textDecoration: "none" }}
-            to={`/${slug || "#"}`}
+            to={`${slug || "#"}`}
             className="article__title-link"
           >
             {title}
@@ -37,7 +37,7 @@ class Article extends React.Component {
         </time>
 
         <Link
-          to={`/${slug || "#"}`}
+          to={`${slug || "#"}`}
           style={{
             textDecoration: "none",
             color: "var(--body-text)",

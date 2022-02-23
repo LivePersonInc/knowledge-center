@@ -383,6 +383,10 @@ export const query = graphql`
             value
           }
         }
+        system {
+          type
+          id
+        }
       }
     }
     allReleaseNotesPage: allKontentItemReleaseNotesPage(
@@ -403,6 +407,9 @@ export const query = graphql`
           subtitle {
             value
           }
+        }
+        system {
+          type
         }
       }
     }
