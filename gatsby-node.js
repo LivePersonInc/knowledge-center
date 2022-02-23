@@ -29,7 +29,6 @@ exports.createPages = ({ graphql, actions }) => {
   }
 
   return new Promise((resolve, reject) => {
-    const navPagePath = path.resolve("./src/pages/nav-page.jsx")
     const PostReleaseNotesPath = path.resolve(
       "./src/pages/post-release-notes.jsx"
     )
@@ -511,18 +510,18 @@ exports.createPages = ({ graphql, actions }) => {
       const releaseNotesPages = result.data.allKontentItemReleaseNotesPage.nodes
       const whatsNewPages = result.data.allKontentItemPostWhatsnew.nodes
 
-      _.each(result.data.allKontentItemNavigationItem.nodes, node => {
-        const contentPage = node.elements.subitems.value[0]
-        contentPage &&
-          createPage({
-            path: `/${node.elements.url.value}/`,
-            component: slash(navPagePath),
-            context: {
-              slug: `${node.elements.url.value}`,
-              codename: `${contentPage.system.codename}`,
-            },
-          })
-      })
+      // _.each(result.data.allKontentItemNavigationItem.nodes, node => {
+      //   const contentPage = node.elements.subitems.value[0]
+      //   contentPage &&
+      //     createPage({
+      //       path: `/${node.elements.url.value}/`,
+      //       component: slash(navPagePath),
+      //       context: {
+      //         slug: `${node.elements.url.value}`,
+      //         codename: `${contentPage.system.codename}`,
+      //       },
+      //     })
+      // })
 
       _.each(result.data.allKontentItemBlogReleaseNotes.nodes, node => {
         createPage({
@@ -539,7 +538,7 @@ exports.createPages = ({ graphql, actions }) => {
         )
 
         createPage({
-          path: `/${node.elements.permalink.value}/`,
+          path: `/release-notes/${node.elements.permalink.value}/`,
           component: slash(PostReleaseNotesPath),
           context: {
             systemId: node.system.id,
@@ -565,7 +564,7 @@ exports.createPages = ({ graphql, actions }) => {
         )
 
         createPage({
-          path: `/${node.elements.permalink.value}/`,
+          path: `/whats-new/${node.elements.permalink.value}/`,
           component: slash(PostWhatsNewPath),
           context: {
             systemId: node.system.id,

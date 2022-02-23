@@ -17,8 +17,14 @@ class HomeArticle extends React.Component {
     const title = _.get(this.props, "data.elements.pagename.value", "N/A")
     // const date = _.get(this.props, "data.elements.date.value", "N/A")
     const subTitle = _.get(this.props, "data.elements.subtitle.value", "N/A")
-    const slug = `${_.get(this.props, "data.elements.permalink.value", "N/A")}`
     const itemId = _.get(this.props, "data.system.id")
+    const slug = `/${
+      _.get(this.props, "data.system.type") === "release_notes_page"
+        ? "release-notes"
+        : "whats-new"
+    }/${_.get(this.props, "data.elements.permalink.value", "N/A")}`
+
+    console.log(this.props, "data.system.type")
 
     return (
       <HomeArticleStyles
@@ -29,7 +35,7 @@ class HomeArticle extends React.Component {
           className="mb-2 font-bold text-primary hover:text-primary-hover"
           data-kontent-element-codename="title"
         >
-          <Link style={{ textDecoration: "none" }} to={`/${slug || "#"}`}>
+          <Link style={{ textDecoration: "none" }} to={`${slug}`}>
             {title}
           </Link>
         </h6>
@@ -42,7 +48,7 @@ class HomeArticle extends React.Component {
         </time> */}
         {subTitle !== "<p><br></p>" && (
           <Link
-            to={`/${slug || "#"}`}
+            to={`${slug}`}
             style={{
               textDecoration: "none",
               color: "var(--body-text)",

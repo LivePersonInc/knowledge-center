@@ -22,16 +22,7 @@ const InnerSiteLayoutStyles = styled.main`
 `
 
 const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
-  // const contentRef = useRef()
-  // const [jumpToItems, setJumpToItems] = useState([])
-  // useEffect(() => {
-  //   if (contentRef.current && data) {
-  //     const headerQuery = contentRef.current.querySelectorAll("h2")
-  //     setJumpToItems([...headerQuery])
-  //   }
-  // }, [data])
-
-  // general template
+  // whatsNew template
   const whatsNew = data?.whatsNew
   // Prev and Next Slug ReleaseNotes
   const { prev, next } = pageContext
