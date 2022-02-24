@@ -28,10 +28,20 @@ const SidebarStyles = styled.div`
       color: var(--primary-focus);
     }
   }
-  .menu ul {
+  .sidebar-menu ul {
     padding-left: 0;
+    list-style: none !important;
   }
-  .nav_item {
+  .sidebar-menu :where(li) {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .inner-nav {
+    margin-left: 1.5rem;
+    padding-right: 4px;
+  }
+  .sidebar_item {
     color: var(--link-color);
     margin-bottom: 1rem;
     cursor: pointer;
@@ -57,29 +67,28 @@ const SidebarStyles = styled.div`
   }
 
   .subcategoryfolder {
-    padding-left: 1.5rem;
     &:not(:last-child) {
-      margin-bottom: 12px;
+      margin-bottom: 0.75rem;
     }
   }
   .subcategories {
-    padding-left: 1.7rem;
+    padding-left: 1.5rem;
   }
   li.page,
   li.pagesfolder {
     padding-left: 1.5rem;
   }
-  li.nav_item:nth-last-child(8) {
+  li.sidebar_item:nth-last-child(8) {
     padding-top: 1.5rem;
   }
-  li.nav_item:nth-last-child(6) {
+  li.sidebar_item:nth-last-child(6) {
     padding-top: 1.5rem;
     .sidebar-arrow,
     .inner-nav {
       display: none;
     }
   }
-  li.nav_item:nth-last-child(5) {
+  li.sidebar_item:nth-last-child(5) {
     padding-bottom: 1.5rem;
     .sidebar-arrow,
     .inner-nav {
@@ -246,7 +255,7 @@ const Sidebar = ({ location }) => {
       <label htmlFor="my-drawer-2" className="drawer-overlay" />
       <ul
         id="mysidebar"
-        className="menu scrollbar overflow-y-auto w-80 py-8 ipad:bg-body-background h-full ipad:p-[20px]"
+        className="sidebar-menu scrollbar overflow-y-auto w-80 py-8 ipad:bg-body-background h-full ipad:p-[20px]"
         data-testid="sidebar"
       >
         <SidebarItems
@@ -259,7 +268,7 @@ const Sidebar = ({ location }) => {
           location={location}
         />
 
-        <li className="nav_item">
+        <li className="sidebar_item">
           <a
             href={`https://developers.liveperson.com`}
             rel="noreferrer"
@@ -275,7 +284,7 @@ const Sidebar = ({ location }) => {
             </div>
           </a>
         </li>
-        <li className="nav_item">
+        <li className="sidebar_item">
           <a
             href={`https://status.liveperson.com`}
             rel="noreferrer"
@@ -385,7 +394,7 @@ const InContextActiveComponent = ({ close, isOpen }) => {
 
 const SidebarItem = ({ item, level, location }) => {
   if (item.system.type === "navigation_item") {
-    const folder = level === 0 ? "nav_item" : FOLDER_NAME[level]
+    const folder = level === 0 ? "sidebar_item" : FOLDER_NAME[level]
     const newUrl =
       level > 0 ? `${item.elements.url.value}` : item.elements.url.value
 

@@ -13,12 +13,12 @@ body {
     @media (max-width: 768px) {
       word-break: break-word;
     }
-    .menu li > :where(a:active),
-    .menu li > :where(button:active) {
+    .sidebar-menu li > :where(a:active),
+    .sidebar-menu li > :where(button:active) {
       background: transparent;
     }
     .inner-menu {
-      .menu {
+      .sidebar-menu {
         li > :where(a:focus),
         li > :where(a:hover),
         li > :where(button:focus),
@@ -58,14 +58,14 @@ body {
   .drawer-toggle ~ .drawer-content {
     overflow-y: visible;
   }
-  .menu li.hover-bordered a {
+  .sidebar-menu li.hover-bordered a {
     border-left-width: 2px;
   }
 
-  .menu li.hover-bordered a:hover {
+  .sidebar-menu li.hover-bordered a:hover {
     outline: 1px;
   }
-  .menu li.hover-bordered:focus a {
+  .sidebar-menu li.hover-bordered:focus a {
     border-color: var(--jumpto-border-color);
   }
 }
