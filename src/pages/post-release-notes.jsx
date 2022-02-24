@@ -239,6 +239,15 @@ export const query = graphql`
               elements {
                 notice_text {
                   value
+                  links {
+                    codename
+                    link_id
+                    type
+                    url_slug
+                  }
+                  modular_content {
+                    id
+                  }
                 }
                 type {
                   value {
@@ -366,6 +375,15 @@ export const query = graphql`
                       elements {
                         notice_text {
                           value
+                          links {
+                            codename
+                            link_id
+                            type
+                            url_slug
+                          }
+                          modular_content {
+                            id
+                          }
                         }
                         type {
                           value {
@@ -457,6 +475,15 @@ export const query = graphql`
                       elements {
                         notice_text {
                           value
+                          links {
+                            codename
+                            link_id
+                            type
+                            url_slug
+                          }
+                          modular_content {
+                            id
+                          }
                         }
                         type {
                           value {

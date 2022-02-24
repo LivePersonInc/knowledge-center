@@ -22,7 +22,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
       resolveLink={(link, domNode) => {
         // const parentItemType =
         //   bodyfield.type
-
         // It is possible to use external data for resolution
         return (
           <Link to={`/${link?.url_slug || "#"}`}>
@@ -180,12 +179,22 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                       ></path>
                     </svg>
                   </div>
-                  <div
-                    className="px-3"
-                    dangerouslySetInnerHTML={{
-                      __html: linkedItem.elements.notice_text.value,
-                    }}
-                  />
+                  <div className="px-3">
+                    <RichTextElement
+                      value={linkedItem.elements.notice_text.value}
+                      links={linkedItem.elements.notice_text.links}
+                      linkedItems={
+                        linkedItem.elements.notice_text.modular_content
+                      }
+                      resolveLink={(innerlink, innerDomNode) => {
+                        return (
+                          <Link to={`/${innerlink?.url_slug || "#"}`}>
+                            {innerDomNode.children[0].data}
+                          </Link>
+                        )
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             )

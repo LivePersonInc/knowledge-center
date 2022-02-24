@@ -208,6 +208,15 @@ export const query = graphql`
               elements {
                 notice_text {
                   value
+                  modular_content {
+                    id
+                  }
+                  links {
+                    url_slug
+                    type
+                    link_id
+                    codename
+                  }
                 }
                 type {
                   value {
