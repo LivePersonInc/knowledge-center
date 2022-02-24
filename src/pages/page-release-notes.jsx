@@ -109,6 +109,9 @@ export const query = graphql`
             value
           }
         }
+        system {
+          type
+        }
       }
     }
     kontentItemBlogReleaseNotes {

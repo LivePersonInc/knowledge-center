@@ -86,6 +86,10 @@ module.exports = {
         "button-background-secondary": "var(--button-background-secondary)",
         "button-text-secondary": "var(--button-text-secondary)",
         "box-shadow": "var(--box-shadow)",
+        "notice-background": "var(--notice-background)",
+        "success-background": "var(--success-background)",
+        "warning-background": "var(--warning-background)",
+        "bad-background": "var(--bad-background)",
         blue: {
           navy: "#090C43",
           "navy-light": "#1D1F52",
@@ -176,10 +180,10 @@ module.exports = {
           "base-300": "#6f737c",
           "base-content": "#2a2b2e",
 
-          info: "var(--notice-backgorund)",
-          success: "var(--success-backgorund)",
-          warning: "var(--warning-backgorund)",
-          error: "var(--bad-backgorund)",
+          info: "#f0f6fa",
+          success: "#008738",
+          warning: "#d65800",
+          error: "#b00020",
         },
 
         // active

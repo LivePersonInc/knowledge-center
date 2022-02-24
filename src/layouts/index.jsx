@@ -112,12 +112,6 @@ const Layout = ({ children, location }) => {
 
   const data = useStaticQuery(graphql`
     {
-      sitePlugin(name: { eq: "@kentico/gatsby-source-kontent" }) {
-        pluginOptions {
-          projectId
-          languageCodenames
-        }
-      }
       site {
         siteMetadata {
           title
@@ -127,13 +121,7 @@ const Layout = ({ children, location }) => {
   `)
 
   return (
-    <BodyStyles
-      className="layout"
-      data-kontent-project-id={data.sitePlugin.pluginOptions.projectId}
-      data-kontent-language-codename={
-        data.sitePlugin.pluginOptions.languageCodenames[0]
-      }
-    >
+    <BodyStyles className="layout">
       <Seo title={data.site.siteMetadata.title} />
       <GlobalStyles />
       <Header />

@@ -24,9 +24,9 @@ const JumpTo = ({ title, jumpToItems }) => {
   }
 
   return (
-    <div className="inner-menu full-width ipad:hidden">
+    <div className="menu full-width ipad:hidden">
       <div className="anchorlist shadow-none">
-        <ul className="menu ml-8 text-link-color" style={jumptoList}>
+        <ul className="sidebar-menu ml-8 text-link-color" style={jumptoList}>
           <li
             className="anchoritem hover-bordered mb-0 focus:text-body-text"
             id="jumptotop"
