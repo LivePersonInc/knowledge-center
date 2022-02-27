@@ -24,7 +24,7 @@ class HomeArticle extends React.Component {
         : "whats-new"
     }/${_.get(this.props, "data.elements.permalink.value", "N/A")}`
 
-    console.log(this.props, "data.system.type")
+    // console.log(this.props, "data.system.type")
 
     return (
       <HomeArticleStyles

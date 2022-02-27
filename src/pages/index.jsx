@@ -33,7 +33,7 @@ const HomePage = ({ data }) => {
             link={kontentItemHomepage?.elements?.link_1?.value}
             icon="LearnMoreIcon"
             desc={kontentItemHomepage?.elements?.box_description_1?.value}
-            homeimg={withPrefix("bgkc.jpeg")}
+            homeimg={kontentItemHomepage?.elements?.image?.value[0]?.url}
           />
           <CardIcon
             // Messaging
