@@ -78,7 +78,7 @@ const HomePage = ({ data }) => {
       <div
         className="my-8 md:card-side"
         style={{
-          background: `url(${withPrefix("/images/free-trial-banner.jpeg")})`,
+          background: `url(${kontentItemHomepage?.elements?.cta_image?.value[0]?.url})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -361,6 +361,11 @@ export const query = graphql`
         }
         link_6 {
           value
+        }
+        cta_image {
+          value {
+            url
+          }
         }
       }
     }
