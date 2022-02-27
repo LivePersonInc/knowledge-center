@@ -11,6 +11,7 @@ import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import { customBodyContent } from "../utils"
 import Footer from "../components/Footer"
+import RelatedArticles from "../components/widgets/RelatedArticles"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -55,6 +56,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
+  // Related Articles
+  const relatedArticlesList =
+    knowledgeCenterMarkdown?.elements?.related_articles.value
+
+  console.log(relatedArticlesList)
   return (
     <>
       <Seo title={pageTitle} description={pageSubTitle} />
@@ -96,7 +102,9 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                 bodyfield={knowledgeCenterMarkdown?.elements?.body}
               />
             )}
-
+            <div id="relatedArticles">
+              <RelatedArticles related={relatedArticlesList} />
+            </div>
             <AlertComponent />
           </div>
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
@@ -252,6 +260,27 @@ export const query = graphql`
         }
         redirects {
           value
+        }
+        related_articles {
+          name
+          value {
+            system {
+              codename
+              name
+              type
+            }
+            ... on kontent_item_knowledge_center_markdown_page {
+              id
+              elements {
+                pagename {
+                  value
+                }
+                permalink {
+                  value
+                }
+              }
+            }
+          }
         }
       }
     }
