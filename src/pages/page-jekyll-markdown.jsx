@@ -102,9 +102,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
                 bodyfield={knowledgeCenterMarkdown?.elements?.body}
               />
             )}
-            <div id="relatedArticles">
-              <RelatedArticles related={relatedArticlesList} />
-            </div>
+            {relatedArticlesList.length > 0 && (
+              <div id="relatedArticles">
+                <RelatedArticles related={relatedArticlesList} />
+              </div>
+            )}
             <AlertComponent />
           </div>
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
