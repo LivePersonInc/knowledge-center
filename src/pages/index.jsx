@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, withPrefix } from "gatsby"
+import { graphql } from "gatsby"
 
 import { RichTextElement } from "@kentico/gatsby-kontent-components"
 import CardBg from "../components/widgets/CardBg"
