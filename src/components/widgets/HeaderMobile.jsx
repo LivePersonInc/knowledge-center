@@ -92,7 +92,14 @@ const Hit = props => {
         ? props.hits.map((pP, index) => {
             return (
               <div key={index} className="hit-block">
-                <Link to={`/${pP.link}`} onClick={props.onClose}>
+                <Link
+                  to={
+                    pP.type === "release-notes" || pP.type === "whats-new"
+                      ? `/${pP.type}/${pP.link}`
+                      : `/${pP.link}`
+                  }
+                  onClick={props.onClose}
+                >
                   <div className="hit-name">
                     <p className="font-bold" attribute="name">
                       <Highlight attribute="title" hit={pP} />

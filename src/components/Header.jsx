@@ -196,9 +196,17 @@ const Hit = props => {
     <div>
       {props?.hits?.length > 0
         ? props.hits.map((pP, index) => {
+            // console.log(pP.type)
             return (
               <div key={index} className="hit-block">
-                <Link to={`/${pP.link}`} onClick={props.onClose}>
+                <Link
+                  to={
+                    pP.type === "release-notes" || pP.type === "whats-new"
+                      ? `/${pP.type}/${pP.link}`
+                      : `/${pP.link}`
+                  }
+                  onClick={props.onClose}
+                >
                   <div className="hit-name">
                     <p
                       className="font-bold text-body-text mb-1"

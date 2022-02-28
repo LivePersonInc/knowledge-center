@@ -20,13 +20,26 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
       //   return <ImageElement />
       // }}
       resolveLink={(link, domNode) => {
-        // const parentItemType =
-        //   bodyfield.type
+        const parentItemType = link.type
+        // console.log(link.type)
         // It is possible to use external data for resolution
         return (
-          <Link to={`/${link?.url_slug || "#"}`}>
-            {domNode.children[0].data}
-          </Link>
+          <>
+            {(parentItemType === "post___whatsnew" && (
+              <Link to={`/whats-new/${link?.url_slug || "#"}`}>
+                {domNode.children[0].data}
+              </Link>
+            )) ||
+              (parentItemType === "release_notes_page" && (
+                <Link to={`/release-notes/${link?.url_slug || "#"}`}>
+                  {domNode.children[0].data}
+                </Link>
+              )) || (
+                <Link to={`/${link?.url_slug || "#"}`}>
+                  {domNode.children[0].data}
+                </Link>
+              )}
+          </>
         )
       }}
       resolveLinkedItem={linkedItem => {
@@ -187,10 +200,31 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                         linkedItem.elements.notice_text.modular_content
                       }
                       resolveLink={(innerlink, innerDomNode) => {
+                        const parentNoticeItemType = innerlink.type
                         return (
-                          <Link to={`/${innerlink?.url_slug || "#"}`}>
-                            {innerDomNode.children[0].data}
-                          </Link>
+                          <>
+                            {(parentNoticeItemType === "post___whatsnew" && (
+                              <Link
+                                to={`/whats-new/${innerlink?.url_slug || "#"}`}
+                              >
+                                {innerDomNode.children[0].data}
+                              </Link>
+                            )) ||
+                              (parentNoticeItemType ===
+                                "release_notes_page" && (
+                                <Link
+                                  to={`/release-notes/${
+                                    innerlink?.url_slug || "#"
+                                  }`}
+                                >
+                                  {innerDomNode.children[0].data}
+                                </Link>
+                              )) || (
+                                <Link to={`/${innerlink?.url_slug || "#"}`}>
+                                  {innerDomNode.children[0].data}
+                                </Link>
+                              )}
+                          </>
                         )
                       }}
                     />

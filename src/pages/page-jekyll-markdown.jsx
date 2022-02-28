@@ -60,7 +60,6 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   const relatedArticlesList =
     knowledgeCenterMarkdown?.elements?.related_articles.value
 
-  console.log(relatedArticlesList)
   return (
     <>
       <Seo title={pageTitle} description={pageSubTitle} />
