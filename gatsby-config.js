@@ -182,9 +182,11 @@ module.exports = {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {
         mergeSecurityHeaders: false, // boolean to turn off the default security headers should be fixed
-        headers: [
-          "Cache-Control: public, max-age=31536000, immutable",
-        ],
+        headers: {
+          "/*": [
+            "Cache-Control: public, max-age=31536000, immutable",
+          ]
+        }
       },
     },
   ],
