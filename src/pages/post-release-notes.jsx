@@ -93,17 +93,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                     />
                   </div>
                 )}
-
-                {/* Fixes */}
-                {node.elements.fixes.value !== "<p><br></p>" && (
-                  <div>
-                    <h3 className="h3 mt-4 mb-2">Fixes</h3>
-                    <LpRichTextElement
-                      body_content={node?.elements?.fixes?.value}
-                      bodyfield={node?.elements?.fixes}
-                    />
-                  </div>
-                )}
                 {/* enhancements */}
                 {node.elements.enhancements.value !== "<p><br></p>" && (
                   <div>
@@ -113,6 +102,16 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                         node?.elements?.enhancements?.value
                       )}
                       bodyfield={node?.elements?.enhancements}
+                    />
+                  </div>
+                )}
+                {/* Fixes */}
+                {node.elements.fixes.value !== "<p><br></p>" && (
+                  <div>
+                    <h3 className="h3 mt-4 mb-2">Fixes</h3>
+                    <LpRichTextElement
+                      body_content={node?.elements?.fixes?.value}
+                      bodyfield={node?.elements?.fixes}
                     />
                   </div>
                 )}
