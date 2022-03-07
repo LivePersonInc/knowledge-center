@@ -1,6 +1,6 @@
 # LivePerson Knowledge Center + Gatsby
 
-**This site is maintained by the Product Communications and Experience team. Please contact ihaephrati@liveperson.com for issues, questions, and the such**.
+**This site is maintained by the product communication and experience team. Please feel free to contact me at ihaephrati@liveperson.com with any issues, questions, or concerns.**.
 
 This repository generates LivePerson's Knowledge Center, which can be found at <https://knowledge.liveperson.com>. The site is generated using Gatsby. If you find an issue with the documentation, site structure, meta or anything else, please open an issue and we'll respond as soon as possible.
 
