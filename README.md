@@ -1,29 +1,17 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.liveperson.com">
-    <img alt="Gatsby" src="./src/assets/images/logo.svg" width="200" />
-  </a>
-</p>
-<h1 align="center">
-  LP Gatsby + Kontent
-</h1>
+# LivePerson Knowledge Center + Gatsby
 
 **This site is maintained by the Product Communications and Experience team. Please contact ihaephrati@liveperson.com for issues, questions, and the such**.
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+This repository generates LivePerson's Knowledge Center, which can be found at <https://knowledge.liveperson.com>. The site is generated using Gatsby. If you find an issue with the documentation, site structure, meta or anything else, please open an issue and we'll respond as soon as possible.
 
 ## 🚀 Quick start
 
-    npm install
-    npm run develop
+    yarn
+    yarn start
 
-## 🚀 Quick start (Gatsby Cloud)
+## 🚀 Live site
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+Link: [knowledge](https://knowledge.liveperson.com/):
 
 ## 🧐 What's inside?
 
@@ -74,11 +62,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
-
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
