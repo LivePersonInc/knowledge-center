@@ -117,187 +117,6 @@ export default HomePage
 
 export const query = graphql`
   {
-    allKontentItemNavigationItem(
-      filter: { system: { codename: { eq: "root" } } }
-    ) {
-      nodes {
-        elements {
-          subitems {
-            value {
-              ... on kontent_item_knowledge_center_markdown_page {
-                id
-                elements {
-                  pagename {
-                    value
-                  }
-                  permalink {
-                    value
-                  }
-                }
-                system {
-                  type
-                }
-              }
-              ... on kontent_item_release_notes_page {
-                id
-                elements {
-                  pagename {
-                    value
-                  }
-                  permalink {
-                    value
-                  }
-                }
-                system {
-                  type
-                }
-              }
-              ... on kontent_item_post___whatsnew {
-                id
-                elements {
-                  pagename {
-                    value
-                  }
-                  permalink {
-                    value
-                  }
-                }
-                system {
-                  type
-                }
-              }
-              ... on kontent_item_navigation_item {
-                id
-                elements {
-                  title {
-                    value
-                  }
-                  url {
-                    value
-                  }
-                  subitems {
-                    value {
-                      ... on kontent_item_knowledge_center_markdown_page {
-                        id
-                        elements {
-                          pagename {
-                            value
-                          }
-                          permalink {
-                            value
-                          }
-                        }
-                        system {
-                          type
-                        }
-                      }
-                      ... on kontent_item_release_notes_page {
-                        id
-                        elements {
-                          pagename {
-                            value
-                          }
-                          permalink {
-                            value
-                          }
-                        }
-                        system {
-                          type
-                        }
-                      }
-                      ... on kontent_item_post___whatsnew {
-                        id
-                        elements {
-                          pagename {
-                            value
-                          }
-                          permalink {
-                            value
-                          }
-                        }
-                        system {
-                          type
-                        }
-                      }
-                      ... on kontent_item_navigation_item {
-                        id
-                        elements {
-                          subitems {
-                            value {
-                              ... on kontent_item_knowledge_center_markdown_page {
-                                id
-                                elements {
-                                  pagename {
-                                    value
-                                  }
-                                  permalink {
-                                    value
-                                  }
-                                }
-                                system {
-                                  type
-                                }
-                              }
-                              ... on kontent_item_navigation_item {
-                                id
-                                elements {
-                                  title {
-                                    value
-                                  }
-                                  url {
-                                    value
-                                  }
-                                  subitems {
-                                    value {
-                                      ... on kontent_item_knowledge_center_markdown_page {
-                                        id
-                                        elements {
-                                          pagename {
-                                            value
-                                          }
-                                          permalink {
-                                            value
-                                          }
-                                        }
-                                        system {
-                                          type
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                                system {
-                                  type
-                                }
-                              }
-                            }
-                          }
-                          title {
-                            value
-                          }
-                          url {
-                            value
-                          }
-                        }
-                        system {
-                          type
-                        }
-                      }
-                      system {
-                        type
-                      }
-                    }
-                  }
-                }
-                system {
-                  type
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     kontentItemHomepage {
       elements {
         title {
@@ -392,6 +211,7 @@ export const query = graphql`
           type
           id
         }
+        id
       }
     }
     allReleaseNotesPage: allKontentItemReleaseNotesPage(
@@ -415,7 +235,9 @@ export const query = graphql`
         }
         system {
           type
+          id
         }
+        id
       }
     }
   }

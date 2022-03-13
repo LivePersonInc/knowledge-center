@@ -8,9 +8,7 @@ const CardLatestPosts = ({ title, icon, link, alltype }) => {
   const items = []
   const homeArticles = alltype.nodes
   homeArticles.forEach(article => {
-    items.push(
-      <HomeArticle data={article} key={article.elements.permalink.value} />
-    )
+    items.push(<HomeArticle data={article} key={article.system.id} />)
   })
   return (
     <div className="flex border border-card-border transition-shadow compact side bg-card-background w-full flex-grow">
