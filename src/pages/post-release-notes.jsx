@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
-import Pagination from "../components/Pagination"
+// import Pagination from "../components/Pagination"
 import { customBodyContent } from "../utils"
 import Footer from "../components/Footer"
 
@@ -45,7 +45,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   // const pageTags = releaseNotesPage?.elements?.channels_supported.value
 
   // Prev and Next Slug ReleaseNotes
-  const { prev, next } = pageContext
+  // const { prev, next } = pageContext
 
   return (
     <>
