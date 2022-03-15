@@ -95,6 +95,29 @@ header {
   }
 }
 
+// Search page
+
+.breadcrumbs .search-tags {
+  background: var(--body-background);
+  border: 1px solid var(--jumpto-border-color);
+  border-radius: 16px;
+  padding: 4px 16px;
+  font-family: "Inter";
+  color: var(--tags-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  &:hover {
+    background: var(--scroll-bg);
+    color: var(--tags-color);
+  }
+}
+
+em.ais-Highlight-highlighted {
+  font-weight: bold;
+}
+
 //mobile search
 
 .mobile-search-component form.ais-SearchBox-form {

@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState } from "react"
 import algoliasearch from "algoliasearch/lite"
 import SearchContext from "./searchContext"
-import {
-  InstantSearch,
-} from "react-instantsearch-dom"
+import { InstantSearch } from "react-instantsearch-dom"
 
 let appId = process.env.GATSBY_ALGOLIA_APP_ID
 let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
@@ -11,7 +9,6 @@ let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
 const searchClient = algoliasearch(appId, apiKey)
 const SearchContextProvider = ({ children }) => {
   const [redirectStatus, setRedirectStatus] = useState(false)
-  const [itemsLength, setTtemsLength] = useState(false)
 
   let initialSearchState = {
     query: null,
@@ -19,19 +16,19 @@ const SearchContextProvider = ({ children }) => {
   let initialQuery = ""
   const [query, setQuery] = useState(initialQuery)
   const [searchState, setSearchState] = useState(initialSearchState)
-  const [filterTypes, setFilterTypes] = useState(initialSearchState)
+  // const [filterTypes, setFilterTypes] = useState(initialSearchState)
 
-  const updateHits = v => {
-    console.log(v)
-    setTtemsLength(v.hits.length)
-    if (v.hits.length) {
-      let foundTypes = []
-      v.hits.map(c => {
-        if (!foundTypes.includes(c.type)) foundTypes.push(c.type)
-      })
-      setFilterTypes(foundTypes)
-    }
-  }
+  // const updateHits = v => {
+  //   console.log(v)
+  //   setTtemsLength(v.hits.length)
+  //   if (v.hits.length) {
+  //     let foundTypes = []
+  //     v.hits.map(c => {
+  //       if (!foundTypes.includes(c.type)) foundTypes.push(c.type)
+  //     })
+  //     setFilterTypes(foundTypes)
+  //   }
+  // }
   const onSearchStateChange = updatedSearchState => {
     // console.log(updatedSearchState);
     setRedirectStatus(false)
@@ -44,11 +41,9 @@ const SearchContextProvider = ({ children }) => {
       value={{
         redirectStatus,
         setRedirectStatus,
-        updateHits,
+
         query,
-        itemsLength,
-        filterTypes,
-        searchClient,
+
         searchState,
       }}
     >

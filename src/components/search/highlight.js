@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { connectHighlight } from "react-instantsearch-dom"
 import parse from "html-react-parser"
 const Highlight = ({ highlight, attribute, hit }) => {
@@ -9,10 +8,6 @@ const Highlight = ({ highlight, attribute, hit }) => {
     hit,
   })
 
-  console.log(parsedHit)
-  console.log(hit)
-
-  // console.log("parsedHit")
   // console.log("parsedHit")
   let type = hit.type
 
