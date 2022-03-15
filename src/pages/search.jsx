@@ -138,7 +138,7 @@ const RefinementLisst = ({
             // if(k+1> limit && showMore){
             //    return (
             //      <li
-            //        className="breadcrumbs-item m-0 w-17 h-9 m-2 border rounded "
+            //        className=""
             //        key={item.label}
             //      >
             //        <a
@@ -180,9 +180,7 @@ const RefinementLisst = ({
               </li>
             )
           })}
-        {/* {items.length>2&& !showMore&& <li
-          className="breadcrumbs-item m-0 w-17 h-9 m-2 border rounded "
-        >
+        {/* {items.length>2&& !showMore&& <li>
           <button
             onClick={event => {
               event.preventDefault()
