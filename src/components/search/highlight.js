@@ -31,14 +31,14 @@ const Highlight = ({ highlight, attribute, hit }) => {
           )
         } else {
           return part.isHighlighted ? (
-            <mark className="ais-Highlight-highlighted font-bold text-body-text" key={index}>
+            <mark
+              className="ais-Highlight-highlighted font-bold text-body-text"
+              key={index}
+            >
               {part.value}
             </mark>
           ) : (
-            <span
-              className="ais-Highlight-nonHighlighted "
-              key={index}
-            >
+            <span className="ais-Highlight-nonHighlighted " key={index}>
               {part.value}
             </span>
           )

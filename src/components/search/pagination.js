@@ -3,14 +3,16 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Pagination = ({ currentRefinement, nbPages, refine, createURL }) => (
-  <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+  <nav
+    className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
     style={{
-      fontFamily: 'Space Grotesk',
-      fontStyle: 'normal',
+      fontFamily: "Space Grotesk",
+      fontStyle: "normal",
       fontWeight: 700,
-      fontSize: '18px',
-      lineHeight: '28px',
-    }}>
+      fontSize: "18px",
+      lineHeight: "28px",
+    }}
+  >
     {currentRefinement > 1 && (
       <Link
         to="#"

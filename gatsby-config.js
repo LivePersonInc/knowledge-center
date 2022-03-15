@@ -22,7 +22,7 @@ module.exports = {
           process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
         authorizationKey:
           process.env.KONTENT_PREVIEW_ENABLED &&
-            process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
+          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
             ? process.env.KONTENT_PREVIEW_KEY
             : undefined,
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
@@ -184,10 +184,8 @@ module.exports = {
         mergeSecurityHeaders: false, // boolean to turn off the default security headers should be fixed
         mergeCachingHeaders: true,
         headers: {
-          "/*": [
-            "Cache-Control: public, max-age=31536000, immutable",
-          ]
-        }
+          "/*": ["Cache-Control: public, max-age=31536000, immutable"],
+        },
       },
     },
   ],
