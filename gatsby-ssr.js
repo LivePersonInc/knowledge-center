@@ -1,4 +1,3 @@
-import "./src/assets/scss/index.scss"
 import SearchContextProvider from "./src/context/searchProvider"
 import React from "react"
 

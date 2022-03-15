@@ -5,7 +5,7 @@ import Seo from "../components/Seo"
 import LpRichTextElement from "../components/LpRichTextElement"
 import PostSidebar from "../components/postSidebar"
 import Breadcrumbs from "../components/Breadbrumbs"
-import Pagination from "../components/Pagination"
+import PagePagination from "../components/PagePagination"
 import Footer from "../components/Footer"
 
 const InnerSiteLayoutStyles = styled.main`
@@ -67,7 +67,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
 
             {/* <AlertComponent /> */}
             {/* {products_mentioned */}
-            {/* <Pagination prev={prev} next={next} /> */}
+            <PagePagination prev={prev} next={next} pagetype="whats-new" />
           </div>
           <PostSidebar />
         </InnerSiteLayoutStyles>

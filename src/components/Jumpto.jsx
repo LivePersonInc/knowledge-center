@@ -56,9 +56,12 @@ const JumpTo = ({ title, jumpToItems }) => {
                 onClick={() => scrollTo(anchor)}
                 role="presentation"
               >
-                <Link className="hover:text-link-color-hover">
+                <a
+                  className="hover:text-link-color-hover"
+                  href={`#${anchor.id}`}
+                >
                   {anchor.textContent}
-                </Link>
+                </a>
               </li>
             )
           })}

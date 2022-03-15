@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from "react"
-import { Link } from "gatsby"
+import React, { useRef, useEffect, useContext } from "react"
+import { Link, navigate } from "gatsby"
+import { useLocation } from "@reach/router"
+
 import algoliasearch from "algoliasearch/lite"
 import {
-  InstantSearch,
   connectHits,
   connectStateResults,
   Index,
@@ -10,6 +11,8 @@ import {
   Highlight,
 } from "react-instantsearch-dom"
 import HeaderMobile from "./widgets/HeaderMobile"
+import SearchContext from "../context/searchContext"
+import CustomHighlight from "./search/highlight"
 
 let appId = process.env.GATSBY_ALGOLIA_APP_ID
 let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
@@ -17,7 +20,7 @@ let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
 const searchClient = algoliasearch(appId, apiKey)
 
 export default function Header() {
-  const [redirectStatus, setRedirectStatus] = useState(false)
+  const { redirectStatus, setRedirectStatus } = useContext(SearchContext)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -42,6 +45,7 @@ export default function Header() {
         : null
     }
   )
+  const location = useLocation()
 
   return (
     <header className="z-50 sticky top-0 w-full bg-body-background smobile:px-5 px-8 md:px-0">
@@ -94,35 +98,31 @@ export default function Header() {
         </div>
         <div className="searchcomponent hidden flex-grow navbar-center md:flex">
           <div className="flex items-stretch w-full flex-col relative">
-            <InstantSearch
-              indexName="helpcenter"
-              searchClient={searchClient}
-              onSearchStateChange={() => {
-                setRedirectStatus(false)
+            <SearchBox
+              submit={
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 19.6L16.5 15C17.5 13.7 18 12.2 18 10.5C18 6.4 14.6 3 10.5 3C6.4 3 3 6.4 3 10.5C3 14.6 6.4 18 10.5 18C12.2 18 13.8 17.4 15 16.5L19.5 21L21 19.6ZM10.5 16C7.5 16 5 13.5 5 10.5C5 7.5 7.5 5 10.5 5C13.5 5 16 7.5 16 10.5C16 13.5 13.5 16 10.5 16Z"
+                    fill="var(--search-input-color)"
+                  />
+                </svg>
+              }
+              onSubmit={event => {
+                event.preventDefault()
+                navigate("/search")
               }}
-              refresh={true}
-              searchable={true}
-            >
-              <SearchBox
-                submit={
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M21 19.6L16.5 15C17.5 13.7 18 12.2 18 10.5C18 6.4 14.6 3 10.5 3C6.4 3 3 6.4 3 10.5C3 14.6 6.4 18 10.5 18C12.2 18 13.8 17.4 15 16.5L19.5 21L21 19.6ZM10.5 16C7.5 16 5 13.5 5 10.5C5 7.5 7.5 5 10.5 5C13.5 5 16 7.5 16 10.5C16 13.5 13.5 16 10.5 16Z"
-                      fill="var(--search-input-color)"
-                    />
-                  </svg>
-                }
-                style={{ borderRadius: `32px`, backgroundColor: "#EEEFF1" }}
-                type="text"
-                placeholder="SEARCH"
-                className="search-input w-full rounded-full"
-              />
+              style={{ borderRadius: `32px`, backgroundColor: "#EEEFF1" }}
+              type="text"
+              placeholder="SEARCH"
+              className="search-input w-full rounded-full"
+            />
+            {location.pathname !== "/search" && (
               <div ref={ref}>
                 <Index indexName="helpcenter">
                   <IndexResults>
@@ -146,7 +146,7 @@ export default function Header() {
                   </IndexResults>
                 </Index>
               </div>
-            </InstantSearch>
+            )}
           </div>
         </div>
         <div className="gap-8 relative">
@@ -215,7 +215,7 @@ const Hit = props => {
                       <Highlight attribute="title" hit={pP} />
                     </p>
                   </div>
-                  <Highlight
+                  <CustomHighlight
                     className="text-footer-text"
                     attribute="subtitle"
                     hit={pP}

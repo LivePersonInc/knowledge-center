@@ -17,6 +17,7 @@ const Span = styled.span`
   font-weight: bold;
   font-size: 23px;
 `
+
 const Flex = styled.div`
   display: flex;
   gap: 0.5rem;
@@ -28,7 +29,7 @@ const Flex = styled.div`
   }
 `
 
-const Pagination = ({ prev, next }) => {
+const PagePagination = ({ prev, next, pagetype }) => {
   const needsPagination = Boolean(prev) || Boolean(next)
 
   return (
@@ -44,7 +45,7 @@ const Pagination = ({ prev, next }) => {
           {prev && (
             <Link
               style={{ textDecoration: "none" }}
-              to={`/${prev?.permalink.value}`}
+              to={`/${pagetype}/${prev?.permalink.value}`}
             >
               <Flex>
                 <Span>
@@ -84,7 +85,7 @@ const Pagination = ({ prev, next }) => {
           {next && (
             <Link
               style={{ textDecoration: "none" }}
-              to={`/${next?.permalink.value}`}
+              to={`/${pagetype}/${next?.permalink.value}`}
             >
               <Flex>
                 <div>
@@ -128,4 +129,4 @@ const Pagination = ({ prev, next }) => {
   )
 }
 
-export default Pagination
+export default PagePagination

@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
-import Pagination from "../components/Pagination"
+import PagePagination from "../components/PagePagination"
 import { customBodyContent } from "../utils"
 import Footer from "../components/Footer"
 
@@ -117,7 +117,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                 )}
               </div>
             ))}
-            {/* <Pagination prev={prev} next={next} /> */}
+            <PagePagination prev={prev} next={next} pagetype="release-notes" />
           </div>
           <Jumpto title={pageTitle} jumpToItems={jumpToItems} />
         </InnerSiteLayoutStyles>
