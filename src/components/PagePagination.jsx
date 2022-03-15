@@ -17,6 +17,7 @@ const Span = styled.span`
   font-weight: bold;
   font-size: 23px;
 `
+
 const Flex = styled.div`
   display: flex;
   gap: 0.5rem;
