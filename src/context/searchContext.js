@@ -1,8 +1,8 @@
-import { createContext, useReducer, useEffect } from "react"
+import { createContext } from "react"
 
 const SearchContext = createContext({
   redirectStatus: false,
-  setRedirectStatus: () => {},
+  setRedirectStatus: () => { },
 
   query: "",
 

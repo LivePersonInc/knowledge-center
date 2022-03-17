@@ -22,7 +22,7 @@ module.exports = {
           process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
         authorizationKey:
           process.env.KONTENT_PREVIEW_ENABLED &&
-          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
+            process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
             ? process.env.KONTENT_PREVIEW_KEY
             : undefined,
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
@@ -74,15 +74,15 @@ module.exports = {
         sv: 6,
       },
     },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries: require("./src/utils/algolia-queries"),
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     appId: process.env.GATSBY_ALGOLIA_APP_ID,
+    //     apiKey: process.env.ALGOLIA_ADMIN_KEY,
+    //     indexName: process.env.ALGOLIA_INDEX_NAME,
+    //     queries: require("./src/utils/algolia-queries"),
+    //   },
+    // },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-dark-mode`,

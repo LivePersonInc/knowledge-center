@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import Breadcrumbs from "../components/Breadbrumbs"
 import { Link } from "gatsby"
 
@@ -101,7 +101,7 @@ const StateResults = ({ searchResults, searchState }) => {
 const CustomStateResults = connectStateResults(StateResults)
 
 const RefinementLisst = ({ items, refine, createURL, currentRefinement }) => {
-  const [showMore, setShowMore] = useState(false)
+  // const [showMore, setShowMore] = useState(false)
   const ClearRefinements = ({ items, refine }) => (
     <Link
       to="#"

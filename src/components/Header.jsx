@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useContext } from "react"
 import { Link, navigate } from "gatsby"
 import { useLocation } from "@reach/router"
 
-import algoliasearch from "algoliasearch/lite"
 import {
   connectHits,
   connectStateResults,
@@ -13,11 +12,6 @@ import {
 import HeaderMobile from "./widgets/HeaderMobile"
 import SearchContext from "../context/searchContext"
 import CustomHighlight from "./search/highlight"
-
-let appId = process.env.GATSBY_ALGOLIA_APP_ID
-let apiKey = process.env.GATSBY_ALGOLIA_APP_KEY
-
-const searchClient = algoliasearch(appId, apiKey)
 
 export default function Header() {
   const { redirectStatus, setRedirectStatus } = useContext(SearchContext)
@@ -33,7 +27,7 @@ export default function Header() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-  }, [ref])
+  }, [ref, setRedirectStatus])
 
   const IndexResults = connectStateResults(
     ({ searchState, searchResults, children }) => {
