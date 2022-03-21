@@ -7,6 +7,7 @@ import PostSidebar from "../components/postSidebar"
 import Breadcrumbs from "../components/Breadbrumbs"
 import PagePagination from "../components/PagePagination"
 import Footer from "../components/Footer"
+import { customBodyContent } from "../utils"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -31,7 +32,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   const pageBody = whatsNew?.elements?.body?.value
   // const pageCategory = whatsNew?.elements?.categoryname?.value
   const pageSubTitle = whatsNew?.elements?.subtitle?.value
-
   // Tags
   // const pageTags = whatsNew?.elements?.channels_supported.value
 
@@ -61,7 +61,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
             />
 
             <LpRichTextElement
-              body_content={pageBody}
+              body_content={customBodyContent(pageBody)}
               bodyfield={whatsNew?.elements?.body}
             />
 
