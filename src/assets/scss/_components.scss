@@ -115,7 +115,7 @@ header {
   }
   &:focus {
     outline: none;
-    border-color: var(--primary-hover);
+    border-color: var(--primary-hover) !important;
   }
 }
 
