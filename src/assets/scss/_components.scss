@@ -99,7 +99,7 @@ header {
 
 .breadcrumbs .search-tags {
   background: var(--body-background);
-  border: 1px solid var(--jumpto-border-color);
+  border: 1px solid var(--search-tags-border);
   border-radius: 16px;
   padding: 4px 16px;
   font-family: "Inter";
@@ -110,7 +110,12 @@ header {
   line-height: 16px;
   &:hover {
     background: var(--scroll-bg);
-    color: var(--tags-color);
+    color: var(--primary-hover);
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--primary-hover);
   }
 }
 

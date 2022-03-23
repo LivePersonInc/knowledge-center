@@ -107,7 +107,10 @@ const RefinementLisst = ({ items, refine, createURL, currentRefinement }) => {
       to="#"
       className="search-tags"
       style={{
-        background: currentRefinement.length === 0 ? "var(--scroll-bg)" : "",
+        background:
+          currentRefinement.length === 0 ? "var(--search-tags-activated)" : "",
+        borderColor:
+          currentRefinement.length === 0 ? "var(--search-tags-activated)" : "",
       }}
       onClick={event => {
         event.preventDefault()
@@ -159,7 +162,12 @@ const RefinementLisst = ({ items, refine, createURL, currentRefinement }) => {
                     href={createURL(item.value)}
                     className="search-tags"
                     style={{
-                      background: item.isRefined ? "var(--scroll-bg)" : "",
+                      background: item.isRefined
+                        ? "var(--search-tags-activated)"
+                        : "",
+                      borderColor: item.isRefined
+                        ? "var(--search-tags-activated)"
+                        : "",
                     }}
                     onClick={event => {
                       event.preventDefault()
