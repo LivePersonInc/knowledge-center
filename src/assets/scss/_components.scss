@@ -153,6 +153,9 @@ em.ais-Highlight-highlighted {
     &:last-child {
       margin-bottom: 0;
     }
+    em {
+      font-style: italic;
+    }
   }
   figure {
     img {
