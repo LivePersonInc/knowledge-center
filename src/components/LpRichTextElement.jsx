@@ -109,6 +109,11 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                     linkedItem.elements.orientation.value[0].codename +
                     " flex flex-col text-center cursor-pointer"
                   }
+                  style={{
+                    maxHeight: "400px",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                  }}
                   key={linkedItem.system.id}
                   role="none"
                   onClick={v => {
@@ -142,9 +147,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
                   {linkedItem.elements.orientation.value[0].codename ===
                     "vertical" && (
-                    <div className="my-6 flex flex-col p-4 text-center">
+                    <div className="flex flex-col text-center">
                       <ImageElement
-                        imgStyle={{ objectFit: `contain` }}
+                        imgStyle={{ objectFit: `cover` }}
                         options={{
                           fit: "clip",
                         }}
