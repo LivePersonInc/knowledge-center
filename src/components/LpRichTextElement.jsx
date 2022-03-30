@@ -110,8 +110,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                     " flex flex-col text-center cursor-pointer"
                   }
                   style={{
-                    maxHeight: "400px",
-                    overflow: "hidden",
                     cursor: "pointer",
                   }}
                   key={linkedItem.system.id}
@@ -129,7 +127,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                   {linkedItem.elements.orientation.value[0].codename ===
                     "horizontal" && (
                     <ImageElement
-                      imgStyle={{ objectFit: `contain` }}
+                      imgStyle={{ objectFit: `contain`, maxHeight: "400px" }}
                       options={{
                         fit: "clip",
                       }}
