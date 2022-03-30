@@ -100,6 +100,8 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
             }
             case "image__widget": {
               let codeName = linkedItem.elements.orientation.value[0].codename
+              let imgWidth = linkedItem.elements.image.value[0].width
+              let imgHeight = linkedItem.elements.image.value[0].height
               if (codeName === "horizontal" || codeName === "vertical")
                 lightBoxImagess.push(linkedItem.elements.image.value[0])
               return (
@@ -152,8 +154,8 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                           fit: "clip",
                         }}
                         className="mx-auto"
-                        width={linkedItem.elements.image.width}
-                        height={linkedItem.elements.image.height}
+                        width={imgWidth ? imgWidth : 600}
+                        height={imgHeight ? imgHeight : 400}
                         backgroundColor="#bbbbbb"
                         alt={
                           linkedItem.elements.image.description
