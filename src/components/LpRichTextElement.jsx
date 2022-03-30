@@ -142,7 +142,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                       }
                       width={linkedItem.elements.image.width}
                       height={linkedItem.elements.image.height}
-                      backgroundColor="#bbbbbb"
+                      backgroundColor="#eaeaea"
                     />
                   )}
 
