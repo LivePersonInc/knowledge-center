@@ -14,7 +14,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
   const [lightBoxImages, setLightBoxImages] = useState([])
   let lightBoxImagess = []
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
-  console.log(bodyfield.images)
   // useEffect(() => {
   //   console.log(lightBoxImagess)
   //   // setLightBoxImages([...lightBoxImagess])
@@ -22,7 +21,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
   const openLightbox = (value, view) => {
     let index = lightBoxImagess.findIndex(v => v.name === value.name)
-    console.log(index, value)
 
     let imageObjects = []
     if (lightBoxImagess !== null && lightBoxImagess.length > 0) {
@@ -32,9 +30,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
           caption: image.description,
         }
         imageObjects.push(imageObject)
+        return image
       })
     }
-    console.log(imageObjects)
     setLightBoxImages(imageObjects)
     setCurrentImage(index)
     setViewerIsOpen(true)
@@ -101,24 +99,20 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
               )
             }
             case "image__widget": {
-              if (
-                linkedItem.elements.orientation.value[0].codename ===
-                "horizontal"
-              )
+              let codeName = linkedItem.elements.orientation.value[0].codename
+              if (codeName === "horizontal" || codeName === "vertical")
                 lightBoxImagess.push(linkedItem.elements.image.value[0])
               return (
                 <div
                   className={
                     "my-8 " +
                     linkedItem.elements.orientation.value[0].codename +
-                    " flex flex-col text-center"
+                    " flex flex-col text-center cursor-pointer"
                   }
                   key={linkedItem.system.id}
+                  role="none"
                   onClick={v => {
-                    if (
-                      linkedItem.elements.orientation.value[0].codename ===
-                      "horizontal"
-                    )
+                    if (codeName === "horizontal" || codeName === "vertical")
                       openLightbox(
                         linkedItem.elements.image.value[0],
 
@@ -130,7 +124,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                   {linkedItem.elements.orientation.value[0].codename ===
                     "horizontal" && (
                     <ImageElement
-                      imgStyle={{ objectFit: `contain`, cursor: `pointer` }}
+                      imgStyle={{ objectFit: `contain` }}
                       options={{
                         fit: "clip",
                       }}
@@ -142,7 +136,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                       }
                       width={linkedItem.elements.image.width}
                       height={linkedItem.elements.image.height}
-                      backgroundColor="#eaeaea"
+                      backgroundColor="#bbbbbb"
                     />
                   )}
 
