@@ -129,7 +129,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                   {linkedItem.elements.orientation.value[0].codename ===
                     "horizontal" && (
                     <ImageElement
-                      imgStyle={{ objectFit: `contain`, maxHeight: "400px" }}
+                      imgStyle={{ objectFit: `contain` }}
                       options={{
                         fit: "clip",
                       }}
@@ -147,7 +147,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
                   {linkedItem.elements.orientation.value[0].codename ===
                     "vertical" && (
-                    <div className="flex flex-col text-center">
+                    <div className="flex flex-col text-center maxHeight400">
                       <ImageElement
                         imgStyle={{ objectFit: `cover` }}
                         options={{
