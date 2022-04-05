@@ -780,7 +780,6 @@ const createObjectIdMap = (nodeSet, type) => {
       type: type,
       title: x.elements.pagename.value,
       subtitle: x.elements.subtitle.value,
-      introduction: x.elements.introduction.value,
       link: x.elements.permalink.value,
       categoryName: x?.elements?.categoryname?.value
         ? x?.elements?.categoryname?.value
