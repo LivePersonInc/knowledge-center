@@ -6,9 +6,15 @@ import moment from "moment"
 const PrevNext = styled.section`
   display: flex;
   justify-content: space-between;
+  a {
+    width: 50%;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1.5rem;
+    a {
+      width: 100%;
+    }
   }
 `
 const Span = styled.span`
