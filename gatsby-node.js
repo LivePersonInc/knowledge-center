@@ -118,6 +118,11 @@ exports.createPages = ({ graphql, actions }) => {
                       video_id {
                         value
                       }
+                      video_type {
+                        value {
+                          codename
+                        }
+                      }
                     }
                     system {
                       codename
@@ -237,6 +242,11 @@ exports.createPages = ({ graphql, actions }) => {
                     elements {
                       video_id {
                         value
+                      }
+                      video_type {
+                        value {
+                          codename
+                        }
                       }
                     }
                     system {
@@ -367,6 +377,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+
       fragment folder on kontent_item_navigation_item {
         system {
           type
@@ -381,6 +392,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+
       fragment page on kontent_item {
         ...KCMD
         ...BRN
@@ -388,6 +400,7 @@ exports.createPages = ({ graphql, actions }) => {
         ...RN
         ...WN
       }
+
       fragment KCMD on kontent_item_knowledge_center_markdown_page {
         elements {
           pagename {
@@ -405,6 +418,7 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
+
       fragment BRN on kontent_item_blog_release_notes {
         elements {
           pagename {
@@ -419,6 +433,7 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
+
       fragment BWN on kontent_item_blog_whats_new {
         elements {
           pagename {
@@ -433,6 +448,7 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
+
       fragment RN on kontent_item_release_notes_page {
         elements {
           pagename {
@@ -447,6 +463,7 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
+
       fragment WN on kontent_item_post___whatsnew {
         elements {
           pagename {
@@ -461,6 +478,7 @@ exports.createPages = ({ graphql, actions }) => {
           type
         }
       }
+
       fragment recursiveFolder on kontent_item_navigation_item {
         system {
           type

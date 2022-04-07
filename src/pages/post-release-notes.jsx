@@ -207,6 +207,11 @@ export const query = graphql`
                 video_id {
                   value
                 }
+                video_type {
+                  value {
+                    codename
+                  }
+                }
               }
               system {
                 codename
@@ -343,6 +348,11 @@ export const query = graphql`
                         video_id {
                           value
                         }
+                        video_type {
+                          value {
+                            codename
+                          }
+                        }
                       }
                       system {
                         codename
@@ -443,6 +453,11 @@ export const query = graphql`
                         video_id {
                           value
                         }
+                        video_type {
+                          value {
+                            codename
+                          }
+                        }
                       }
                       system {
                         codename
@@ -542,6 +557,11 @@ export const query = graphql`
                       elements {
                         video_id {
                           value
+                        }
+                        video_type {
+                          value {
+                            codename
+                          }
                         }
                       }
                       system {

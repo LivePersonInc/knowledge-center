@@ -151,6 +151,11 @@ export const query = graphql`
                 video_id {
                   value
                 }
+                video_type {
+                  value {
+                    codename
+                  }
+                }
               }
               system {
                 codename

@@ -79,22 +79,38 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         resolveLinkedItem={linkedItem => {
           switch (get(linkedItem, "system.type")) {
             case "video___widget": {
+              // let videoType = linkedItem.elements.video_type.value[0].codename
+              let videoId = linkedItem.elements.video_id.value
               return (
                 <div className="my-8 aspect-w-16 aspect-h-9">
-                  <iframe
-                    title={linkedItem.elements.video_id.value}
-                    className="mx-auto w-full"
-                    src={
-                      `https://player.vimeo.com/video/` +
-                      linkedItem.elements.video_id.value +
-                      `?h=038e0fbc6f`
-                    }
-                    width={640}
-                    height={360}
-                    frameBorder={0}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                  />
+                  {linkedItem.elements.video_type.value[0]?.codename ===
+                  "youtube" ? ( // if youtube video
+                    <iframe
+                      title={videoId}
+                      width="640"
+                      height="360"
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  ) : (
+                    // if vimeo video
+                    <iframe
+                      title={videoId}
+                      className="mx-auto w-full"
+                      src={
+                        `https://player.vimeo.com/video/` +
+                        videoId +
+                        `?h=038e0fbc6f`
+                      }
+                      width={640}
+                      height={360}
+                      frameBorder={0}
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                    />
+                  )}
                 </div>
               )
             }
