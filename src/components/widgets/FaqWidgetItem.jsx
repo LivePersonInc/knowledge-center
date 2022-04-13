@@ -5,7 +5,6 @@ import styled from "styled-components"
 const QuestionStyles = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   background-color: var(--table-even-background);
   padding: 1rem;
   button {
