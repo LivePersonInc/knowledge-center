@@ -38,6 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
     const BlogWhatsNewPath = path.resolve("./src/pages/page-whats-new.jsx")
     const PostWhatsNewPath = path.resolve("./src/pages/post-whats-new.jsx")
     const PageGeneralPath = path.resolve("./src/pages/page-jekyll-markdown.jsx")
+    const PageFaqPath = path.resolve("./src/pages/page-faq.jsx")
 
     graphql(`
       {
@@ -376,6 +377,39 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allKontentItemKcFaqs {
+          edges {
+            node {
+              elements {
+                redirects {
+                  value
+                }
+                permalink {
+                  value
+                }
+              }
+              id
+            }
+          }
+          nodes {
+            system {
+              codename
+              id
+            }
+            elements {
+              permalink {
+                name
+                value
+              }
+              redirects {
+                value
+              }
+              pagename {
+                value
+              }
+            }
+          }
+        }
       }
 
       fragment folder on kontent_item_navigation_item {
@@ -593,6 +627,30 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
+      _.each(result.data.allKontentItemKcFaqs.nodes, node => {
+        createPage({
+          path: `/${node.elements.permalink.value}/`,
+          component: slash(PageFaqPath),
+          context: {
+            systemId: node.system.id,
+            slug: `${node.elements.permalink.value}`,
+          },
+        })
+
+        let redirectPagePaths = node.elements.redirects.value
+        let newRedirectPagePaths = redirectPagePaths.split(",")
+
+        _.each(newRedirectPagePaths, pagePath => {
+          let newPagePath = pagePath.replace(/ /g, "")
+          if (newPagePath.length === 0) return
+          actions.createRedirect({
+            fromPath: `/${newPagePath}`,
+            isPermanent: true,
+            redirectInBrowser: true,
+            toPath: `/${node.elements.permalink.value}/`,
+          })
+        })
+      })
       _.each(
         result.data.allKontentItemKnowledgeCenterMarkdownPage.nodes,
         node => {
