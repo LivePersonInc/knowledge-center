@@ -1004,7 +1004,6 @@ const pageQuery = `
     }
   }
 }
-
 `
 
 const createObjectIdMap = (nodeSet, type) => {
