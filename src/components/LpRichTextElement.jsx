@@ -360,6 +360,11 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
           }
         }}
       />
+      {viewerIsOpen && (
+        <span id="tModalLightbox" className="sr-only">
+          f
+        </span>
+      )}
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>

@@ -48,9 +48,10 @@ function FaqWidgetItem({ node }) {
   const contentRef = useRef(null)
 
   useEffect(() => {
-    contentRef.current.style.maxHeight = active
-      ? `${contentRef.current.scrollHeight}px`
-      : "0px"
+    let el = document.getElementById("tModalLightbox")
+
+    contentRef.current.style.maxHeight =
+      active || el ? `${contentRef.current.scrollHeight}px` : "0px"
   }, [contentRef, active])
 
   const toggleAccordion = () => {
