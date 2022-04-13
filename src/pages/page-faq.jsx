@@ -7,21 +7,13 @@ import AlertComponent from "../components/AlertComponent"
 import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import Footer from "../components/Footer"
-import { customBodyContent } from "../utils"
-import PagePagination from "../components/PagePagination"
 import RelatedArticles from "../components/widgets/RelatedArticles"
 import FaqWidget from "../components/widgets/FaqWidget"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  grid-template-areas: "sidebar content";
-  grid-template-columns: repeat(auto-fit, minmax(70%, 30%));
+
   @media (max-width: 1023px) {
-    flex-direction: column;
-    display: flex;
-    gap: 1rem;
   }
 `
 
@@ -32,7 +24,6 @@ const FaqTemplate = ({ data, pageContext }) => {
   const { prev, next } = pageContext
 
   const pageTitle = faqPageQuery?.elements?.pagename?.value
-  const pageBody = faqPageQuery?.elements?.body?.value
   // const pageCategory = faqPageQuery?.elements?.categoryname?.value
   const pageSubTitle = faqPageQuery?.elements?.subtitle?.value
   const introduction = faqPageQuery?.elements?.introduction?.value
@@ -86,7 +77,7 @@ const FaqTemplate = ({ data, pageContext }) => {
               />
             )} */}
             {faqList.length > 0 && (
-              <div id="FaqWidget">
+              <div className="FaqWidget gap-4 flex flex-col">
                 <FaqWidget questions={faqList} />
               </div>
             )}
