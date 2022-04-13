@@ -165,7 +165,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                     "vertical" && (
                     <div className="flex flex-col text-center maxHeight400">
                       <ImageElement
-                        imgStyle={{ objectFit: `cover` }}
+                        imgStyle={{ objectFit: `contain` }}
                         options={{
                           fit: "clip",
                         }}
