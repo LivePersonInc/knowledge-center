@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import LpRichTextElement from "../LpRichTextElement"
 import styled from "styled-components"
+import ArrowLeft from "../icons/ArrowLeft"
 
 const QuestionStyles = styled.section`
   display: flex;
@@ -18,23 +19,22 @@ const QuestionStyles = styled.section`
     width: 100%;
   }
 
-  .question-section {
-    background: transparent;
-    border: 1px solid lightgray;
-    border-radius: 8px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  }
-
   .rotate {
-    transform: rotate(45deg);
+    transform: rotate(-90deg);
   }
-
+  .question-icon {
+    display: flex;
+    align-items: center;
+    transition: transform 250ms ease;
+  }
   .answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease;
+    transition: all 0.6s ease;
     text-align: left;
+  }
+  .faq-answer {
+    margin-top: 1rem;
   }
 `
 
@@ -60,6 +60,7 @@ function FaqWidgetItem({ node }) {
         onClick={toggleAccordion}
       >
         <svg
+          className=""
           width="32"
           height="32"
           viewBox="0 0 32 32"
@@ -74,13 +75,13 @@ function FaqWidgetItem({ node }) {
             fill="var(--faq-icon)"
           />
         </svg>
-        <div className="grow">
+        <div className="flex flex-col grow w-full">
           <button className="faq-question button flex">
             <span className="flex gap-2">
               {node?.elements?.question?.value}
             </span>
             <div className={active ? `question-icon rotate` : `question-icon`}>
-              =
+              <ArrowLeft />
             </div>
           </button>
           <div ref={contentRef} className={active ? `faq-answer` : `answer`}>
