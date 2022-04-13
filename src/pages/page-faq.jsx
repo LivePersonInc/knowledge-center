@@ -12,7 +12,6 @@ import FaqWidget from "../components/widgets/FaqWidget"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
-
   @media (max-width: 1023px) {
   }
 `
@@ -24,6 +23,7 @@ const FaqTemplate = ({ data, pageContext }) => {
   const { prev, next } = pageContext
 
   const pageTitle = faqPageQuery?.elements?.pagename?.value
+
   // const pageCategory = faqPageQuery?.elements?.categoryname?.value
   const pageSubTitle = faqPageQuery?.elements?.subtitle?.value
   const introduction = faqPageQuery?.elements?.introduction?.value
@@ -70,14 +70,8 @@ const FaqTemplate = ({ data, pageContext }) => {
                 />
               </div>
             )}
-            {/* {body_content.length > 0 && (
-              <LpRichTextElement
-                body_content={customBodyContent(body_content)}
-                bodyfield={faqPageQuery?.elements?.body}
-              />
-            )} */}
             {faqList.length > 0 && (
-              <div className="FaqWidget gap-4 flex flex-col">
+              <div className="FaqWidget gap-4 flex flex-col mb-8">
                 <FaqWidget questions={faqList} />
               </div>
             )}
