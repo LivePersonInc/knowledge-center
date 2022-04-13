@@ -18,6 +18,7 @@ const tags = [
   { type: "knowledge-center", title: "Articles" },
   { type: "release-notes", title: "Release notes" },
   { type: "whats-new", title: "News" },
+  { type: "faq", title: "Faqs" },
 ]
 
 const Hit = props => {

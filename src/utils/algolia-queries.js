@@ -770,7 +770,241 @@ const pageQuery = `
       }
     }
   }
+  allKontentItemKcFaqs(filter: {system: {workflow_step: {eq: "published"}}}) {
+    edges {
+      node {
+        elements {
+          redirects {
+            value
+          }
+          permalink {
+            value
+          }
+          pagename {
+            value
+          }
+          introduction {
+            value
+            modular_content {
+              id
+              system {
+                type
+                codename
+                id
+              }
+              ... on kontent_item_video___widget {
+                id
+                elements {
+                  video_id {
+                    value
+                  }
+                }
+                system {
+                  codename
+                  type
+                }
+              }
+              ... on kontent_item_image__widget {
+                id
+                system {
+                  type
+                }
+                elements {
+                  description {
+                    value
+                  }
+                  image {
+                    value {
+                      url
+                      name
+                      description
+                      height
+                      width
+                    }
+                    name
+                  }
+                  orientation {
+                    value {
+                      codename
+                    }
+                  }
+                  product {
+                    value {
+                      id
+                      system {
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+              ... on kontent_item_code_sample {
+                id
+                system {
+                  type
+                  codename
+                }
+                elements {
+                  code {
+                    value
+                  }
+                  language {
+                    value {
+                      codename
+                    }
+                  }
+                }
+              }
+              ... on kontent_item_contentbox {
+                id
+                system {
+                  codename
+                  type
+                }
+                elements {
+                  notice_text {
+                    value
+                  }
+                  type {
+                    value {
+                      codename
+                    }
+                  }
+                }
+              }
+            }
+          }
+          faq_items {
+            value {
+              ... on kontent_item_faq {
+                id
+                elements {
+                  short_answer {
+                    value
+                  }
+                  question {
+                    value
+                  }
+                  long_answer {
+                    value
+                    modular_content {
+                      id
+                      system {
+                        type
+                        codename
+                        id
+                      }
+                      ... on kontent_item_video___widget {
+                        id
+                        elements {
+                          video_id {
+                            value
+                          }
+                        }
+                        system {
+                          codename
+                          type
+                        }
+                      }
+                      ... on kontent_item_image__widget {
+                        id
+                        system {
+                          type
+                        }
+                        elements {
+                          description {
+                            value
+                          }
+                          image {
+                            value {
+                              url
+                              name
+                              description
+                              height
+                              width
+                            }
+                            name
+                          }
+                          orientation {
+                            value {
+                              codename
+                            }
+                          }
+                          product {
+                            value {
+                              id
+                              system {
+                                id
+                              }
+                            }
+                          }
+                        }
+                      }
+                      ... on kontent_item_code_sample {
+                        id
+                        system {
+                          type
+                          codename
+                        }
+                        elements {
+                          code {
+                            value
+                          }
+                          language {
+                            value {
+                              codename
+                            }
+                          }
+                        }
+                      }
+                      ... on kontent_item_contentbox {
+                        id
+                        system {
+                          codename
+                          type
+                        }
+                        elements {
+                          notice_text {
+                            value
+                          }
+                          type {
+                            value {
+                              codename
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        id
+      }
+    }
+    nodes {
+      system {
+        codename
+        id
+      }
+      elements {
+        permalink {
+          name
+          value
+        }
+        redirects {
+          value
+        }
+        pagename {
+          value
+        }
+      }
+    }
+  }
 }
+
 `
 
 const createObjectIdMap = (nodeSet, type) => {
@@ -807,6 +1041,10 @@ const queries = [
       ...createObjectIdMap(
         data?.allKontentItemReleaseNotesPage?.nodes,
         "release-notes"
+      ),
+      ...createObjectIdMap(
+        data?.allKontentItemKcFaqs?.nodes,
+        "faqs"
       ),
     ],
   },
