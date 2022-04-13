@@ -30,11 +30,12 @@ const QuestionStyles = styled.section`
   .answer {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.6s ease;
+    transition: all 250ms ease;
     text-align: left;
   }
   .faq-answer {
     margin-top: 1rem;
+    transition: all 250ms ease;
   }
 `
 
