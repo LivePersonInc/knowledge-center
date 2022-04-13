@@ -8,6 +8,9 @@ const QuestionStyles = styled.section`
   background-color: var(--table-even-background);
   padding: 1rem;
   gap: 0.5rem;
+  @media (max-width: 1023px) {
+    padding: 0.5rem;
+  }
   button {
     font-family: "Space Grotesk";
     font-style: normal;

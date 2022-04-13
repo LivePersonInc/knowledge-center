@@ -19,8 +19,9 @@ const InnerSiteLayoutStyles = styled.main`
 const FaqTemplate = ({ data, pageContext }) => {
   // faqPageQuery template
   const faqPageQuery = data?.faqPageQuery
+
   // Prev and Next Slug ReleaseNotes
-  const { prev, next } = pageContext
+  // const { prev, next } = pageContext
 
   const pageTitle = faqPageQuery?.elements?.pagename?.value
 
