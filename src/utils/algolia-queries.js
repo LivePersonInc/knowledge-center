@@ -1007,9 +1007,9 @@ const pageQuery = `
 `
 
 const createObjectIdMap = (nodeSet, type) => {
-  return nodeSet.map(x => {
+  return nodeSet.map((x, k) => {
     return {
-      objectID: `${type}_${x.id}`,
+      objectID: `${type}_${x.id ? x.id : k + 1}`,
       type: type,
       title: x.elements?.pagename?.value,
       subtitle: x.elements?.subtitle?.value,

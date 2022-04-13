@@ -115,6 +115,7 @@ const Sidebar = ({ location }) => {
         }
       }
     }
+
     fragment folder on kontent_item_navigation_item {
       system {
         id
@@ -129,13 +130,16 @@ const Sidebar = ({ location }) => {
         }
       }
     }
+
     fragment page on kontent_item {
       ...KCMD
       ...BRN
       ...BWN
       ...RN
       ...WN
+      ...FQ
     }
+
     fragment KCMD on kontent_item_knowledge_center_markdown_page {
       elements {
         pagename {
@@ -150,6 +154,7 @@ const Sidebar = ({ location }) => {
         type
       }
     }
+
     fragment BRN on kontent_item_blog_release_notes {
       elements {
         pagename {
@@ -164,6 +169,7 @@ const Sidebar = ({ location }) => {
         type
       }
     }
+
     fragment BWN on kontent_item_blog_whats_new {
       elements {
         pagename {
@@ -178,6 +184,7 @@ const Sidebar = ({ location }) => {
         type
       }
     }
+
     fragment RN on kontent_item_release_notes_page {
       elements {
         pagename {
@@ -192,6 +199,7 @@ const Sidebar = ({ location }) => {
         type
       }
     }
+
     fragment WN on kontent_item_post___whatsnew {
       elements {
         pagename {
@@ -206,6 +214,22 @@ const Sidebar = ({ location }) => {
         type
       }
     }
+
+    fragment FQ on kontent_item_kc_faqs {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
     fragment recursiveFolder on kontent_item_navigation_item {
       system {
         id
@@ -482,6 +506,15 @@ const SidebarItem = ({ item, level, location }) => {
       </li>
     )
   } else if (item.system.type === "blog_release_notes") {
+    const newUrl = item.elements.permalink.value
+    return (
+      <li className={"mb-3 " + LEAF_NAME[level]}>
+        <span className="nav-title">
+          <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
+        </span>
+      </li>
+    )
+  } else if (item.system.type === "kc_faqs") {
     const newUrl = item.elements.permalink.value
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
