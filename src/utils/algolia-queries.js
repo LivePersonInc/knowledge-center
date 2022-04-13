@@ -774,6 +774,9 @@ const pageQuery = `
     edges {
       node {
         elements {
+          redirects {
+            value
+          }
           permalink {
             value
           }
@@ -991,6 +994,9 @@ const pageQuery = `
           name
           value
         }
+        redirects {
+          value
+        }
         pagename {
           value
         }
@@ -1003,7 +1009,7 @@ const pageQuery = `
 const createObjectIdMap = (nodeSet, type) => {
   return nodeSet.map(x => {
     return {
-      objectID: x.id,
+      objectID: `${type}_${x.id}`,
       type: type,
       title: x.elements?.pagename?.value,
       subtitle: x.elements?.subtitle?.value,
