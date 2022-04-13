@@ -774,9 +774,6 @@ const pageQuery = `
     edges {
       node {
         elements {
-          redirects {
-            value
-          }
           permalink {
             value
           }
@@ -994,9 +991,6 @@ const pageQuery = `
           name
           value
         }
-        redirects {
-          value
-        }
         pagename {
           value
         }
@@ -1041,10 +1035,7 @@ const queries = [
         data?.allKontentItemReleaseNotesPage?.nodes,
         "release-notes"
       ),
-      ...createObjectIdMap(
-        data?.allKontentItemKcFaqs?.nodes,
-        "faqs"
-      ),
+      ...createObjectIdMap(data?.allKontentItemKcFaqs?.nodes, "faqs"),
     ],
   },
 ]
