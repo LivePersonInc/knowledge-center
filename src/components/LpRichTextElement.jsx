@@ -163,24 +163,22 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
 
                   {linkedItem.elements.orientation.value[0].codename ===
                     "vertical" && (
-                    <div className="flex flex-col text-center maxHeight400">
-                      <ImageElement
-                        imgStyle={{ objectFit: `contain` }}
-                        options={{
-                          fit: "clip",
-                        }}
-                        className="mx-auto"
-                        width={imgWidth ? imgWidth : 400}
-                        height={imgHeight ? imgHeight : 600}
-                        backgroundColor="#bbbbbb"
-                        alt={
-                          linkedItem.elements.image.description
-                            ? linkedItem.elements.image.description
-                            : linkedItem.elements.image.name
-                        }
-                        image={linkedItem.elements.image.value[0]}
-                      />
-                    </div>
+                    <ImageElement
+                      imgStyle={{ objectFit: `contain` }}
+                      options={{
+                        fit: "clip",
+                      }}
+                      className="mx-auto"
+                      width={imgWidth ? imgWidth : 400}
+                      height={imgHeight ? imgHeight : 600}
+                      backgroundColor="#bbbbbb"
+                      alt={
+                        linkedItem.elements.image.description
+                          ? linkedItem.elements.image.description
+                          : linkedItem.elements.image.name
+                      }
+                      image={linkedItem.elements.image.value[0]}
+                    />
                   )}
                   <p className="text-center my-2 opacity-70 italic">
                     {linkedItem.elements.description.value}
