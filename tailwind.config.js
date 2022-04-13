@@ -22,7 +22,7 @@ module.exports = {
       xl: ["24px", "32px"],
     },
     screens: {
-      smobile: { max: "380px" },
+      smobile: { max: "539px" },
       // => @media (max-width: 360px) { ... }
 
       lmobile: { max: "767px" },
