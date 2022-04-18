@@ -14,6 +14,9 @@ const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   @media (max-width: 1023px) {
   }
+  section.question_item.true {
+    background: var(--body-background);
+  }
 `
 
 const FaqTemplate = ({ data, pageContext }) => {
