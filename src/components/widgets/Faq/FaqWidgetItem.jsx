@@ -105,7 +105,7 @@ function FaqWidgetItem({ node }) {
               bodyfield={node?.elements?.long_answer}
             />
             {relatedFaqArticleList.length > 0 && (
-              <div id="relatedArticles">
+              <div id="relatedArticles" style={{ paddingTop: "2px" }}>
                 <RelatedFaqArticles related={relatedFaqArticleList} />
               </div>
             )}
