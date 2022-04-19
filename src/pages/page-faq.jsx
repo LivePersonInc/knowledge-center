@@ -8,7 +8,7 @@ import LpRichTextElement from "../components/LpRichTextElement"
 import Breadcrumbs from "../components/Breadbrumbs"
 import Footer from "../components/Footer"
 import RelatedArticles from "../components/widgets/RelatedArticles"
-import FaqWidget from "../components/widgets/FaqWidget"
+import FaqWidget from "../components/widgets/Faq/FaqWidget"
 
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
@@ -357,6 +357,17 @@ export const query = graphql`
                 related_article {
                   value {
                     id
+                    ... on kontent_item_knowledge_center_markdown_page {
+                      id
+                      elements {
+                        permalink {
+                          value
+                        }
+                        pagename {
+                          value
+                        }
+                      }
+                    }
                   }
                 }
               }

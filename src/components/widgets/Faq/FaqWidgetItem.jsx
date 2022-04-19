@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react"
-import LpRichTextElement from "../LpRichTextElement"
+import LpRichTextElement from "../../LpRichTextElement"
 import styled from "styled-components"
-import ArrowLeft from "../icons/ArrowLeft"
+import ArrowLeft from "../../icons/ArrowLeft"
+import RelatedFaqArticles from "./RelatedFaqArticles"
 
 const QuestionStyles = styled.section`
   display: flex;
@@ -57,6 +58,11 @@ function FaqWidgetItem({ node }) {
   const toggleAccordion = () => {
     setActive(!active)
   }
+
+  // Related Articles
+  const relatedFaqArticleList = node?.elements?.related_article.value
+  console.log("itay")
+  console.log(relatedFaqArticleList)
   return (
     <>
       <QuestionStyles
@@ -98,6 +104,11 @@ function FaqWidgetItem({ node }) {
               body_content={node?.elements?.long_answer?.value}
               bodyfield={node?.elements?.long_answer}
             />
+            {relatedFaqArticleList.length > 0 && (
+              <div id="relatedArticles">
+                <RelatedFaqArticles related={relatedFaqArticleList} />
+              </div>
+            )}
           </div>
         </div>
       </QuestionStyles>
