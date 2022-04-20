@@ -97,10 +97,6 @@ function FaqWidgetItem({ node }) {
           </button>
           <div ref={contentRef} className={active ? `faq-answer` : `answer`}>
             <LpRichTextElement
-              body_content={node?.elements?.short_answer?.value}
-              bodyfield={node?.elements?.short_answer}
-            />
-            <LpRichTextElement
               body_content={node?.elements?.long_answer?.value}
               bodyfield={node?.elements?.long_answer}
             />
