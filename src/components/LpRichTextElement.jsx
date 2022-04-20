@@ -94,6 +94,18 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
                     ></iframe>
+                  ) : linkedItem.elements.video_type.value[0]?.codename ===
+                    "vidyard" ? (
+                    <iframe
+                      className="vidyard_iframe"
+                      src={`//play.vidyard.com/${videoId}`}
+                      width="640"
+                      height="360"
+                      scrolling="no"
+                      frameborder="0"
+                      allowtransparency="true"
+                      allowfullscreen
+                    ></iframe>
                   ) : (
                     // if vimeo video
                     <iframe
