@@ -97,12 +97,12 @@ function FaqWidgetItem({ node }) {
                 <a
                   data-tip="Click to copy direct link to this section"
                   className="anchor-link tooltip tooltip-bottom tooltip-primary"
-                  href={`#${encodeURI(node.id)}`}
+                  href={`#${encodeURI(node?.system?.name)}`}
                   onClick={() => {
                     navigator.clipboard.writeText(
                       window.location.origin +
                         window.location.pathname +
-                        `#${encodeURI(node.id)}`
+                        `#${encodeURI(node?.system?.name)}`
                     )
                   }}
                 >

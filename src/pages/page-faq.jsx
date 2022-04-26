@@ -371,6 +371,10 @@ export const query = graphql`
                   }
                 }
               }
+              system {
+                codename
+                name
+              }
             }
           }
         }
