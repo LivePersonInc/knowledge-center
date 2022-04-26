@@ -436,11 +436,11 @@ const SidebarItem = ({ item, level, location }) => {
               />
               <dt className="flex items-center">
                 <Disclosure.Button>
-                  <div className="flex itemdetails canOpen relative items-center gap-2">
+                  <div className="flex itemdetails canOpen relative items-start gap-2">
                     {level === 0 ? (
                       <div
                         className={
-                          "sidebar-arrow w-4 h-4 flex items-center flex-col justify-center transform transition " +
+                          "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center transform transition " +
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >
@@ -449,7 +449,7 @@ const SidebarItem = ({ item, level, location }) => {
                     ) : level === 1 ? (
                       <div
                         className={
-                          "sidebar-arrow w-4 h-4 flex items-center flex-col justify-center transform transition " +
+                          "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center transform transition " +
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >

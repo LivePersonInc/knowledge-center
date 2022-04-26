@@ -97,6 +97,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                   ) : linkedItem.elements.video_type.value[0]?.codename ===
                     "vidyard" ? (
                     <iframe
+                      title={videoId}
                       className="vidyard_iframe"
                       src={`//play.vidyard.com/${videoId}`}
                       width="640"
