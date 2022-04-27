@@ -1,8 +1,10 @@
-# LivePerson Knowledge Center + Gatsby
+# LivePerson Knowledge Center
 
-**This site is maintained by the product communication and experience team. Please feel free to contact me at ihaephrati@liveperson.com with any issues, questions, or concerns.**.
+#### This site was built with GatsbyJS
 
-This repository generates LivePerson's Knowledge Center, which can be found at <https://knowledge.liveperson.com>. The site is generated using Gatsby. If you find an issue with the documentation, site structure, meta or anything else, please open an issue and we'll respond as soon as possible.
+**The product communication and experience team maintains this site. This product was built by Itay Haephrati. Please contact me at ihaephrati@liveperson.com with any questions, issues, or concerns.**.
+
+The repository generates LivePerson's Knowledge Center, which can be found at \*<https://knowledge.liveperson.com/>. The site is generated using Gatsby, while the content is managed using Kontent.ai. If you have questions regarding content editing, please contact Cale Short. Please open an issue if you find an issue with the documentation, site structure, meta, or anything else.
 
 ## 🚀 Quick start
 
