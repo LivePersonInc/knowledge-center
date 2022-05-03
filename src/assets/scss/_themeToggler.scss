@@ -5,7 +5,7 @@ body {
 }
 
 .theme-switch-wrapper .slider.round:before {
-  background-image: url(../images/sun.svg);
+  background-image: url(/images/sun.svg);
   background-repeat: no-repeat;
   background-position: center center;
   border: 1px solid var(--footer-text);
@@ -15,7 +15,7 @@ body {
 }
 
 .theme-switch-wrapper input:checked + .slider:before {
-  background-image: url(../images/moon.svg);
+  background-image: url(/images/moon.svg);
   background-repeat: no-repeat;
   background-position: center center;
   border: 0.0625rem solid rgba(255, 255, 255, 0.15);
