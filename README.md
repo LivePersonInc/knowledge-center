@@ -1,3 +1,5 @@
+![Logo](https://knowledge.liveperson.com/images/logo.svg)
+
 # LivePerson Knowledge Center
 
 #### This site was built with GatsbyJS
@@ -6,14 +8,27 @@
 
 The repository generates LivePerson's Knowledge Center, which can be found at \*<https://knowledge.liveperson.com/>. The site is generated using Gatsby, while the content is managed using Kontent.ai. If you have questions regarding content editing, please contact Cale Short. Please open an issue if you find an issue with the documentation, site structure, meta, or anything else.
 
-## 🚀 Quick start
-
-    yarn
-    yarn start
-
 ## 🚀 Live site
 
-Link: [knowledge](https://knowledge.liveperson.com/):
+Link: [knowledge Center](https://knowledge.liveperson.com/)
+
+## 🚀 Installation
+
+Install with yarn
+
+```bash
+  yarn
+  yarn start
+
+  yarn clean
+  yarn format
+```
+
+## Features
+
+- GatsbyJS
+- Konten.ai for CMS
+- Gatsby cloud
 
 ## 🧐 What's inside?
 
@@ -64,3 +79,33 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+
+## Developer
+
+- Itay Haephrati [ihaephrati@liveperson.com](ihaephrati@liveperson.com)
+
+## Designer
+
+- Bohdan Doshchak [bdoshchak@liveperson.com](bdoshchak@liveperson.com)
+
+## Contributing
+
+Contributions are always welcome!
+
+## Preview
+
+<https://knowledge.liveperson.com/>
+
+## Related
+
+Related project
+
+[LivePerson Developers](https://developers.liveperson.com/)
+
+## Feedback
+
+If you have any feedback, please reach out to us at
+
+- Cale Short cshort@liveperson.com
+- Elana Roth elanar@liveperson.com
+- Itay Haephrati ihaephrati@liveperson.com

@@ -61,8 +61,7 @@ function FaqWidgetItem({ node }) {
 
   // Related Articles
   const relatedFaqArticleList = node?.elements?.related_article.value
-  // console.log("itay")
-  // console.log(node)
+
   return (
     <>
       <QuestionStyles key={node.id} className={`question_item ${active}`}>
