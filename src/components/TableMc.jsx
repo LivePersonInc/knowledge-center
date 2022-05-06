@@ -23,6 +23,7 @@ import {
   WebMessagingIcon,
   WeChatIcon,
   WhatsappIcon,
+  InstagramIcon,
 } from "./icons/metric-table"
 
 // Define a default UI for filtering
@@ -77,6 +78,7 @@ const preProcessJSON = json => {
         viber: <ViberIcon />,
         weChat: <WeChatIcon />,
         webMessaging: <WebMessagingIcon />,
+        instagram: <InstagramIcon />,
         whatsapp: <WhatsappIcon />,
         search: true,
       })
@@ -124,6 +126,10 @@ const TableMc = () => {
       {
         Header: "Twitter",
         accessor: "twitter",
+      },
+      {
+        Header: "Instagram",
+        accessor: "instagram",
       },
       {
         Header: "WhatsApp",
