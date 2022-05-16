@@ -239,6 +239,170 @@ export const query = graphql`
                 }
               }
             }
+            ... on kontent_item_faq {
+              id
+              elements {
+                short_answer {
+                  value
+                }
+                question {
+                  value
+                }
+                long_answer {
+                  value
+                  modular_content {
+                    id
+                    system {
+                      type
+                      codename
+                      id
+                    }
+                    ... on kontent_item_video___widget {
+                      id
+                      elements {
+                        video_id {
+                          value
+                        }
+                        video_type {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                      system {
+                        codename
+                        type
+                      }
+                    }
+                    ... on kontent_item_image__widget {
+                      id
+                      system {
+                        type
+                      }
+                      elements {
+                        description {
+                          value
+                        }
+                        image {
+                          value {
+                            url
+                            name
+                            description
+                            height
+                            width
+                          }
+                          name
+                        }
+                        orientation {
+                          value {
+                            codename
+                          }
+                        }
+                        product {
+                          value {
+                            id
+                            system {
+                              id
+                            }
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_code_sample {
+                      id
+                      system {
+                        type
+                        codename
+                      }
+                      elements {
+                        code {
+                          value
+                        }
+                        language {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                    ... on kontent_item_contentbox {
+                      id
+                      system {
+                        codename
+                        type
+                      }
+                      elements {
+                        notice_text {
+                          value
+                          modular_content {
+                            id
+                          }
+                          links {
+                            url_slug
+                            type
+                            link_id
+                            codename
+                          }
+                        }
+                        type {
+                          value {
+                            codename
+                          }
+                        }
+                      }
+                    }
+                  }
+                  images {
+                    url
+                    image_id
+                  }
+                  links {
+                    url_slug
+                    type
+                    codename
+                    link_id
+                  }
+                }
+                faq_page {
+                  value {
+                    id
+                  }
+                }
+                category {
+                  type
+                  value {
+                    codename
+                    name
+                  }
+                  name
+                }
+                related_product {
+                  value {
+                    id
+                  }
+                }
+                related_article {
+                  value {
+                    id
+                    ... on kontent_item_knowledge_center_markdown_page {
+                      id
+                      elements {
+                        permalink {
+                          value
+                        }
+                        pagename {
+                          value
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              system {
+                codename
+                name
+              }
+            }
           }
           images {
             url

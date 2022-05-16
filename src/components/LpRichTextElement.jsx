@@ -8,6 +8,7 @@ import TableMc from "../components/TableMc"
 import get from "lodash/get"
 import { Link } from "gatsby"
 import Carousel, { Modal, ModalGateway } from "react-images"
+import FaqWidgetItem from "./widgets/Faq/FaqWidgetItem"
 
 const LpRichTextElement = ({ body_content, bodyfield }) => {
   const [currentImage, setCurrentImage] = useState(0)
@@ -313,6 +314,10 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                   </div>
                 </div>
               )
+            }
+
+            case "faq": {
+              return <FaqWidgetItem node={linkedItem} />
             }
 
             default: {
