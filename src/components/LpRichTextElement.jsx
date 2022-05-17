@@ -317,7 +317,11 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
             }
 
             case "faq": {
-              return <FaqWidgetItem node={linkedItem} />
+              return (
+                <div className="mt-4">
+                  <FaqWidgetItem node={linkedItem} />
+                </div>
+              )
             }
 
             default: {

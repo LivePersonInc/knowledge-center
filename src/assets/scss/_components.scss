@@ -40,6 +40,9 @@
     margin-right: 0.625rem;
   }
 }
+section.question_item.true {
+  background: var(--body-background);
+}
 // search widget
 header {
   box-shadow: var(--shadow-lp);
