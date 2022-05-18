@@ -1283,6 +1283,28 @@ const pageQuery = `
         pagename {
           value
         }
+        faq_items {
+          value {
+            ... on kontent_item_faq {
+              id
+              elements {
+                short_answer {
+                  value
+                }
+                question {
+                  value
+                }
+                long_answer {
+                  value
+                }
+              }
+              system {
+                codename
+                name
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -1297,14 +1319,20 @@ const createObjectIdMap = (nodeSet, type) => {
       title: x.elements?.pagename?.value,
       subtitle: x.elements?.subtitle?.value,
       link: x.elements.permalink?.value,
+
       categoryName: x?.elements?.categoryname?.value
         ? x?.elements?.categoryname?.value
-        : null,
+        : undefined,
       subCategoryName: x?.elements?.subcategoryname?.value
         ? x.elements.subcategoryname.value
-        : null,
-      body: x?.elements?.body?.value ? x.elements.body.value : null,
-      faq_items: x?.elements?.faq_items?.value ? x.elements.faq_items.value : null,
+        : undefined,
+      body: x?.elements?.body?.value ? x.elements.body.value : undefined,
+      modular_content: x?.elements?.body?.modular_content
+        ? x.elements.body.modular_content
+        : undefined,
+      faq_items: x?.elements?.faq_items?.value
+        ? x.elements.faq_items.value
+        : undefined,
     }
   })
 }
