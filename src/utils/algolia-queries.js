@@ -1304,6 +1304,7 @@ const createObjectIdMap = (nodeSet, type) => {
         ? x.elements.subcategoryname.value
         : null,
       body: x?.elements?.body?.value ? x.elements.body.value : null,
+      faq_items: x?.elements?.faq_items?.value ? x.elements.faq_items.value : null,
     }
   })
 }
