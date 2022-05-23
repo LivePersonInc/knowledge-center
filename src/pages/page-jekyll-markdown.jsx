@@ -12,7 +12,6 @@ import Breadcrumbs from "../components/Breadbrumbs"
 import { customBodyContent } from "../utils"
 import Footer from "../components/Footer"
 import RelatedArticles from "../components/widgets/RelatedArticles"
-
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   display: grid;
@@ -35,9 +34,14 @@ const InnerSiteLayoutStyles = styled.main`
   }
 `
 
-const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
+const KnowledgeCenterMarkdownPageTemplate = ({
+  data,
+  pageContext,
+  location,
+}) => {
   const contentRef = useRef()
   const [jumpToItems, setJumpToItems] = useState([])
+  // console.log(data)
   useEffect(() => {
     if (contentRef.current && data) {
       const headerQuery = contentRef.current.querySelectorAll("h2")
@@ -46,19 +50,87 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
   }, [data])
 
   // general template
+  useEffect(() => {
+    // console.log("page", pageNumber)
+    // itemsRef.current.scrollIntoView()
+    // console.log(itemsRef.current)
+
+    if (location.hash) {
+      let id = location.hash.substring(1)
+      console.log(id)
+
+      // element.scrollTop = 0
+      window.onload = e => {
+        const element = document.getElementById(id)
+        console.log(element.offsetTop)
+
+        window.scrollTo({
+          top: element.offsetTop,
+          behavior: "smooth",
+        })
+      }
+
+      // element.scrollIntoView(true)
+    }
+  }, [location.hash])
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
   const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
+  let pageSubCategory =
+    knowledgeCenterMarkdown?.elements?.subcategoryname?.value
   const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
   const introduction = knowledgeCenterMarkdown?.elements?.introduction?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
-
+  if (pageCategory === "Troubleshooting" && pageSubCategory === "Web Messaging")
+    pageSubCategory = "Messaging"
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
   // Related Articles
   const relatedArticlesList =
     knowledgeCenterMarkdown?.elements?.related_articles.value
+  const allKontentItemNavigationItem =
+    data.allKontentItemNavigationItem.nodes[0].elements.subitems.value
+  let mainCatLink = allKontentItemNavigationItem.filter(
+    v => v.elements.title.value.toLowerCase() === pageCategory.toLowerCase()
+  )[0]
+  let subCatLink = {}
+  let fourthCrumbLink = ""
+  let fourthCrumbTitle = ""
+  // console.log(mainCatLink, pageSubCategory)
+  if (mainCatLink) {
+    subCatLink = mainCatLink.elements?.subitems.value.filter(v =>
+      v.elements?.title?.value === `\nWeb Messaging` &&
+      pageSubCategory === "Web Messaging"
+        ? true
+        : v.elements?.title?.value.toLowerCase() ===
+          pageSubCategory.toLowerCase()
+    )[0]
+    // console.log(subCatLink)
+    if (subCatLink?.elements?.hasOwnProperty("subitems")) {
+      let getFourthCat = subCatLink.elements.subitems?.value.filter(
+        v => v.system.id.toLowerCase() === pageContext.systemId
+      )[0]
+      if (!getFourthCat) {
+        let getFourthCatSubs = subCatLink.elements.subitems.value.filter(v =>
+          v?.elements.hasOwnProperty("subitems")
+        )
+        if (getFourthCatSubs.length) {
+          getFourthCatSubs.map(fc => {
+            let getFourthCat = fc?.elements?.subitems?.value.filter(
+              v => v.system.id.toLowerCase() === pageContext.systemId
+            )[0]
+            // console.log(getFourthCat, fc)
+            if (getFourthCat) {
+              fourthCrumbLink = fc?.elements?.url?.value
+              fourthCrumbTitle = fc?.elements?.title?.value
+            }
+            return null
+          })
+        }
+      }
+    }
+  }
 
   return (
     <>
@@ -71,9 +143,13 @@ const KnowledgeCenterMarkdownPageTemplate = ({ data, pageContext }) => {
           }}
         >
           <Breadcrumbs
-            secondCrumbLink=""
+            secondCrumbLink={mainCatLink?.elements?.url?.value}
             secondCrumbTitle={pageCategory}
-            thirdCrumb={pageTitle}
+            thirdCrumbLink={subCatLink?.elements?.url?.value}
+            thirdCrumbTitle={pageSubCategory}
+            fourthCrumbLink={fourthCrumbLink}
+            fourthCrumbTitle={fourthCrumbTitle}
+            lastCrumb={pageTitle}
           />
 
           <h1 className="h1">{pageTitle}</h1>
@@ -454,14 +530,89 @@ export const query = graphql`
         }
       }
     }
-    allKontentItemNavigationItem {
+    allKontentItemNavigationItem(
+      filter: { system: { codename: { eq: "root" } } }
+    ) {
       nodes {
         elements {
-          url {
-            value
+          subitems {
+            value {
+              ...folder
+              ...recursiveFolder
+            }
           }
-          title {
-            value
+        }
+      }
+    }
+  }
+
+  fragment folder on kontent_item_navigation_item {
+    system {
+      id
+      type
+    }
+    elements {
+      url {
+        value
+      }
+      title {
+        value
+      }
+    }
+  }
+
+  fragment KCMD on kontent_item_knowledge_center_markdown_page {
+    elements {
+      pagename {
+        value
+      }
+      permalink {
+        value
+      }
+    }
+    system {
+      id
+      type
+    }
+  }
+
+  fragment recursiveFolder on kontent_item_navigation_item {
+    system {
+      id
+      type
+    }
+    elements {
+      subitems {
+        value {
+          ...page
+          ...folder
+          ... on kontent_item_navigation_item {
+            system {
+              id
+              type
+            }
+            elements {
+              subitems {
+                value {
+                  ...page
+                  ...folder
+                  ... on kontent_item_navigation_item {
+                    system {
+                      id
+                      type
+                    }
+                    elements {
+                      subitems {
+                        value {
+                          ...page
+                          ...folder
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

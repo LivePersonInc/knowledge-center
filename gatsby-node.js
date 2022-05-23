@@ -3,7 +3,7 @@ const Promise = require("bluebird")
 const path = require("path")
 const slash = require("slash")
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // let redirects = knowledgeCenterMarkdown?.elements?.redirects?.value
@@ -27,6 +27,223 @@ exports.createPages = ({ graphql, actions }) => {
     }
     return [prev, next]
   }
+  const listingPages = await graphql(`
+    query {
+      allKontentItemNavigationItem(
+        filter: { system: { codename: { eq: "root" } } }
+      ) {
+        nodes {
+          elements {
+            subitems {
+              value {
+                ...folder
+                ...recursiveFolder
+              }
+            }
+          }
+        }
+      }
+    }
+
+    fragment folder on kontent_item_navigation_item {
+      system {
+        id
+        type
+      }
+      elements {
+        url {
+          value
+        }
+        title {
+          value
+        }
+      }
+    }
+
+    fragment page on kontent_item {
+      ...KCMD
+      ...BRN
+      ...BWN
+      ...RN
+      ...WN
+      ...FQ
+    }
+
+    fragment KCMD on kontent_item_knowledge_center_markdown_page {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment BRN on kontent_item_blog_release_notes {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment BWN on kontent_item_blog_whats_new {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment RN on kontent_item_release_notes_page {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment WN on kontent_item_post___whatsnew {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment FQ on kontent_item_kc_faqs {
+      elements {
+        pagename {
+          value
+        }
+        permalink {
+          value
+        }
+      }
+      system {
+        id
+        type
+      }
+    }
+
+    fragment recursiveFolder on kontent_item_navigation_item {
+      system {
+        id
+        type
+      }
+      elements {
+        subitems {
+          value {
+            ...page
+            ...folder
+            ... on kontent_item_navigation_item {
+              system {
+                id
+                type
+              }
+              elements {
+                subitems {
+                  value {
+                    ...page
+                    ...folder
+                    ... on kontent_item_navigation_item {
+                      system {
+                        id
+                        type
+                      }
+                      elements {
+                        subitems {
+                          value {
+                            ...page
+                            ...folder
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const runList = (node, level, parent) => {
+    let { elements, system } = node
+
+    if (system?.type === "navigation_item") {
+      if (parent) {
+        createPage({
+          path: `${elements.url.value}/`,
+          component: require.resolve("./src/template/ItemsListing.js"),
+          context: {
+            ...node,
+            level: level,
+            parent: parent,
+          },
+        })
+      } else {
+        createPage({
+          path: `${elements.url.value}/`,
+          component: require.resolve("./src/template/ItemsListing.js"),
+          context: {
+            ...node,
+            level: level,
+          },
+        })
+      }
+      if (elements?.subitems?.value && elements.subitems.value.length) {
+        elements.subitems.value.forEach(node => {
+          // excludeStaticProduct.push(`/product/${node.nid}/`)
+          let p = { url: elements.url.value, title: elements.title.value }
+          if (parent) p = { ...p, parent: parent }
+          runList(node, level + 1, p)
+        })
+      }
+    }
+  }
+
+  listingPages.data.allKontentItemNavigationItem.nodes[0].elements.subitems.value.forEach(
+    node => {
+      // excludeStaticProduct.push(`/product/${node.nid}/`)
+      runList(node, 0)
+    }
+  )
 
   return new Promise((resolve, reject) => {
     const PostReleaseNotesPath = path.resolve(

@@ -3,7 +3,7 @@ import LpRichTextElement from "../../LpRichTextElement"
 import styled from "styled-components"
 import ArrowLeft from "../../icons/ArrowLeft"
 import RelatedFaqArticles from "./RelatedFaqArticles"
-
+import { useLocation } from "@reach/router"
 const QuestionStyles = styled.section`
   display: flex;
   background-color: var(--table-even-background);
@@ -47,7 +47,7 @@ function FaqWidgetItem({ node }) {
   const [active, setActive] = useState(false)
 
   const contentRef = useRef(null)
-
+  const location = useLocation()
   useEffect(() => {
     let el = document.getElementById("tModalLightbox")
 
@@ -58,6 +58,12 @@ function FaqWidgetItem({ node }) {
   const toggleAccordion = () => {
     setActive(!active)
   }
+  useEffect(() => {
+    if (location.hash) {
+      let id = location.hash
+      if (id === `#${encodeURI(node?.system?.name)}`) setActive(true)
+    }
+  }, [location.hash, node?.system?.name])
 
   // Related Articles
   const relatedFaqArticleList = node?.elements?.related_article.value
@@ -87,10 +93,10 @@ function FaqWidgetItem({ node }) {
             <span className="flex gap-2 w-full">
               <span
                 className="anchor-address w-full"
-                id={`${encodeURI(node.id)}`}
+                id={`${encodeURI(node?.system?.name)}`}
                 style={{ margin: 0 }}
               >
-                <span className="w-full" onClick={toggleAccordion}>
+                <span className="w-full" role="none" onClick={toggleAccordion}>
                   {node?.elements?.question?.value}
                 </span>
                 <a
@@ -104,6 +110,7 @@ function FaqWidgetItem({ node }) {
                         `#${encodeURI(node?.system?.name)}`
                     )
                   }}
+                  // role="none"
                 >
                   {/* anchor icon */}
                   <svg
@@ -133,6 +140,7 @@ function FaqWidgetItem({ node }) {
             </span>
             <div
               onClick={toggleAccordion}
+              role="none"
               className={active ? `question-icon rotate` : `question-icon`}
             >
               <ArrowLeft />
