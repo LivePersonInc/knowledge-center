@@ -57,31 +57,16 @@ const KnowledgeCenterMarkdownPageTemplate = ({
 
     if (location.hash) {
       let id = location.hash.substring(1)
-      console.log(id)
-      const element = document.getElementById(id)
-      element.scrollIntoView({
-        behavior: "auto",
-        block: "center",
-        inline: "center",
-      })
+
       // element.scrollTop = 0
       window.onload = e => {
         const element = document.getElementById(id)
         console.log(element.offsetTop)
-        const offset = 45
-        const bodyRect = document.body.getBoundingClientRect().top
-        const elementRect = element.getBoundingClientRect().top
-        const elementPosition = elementRect - bodyRect
-        const offsetPosition = elementPosition
-        element.scrollIntoView({
-          behavior: "auto",
-          block: "center",
-          inline: "center",
+
+        window.scrollTo({
+          top: element.offsetTop, //element.offsetTop,
+          behavior: "smooth",
         })
-        // window.scrollTo({
-        //   top: elementRect, //element.offsetTop,
-        //   behavior: "smooth",
-        // })
       }
 
       // element.scrollIntoView(true)
@@ -97,6 +82,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
   if (pageCategory === "Troubleshooting" && pageSubCategory === "Web Messaging")
     pageSubCategory = "Messaging"
+  else if (
+    pageCategory === "Agent & Manager Workspace" &&
+    pageSubCategory === "Agent manager tools for messaging"
+  )
+    pageSubCategory = "Manager Workspace for messaging"
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
@@ -111,12 +101,11 @@ const KnowledgeCenterMarkdownPageTemplate = ({
   let subCatLink = {}
   let fourthCrumbLink = ""
   let fourthCrumbTitle = ""
-
+  console.log(pageSubCategory, mainCatLink)
   if (mainCatLink) {
     // subCatLink
     mainCatLink.elements?.subitems.value.map(v => {
       let val = v.elements?.title?.value.replaceAll(`\n`, "")
-      console.log(val)
       if (val && val.toLowerCase() === pageSubCategory.toLowerCase()) {
         subCatLink = v
         if (v?.elements?.hasOwnProperty("subitems")) {
