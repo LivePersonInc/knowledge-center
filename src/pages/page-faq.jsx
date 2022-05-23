@@ -27,13 +27,13 @@ const FaqTemplate = ({ data, pageContext, location }) => {
       // objDiv.scrollTop = 0
       window.onload = e => {
         const element = document.getElementById(id)
-        console.log(element.offsetTop)
         // element.scrollTop = 0
-
-        window.scrollTo({
-          top: element.offsetTop,
-          behavior: "smooth",
-        })
+        if (element) {
+          window.scrollTo({
+            top: element.offsetTop,
+            behavior: "smooth",
+          })
+        }
       }
     }
   }, [location.hash])

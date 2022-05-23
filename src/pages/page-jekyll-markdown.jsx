@@ -57,21 +57,26 @@ const KnowledgeCenterMarkdownPageTemplate = ({
 
     if (location.hash) {
       let id = location.hash.substring(1)
+      console.log(id)
+      const element = document.getElementById(id)
+      // element.scrollTop = 0 + element.scrollHeight
 
-      // element.scrollTop = 0
-      window.onload = e => {
-        const element = document.getElementById(id)
-        console.log(element.offsetTop)
-
-        window.scrollTo({
-          top: element.offsetTop, //element.offsetTop,
-          behavior: "smooth",
-        })
-      }
+      // if (typeof element?.scrollIntoView === "function") {
+      //   element.scrollIntoView({
+      //     block: "center",
+      //     inline: "start",
+      //     behavior: "smooth",
+      //   })
+      // }
+      // // if (element)
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth",
+      })
 
       // element.scrollIntoView(true)
     }
-  }, [])
+  }, [jumpToItems])
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
   const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
@@ -132,6 +137,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({
           }
         }
       }
+      return null
     })
   }
 

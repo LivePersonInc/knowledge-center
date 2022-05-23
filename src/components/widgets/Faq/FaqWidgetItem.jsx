@@ -58,10 +58,14 @@ function FaqWidgetItem({ node }) {
   const toggleAccordion = () => {
     setActive(!active)
   }
+  let strId = `${encodeURI(node?.system?.name)}`
+  let last = strId.charAt(strId?.length - 1)
+  if (last === "." || last === "?") strId = strId.substring(0, strId.length - 1)
   useEffect(() => {
     if (location.hash) {
       let id = location.hash
-      if (id === `#${encodeURI(node?.system?.name)}`) setActive(true)
+
+      if (id === `#${strId}`) setActive(true)
     }
   }, [location.hash, node?.system?.name])
 
@@ -93,7 +97,7 @@ function FaqWidgetItem({ node }) {
             <span className="flex gap-2 w-full">
               <span
                 className="anchor-address w-full"
-                id={`${encodeURI(node?.system?.name)}`}
+                id={strId}
                 style={{ margin: 0 }}
               >
                 <span className="w-full" role="none" onClick={toggleAccordion}>
@@ -102,12 +106,12 @@ function FaqWidgetItem({ node }) {
                 <a
                   data-tip="Click to copy direct link to this section"
                   className="anchor-link tooltip tooltip-bottom tooltip-primary mx-2"
-                  href={`#${encodeURI(node?.system?.name)}`}
+                  href={`#${strId}`}
                   onClick={() => {
                     navigator.clipboard.writeText(
                       window.location.origin +
                         window.location.pathname +
-                        `#${encodeURI(node?.system?.name)}`
+                        `#${strId}`
                     )
                   }}
                   // role="none"

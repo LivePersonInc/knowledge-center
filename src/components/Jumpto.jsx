@@ -10,9 +10,11 @@ const JumpTo = ({ title, jumpToItems }) => {
 
   const scrollTo = el => {
     setIsClicked(true)
-    if (typeof el?.scrollIntoView === "function") {
-      el.scrollIntoView({ behavior: "smooth" })
-    }
+    if (el?.offsetTop)
+      window.scrollTo({
+        top: el.offsetTop,
+        behavior: "smooth",
+      })
   }
 
   const jumptoList = {
