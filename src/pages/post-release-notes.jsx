@@ -34,7 +34,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
   }, [data])
 
   // general template
-  console.log(data)
   const releaseNotesPage = data?.releaseNotesPage
   const pageTitle = releaseNotesPage?.elements?.pagename?.value
   // const pageCategory = releaseNotesPage?.elements?.categoryname?.value
@@ -80,7 +79,6 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                   {/* Title  */}
 
                   {node?.elements?.product_name?.value.map((node, k) => {
-                    console.log(node)
                     return (
                       <>
                         <h2

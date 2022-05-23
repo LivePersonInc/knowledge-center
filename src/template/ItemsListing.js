@@ -66,7 +66,7 @@ const isActive = ({ elements, location }) => {
       if (
         x?.elements?.permalink &&
         location.pathname.replaceAll("/", "") ===
-          x.elements?.permalink?.value?.replaceAll("/", "")
+        x.elements?.permalink?.value?.replaceAll("/", "")
       ) {
         return true
       }
@@ -131,12 +131,11 @@ const Item = ({ item, level, location }) => {
                     ) : null}
 
                     {item.elements.url.value === "what-s-new" ||
-                    item.elements.url.value === "release-notes" ? (
+                      item.elements.url.value === "release-notes" ? (
                       <Link
                         to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
-                        className={`nav-title  ${
-                          open ? "font-bold text-sidebar-color-active" : " "
-                        }
+                        className={`nav-title  ${open ? "font-bold text-sidebar-color-active" : " "
+                          }
                         `}
                       >
                         {item.elements.title?.value}

@@ -154,7 +154,6 @@ const RefinementLisst = ({ items, refine, createURL, currentRefinement }) => {
             // } else {
             // let foundLabel = tags.filter(v => v.type === item.label)[0]
             let item = items.filter(v => v.label === tag.type)[0]
-            // console.log(item, items)
 
             return (
               <li className="flex" style={{ marginBottom: 0 }} key={k}>
