@@ -5,6 +5,8 @@ export { default as ContactIcon } from "./ContactIcon"
 export { default as AgentIcon } from "./AgentIcon"
 export { default as ReportingIcon } from "./ReportingIcon"
 export { default as LinkIcon } from "./LinkIcon"
+export { default as DirectoryIcon } from "./DirectoryIcon"
+export { default as ArticleIcon } from "./ArticleIcon"
 
 export { default as MarketplaceIcon } from "./MarketplaceIcon"
 export { default as AdminIcon } from "./AdminIcon"

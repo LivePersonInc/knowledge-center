@@ -9,7 +9,7 @@ import { Disclosure, Transition } from "@headlessui/react"
 import Breadcrumbs from "../components/Breadbrumbs"
 
 import Footer from "../components/Footer"
-import { ArrowRight, LinkIcon } from "../components/icons/"
+import { ArrowRight, LinkIcon, DirectoryIcon, ArticleIcon } from "../components/icons/"
 const LEAF_NAME = ["categoryname", "subcategories", "page", "level3"]
 const FOLDER_NAME = [
   "categoryfolder",
@@ -126,7 +126,7 @@ const Item = ({ item, level, location }) => {
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >
-                        <ArrowRight />
+                        <DirectoryIcon />
                       </div>
                     ) : null}
 
@@ -208,7 +208,7 @@ const Item = ({ item, level, location }) => {
       <li className={"mb-3 " + LEAF_NAME[level]}>
         <span className="nav-title flex items-center">
           <span className="mr-2">
-            <LinkIcon />
+            <ArticleIcon />
           </span>
 
           <Link
