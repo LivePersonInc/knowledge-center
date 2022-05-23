@@ -201,7 +201,7 @@ export default function SearchCom() {
   const { setRedirectStatus } = useContext(SearchContext)
   return (
     <div>
-      <Breadcrumbs lastCrumb={"Search Result"} />
+      <Breadcrumbs thirdCrumb={"Search Result"} />
       <h1 className="h1">Search Results</h1>
       <CustomStateResults />
 

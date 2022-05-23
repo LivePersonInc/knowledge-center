@@ -49,7 +49,7 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
           <Breadcrumbs
             secondCrumbLink="whats-new"
             secondCrumbTitle="What's New"
-            lastCrumb={pageTitle}
+            thirdCrumb={pageTitle}
           />
           <h1 className="h1">{pageTitle}</h1>
         </div>

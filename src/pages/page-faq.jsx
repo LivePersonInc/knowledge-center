@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Seo from "../components/Seo"
@@ -14,29 +14,13 @@ const InnerSiteLayoutStyles = styled.main`
   width: 100%;
 `
 
-const FaqTemplate = ({ data, pageContext, location }) => {
+const FaqTemplate = ({ data, pageContext }) => {
   // faqPageQuery template
   const faqPageQuery = data?.faqPageQuery
-  // console.log(location)
+
   // Prev and Next Slug ReleaseNotes
   // const { prev, next } = pageContext
-  useEffect(() => {
-    if (location.hash) {
-      let id = location.hash.substring(1)
-      // const objDiv = document.getElementById(id)
-      // objDiv.scrollTop = 0
-      window.onload = e => {
-        const element = document.getElementById(id)
-        console.log(element.offsetTop)
-        // element.scrollTop = 0
 
-        window.scrollTo({
-          top: element.offsetTop,
-          behavior: "smooth",
-        })
-      }
-    }
-  }, [location.hash])
   const pageTitle = faqPageQuery?.elements?.pagename?.value
 
   // const pageCategory = faqPageQuery?.elements?.categoryname?.value
@@ -63,7 +47,7 @@ const FaqTemplate = ({ data, pageContext, location }) => {
           <Breadcrumbs
             secondCrumbLink="faqs"
             secondCrumbTitle="FAQs"
-            lastCrumb={pageTitle}
+            thirdCrumb={pageTitle}
           />
 
           <h1 className="h1">{pageTitle}</h1>
