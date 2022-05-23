@@ -111,12 +111,12 @@ const KnowledgeCenterMarkdownPageTemplate = ({
   let subCatLink = {}
   let fourthCrumbLink = ""
   let fourthCrumbTitle = ""
-  console.log(
-    mainCatLink,
-    mainCatLink.elements?.subitems.value,
-    pageSubCategory,
-    knowledgeCenterMarkdown
-  )
+  // console.log(
+  //   mainCatLink,
+  //   mainCatLink.elements?.subitems.value,
+  //   pageSubCategory,
+  //   knowledgeCenterMarkdown
+  // )
   if (mainCatLink) {
     // subCatLink
     mainCatLink.elements?.subitems.value.map(v => {
