@@ -117,8 +117,7 @@ const Item = ({ item, level, location }) => {
                           `${open ? "rotate-90 text-sidebar-color-active" : ""}`
                         }
                       >
-
-                        s
+                        <ArrowRight />
                       </div>
                     ) : level >= 1 ? (
                       <div
