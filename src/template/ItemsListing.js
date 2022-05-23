@@ -253,7 +253,7 @@ function ItemsListing({ pageContext, location }) {
       </div>
       <InnerSiteLayoutStyles>
         <div className="maincontent" id="scroll-smooth">
-          <ul className="mt-3 text-link-color !list-none mb-2">
+          <ul className="text-link-color !list-none mb-8">
             <Items
               items={elements.subitems.value}
               url=""
