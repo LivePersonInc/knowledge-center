@@ -976,7 +976,7 @@
             "appleBusinessChat": "Supported"
           },
           {
-            "sms": "Not Supported"
+            "sms": "Supported"
           },
           {
             "facebook": "Not Supported"
@@ -1009,7 +1009,7 @@
             "viber": "Supported"
           },
           {
-            "googleBusinessMessaging": "Not Supported"
+            "googleBusinessMessaging": "Supported"
           },
           {
             "kakaoTalk": "Supported"
@@ -1306,7 +1306,7 @@
             "instagram": "Not Supported"
           },
           {
-            "whatsapp": "Supported"
+            "whatsapp": "N/A in Channel"
           },
           {
             "googleRCS": "Supported"
