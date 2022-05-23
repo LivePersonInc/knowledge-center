@@ -58,21 +58,35 @@ const KnowledgeCenterMarkdownPageTemplate = ({
     if (location.hash) {
       let id = location.hash.substring(1)
       console.log(id)
-
+      const element = document.getElementById(id)
+      element.scrollIntoView({
+        behavior: "auto",
+        block: "center",
+        inline: "center",
+      })
       // element.scrollTop = 0
       window.onload = e => {
         const element = document.getElementById(id)
         console.log(element.offsetTop)
-
-        window.scrollTo({
-          top: element.offsetTop,
-          behavior: "smooth",
+        const offset = 45
+        const bodyRect = document.body.getBoundingClientRect().top
+        const elementRect = element.getBoundingClientRect().top
+        const elementPosition = elementRect - bodyRect
+        const offsetPosition = elementPosition
+        element.scrollIntoView({
+          behavior: "auto",
+          block: "center",
+          inline: "center",
         })
+        // window.scrollTo({
+        //   top: elementRect, //element.offsetTop,
+        //   behavior: "smooth",
+        // })
       }
 
       // element.scrollIntoView(true)
     }
-  }, [location.hash])
+  }, [])
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
   const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
@@ -97,39 +111,44 @@ const KnowledgeCenterMarkdownPageTemplate = ({
   let subCatLink = {}
   let fourthCrumbLink = ""
   let fourthCrumbTitle = ""
-  // console.log(mainCatLink, pageSubCategory)
+  console.log(
+    mainCatLink,
+    mainCatLink.elements?.subitems.value,
+    pageSubCategory,
+    knowledgeCenterMarkdown
+  )
   if (mainCatLink) {
-    subCatLink = mainCatLink.elements?.subitems.value.filter(v =>
-      v.elements?.title?.value === `\nWeb Messaging` &&
-      pageSubCategory === "Web Messaging"
-        ? true
-        : v.elements?.title?.value.toLowerCase() ===
-          pageSubCategory.toLowerCase()
-    )[0]
-    // console.log(subCatLink)
-    if (subCatLink?.elements?.hasOwnProperty("subitems")) {
-      let getFourthCat = subCatLink.elements.subitems?.value.filter(
-        v => v.system.id.toLowerCase() === pageContext.systemId
-      )[0]
-      if (!getFourthCat) {
-        let getFourthCatSubs = subCatLink.elements.subitems.value.filter(v =>
-          v?.elements.hasOwnProperty("subitems")
-        )
-        if (getFourthCatSubs.length) {
-          getFourthCatSubs.map(fc => {
-            let getFourthCat = fc?.elements?.subitems?.value.filter(
-              v => v.system.id.toLowerCase() === pageContext.systemId
-            )[0]
-            // console.log(getFourthCat, fc)
-            if (getFourthCat) {
-              fourthCrumbLink = fc?.elements?.url?.value
-              fourthCrumbTitle = fc?.elements?.title?.value
+    // subCatLink
+    mainCatLink.elements?.subitems.value.map(v => {
+      let val = v.elements?.title?.value.replaceAll(`\n`, "")
+      console.log(val)
+      if (val && val.toLowerCase() === pageSubCategory.toLowerCase()) {
+        subCatLink = v
+        if (v?.elements?.hasOwnProperty("subitems")) {
+          let getFourthCat = v.elements.subitems?.value.filter(
+            v => v.system.id.toLowerCase() === pageContext.systemId
+          )[0]
+          if (!getFourthCat) {
+            let getFourthCatSubs = v.elements.subitems.value.filter(v =>
+              v?.elements.hasOwnProperty("subitems")
+            )
+            if (getFourthCatSubs.length) {
+              getFourthCatSubs.map(fc => {
+                let getFourthCat = fc?.elements?.subitems?.value.filter(
+                  v => v.system.id.toLowerCase() === pageContext.systemId
+                )[0]
+                console.log(getFourthCat, fc)
+                if (getFourthCat) {
+                  fourthCrumbLink = fc?.elements?.url?.value
+                  fourthCrumbTitle = fc?.elements?.title?.value
+                }
+                return null
+              })
             }
-            return null
-          })
+          }
         }
       }
-    }
+    })
   }
 
   return (
