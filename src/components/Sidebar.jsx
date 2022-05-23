@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery, navigate } from "gatsby"
 import { Disclosure, Transition } from "@headlessui/react"
 
 import { ArrowRight, LinkIcon } from "./icons/"
@@ -274,6 +274,9 @@ const Sidebar = ({ location }) => {
     }
   `)
 
+  // console.log(
+  //   sidebarData.allKontentItemNavigationItem.nodes[0].elements.subitems
+  // )
   return (
     <SidebarStyles className="drawer-side">
       <div htmlFor="my-drawer-2" className="drawer-overlay" />
@@ -435,7 +438,9 @@ const SidebarItem = ({ item, level, location }) => {
                 isOpen={isOpen}
               />
               <dt className="flex items-center">
-                <Disclosure.Button>
+                <Disclosure.Button
+                  onDoubleClick={() => navigate(`/${item.elements.url.value}`)}
+                >
                   <div className="flex itemdetails canOpen relative items-start gap-2">
                     {level === 0 ? (
                       <div
@@ -446,7 +451,7 @@ const SidebarItem = ({ item, level, location }) => {
                       >
                         <ArrowRight />
                       </div>
-                    ) : level === 1 ? (
+                    ) : level >= 1 ? (
                       <div
                         className={
                           "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center transform transition " +
