@@ -67,7 +67,7 @@ function FaqWidgetItem({ node }) {
 
       if (id === `#${strId}`) setActive(true)
     }
-  }, [location.hash, node?.system?.name])
+  }, [location.hash, strId])
 
   // Related Articles
   const relatedFaqArticleList = node?.elements?.related_article.value

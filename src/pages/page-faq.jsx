@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Seo from "../components/Seo"
@@ -20,23 +20,23 @@ const FaqTemplate = ({ data, pageContext, location }) => {
   // console.log(location)
   // Prev and Next Slug ReleaseNotes
   // const { prev, next } = pageContext
-  useEffect(() => {
-    if (location.hash) {
-      let id = location.hash.substring(1)
-      // const objDiv = document.getElementById(id)
-      // objDiv.scrollTop = 0
-      window.onload = e => {
-        const element = document.getElementById(id)
-        // element.scrollTop = 0
-        if (element) {
-          window.scrollTo({
-            top: element.offsetTop,
-            behavior: "smooth",
-          })
-        }
-      }
-    }
-  }, [location.hash])
+  // useEffect(() => {
+  //   if (location.hash) {
+  //     let id = location.hash.substring(1)
+  //     // const objDiv = document.getElementById(id)
+  //     // objDiv.scrollTop = 0
+  //     window.onload = e => {
+  //       const element = document.getElementById(id)
+  //       // element.scrollTop = 0
+  //       if (element) {
+  //         window.scrollTo({
+  //           top: element.offsetTop,
+  //           behavior: "smooth",
+  //         })
+  //       }
+  //     }
+  //   }
+  // }, [location.hash])
   const pageTitle = faqPageQuery?.elements?.pagename?.value
 
   // const pageCategory = faqPageQuery?.elements?.categoryname?.value

@@ -50,33 +50,33 @@ const KnowledgeCenterMarkdownPageTemplate = ({
   }, [data])
 
   // general template
-  useEffect(() => {
-    // console.log("page", pageNumber)
-    // itemsRef.current.scrollIntoView()
-    // console.log(itemsRef.current)
+  // useEffect(() => {
+  //   // console.log("page", pageNumber)
+  //   // itemsRef.current.scrollIntoView()
+  //   // console.log(itemsRef.current)
 
-    if (location.hash) {
-      let id = location.hash.substring(1)
-      console.log(id)
-      const element = document.getElementById(id)
-      // element.scrollTop = 0 + element.scrollHeight
+  //   if (location.hash) {
+  //     let id = location.hash.substring(1)
+  //     console.log(id)
+  //     const element = document.getElementById(id)
+  //     // element.scrollTop = 0 + element.scrollHeight
 
-      // if (typeof element?.scrollIntoView === "function") {
-      //   element.scrollIntoView({
-      //     block: "center",
-      //     inline: "start",
-      //     behavior: "smooth",
-      //   })
-      // }
-      // // if (element)
-      window.scrollTo({
-        top: element.offsetTop,
-        behavior: "smooth",
-      })
+  //     // if (typeof element?.scrollIntoView === "function") {
+  //     //   element.scrollIntoView({
+  //     //     block: "center",
+  //     //     inline: "start",
+  //     //     behavior: "smooth",
+  //     //   })
+  //     // }
+  //     // // if (element)
+  //     window.scrollTo({
+  //       top: element.offsetTop,
+  //       behavior: "smooth",
+  //     })
 
-      // element.scrollIntoView(true)
-    }
-  }, [jumpToItems])
+  //     // element.scrollIntoView(true)
+  //   }
+  // }, [jumpToItems])
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
   const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
