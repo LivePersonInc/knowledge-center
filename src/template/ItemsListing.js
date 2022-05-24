@@ -187,10 +187,10 @@ const Item = ({ item, level, location }) => {
     const newUrl = item.elements.permalink.value
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
-        <span className="mr-2">
+        <span className="w-4 h-4 mt-1.5 flex items-center flex-col justify-center mr-2">
           <LinkIcon />
         </span>
-        <span className="nav-title flex items-center">
+        <span className="nav-title flex items-start">
           <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
         </span>
       </li>
@@ -199,11 +199,11 @@ const Item = ({ item, level, location }) => {
     const newUrl = item.elements.permalink.value
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
-        <span className="mr-2">
+        <span className="w-4 h-4 mt-1.5 flex items-center flex-col justify-center mr-2">
           <LinkIcon />
         </span>
 
-        <span className="nav-title flex items-center">
+        <span className="nav-title flex items-start">
           <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
         </span>
       </li>
@@ -212,8 +212,8 @@ const Item = ({ item, level, location }) => {
     const newUrl = item.elements.permalink.value
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
-        <span className="nav-title flex items-center">
-          <span className="mr-2">
+        <span className="nav-title flex items-start">
+          <span className="w-4 h-4 mt-1.5 flex items-center flex-col justify-center mr-2">
             <ArticleIcon />
           </span>
 
