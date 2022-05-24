@@ -6,7 +6,7 @@ import moment from "moment"
 const PrevNext = styled.section`
   display: flex;
   justify-content: space-between;
-  a {
+  a:not(:first-child) {
     width: 50%;
   }
   @media (max-width: 768px) {
@@ -92,7 +92,7 @@ const PagePagination = ({ prev, next, pagetype }) => {
             <Link
               style={{ textDecoration: "none" }}
               to={`/${pagetype}/${next?.permalink.value}`}
-              className="flex justify-end"
+              className="flex justify-end w-full"
             >
               <Flex>
                 <div>
