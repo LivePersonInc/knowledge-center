@@ -9,7 +9,6 @@ import json from "../assets/capabilities.json"
 import { matchSorter } from "match-sorter"
 import {
   AbcIcon,
-  ConnectorApiIcon,
   FbMessengerIcon,
   GoggleRscIcon,
   KakIcon,
@@ -64,7 +63,6 @@ const preProcessJSON = json => {
     if (add) {
       arr.push({
         appleBusinessChat: <AbcIcon />,
-        connectorAPI: <ConnectorApiIcon />,
         facebook: <FbMessengerIcon />,
         featureName: x.categoryName,
         googleBusinessMessaging: <GcIcon />,
@@ -146,10 +144,6 @@ const TableMc = () => {
       {
         Header: "Messaging Window API",
         accessor: "messagingWindowAPI",
-      },
-      {
-        Header: "Connector API",
-        accessor: "connectorAPI",
       },
       {
         Header: "WeChat",
