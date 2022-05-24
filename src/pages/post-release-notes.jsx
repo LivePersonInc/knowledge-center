@@ -134,7 +134,9 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                   <div>
                     <h3 className="h3 mt-4 mb-2">Features</h3>
                     <LpRichTextElement
-                      body_content={node?.elements?.features?.value}
+                      body_content={customBodyContent(
+                        node?.elements?.features?.value
+                      )}
                       bodyfield={node?.elements?.features}
                     />
                   </div>
@@ -156,7 +158,9 @@ const ReleaseNotesPostTemplate = ({ data, pageContext }) => {
                   <div>
                     <h3 className="h3 mt-4 mb-2">Fixes</h3>
                     <LpRichTextElement
-                      body_content={node?.elements?.fixes?.value}
+                      body_content={customBodyContent(
+                        node?.elements?.fixes?.value
+                      )}
                       bodyfield={node?.elements?.fixes}
                     />
                   </div>
@@ -435,6 +439,12 @@ export const query = graphql`
                       }
                     }
                   }
+                  links {
+                    codename
+                    link_id
+                    type
+                    url_slug
+                  }
                 }
                 features {
                   value
@@ -540,6 +550,12 @@ export const query = graphql`
                       }
                     }
                   }
+                  links {
+                    codename
+                    link_id
+                    type
+                    url_slug
+                  }
                 }
                 enhancements {
                   value
@@ -627,6 +643,15 @@ export const query = graphql`
                       elements {
                         notice_text {
                           value
+                          links {
+                            codename
+                            link_id
+                            type
+                            url_slug
+                          }
+                          modular_content {
+                            id
+                          }
                         }
                         type {
                           value {
@@ -635,6 +660,12 @@ export const query = graphql`
                         }
                       }
                     }
+                  }
+                  links {
+                    url_slug
+                    type
+                    link_id
+                    codename
                   }
                 }
                 channels_supported {
