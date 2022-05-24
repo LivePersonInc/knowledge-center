@@ -92,6 +92,7 @@ const PagePagination = ({ prev, next, pagetype }) => {
             <Link
               style={{ textDecoration: "none" }}
               to={`/${pagetype}/${next?.permalink.value}`}
+              className="flex justify-end"
             >
               <Flex>
                 <div>
