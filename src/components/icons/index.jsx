@@ -6,6 +6,7 @@ export { default as AgentIcon } from "./AgentIcon"
 export { default as ReportingIcon } from "./ReportingIcon"
 export { default as LinkIcon } from "./LinkIcon"
 export { default as DirectoryIcon } from "./DirectoryIcon"
+export { default as DirectoryIconOpen } from "./DirectoryIconOpen"
 export { default as ArticleIcon } from "./ArticleIcon"
 
 export { default as MarketplaceIcon } from "./MarketplaceIcon"

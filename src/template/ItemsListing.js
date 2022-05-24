@@ -13,6 +13,7 @@ import {
   ArrowRight,
   LinkIcon,
   DirectoryIcon,
+  DirectoryIconOpen,
   ArticleIcon,
 } from "../components/icons/"
 const LEAF_NAME = ["categoryname", "subcategories", "page", "level3"]
@@ -71,7 +72,7 @@ const isActive = ({ elements, location }) => {
       if (
         x?.elements?.permalink &&
         location.pathname.replaceAll("/", "") ===
-          x.elements?.permalink?.value?.replaceAll("/", "")
+        x.elements?.permalink?.value?.replaceAll("/", "")
       ) {
         return true
       }
@@ -128,20 +129,19 @@ const Item = ({ item, level, location }) => {
                       <div
                         className={
                           "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center transform transition " +
-                          `${open ? "rotate-90 text-sidebar-color-active" : ""}`
+                          `${open ? "text-sidebar-color-active" : ""}`
                         }
                       >
-                        <DirectoryIcon />
+                        {open ? <DirectoryIcon /> : <DirectoryIconOpen />}
                       </div>
                     ) : null}
 
                     {item.elements.url.value === "what-s-new" ||
-                    item.elements.url.value === "release-notes" ? (
+                      item.elements.url.value === "release-notes" ? (
                       <Link
                         to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
-                        className={`nav-title  ${
-                          open ? "font-bold text-sidebar-color-active" : " "
-                        }
+                        className={`nav-title  ${open ? "font-bold text-sidebar-color-active" : " "
+                          }
                         `}
                       >
                         {item.elements.title?.value}
