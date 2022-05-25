@@ -199,13 +199,20 @@ const Item = ({ item, level, location }) => {
     const newUrl = item.elements.permalink.value
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
-        <span className="w-4 h-4 mt-1.5 flex items-center flex-col justify-center mr-2">
-          <LinkIcon />
-        </span>
 
         <span className="nav-title flex items-start">
-          <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
+          <span className="w-4 h-4 mt-1.5 flex items-center flex-col justify-center mr-2">
+            <ArticleIcon />
+          </span>
+
+          <Link
+            activeClassName="font-bold text-sidebar-color-active"
+            to={`/${newUrl}`}
+          >
+            {item.elements.pagename.value}
+          </Link>
         </span>
+
       </li>
     )
   } else if (item?.system?.type === "knowledge_center_markdown_page") {
