@@ -46,7 +46,7 @@ const BlogWhatsNewTemplate = ({ data }) => {
           }}
         >
           <nav className="breadcrumbs text-sm">
-            <ul className="flex-wrap text-primary">
+            <ul className="bread-crumbs flex-wrap text-primary">
               <li className="breadcrumbs-item m-0 hover:text-primary-hover">
                 <Link to="/">Knowledge Center</Link>
               </li>
