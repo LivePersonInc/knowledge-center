@@ -6,7 +6,7 @@ import Seo from "../components/Seo"
 
 import { Disclosure, Transition } from "@headlessui/react"
 
-import Breadcrumbs from "../components/Breadbrumbs"
+import Breadcrumbs from "../components/Breadcrumbs"
 
 import Footer from "../components/Footer"
 import {

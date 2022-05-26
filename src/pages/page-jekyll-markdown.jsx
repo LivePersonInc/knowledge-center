@@ -11,7 +11,7 @@ import LpRichTextElement from "../components/LpRichTextElement"
 import { customBodyContent } from "../utils"
 import Footer from "../components/Footer"
 import RelatedArticles from "../components/widgets/RelatedArticles"
-import BreadcrumbsDynamic from "../components/BreadCrumbsDynamic"
+import Breadcrumbs from "../components/Breadcrumbs"
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   display: grid;
@@ -142,7 +142,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({
             marginBottom: "var(--space8)",
           }}
         >
-          <BreadcrumbsDynamic crumbArray={crumbArray} lastCrumb={pageTitle} />
+          <Breadcrumbs crumbArray={crumbArray} lastCrumb={pageTitle} />
 
           <h1 className="h1">{pageTitle}</h1>
 

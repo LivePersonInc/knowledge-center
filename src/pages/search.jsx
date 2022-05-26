@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import Breadcrumbs from "../components/Breadbrumbs"
+import Breadcrumbs from "../components/Breadcrumbs"
 import { Link } from "gatsby"
 
 import {

@@ -9,7 +9,7 @@ const Breadcrumbs = ({
   thirdCrumbLink,
   fourthCrumbTitle,
   fourthCrumbLink,
-
+  crumbArray,
   lastCrumb,
 }) => {
   return (
@@ -18,6 +18,18 @@ const Breadcrumbs = ({
         <li className="breadcrumbs-item m-0 hover:text-primary-hover">
           <Link to="/">Knowledge Center</Link>
         </li>
+        {crumbArray &&
+          crumbArray.length > 0 &&
+          crumbArray.map((v, k) => (
+            <>
+              <li className="m-0">
+                <Slash />
+              </li>
+              <li className="breadcrumbs-item m-0 hover:text-primary-hover">
+                <Link to={`/${v.url}`}>{v.title}</Link>
+              </li>
+            </>
+          ))}
         {secondCrumbTitle && (
           <>
             <li className="m-0">
