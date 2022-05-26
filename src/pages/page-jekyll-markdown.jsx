@@ -8,10 +8,10 @@ import Tags from "../components/Tags"
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
 import LpRichTextElement from "../components/LpRichTextElement"
-import Breadcrumbs from "../components/Breadbrumbs"
 import { customBodyContent } from "../utils"
 import Footer from "../components/Footer"
 import RelatedArticles from "../components/widgets/RelatedArticles"
+import BreadcrumbsDynamic from "../components/BreadCrumbsDynamic"
 const InnerSiteLayoutStyles = styled.main`
   width: 100%;
   display: grid;
@@ -100,47 +100,38 @@ const KnowledgeCenterMarkdownPageTemplate = ({
     knowledgeCenterMarkdown?.elements?.related_articles.value
   const allKontentItemNavigationItem =
     data.allKontentItemNavigationItem.nodes[0].elements.subitems.value
-  let mainCatLink = allKontentItemNavigationItem.filter(
-    v => v.elements.title.value.toLowerCase() === pageCategory.toLowerCase()
-  )[0]
-  let subCatLink = {}
-  let fourthCrumbLink = ""
-  let fourthCrumbTitle = ""
-  console.log(pageSubCategory, mainCatLink)
-  if (mainCatLink) {
-    // subCatLink
-    mainCatLink.elements?.subitems.value.map(v => {
-      let val = v.elements?.title?.value.replaceAll(`\n`, "")
-      if (val && val.toLowerCase() === pageSubCategory.toLowerCase()) {
-        subCatLink = v
-        if (v?.elements?.hasOwnProperty("subitems")) {
-          let getFourthCat = v.elements.subitems?.value.filter(
-            v => v.system.id.toLowerCase() === pageContext.systemId
-          )[0]
-          if (!getFourthCat) {
-            let getFourthCatSubs = v.elements.subitems.value.filter(v =>
-              v?.elements.hasOwnProperty("subitems")
-            )
-            if (getFourthCatSubs.length) {
-              getFourthCatSubs.map(fc => {
-                let getFourthCat = fc?.elements?.subitems?.value.filter(
-                  v => v.system.id.toLowerCase() === pageContext.systemId
-                )[0]
-                console.log(getFourthCat, fc)
-                if (getFourthCat) {
-                  fourthCrumbLink = fc?.elements?.url?.value
-                  fourthCrumbTitle = fc?.elements?.title?.value
-                }
-                return null
-              })
-            }
-          }
+
+  const runCrumb = (array, id) => {
+    let crumbLink = []
+
+    const mapOver = (node, level, parent) => {
+      let { elements, system } = node
+      if (system.id === id) {
+        console.log(parent)
+
+        crumbLink = parent
+        return
+      } else {
+        if (elements?.subitems?.value && elements.subitems.value.length) {
+          elements.subitems.value.forEach(node => {
+            // excludeStaticProduct.push(`/product/${node.nid}/`)
+            let p = { url: elements.url.value, title: elements.title.value }
+
+            if (parent) p = [...parent, p]
+            else p = [p]
+            return mapOver(node, level + 1, p)
+          })
         }
       }
-      return null
+    }
+    array.forEach(node => {
+      mapOver(node, 0)
     })
-  }
+    console.log(crumbLink)
 
+    return crumbLink
+  }
+  let crumbArray = runCrumb(allKontentItemNavigationItem, pageContext.systemId)
   return (
     <>
       <Seo title={pageTitle} description={pageSubTitle} />
@@ -151,15 +142,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({
             marginBottom: "var(--space8)",
           }}
         >
-          <Breadcrumbs
-            secondCrumbLink={mainCatLink?.elements?.url?.value}
-            secondCrumbTitle={pageCategory}
-            thirdCrumbLink={subCatLink?.elements?.url?.value}
-            thirdCrumbTitle={pageSubCategory}
-            fourthCrumbLink={fourthCrumbLink}
-            fourthCrumbTitle={fourthCrumbTitle}
-            lastCrumb={pageTitle}
-          />
+          <BreadcrumbsDynamic crumbArray={crumbArray} lastCrumb={pageTitle} />
 
           <h1 className="h1">{pageTitle}</h1>
 
