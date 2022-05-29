@@ -170,7 +170,7 @@ export default function Header() {
           >
             Sign in
           </a>
-          <a
+          {/* <a
             target="_blank"
             rel="noreferrer"
             aria-label="register"
@@ -178,7 +178,7 @@ export default function Header() {
             className="btn btn-primary btn-primary-hover normal-case rounded-full px-8 mobile:hidden"
           >
             Free trial
-          </a>
+          </a> */}
         </div>
       </div>
     </header>

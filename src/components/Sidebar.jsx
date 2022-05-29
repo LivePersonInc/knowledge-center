@@ -343,7 +343,7 @@ const Sidebar = ({ location }) => {
           </a>
         </li>
 
-        <li className="lg:hidden ipad:visible justify-center text-center">
+        {/* <li className="lg:hidden ipad:visible justify-center text-center">
           <a
             href={`https://developers.liveperson.com/register.html`}
             rel="noreferrer"
@@ -358,7 +358,7 @@ const Sidebar = ({ location }) => {
           >
             <span className="nav-title">Free trial</span>
           </a>
-        </li>
+        </li> */}
       </ul>
     </SidebarStyles>
   )

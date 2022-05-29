@@ -25,7 +25,7 @@ const HomePage = ({ data }) => {
           <RichTextElement value={bodyTextHomepage} />
         </div>
       </div>
-      <div className="flex items-start ipad:flex-col mobile:flex-col justify-between mobile:items-center mt-8 gap-8">
+      <div className="flex items-start ipad:flex-col mobile:flex-col justify-between mobile:items-center mt-8 gap-8 mb-8">
         <div className="flex flex-col justify-between gap-8 w-full">
           <CardBg
             // Getting Started
@@ -75,7 +75,7 @@ const HomePage = ({ data }) => {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="my-8 md:card-side"
         style={{
           background: `url(${kontentItemHomepage?.elements?.cta_image?.value[0]?.url})`,
@@ -107,7 +107,7 @@ const HomePage = ({ data }) => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   )
