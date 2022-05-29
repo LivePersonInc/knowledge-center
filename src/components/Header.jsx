@@ -165,7 +165,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Sign in"
-            className="text-primary hover:text-primary-hover normal-case mobile:hidden"
+            className="text-primary hover:text-primary-hover normal-case mobile:hidden px-8"
             style={{ fontSize: "1.125rem", lineHeight: "1.75rem" }}
           >
             Sign in
