@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 
 import Seo from "../components/Seo"
 import Tags from "../components/Tags"
+import ArticleMeta from "../components/ArticleMeta"
 
 import AlertComponent from "../components/AlertComponent"
 import Jumpto from "../components/Jumpto"
@@ -85,6 +86,9 @@ const KnowledgeCenterMarkdownPageTemplate = ({
   const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
   const introduction = knowledgeCenterMarkdown?.elements?.introduction?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
+
+  let date = knowledgeCenterMarkdown?.system?.last_modified
+
   if (pageCategory === "Troubleshooting" && pageSubCategory === "Web Messaging")
     pageSubCategory = "Messaging"
   else if (
@@ -143,15 +147,14 @@ const KnowledgeCenterMarkdownPageTemplate = ({
           }}
         >
           <Breadcrumbs crumbArray={crumbArray} lastCrumb={pageTitle} />
-
           <h1 className="h1">{pageTitle}</h1>
-
           <div className="text-body-text" id="subtitle">
             {pageSubTitle}
           </div>
           <div id="indicators">
             <Tags tags={(pageTags || []).map(({ name }) => name)} />
           </div>
+          <ArticleMeta date={date} />
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent" id="scroll-smooth">
@@ -520,6 +523,9 @@ export const query = graphql`
             }
           }
         }
+      }
+      system {
+        last_modified
       }
     }
     allKontentItemNavigationItem(
