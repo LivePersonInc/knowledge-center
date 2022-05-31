@@ -73,7 +73,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({
     const mapOver = (node, level, parent) => {
       let { elements, system } = node
       if (system.id === id) {
-        console.log(parent)
+        // console.log(parent)
 
         crumbLink = parent
         return
@@ -93,7 +93,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({
     array.forEach(node => {
       mapOver(node, 0)
     })
-    console.log(crumbLink)
+    // console.log(crumbLink)
 
     return crumbLink
   }

@@ -29,6 +29,7 @@ const ArticleMeta = ({ date, textRef }) => {
             dateTime={moment(date).format("MMMM D, YYYY")}
             data-kontent-element-codename="date"
           >
+            {/* dont show the year if it's the current year */}
             {moment(date).format("YYYY") == new Date().getFullYear()
               ? moment(date).format("MMMM D")
               : moment(date).format("MMMM D, YYYY")}
