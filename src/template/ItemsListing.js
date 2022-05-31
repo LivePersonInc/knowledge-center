@@ -72,7 +72,7 @@ const isActive = ({ elements, location }) => {
       if (
         x?.elements?.permalink &&
         location.pathname.replaceAll("/", "") ===
-        x.elements?.permalink?.value?.replaceAll("/", "")
+          x.elements?.permalink?.value?.replaceAll("/", "")
       ) {
         return true
       }
@@ -137,11 +137,12 @@ const Item = ({ item, level, location }) => {
                     ) : null}
 
                     {item.elements.url.value === "what-s-new" ||
-                      item.elements.url.value === "release-notes" ? (
+                    item.elements.url.value === "release-notes" ? (
                       <Link
                         to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
-                        className={`nav-title  ${open ? "font-bold text-sidebar-color-active" : " "
-                          }
+                        className={`nav-title  ${
+                          open ? "font-bold text-sidebar-color-active" : " "
+                        }
                         `}
                       >
                         {item.elements.title?.value}
@@ -199,7 +200,6 @@ const Item = ({ item, level, location }) => {
     const newUrl = item.elements.permalink.value
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
-
         <span className="nav-title flex items-start">
           <span className="w-4 h-4 mt-1.5 flex items-center flex-col justify-center mr-2">
             <ArticleIcon />
@@ -212,7 +212,6 @@ const Item = ({ item, level, location }) => {
             {item.elements.pagename.value}
           </Link>
         </span>
-
       </li>
     )
   } else if (item?.system?.type === "knowledge_center_markdown_page") {
