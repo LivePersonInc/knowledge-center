@@ -6,7 +6,7 @@ import CardBg from "../components/widgets/CardBg"
 import CardIcon from "../components/widgets/CardIcon"
 import Footer from "../components/Footer"
 import CardLatestPosts from "../components/widgets/CardLatestPosts"
-import Button from "../components/widgets/Button"
+// import Button from "../components/widgets/Button"
 
 const HomePage = ({ data }) => {
   const kontentItemHomepage = data?.kontentItemHomepage

@@ -50,52 +50,14 @@ const KnowledgeCenterMarkdownPageTemplate = ({
     }
   }, [data])
 
-  // general template
-  // useEffect(() => {
-  //   // console.log("page", pageNumber)
-  //   // itemsRef.current.scrollIntoView()
-  //   // console.log(itemsRef.current)
-
-  //   if (location.hash) {
-  //     let id = location.hash.substring(1)
-  //     console.log(id)
-  //     const element = document.getElementById(id)
-  //     // element.scrollTop = 0 + element.scrollHeight
-
-  //     // if (typeof element?.scrollIntoView === "function") {
-  //     //   element.scrollIntoView({
-  //     //     block: "center",
-  //     //     inline: "start",
-  //     //     behavior: "smooth",
-  //     //   })
-  //     // }
-  //     // // if (element)
-  //     window.scrollTo({
-  //       top: element.offsetTop,
-  //       behavior: "smooth",
-  //     })
-
-  //     // element.scrollIntoView(true)
-  //   }
-  // }, [jumpToItems])
   const knowledgeCenterMarkdown = data?.knowledgeCenterMarkdown
   const pageTitle = knowledgeCenterMarkdown?.elements?.pagename?.value
-  const pageCategory = knowledgeCenterMarkdown?.elements?.categoryname?.value
-  let pageSubCategory =
-    knowledgeCenterMarkdown?.elements?.subcategoryname?.value
   const pageSubTitle = knowledgeCenterMarkdown?.elements?.subtitle?.value
   const introduction = knowledgeCenterMarkdown?.elements?.introduction?.value
   const body_content = knowledgeCenterMarkdown?.elements?.body?.value
 
   let date = knowledgeCenterMarkdown?.system?.last_modified
 
-  if (pageCategory === "Troubleshooting" && pageSubCategory === "Web Messaging")
-    pageSubCategory = "Messaging"
-  else if (
-    pageCategory === "Agent & Manager Workspace" &&
-    pageSubCategory === "Agent manager tools for messaging"
-  )
-    pageSubCategory = "Manager Workspace for messaging"
   // Tags
   const pageTags = knowledgeCenterMarkdown?.elements?.channels_supported.value
 
@@ -104,7 +66,7 @@ const KnowledgeCenterMarkdownPageTemplate = ({
     knowledgeCenterMarkdown?.elements?.related_articles.value
   const allKontentItemNavigationItem =
     data.allKontentItemNavigationItem.nodes[0].elements.subitems.value
-
+  const textRef = useRef(null)
   const runCrumb = (array, id) => {
     let crumbLink = []
 
@@ -154,24 +116,26 @@ const KnowledgeCenterMarkdownPageTemplate = ({
           <div id="indicators">
             <Tags tags={(pageTags || []).map(({ name }) => name)} />
           </div>
-          <ArticleMeta date={date} />
+          <ArticleMeta date={date} textRef={textRef} />
         </div>
         <InnerSiteLayoutStyles>
           <div className="maincontent" id="scroll-smooth">
-            {introduction !== "<p><br></p>" && (
-              <div className="pb-8">
+            <div ref={textRef}>
+              {introduction !== "<p><br></p>" && (
+                <div className="pb-8">
+                  <LpRichTextElement
+                    body_content={introduction}
+                    bodyfield={knowledgeCenterMarkdown?.elements?.introduction}
+                  />
+                </div>
+              )}
+              {body_content.length > 0 && (
                 <LpRichTextElement
-                  body_content={introduction}
-                  bodyfield={knowledgeCenterMarkdown?.elements?.introduction}
+                  body_content={customBodyContent(body_content)}
+                  bodyfield={knowledgeCenterMarkdown?.elements?.body}
                 />
-              </div>
-            )}
-            {body_content.length > 0 && (
-              <LpRichTextElement
-                body_content={customBodyContent(body_content)}
-                bodyfield={knowledgeCenterMarkdown?.elements?.body}
-              />
-            )}
+              )}
+            </div>
             {relatedArticlesList.length > 0 && (
               <div id="relatedArticles">
                 <RelatedArticles related={relatedArticlesList} />
