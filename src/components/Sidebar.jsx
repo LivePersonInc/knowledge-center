@@ -78,17 +78,17 @@ const SidebarStyles = styled.div`
   li.pagesfolder {
     padding-left: 1.5rem;
   }
-  li.sidebar_item:nth-last-child(8) {
+  li.sidebar_item:nth-last-child(7) {
     padding-top: 1.5rem;
   }
-  li.sidebar_item:nth-last-child(6) {
+  li.sidebar_item:nth-last-child(5) {
     padding-top: 1.5rem;
     .sidebar-arrow,
     .inner-nav {
       display: none;
     }
   }
-  li.sidebar_item:nth-last-child(5) {
+  li.sidebar_item:nth-last-child(4) {
     padding-bottom: 1.5rem;
     .sidebar-arrow,
     .inner-nav {
