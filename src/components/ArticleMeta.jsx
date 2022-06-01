@@ -23,7 +23,7 @@ const ArticleMeta = ({ date, textRef }) => {
       </div> */}
       <div>
         <div className="flex items-center gap-1">
-          Last updated {"  "}
+          Updated {"  "}
           <time
             className="article__meta-time flex"
             dateTime={moment(date).format("MMMM D, YYYY")}
