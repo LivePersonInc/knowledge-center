@@ -15,16 +15,16 @@ body::-webkit-scrollbar,
 html,
 #mysidebar {
   scrollbar-width: thin;
-  scrollbar-color: var(--scroll-bg) green;
+  scrollbar-color: var(--scroll-bg, #e7e8ec);
   scroll-behavior: smooth;
 }
 body::-webkit-scrollbar-track,
 #mysidebar::-webkit-scrollbar-track {
-  background: var(--body-background);
+  background: var(--body-background, #e7e8ec);
 }
 body::-webkit-scrollbar-thumb,
 #mysidebar::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-bg);
+  background-color: var(--scroll-bg, #e7e8ec);
   border-radius: 6px;
   border: 3px solid var(--body-background);
 }
