@@ -7,11 +7,15 @@ function useReadingTime(ref, wordsPerMinute = 260) {
 
   useEffect(() => {
     const elem = ref.current
-    const words = elem.innerText.match(/\w+/g).length
-    setWordsCount(words)
+    const words = elem.innerText.match(/\w+/g)?.length
+
+    setWordsCount(words ? words : null)
   }, [ref])
 
-  return { readingTime: Math.ceil(wordsCount / wordsPerMinute), wordsCount }
+  return {
+    readingTime: wordsCount ? Math.ceil(wordsCount / wordsPerMinute) : null,
+    wordsCount,
+  }
 }
 const ArticleMeta = ({ date, textRef }) => {
   const { readingTime } = useReadingTime(textRef)
@@ -37,7 +41,9 @@ const ArticleMeta = ({ date, textRef }) => {
         </div>
       </div>
       <div>
-        <div className="flex items-center">{readingTime} min read</div>
+        {readingTime && (
+          <div className="flex items-center">{readingTime} min read</div>
+        )}
       </div>
     </div>
   )
