@@ -72,7 +72,7 @@ const isActive = ({ elements, location }) => {
       if (
         x?.elements?.permalink &&
         location.pathname.replaceAll("/", "") ===
-          x.elements?.permalink?.value?.replaceAll("/", "")
+        x.elements?.permalink?.value?.replaceAll("/", "")
       ) {
         return true
       }
@@ -98,12 +98,12 @@ const Item = ({ item, level, location }) => {
     const folder = level === 0 ? "sidebar_item" : FOLDER_NAME[level]
     const newUrl =
       level > 0 ? `${item.elements.url.value}` : item.elements.url.value
-
-    const isOpen = isActive({ elements: item.elements, location })
+    // isActive({ elements: item.elements, location }) ? true :
+    const isOpen = true
 
     return (
       <li className={folder}>
-        <Disclosure as="div" defaultOpen={isOpen}>
+        <Disclosure as="div" defaultOpen={true}>
           {({ open, close }) => (
             <>
               <InContextActiveComponent
@@ -119,8 +119,8 @@ const Item = ({ item, level, location }) => {
                     {level === 0 ? (
                       <div
                         className={
-                          "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center transform transition " +
-                          `${open ? "rotate-90 text-sidebar-color-active" : ""}`
+                          "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center " +
+                          `${open ? "text-sidebar-color-active" : ""}`
                         }
                       >
                         <ArrowRight />
@@ -128,7 +128,7 @@ const Item = ({ item, level, location }) => {
                     ) : level >= 1 ? (
                       <div
                         className={
-                          "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center transform transition " +
+                          "sidebar-arrow w-4 h-4 mt-1.5 flex items-center flex-col justify-center " +
                           `${open ? "text-sidebar-color-active" : ""}`
                         }
                       >
@@ -137,12 +137,11 @@ const Item = ({ item, level, location }) => {
                     ) : null}
 
                     {item.elements.url.value === "what-s-new" ||
-                    item.elements.url.value === "release-notes" ? (
+                      item.elements.url.value === "release-notes" ? (
                       <Link
                         to={`/${item.elements.subitems.value[0].elements.permalink.value}`}
-                        className={`nav-title  ${
-                          open ? "font-bold text-sidebar-color-active" : " "
-                        }
+                        className={`nav-title  ${open ? "font-bold text-sidebar-color-active" : " "
+                          }
                         `}
                       >
                         {item.elements.title?.value}
@@ -161,12 +160,12 @@ const Item = ({ item, level, location }) => {
               <Transition
                 className="inner-nav"
                 show={open}
-                enter="transition duration-100 ease-out"
-                enterFrom="transform scale-95 opacity-0"
-                enterTo="transform scale-100 opacity-100"
-                leave="transition duration-75 ease-out"
-                leaveFrom="transform scale-100 opacity-100"
-                leaveTo="transform scale-95 opacity-0"
+                enter="ease-out"
+                enterFrom="transform opacity-0"
+                enterTo="transform opacity-100"
+                leave="ease-out"
+                leaveFrom="transform opacity-100"
+                leaveTo="transform opacity-0"
               >
                 <Disclosure.Panel as="dd">
                   <ul className="mt-3 text-link-color  !list-none">
