@@ -10,6 +10,11 @@ import { Link } from "gatsby"
 import Carousel, { Modal, ModalGateway } from "react-images"
 import FaqWidgetItem from "./widgets/Faq/FaqWidgetItem"
 
+// 👋🏽 Hi there!
+// This component is a wrapper around the @kentico/gatsby-kontent-components/RichTextElement component.
+// It's purpose is to provide customized components from the Kentico Kontent project.
+// like the Table component, the TableMC component, the FaqWidgetItem component, the video element, the image__widget, etc.
+
 const LpRichTextElement = ({ body_content, bodyfield }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [lightBoxImages, setLightBoxImages] = useState([])

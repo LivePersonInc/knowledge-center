@@ -11,6 +11,10 @@ import toTitleCase from "../utils/toTitleCase"
 import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/outline"
 
+// 👋🏽 Hi there!
+// This is a custom table component, built with React Table.
+// for Reporting metrics page
+
 // Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,

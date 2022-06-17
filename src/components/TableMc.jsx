@@ -25,6 +25,10 @@ import {
   InstagramIcon,
 } from "./icons/metric-table"
 
+// 👋🏽 Hi there!
+// This is a custom table component, built with React Table.
+// for messaging-channels-messaging-channels-capabilities-comparison page
+
 // Define a default UI for filtering
 function GlobalFilter({ globalFilter, setGlobalFilter }) {
   const [value, setValue] = React.useState(globalFilter)

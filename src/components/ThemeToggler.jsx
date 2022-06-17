@@ -1,6 +1,9 @@
 import React from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
+// 👋🏽 Hi there!
+// This is a component that I use to toggle the theme from dark mode to light mode.
+
 export default function ThemeToggle() {
   return (
     <ThemeToggler>
