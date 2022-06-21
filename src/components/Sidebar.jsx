@@ -57,7 +57,6 @@ const SidebarStyles = styled.div`
       font-style: normal;
       font-size: 1.125rem;
       line-height: 1.75rem;
-      text-transform: capitalize;
       padding-bottom: 0;
       padding-top: 0;
     }
