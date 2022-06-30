@@ -13,6 +13,9 @@
   &.notice {
     border-color: var(--notice-color);
     background-color: var(--notice-background);
+    a {
+      margin: 0;
+    }
   }
   &.warning {
     border-color: var(--warning-color);
