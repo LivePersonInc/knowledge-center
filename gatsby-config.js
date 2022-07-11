@@ -8,7 +8,7 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `LivePerson Knowledge Center`,
-    siteUrl: "https://helpcenterlp.gatsbyjs.io/",
+    siteUrl: "https://knowledge.liveperson.com/",
     description: "Manage, measure, and scale messaging conversations",
   },
   plugins: [
