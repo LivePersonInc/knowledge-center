@@ -22,7 +22,7 @@ module.exports = {
           process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true",
         authorizationKey:
           process.env.KONTENT_PREVIEW_ENABLED &&
-          process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
+            process.env.KONTENT_PREVIEW_ENABLED.toLowerCase() === "true"
             ? process.env.KONTENT_PREVIEW_KEY
             : undefined,
         languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES.split(
@@ -109,7 +109,7 @@ module.exports = {
                   title: `${node.elements.pagename.value} - Release Notes`,
                   description: stripKentico(node.elements.subtitle.value),
                   date: node.elements.date.value,
-                  url: `${site.siteMetadata.siteUrl}/${node.elements.permalink.value}`,
+                  url: `${site.siteMetadata.siteUrl}/release-notes/${node.elements.permalink.value}`,
                   guid: node.elements.permalink.value,
                 })
               )
@@ -118,7 +118,7 @@ module.exports = {
                 title: `${node.elements.pagename.value} - What's New`,
                 description: stripKentico(node.elements.subtitle.value),
                 date: node.elements.date.value,
-                url: `${site.siteMetadata.siteUrl}/${node.elements.permalink.value}`,
+                url: `${site.siteMetadata.siteUrl}/whats-new/${node.elements.permalink.value}`,
                 guid: node.elements.permalink.value,
               }))
 
