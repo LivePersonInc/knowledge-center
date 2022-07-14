@@ -1541,6 +1541,56 @@
   },
   {
     "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "CSAT_1 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"1\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "CSAT_2 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"2\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "CSAT_3 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"3\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "CSAT_4 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"4\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "CSAT_5 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"5\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
     "ELEMENT_NAME": "FCR (AGENT AND SKILL)",
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Surveys",
@@ -1557,6 +1607,26 @@
     "FORMULA": "-",
     "DESCRIPTION": "The percentage of answers Yes out of the total responses submitted by consumers to a predefined FCR question type. Calculated at the Brand level.",
     "FILTERED_BY": "Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "FCR_NO (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"No\" to a predefined FCR question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "FCR_YES (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"Yes\" to a predefined FCR question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
     "CHANNEL": "Messaging"
   },
   {
@@ -1897,6 +1967,116 @@
     "FORMULA": "-",
     "DESCRIPTION": "The Net Promoter Score, based on a scale of 0 to 10 and derived from the predefined NPS question type. Calculated at the Brand level.",
     "FILTERED_BY": "Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_0 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"0\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_1 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"1\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_10 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"10\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_2 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"2\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_3 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"3\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_4 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"4\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_5 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"5\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_6 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"6\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_7 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"7\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_8 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"8\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "NPS_9 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"9\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
     "CHANNEL": "Messaging"
   },
   {
@@ -2565,7 +2745,7 @@
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Surveys",
     "FORMULA": "-",
-    "DESCRIPTION": "The percentage of conversations handled by an agent where the consumer submitted a survey answering a predefined CSAT question type. ",
+    "DESCRIPTION": "The percentage of conversations handled by an agent where the consumer submitted a survey answering a predefined CSAT question type.",
     "FILTERED_BY": "<null>",
     "CHANNEL": "<null>"
   },
@@ -9181,6 +9361,56 @@
   },
   {
     "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "CSAT_1 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"1\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "CSAT_2 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"2\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "CSAT_3 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"3\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "CSAT_4 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"4\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "CSAT_5 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"5\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
     "ELEMENT_NAME": "FCR (AGENT AND SKILL)",
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Surveys",
@@ -9197,6 +9427,26 @@
     "FORMULA": "-",
     "DESCRIPTION": "The percentage of answers Yes out of the total responses submitted by consumers to a predefined FCR question type. Calculated at the Brand level.",
     "FILTERED_BY": "Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "FCR_NO (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"No\" to a predefined FCR question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "FCR_YES (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"Yes\" to a predefined FCR question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
     "CHANNEL": "Messaging"
   },
   {
@@ -9547,6 +9797,116 @@
     "FORMULA": "-",
     "DESCRIPTION": "The Net Promoter Score, based on a scale of -100 to 100 and derived from the predefined NPS question type. Calculated at the Brand level.",
     "FILTERED_BY": "Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_0 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"0\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_1 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"1\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_10 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"10\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_2 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"2\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_3 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"3\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_4 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"4\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_5 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"5\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_6 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"6\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_7 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"7\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_8 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"8\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "NPS_9 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"9\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
     "CHANNEL": "Messaging"
   },
   {
@@ -11071,6 +11431,56 @@
   },
   {
     "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "CSAT_1 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"1\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "CSAT_2 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"2\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "CSAT_3 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"3\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "CSAT_4 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"4\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "CSAT_5 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"5\" to a predefined CSAT question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
     "ELEMENT_NAME": "DISMISSED SURVEYS",
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Agent Survey",
@@ -11101,6 +11511,26 @@
   },
   {
     "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "FCR_NO (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded  \"No\" to a predefined FCR question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "FCR_YES (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"Yes\" to a predefined FCR question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
     "ELEMENT_NAME": "FULLY SUBMITTED SURVEYS",
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Agent Survey",
@@ -11127,6 +11557,116 @@
     "FORMULA": "-",
     "DESCRIPTION": "The Net Promoter Score, based on a scale of -100 to 100 and derived from the predefined NPS question type. Calculated at the Brand level.",
     "FILTERED_BY": "Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_0 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"0\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_1 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"1\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_10 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"10\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_2 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"2\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_3 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"3\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_4 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"4\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_5 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"5\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_6 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"6\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_7 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"7\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_8 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"8\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Survey for Messaging",
+    "ELEMENT_NAME": "NPS_9 (Agent and Skill)",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Surveys",
+    "FORMULA": "-",
+    "DESCRIPTION": "The number of times consumers responded \"9\" to a predefined NPS question.",
+    "FILTERED_BY": "Agent, Group, Skill, Engagement, Campaign, LoB, End-Point (Source Type)",
     "CHANNEL": "Messaging"
   },
   {
