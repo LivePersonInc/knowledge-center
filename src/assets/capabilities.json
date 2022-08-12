@@ -2,6 +2,56 @@
   {
     "categoryName": "Consumer Experience",
     "features": [
+    {
+        "featureName": "Video sharing - consumer to agent",
+        "channels": [
+          {
+            "mobileAppMessaging": "Not Supported"
+          },
+          {
+            "webMessaging": "Not Supported"
+          },
+          {
+            "appleBusinessChat": "Not Supported"
+          },
+          {
+            "sms": "N/A in Channel"
+          },
+          {
+            "facebook": "Supported"
+          },
+          {
+            "twitter": "Supported"
+          },
+          {
+            "instagram": "Supported"
+          },
+          {
+            "whatsapp": "Supported"
+          },
+          {
+            "googleRCS": "Not Supported"
+          },
+          {
+            "line": "Not Supported"
+          },
+          {
+            "messagingWindowAPI": "Not Supported"
+          },
+          {
+            "weChat": "Not Supported"
+          },
+          {
+            "viber": "Supported"
+          },
+          {
+            "googleBusinessMessaging": "N/A in Channel"
+          },
+          {
+            "kakaoTalk": "Not Supported"
+          }
+        ]
+      },
       {
         "featureName": "Typing indication - consumer to agent",
         "channels": [
