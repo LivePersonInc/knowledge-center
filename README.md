@@ -106,6 +106,4 @@ Related project
 
 If you have any feedback, please reach out to us at
 
-- Cale Short cshort@liveperson.com
-- Elana Roth elanar@liveperson.com
 - Itay Haephrati ihaephrati@liveperson.com
