@@ -27,7 +27,7 @@ const ArticleMeta = ({ date, textRef }) => {
           Updated: {"  "}
           <time
             className="article__meta-time flex"
-            dateTime={moment(date).format("MM D, YYYY")}
+            dateTime={moment(date).format("MMM D, YYYY")}
             data-kontent-element-codename="date"
           >
             {moment(date).format("YYYY") == new Date().getFullYear()
