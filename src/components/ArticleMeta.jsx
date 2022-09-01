@@ -22,21 +22,18 @@ const ArticleMeta = ({ date, textRef }) => {
   console.log(readingTime)
   return (
     <div className="ArticleMeta flex justify-start gap-4 text-xs text-footer-text font-semibold capitalize">
-      {/* <div>
-        <div className="flex items-center">Suggest changes</div>
-      </div> */}
       <div>
         <div className="flex items-center gap-1">
-          Updated {"  "}
+          Updated: {"  "}
           <time
             className="article__meta-time flex"
-            dateTime={moment(date).format("MMMM D, YYYY")}
+            dateTime={moment(date).format("MM D, YYYY")}
             data-kontent-element-codename="date"
           >
-            {/* dont show the year if it's the current year */}
             {moment(date).format("YYYY") == new Date().getFullYear()
-              ? moment(date).format("MMMM D")
-              : moment(date).format("MMMM D, YYYY")}
+              // If you don't want to show the current year, remove YYYY
+              ? moment(date).format("MMM D, YYYY")
+              : moment(date).format("MMM D, YYYY")}
           </time>
         </div>
       </div>
