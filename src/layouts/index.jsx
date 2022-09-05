@@ -145,35 +145,33 @@ const Layout = ({ children, location }) => {
         </div>
         <Sidebar location={location} />
       </div>
-      <CookieConsent
-        className="mama"
-        disableStyles="true"
-        location="bottom"
-        buttonText="I agree"
-        declineButtonText="Decline"
-        cookieName="gatsby-gdpr-google-analytics"
-      >
-        <p>
-          This website uses cookies to ensure you get the best browsing
-          experience. By continuing to use this website, you consent to our use
-          of these cookies.{" "}
-          <span>
-            This website contains proprietary content that belongs to LivePerson
-            and that is intended for educational use by our customers and
-            prospects. Your use of this site is subject to our{" "}
-            <a
-              href="https://www.liveperson.com/policies/apitou/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="facebook icon"
-            >
-              Terms of Use
-            </a>
-            , which include restrictions on any use of our information for
-            unauthorized purposes.
-          </span>
-        </p>
-      </CookieConsent>
+        <CookieConsent
+          disableStyles="true"
+          location="bottom"
+          buttonText="I agree"
+          declineButtonText="Decline"
+          cookieName="gatsby-gdpr-google-analytics"
+        >
+          <p>
+            This website uses cookies to ensure you get the best browsing
+            experience. By continuing to use this website, you consent to our
+            use of these cookies.{" "}
+            <span>
+              This website contains proprietary content that belongs to
+              LivePerson and that is intended for educational use by our
+              customers and prospects. Your use of this site is subject to our{" "}
+              <a
+                href="https://www.liveperson.com/policies/apitou/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Terms of Use
+              </a>
+              , which include restrictions on any use of our information for
+              unauthorized purposes.
+            </span>
+          </p>
+        </CookieConsent>
     </BodyStyles>
   )
 }
