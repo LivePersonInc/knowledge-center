@@ -164,7 +164,6 @@ const Layout = ({ children, location }) => {
                 href="https://www.liveperson.com/policies/apitou/"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Terms of Use"
               >
                 Terms of Use
               </a>
