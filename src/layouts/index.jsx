@@ -146,7 +146,6 @@ const Layout = ({ children, location }) => {
         <Sidebar location={location} />
       </div>
       <CookieConsent
-        className="mama"
         disableStyles="true"
         location="bottom"
         buttonText="I agree"
@@ -156,16 +155,16 @@ const Layout = ({ children, location }) => {
         <p>
           This website uses cookies to ensure you get the best browsing
           experience. By continuing to use this website, you consent to our use
-          of these cookies.{" "}
+          of these cookies.
           <span>
             This website contains proprietary content that belongs to LivePerson
             and that is intended for educational use by our customers and
-            prospects. Your use of this site is subject to our{" "}
+            prospects. Your use of this site is subject to our
             <a
               href="https://www.liveperson.com/policies/apitou/"
               target="_blank"
               rel="noreferrer"
-              aria-label="facebook icon"
+              aria-label="Terms of Use"
             >
               Terms of Use
             </a>
