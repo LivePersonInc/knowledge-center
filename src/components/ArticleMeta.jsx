@@ -31,8 +31,8 @@ const ArticleMeta = ({ date, textRef }) => {
             data-kontent-element-codename="date"
           >
             {moment(date).format("YYYY") == new Date().getFullYear()
-              // If you don't want to show the current year, remove YYYY
-              ? moment(date).format("MMM D, YYYY")
+              ? // If you don't want to show the current year, remove YYYY
+                moment(date).format("MMM D, YYYY")
               : moment(date).format("MMM D, YYYY")}
           </time>
         </div>
