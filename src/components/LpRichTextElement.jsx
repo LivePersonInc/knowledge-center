@@ -74,6 +74,10 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
                   <Link to={`/release-notes/${link?.url_slug || "#"}`}>
                     {domNode.children[0].data}
                   </Link>
+                )) || (typeof parentItemType === 'undefined' && (
+                  <Link to="#">
+                    {domNode.children[0].data}
+                  </Link>
                 )) || (
                   <Link to={`/${link?.url_slug || "#"}`}>
                     {domNode.children[0].data}
