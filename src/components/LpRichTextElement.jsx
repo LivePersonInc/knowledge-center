@@ -62,7 +62,7 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         resolveLink={(link, domNode) => {
           const parentItemType = link?.type
           // console.log(link.type)
-          // It is possible to use external data for resolution
+
           if(!parentItemType)return <Link to={`/`}>
                     {domNode.children[0].data}
                   </Link>
