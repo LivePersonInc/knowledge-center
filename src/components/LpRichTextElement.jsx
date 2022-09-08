@@ -55,13 +55,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         images={bodyfield.images}
         links={bodyfield.links}
         linkedItems={bodyfield.modular_content}
-        // resolveImage={image => {
-        //   console.log(image)
-        //   return <ImageElement />
-        // }}
         resolveLink={(link, domNode) => {
           const parentItemType = link.type
-          // console.log(link.type)
+          console.log(link.type)
           // It is possible to use external data for resolution
           return (
             <>
@@ -72,6 +68,11 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
               )) ||
                 (parentItemType === "release_notes_page" && (
                   <Link to={`/release-notes/${link?.url_slug || "#"}`}>
+                    {domNode.children[0].data}
+                  </Link>
+                )) ||
+                (parentItemType === "undefined" && (
+                  <Link to={`/${link?.url_slug || "#"}`}>
                     {domNode.children[0].data}
                   </Link>
                 )) || (
