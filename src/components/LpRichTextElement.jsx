@@ -60,9 +60,12 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         //   return <ImageElement />
         // }}
         resolveLink={(link, domNode) => {
-          const parentItemType = link.type
+          const parentItemType = link?.type
           // console.log(link.type)
           // It is possible to use external data for resolution
+          if(!parentItemType)return <Link to={`/`}>
+                    {domNode.children[0].data}
+                  </Link>
           return (
             <>
               {(parentItemType === "post___whatsnew" && (
@@ -72,10 +75,6 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
               )) ||
                 (parentItemType === "release_notes_page" && (
                   <Link to={`/release-notes/${link?.url_slug || "#"}`}>
-                    {domNode.children[0].data}
-                  </Link>
-                )) || (typeof parentItemType === 'undefined' && (
-                  <Link to="#">
                     {domNode.children[0].data}
                   </Link>
                 )) || (
