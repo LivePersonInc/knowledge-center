@@ -61,11 +61,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
         // }}
         resolveLink={(link, domNode) => {
           const parentItemType = link?.type
-          // console.log(link.type)
 
-          if(!parentItemType)return <Link to={`/`}>
-                    {domNode.children[0].data}
-                  </Link>
+          if (!parentItemType)
+            return <Link to={`/`}>{domNode.children[0].data}</Link>
           return (
             <>
               {(parentItemType === "post___whatsnew" && (

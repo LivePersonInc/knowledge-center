@@ -94,7 +94,10 @@ const StateResults = ({ searchResults, searchState }) => {
         <p hidden={!hasResults}>
           {nbHits} items with {`"${query}"`} found
         </p>
-        <p hidden={hasResults}>There is no results</p>
+        <p hidden={hasResults}>
+          Sorry! We can’t find any results for that. Try searching for a
+          different word or phrase.
+        </p>
       </div>
     )
   else return null
@@ -131,28 +134,6 @@ const RefinementLisst = ({ items, refine, createURL, currentRefinement }) => {
         </li>
         {items.length &&
           tags.map((tag, k) => {
-            // if(k+1> limit && showMore){
-            //    return (
-            //      <li
-            //        className=""
-            //        key={item.label}
-            //      >
-            //        <a
-            //          href={createURL(item.value)}
-            //          style={{ fontWeight: item.isRefined ? "bold" : "" }}
-            //          onClick={event => {
-            //            event.preventDefault()
-            //            refine(item.value)
-            //          }}
-            //        >
-            //          {item.label.toUpperCase()} ({item.count})
-            //        </a>
-            //      </li>
-            //    )
-            // }else if (k+1 > limit && !showMore) {
-            //   return null
-            // } else {
-            // let foundLabel = tags.filter(v => v.type === item.label)[0]
             let item = items.filter(v => v.label === tag.type)[0]
 
             return (

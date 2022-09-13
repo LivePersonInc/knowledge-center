@@ -30,9 +30,7 @@ const ArticleMeta = ({ date, textRef }) => {
             dateTime={moment(date).format("MMM D, YYYY")}
             data-kontent-element-codename="date"
           >
-            {
-              moment(date).format("MMM D, YYYY")
-            }
+            {moment(date).format("MMM D, YYYY")}
           </time>
         </div>
       </div>
