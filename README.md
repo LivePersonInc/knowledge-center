@@ -2,19 +2,15 @@
 
 # LivePerson Knowledge Center
 
-#### This site was built with GatsbyJS
+**This site is run by LivePerson’s Product Strategy and Experience team, and maintained by the Developer Experience team. Please contact dx-lp@liveperson.com for issues, comments, or questions.**
 
-**The product communication and experience team maintains this site. This product was built by Itay Haephrati. Please contact me at ihaephrati@liveperson.com with any questions, issues, or concerns.**.
+The repository generates LivePerson’s Knowledge Center, which can be found at [knowledge.liveperson.com](https://knowledge.liveperson.com/). The site is generated using Gatsby, while the content is managed using Kontent.ai. Please open an issue if you find an issue with the documentation, site structure, meta, or anything else.
 
-The repository generates LivePerson's Knowledge Center, which can be found at \*<https://knowledge.liveperson.com/>. The site is generated using Gatsby, while the content is managed using Kontent.ai. If you have questions regarding content editing, please contact Cale Short. Please open an issue if you find an issue with the documentation, site structure, meta, or anything else.
-
-## 🚀 Live site
-
-Link: [knowledge Center](https://knowledge.liveperson.com/)
+(For developer documentation, visit the [LivePerson Developer Center](https://developers.liveperson.com/).)
 
 ## 🚀 Installation
 
-Install with yarn
+Install with yarn:
 
 ```bash
   yarn
@@ -24,15 +20,15 @@ Install with yarn
   yarn format
 ```
 
-## Features
+## Tooling
 
-- GatsbyJS
-- Konten.ai for CMS
-- Gatsby cloud
+- Gatsby
+- Kontent.ai for CMS
+- Gatsby Cloud
 
-## 🧐 What's inside?
+## 🧐 What’s inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you’ll see in a Gatsby project like this one.
 
     .
     ├── node_modules
@@ -72,38 +68,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
+## Team
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## Developer
-
-- Itay Haephrati [ihaephrati@liveperson.com](ihaephrati@liveperson.com)
-
-## Designer
-
-- Bohdan Doshchak [bdoshchak@liveperson.com](bdoshchak@liveperson.com)
-
-## Contributing
-
-Contributions are always welcome!
-
-## Preview
-
-<https://knowledge.liveperson.com/>
-
-## Related
-
-Related project
-
-[LivePerson Developers](https://developers.liveperson.com/)
-
-## Feedback
-
-If you have any feedback, please reach out to us at
-
-- Itay Haephrati ihaephrati@liveperson.com
+* Development: Itay Haephrati <[ihaephrati@liveperson.com](ihaephrati@liveperson.com)>
+* Design: Bohdan Doshchak <[bdoshchak@liveperson.com](bdoshchak@liveperson.com)>
