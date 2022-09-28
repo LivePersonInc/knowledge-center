@@ -58,7 +58,7 @@
     "react-instantsearch-dom": "^6.12.1",
     "react-instantsearch-hooks": "^6.22.0",
     "react-table": "^7.7.0",
-    "react-window": "^1.8.6",
+    "react-window": "^1.8.7",
     "sanitize-html": "^2.4.0",
     "sass": "^1.37.5",
     "slugify": "^1.6.0",
