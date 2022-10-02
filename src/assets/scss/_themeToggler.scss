@@ -1,7 +1,9 @@
 /* toggle switch  */
-body {
-  background-color: var(--body-background);
-  color: var(--body-text);
+body,
+html {
+  background-color: var(--body-background) !important;
+  color: var(--body-text) !important;
+  ;
 }
 
 .theme-switch-wrapper .slider.round:before {
@@ -14,7 +16,7 @@ body {
   border-radius: 16px;
 }
 
-.theme-switch-wrapper input:checked + .slider:before {
+.theme-switch-wrapper input:checked+.slider:before {
   background-image: url(/images/moon.svg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -29,6 +31,7 @@ body {
   align-items: center;
   float: right;
 }
+
 .theme-switch-wrapper .theme-switch {
   display: inline-block;
   height: 1.5rem;
@@ -37,9 +40,11 @@ body {
   text-align: right;
   margin-bottom: 0;
 }
+
 .theme-switch-wrapper .theme-switch input {
   display: none;
 }
+
 .theme-switch-wrapper .slider {
   border: 1px solid #989eae;
   background-color: var(--body-background);
@@ -51,6 +56,7 @@ body {
   top: 0;
   transition: 0.4s;
 }
+
 .theme-switch-wrapper .slider:before {
   bottom: 2px;
   content: "";
@@ -65,20 +71,22 @@ body {
   box-shadow: 0 0 0.125rem rgb(0 0 0 / 25%),
     0 0.0625rem 0.125rem rgb(0 0 0 / 18%), 0 0.125rem 0.1875rem rgb(0 0 0 / 12%);
 }
-.theme-switch-wrapper input:checked + .slider {
+
+.theme-switch-wrapper input:checked+.slider {
   background-color: var(--card-background);
   border: 0.0625rem solid var(--card-border);
   box-sizing: border-box;
-  filter: drop-shadow(0 0 0.125rem rgba(0, 0, 0, 0.25))
-    drop-shadow(0 0.0625rem 0.125rem rgba(0, 0, 0, 0.18))
-    drop-shadow(0 0.125rem 0.1875rem rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 0 0.125rem rgba(0, 0, 0, 0.25)) drop-shadow(0 0.0625rem 0.125rem rgba(0, 0, 0, 0.18)) drop-shadow(0 0.125rem 0.1875rem rgba(0, 0, 0, 0.12));
 }
-.theme-switch-wrapper input:checked + .slider:before {
+
+.theme-switch-wrapper input:checked+.slider:before {
   transform: translateX(23px);
 }
+
 .theme-switch-wrapper .slider.round {
   border-radius: 1rem;
 }
+
 .theme-switch-wrapper .slider.round:before {
   border-radius: 50%;
 }
@@ -99,6 +107,7 @@ body {
   white-space: nowrap;
   display: none;
 }
+
 // .theme-switch-wrapper input + .slider:after {
 //   right: -94%;
 //   position: absolute;
@@ -118,11 +127,12 @@ body {
 //   content: "Light theme";
 // }
 
-.theme-switch-wrapper input:checked + .slider .toggle-title-dark {
+.theme-switch-wrapper input:checked+.slider .toggle-title-dark {
   display: flex;
 }
 
-.theme-switch-wrapper input:not(:checked) + .slider .toggle-title-light {
+.theme-switch-wrapper input:not(:checked)+.slider .toggle-title-light {
   display: flex;
 }
+
 /* toggle end */
