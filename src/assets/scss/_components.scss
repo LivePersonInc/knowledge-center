@@ -237,10 +237,13 @@ em.ais-Highlight-highlighted {
         td {
           flex-grow: 1;
           display: flex;
+          text-align: left;
           flex: 1 1;
           justify-content: center;
-          align-items: center;
+          align-items: self-start;
           flex-direction: column;
+          font-size: 1rem;
+          line-height: 1.75rem;
         }
 
         &:first-child {
@@ -262,8 +265,8 @@ em.ais-Highlight-highlighted {
       font-family: "Space Grotesk", sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 13px;
-      line-height: 16px;
+      font-size: 1rem;
+      line-height: 1.75rem;
       text-align: center;
     }
 
@@ -281,6 +284,7 @@ em.ais-Highlight-highlighted {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          align-items: self-start;
         }
       }
 
