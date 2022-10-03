@@ -44,7 +44,7 @@
     "gatsby-plugin-sass": "^5.8.0",
     "gatsby-plugin-sharp": "^4.8.0",
     "gatsby-plugin-styled-components": "^5.24.0",
-    "gatsby-source-filesystem": "^4.8.0",
+    "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-sharp": "^4.8.0",
     "html-react-parser": "^1.4.8",
     "install-peerdeps": "^3.0.3",
