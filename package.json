@@ -29,7 +29,7 @@
     "babel-plugin-styled-components": "^2.0.5",
     "daisyui": "^2.2.0",
     "dotenv": "^16.0.0",
-    "gatsby": "^4.8.0",
+    "gatsby": "^4.24.4",
     "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^4.8.0",
