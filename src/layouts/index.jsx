@@ -7,6 +7,7 @@ import GlobalStyles from "../styles/GlobalStyles"
 import Sidebar from "../components/Sidebar"
 import Seo from "../components/Seo"
 import "../assets/scss/index.scss"
+import { useState } from "react"
 
 const BodyStyles = styled.div`
   min-height: 100vh;
@@ -120,14 +121,20 @@ const Layout = ({ children, location }) => {
       }
     }
   `)
-
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
     <BodyStyles className="layout">
       <Seo title={data.site.siteMetadata.title} />
       <GlobalStyles />
       <Header />
       <div className="max-width w-full min-h-screen drawer ipad:drawer-end drawer-mobile overflow-y-visible gap-8">
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <input
+          id="my-drawer-2"
+          type="checkbox"
+          onChange={e => setSidebarOpen(e.target.checked)}
+          className="drawer-toggle"
+          checked={sidebarOpen}
+        />
         <div className="flex flex-col items-center justify-start drawer-content smobile:px-5 px-8 md:px-0">
           {location.pathname === "/" ? (
             <HomeStyles>
@@ -143,7 +150,11 @@ const Layout = ({ children, location }) => {
             </SiteLayoutStyles>
           )}
         </div>
-        <Sidebar location={location} />
+        <Sidebar
+          location={location}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
       </div>
       <CookieConsent
         disableStyles="true"
