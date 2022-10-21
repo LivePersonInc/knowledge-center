@@ -96,7 +96,7 @@ const SidebarStyles = styled.div`
   }
 `
 
-const Sidebar = ({ location, sidebarOpen, setSidebarOpen }) => {
+const Sidebar = ({ location }) => {
   const sidebarData = useStaticQuery(graphql`
     {
       allKontentItemNavigationItem(
@@ -292,8 +292,6 @@ const Sidebar = ({ location, sidebarOpen, setSidebarOpen }) => {
           url=""
           level={0}
           location={location}
-          sidebarOpen={sidebarOpen}
-          setSidebarOpen={setSidebarOpen}
         />
 
         <li className="sidebar_item">
@@ -371,14 +369,7 @@ const FOLDER_NAME = [
   "pagesfolder",
   "level3folder",
 ]
-const SidebarItems = ({
-  items,
-  url,
-  level,
-  location,
-  sidebarOpen,
-  setSidebarOpen,
-}) => {
+const SidebarItems = ({ items, url, level, location }) => {
   return items?.map(item => (
     <SidebarItem
       key={item.system.id}
@@ -386,8 +377,6 @@ const SidebarItems = ({
       url={url}
       level={level}
       location={location}
-      sidebarOpen={sidebarOpen}
-      setSidebarOpen={setSidebarOpen}
     />
   ))
 }
@@ -419,7 +408,7 @@ const isActive = ({ elements, location }) => {
   return false
 }
 
-const InContextActiveComponent = ({ close, isOpen, setSidebarOpen }) => {
+const InContextActiveComponent = ({ close, isOpen }) => {
   React.useEffect(() => {
     if (!isOpen) {
       close()
@@ -429,13 +418,7 @@ const InContextActiveComponent = ({ close, isOpen, setSidebarOpen }) => {
   return null
 }
 
-const SidebarItem = ({
-  item,
-  level,
-  location,
-  sidebarOpen,
-  setSidebarOpen,
-}) => {
+const SidebarItem = ({ item, level, location }) => {
   if (item.system.type === "navigation_item") {
     const folder = level === 0 ? "sidebar_item" : FOLDER_NAME[level]
     const newUrl =
@@ -452,14 +435,10 @@ const SidebarItem = ({
                 open={open}
                 close={close}
                 isOpen={isOpen}
-                setSidebarOpen={setSidebarOpen}
               />
               <dt className="flex items-center">
                 <Disclosure.Button
-                  onDoubleClick={() => {
-                    navigate(`/${item.elements.url.value}`)
-                    setSidebarOpen(false)
-                  }}
+                  onDoubleClick={() => navigate(`/${item.elements.url.value}`)}
                 >
                   <div className="flex itemdetails canOpen relative items-start gap-2">
                     {level === 0 ? (
@@ -490,7 +469,6 @@ const SidebarItem = ({
                           open ? "font-bold text-sidebar-color-active" : " "
                         }
                         `}
-                        onClick={() => setSidebarOpen(false)}
                       >
                         {item.elements.title?.value}
                       </Link>
@@ -522,8 +500,6 @@ const SidebarItem = ({
                       url={newUrl}
                       level={level + 1}
                       location={location}
-                      sidebarOpen={sidebarOpen}
-                      setSidebarOpen={setSidebarOpen}
                     />
                   </ul>
                 </Disclosure.Panel>
@@ -538,9 +514,7 @@ const SidebarItem = ({
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
         <span className="nav-title">
-          <Link to={`/${newUrl}`} onClick={() => setSidebarOpen(false)}>
-            {item.elements.pagename?.value}
-          </Link>
+          <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
         </span>
       </li>
     )
@@ -549,9 +523,7 @@ const SidebarItem = ({
     return (
       <li className={"mb-3 " + LEAF_NAME[level]}>
         <span className="nav-title">
-          <Link to={`/${newUrl}`} onClick={() => setSidebarOpen(false)}>
-            {item.elements.pagename?.value}
-          </Link>
+          <Link to={`/${newUrl}`}>{item.elements.pagename?.value}</Link>
         </span>
       </li>
     )
@@ -563,7 +535,6 @@ const SidebarItem = ({
           <Link
             activeClassName="font-bold text-sidebar-color-active"
             to={`/${newUrl}`}
-            onClick={() => setSidebarOpen(false)}
           >
             {item.elements.pagename.value}
           </Link>
