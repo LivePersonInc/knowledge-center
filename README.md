@@ -70,5 +70,5 @@ A quick look at the top-level files and directories you’ll see in a Gatsby pro
 
 ## Team
 
-- Development: Itay Haephrati <[ihaephrati@liveperson.com](ihaephrati@liveperson.com)>
-- Design: Bohdan Doshchak <[bdoshchak@liveperson.com](bdoshchak@liveperson.com)>
+* Development: Itay Haephrati <[ihaephrati@liveperson.com](ihaephrati@liveperson.com)>
+* Design: Bohdan Doshchak <[bdoshchak@liveperson.com](bdoshchak@liveperson.com)>
