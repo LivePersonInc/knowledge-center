@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, Link, useStaticQuery, navigate } from "gatsby"
 import { Disclosure, Transition } from "@headlessui/react"
-
 import { ArrowRight, LinkIcon } from "./icons/"
 
 const SidebarStyles = styled.div`
