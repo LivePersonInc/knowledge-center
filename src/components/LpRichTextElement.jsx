@@ -226,13 +226,13 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
               )
             }
 
-            case "reporting_metrics_table___widget": {
-              return <Table />
-            }
+            // case "reporting_metrics_table___widget": {
+            //   return <Table />
+            // }
 
-            case "messaging_channels___widget": {
-              return <TableMc />
-            }
+            // case "messaging_channels___widget": {
+            //   return <TableMc />
+            // }
 
             case "contentbox": {
               return (
