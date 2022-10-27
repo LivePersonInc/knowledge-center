@@ -195,9 +195,6 @@ module.exports = {
       options: {
         mergeSecurityHeaders: false, // boolean to turn off the default security headers should be fixed
         mergeCachingHeaders: true,
-        headers: {
-          "/*": ["Cache-Control: public, max-age=31536000, immutable"],
-        },
       },
     },
   ],
