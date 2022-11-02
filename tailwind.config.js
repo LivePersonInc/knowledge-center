@@ -97,6 +97,11 @@ module.exports = {
         "success-background": "var(--success-background)",
         "warning-background": "var(--warning-background)",
         "bad-background": "var(--bad-background)",
+        "attnnote-background": "var(--attnnote-background)",
+        "attnalert-background": "var(--attnalert-background)",
+        "attndeprecation-background": "var(--attndeprecation-background)",
+        "attntip-background": "var(--attntip-background)",
+        "attninfo-background": "var(--attninfo-background)",
         blue: {
           navy: "#090C43",
           "navy-light": "#1D1F52",

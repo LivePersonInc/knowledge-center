@@ -37,6 +37,35 @@
     background-color: var(--success-background);
   }
 
+  &.attnnote {
+    border-color: var(--attnnote-color);
+    background-color: var(--attnnote-background);
+  }
+
+  &.attnalert {
+    border-color: var(--attnalert-color);
+    background-color: var(--attnalert-background);
+  }
+
+  &.attndeprecation {
+    border-color: var(--attndeprecation-color);
+    background-color: var(--attndeprecation-background);
+
+    p {
+      color: var(--attndeprecation-color);
+    }
+  }
+
+  &.attntip {
+    border-color: var(--attntip-color);
+    background-color: var(--attntip-background);
+  }
+
+  &.attninfo {
+    border-color: var(--attninfo-color);
+    background-color: var(--attninfo-background);
+  }
+
   a {
     cursor: pointer;
     text-decoration: underline;
