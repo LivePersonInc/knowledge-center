@@ -1071,12 +1071,32 @@
   },
   {
     "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "AVG. AGENT AWAY LOAD",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The average conversation load on an agent in the AWAY state. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.\\n",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
     "ELEMENT_NAME": "AVG. AGENT LOAD",
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Agent Utilization",
     "FORMULA": "-",
     "DESCRIPTION": "The average conversation load on an agent. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.",
     "FILTERED_BY": "Agent, Group",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "AVG. AGENT ONLINE LOAD",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The average conversation load on an agent in the ONLINE state. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
     "CHANNEL": "Messaging"
   },
   {
@@ -1197,6 +1217,16 @@
     "FORMULA": "<null>",
     "DESCRIPTION": "Average duration of skill-segments. Measured from the time the conversation was assigned to the skill until it was closed or transferred to another skill.",
     "FILTERED_BY": "Skill, Skill Segment Start Reason, Skill Segment End Reason, Engagement, Campaign, End-Point (Source Type), Source, Consumer Device",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "AVG. SLA FIRST RESPONSE",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The average time taken to first respond to the consumer, for new conversations or transferred conversations. For transferred conversations, the time is measured from the time of transfer to the time of agent response. Attributed to the time the conversion was assigned to the agent (agent segment start time).",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
     "CHANNEL": "Messaging"
   },
   {
@@ -1777,6 +1807,16 @@
     "FORMULA": "-",
     "DESCRIPTION": "The maximum conversation load on an agent. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.",
     "FILTERED_BY": "Agent, Group",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Agent Operations",
+    "ELEMENT_NAME": "MAX. SLA FIRST RESPONSE",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The maximum time taken to first respond to the consumer, for new conversations or transferred conversations. For transferred conversations, the time is measured from the time of transfer to the time of agent response. Attributed to the time the conversion was assigned to the agent (agent segment start time).",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
     "CHANNEL": "Messaging"
   },
   {
@@ -2745,7 +2785,7 @@
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Surveys",
     "FORMULA": "-",
-    "DESCRIPTION": "The percentage of conversations handled by an agent where the consumer submitted a survey answering a predefined CSAT question type.",
+    "DESCRIPTION": "The percentage of conversations handled by an agent where the consumer submitted a survey answering a predefined CSAT question type. ",
     "FILTERED_BY": "<null>",
     "CHANNEL": "<null>"
   },
@@ -4657,6 +4697,26 @@
     "FORMULA": "(TOTAL REVENUE AFTER EXPOSURE-TOTAL REVENUE AFTER ENGAGEMENT)/TOTAL CONVERSIONS AFTER EXPOSURE NOT ENGAGEMENT",
     "DESCRIPTION": "Average of the total direct revenue achieved after exposures excluding revenue after engagements out of the number of purchase transactions completed after exposures.",
     "FILTERED_BY": "Date, Initial Device, Goal Type, Group , Source Type",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Business Activity for Messaging",
+    "ELEMENT_NAME": "TOTAL DIRECT CONVERSION RATE AFTER ENGAGEMENT",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Campaign Conversions",
+    "FORMULA": "TOTAL DIRECT CONVERSIONS AFTER ENGAGEMENTS / ENGAGED",
+    "DESCRIPTION": "Percentage of direct conversions achieved after or during an engagement out of all sessions containing an engagement",
+    "FILTERED_BY": "Engagement, Campaign, LoB, End-Point (Source Type)",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Business Activity for Messaging",
+    "ELEMENT_NAME": "TOTAL DIRECT CONVERSIONS AFTER ENGAGEMENT",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Campaign Conversions",
+    "FORMULA": "-",
+    "DESCRIPTION": "Total number of direct conversions achieved after engagement",
+    "FILTERED_BY": "Engagement, Campaign, LoB, End-Point (Source Type)",
     "CHANNEL": "Messaging"
   },
   {
@@ -8931,12 +8991,32 @@
   },
   {
     "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "AVG. AGENT AWAY LOAD",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The average conversation load on an agent in the AWAY state. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.\\n",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
     "ELEMENT_NAME": "AVG. AGENT LOAD",
     "ELEMENT": "Metric",
     "ANALYSIS_TYPE": "Agent Utilization",
     "FORMULA": "-",
     "DESCRIPTION": "The average conversation load on an agent. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.",
     "FILTERED_BY": "Agent, Group",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "AVG. AGENT ONLINE LOAD",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The average conversation load on an agent in the ONLINE state. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
     "CHANNEL": "Messaging"
   },
   {
@@ -9057,6 +9137,16 @@
     "FORMULA": "<null>",
     "DESCRIPTION": "Average duration of skill-segments. Measured from the time the conversation was assigned to the skill until it was closed or transferred to another skill.",
     "FILTERED_BY": "Skill, Skill Segment Start Reason, Skill Segment End Reason, Engagement, Campaign, End-Point (Source Type), Source, Consumer Device",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "AVG. SLA FIRST RESPONSE",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The average time taken to first respond to the consumer, for new conversations or transferred conversations. For transferred conversations, the time is measured from the time of transfer to the time of agent response. Attributed to the time the conversion was assigned to the agent (agent segment start time).",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
     "CHANNEL": "Messaging"
   },
   {
@@ -9597,6 +9687,16 @@
     "FORMULA": "-",
     "DESCRIPTION": "The maximum conversation load on an agent. The load is determined by the weights assigned to conversations by Smart Capacity. A conversation can have a maximum weight of 1 and a minimum of 0.1.",
     "FILTERED_BY": "Agent, Group",
+    "CHANNEL": "Messaging"
+  },
+  {
+    "DASHBOARD": "Performance for Messaging",
+    "ELEMENT_NAME": "MAX. SLA FIRST RESPONSE",
+    "ELEMENT": "Metric",
+    "ANALYSIS_TYPE": "Agent Productivity",
+    "FORMULA": "-",
+    "DESCRIPTION": "The maximum time taken to first respond to the consumer, for new conversations or transferred conversations. For transferred conversations, the time is measured from the time of transfer to the time of agent response. Attributed to the time the conversion was assigned to the agent (agent segment start time).",
+    "FILTERED_BY": "Agent, Group, Skill, Campaign, Source Type",
     "CHANNEL": "Messaging"
   },
   {
@@ -10756,7 +10856,7 @@
     "ANALYSIS_TYPE": "Agent Productivity",
     "FORMULA": "-",
     "DESCRIPTION": "The number of conversations in which the agent sent at least one message during the selected timeframe.",
-    "FILTERED_BY": "Date, Initial Device, Goal Type, Group , Conv Type",
+    "FILTERED_BY": "Date, Initial Device, Goal Type, Group , Source Type",
     "CHANNEL": "Messaging"
   },
   {
