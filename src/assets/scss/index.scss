@@ -56,6 +56,7 @@ body.light {
   --content-widget-text: #34363b;
   --missing-something-background: #f8f8f8;
   --missing-something-text: #000;
+
   --notice-background: #f0f6fa;
   --notice-color: #006bb3;
   --warning-background: #faf4f0;
@@ -64,16 +65,25 @@ body.light {
   --bad-color: #b00020;
   --success-background: #f3f5f1;
   --success-color: #008738;
+  --attnnote-background: #F0F6FA;
+  --attnnote-color: #006BB3;
+  --attnalert-background: #F8F1F2;
+  --attnalert-color: #B00020;
+  --attndeprecation-background: #292931;
+  --attndeprecation-color: #FFFFFF;
+  --attntip-background: #F3F5F1;
+  --attntip-color: #18924A;
+  --attninfo-background: #EEEFF1;
+  --attninfo-color: #5A5F72;
+
   --box-shadow: #dadbe5e0;
   --search-input-background: #eeeff1;
   --search-input-color: #292b33;
   --hr: hsla(0, 0%, 0, 0.2);
   --gradient: linear-gradient(90deg, #f9c1c1 0%, #f9caaf 50.01%, #f3e1af 100%);
-  --card-bg-background: linear-gradient(
-    180deg,
-    rgba(41, 43, 51, 0.35) 0%,
-    rgba(41, 43, 51, 0.7) 100%
-  );
+  --card-bg-background: linear-gradient(180deg,
+      rgba(41, 43, 51, 0.35) 0%,
+      rgba(41, 43, 51, 0.7) 100%);
   --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.05),
     inset 0px -1px 0px rgba(167, 172, 190, 0.3);
   --scroll-bg: #e7e8ec;
@@ -125,9 +135,10 @@ body.dark {
   --button-background-secondary: transparent;
   --button-text-secondary: #2dbae6;
   --sidebar-text: var(--primary);
-  --content-widget-text: #dadbe6;
+  --content-widget-text: #AFB3C0;
   --missing-something-background: var(--card-background);
   --missing-something-color: #fff;
+
   --notice-background: #101c25;
   --notice-color: #429bd7;
   --warning-background: #251a14;
@@ -136,16 +147,25 @@ body.dark {
   --bad-color: #ea405f;
   --success-background: #101e1f;
   --success-color: #3f9f66;
+  --attnnote-background: #101C25;
+  --attnnote-color: #429BD7;
+  --attnalert-background: #221117;
+  --attnalert-color: #EA405F;
+  --attndeprecation-background: #1C1D22;
+  --attndeprecation-color: #6C7288;
+  --attntip-background: #101E1F;
+  --attntip-color: #3F9F66;
+  --attninfo-background: #363944;
+  --attninfo-color: #D1D4DB;
+
   --box-shadow: #000000d6;
   --search-input-color: #81899c;
   --search-input-background: #24262e;
   --hr: hsla(0, 0%, 100%, 0.2);
   --gradient: linear-gradient(90deg, #113546 0%, #44132e 100%);
-  --card-bg-background: linear-gradient(
-    0deg,
-    rgba(196, 199, 212, 0.7),
-    rgba(196, 199, 212, 0.7)
-  );
+  --card-bg-background: linear-gradient(0deg,
+      rgba(196, 199, 212, 0.7),
+      rgba(196, 199, 212, 0.7));
   --shadow-lp: 0px 1px 8px rgba(0, 0, 0, 0.15), inset 0px -1px 0px #1f1f1f;
   --scroll-bg: #24262e;
   --faq-icon: #429bd7;
