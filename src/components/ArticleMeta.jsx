@@ -19,7 +19,7 @@ function useReadingTime(ref, wordsPerMinute = 260) {
 }
 const ArticleMeta = ({ date, textRef }) => {
   const { readingTime } = useReadingTime(textRef)
-  console.log(readingTime)
+  // console.log(readingTime)
   return (
     <div className="ArticleMeta flex justify-start gap-4 text-xs text-footer-text font-semibold capitalize">
       <div>
