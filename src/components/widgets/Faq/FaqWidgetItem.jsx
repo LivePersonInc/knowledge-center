@@ -45,7 +45,7 @@ const QuestionStyles = styled.section`
 
 function FaqWidgetItem({ node }) {
   const [active, setActive] = useState(false)
-  console.log(node)
+  // console.log(node)
   const contentRef = useRef(null)
   const location = useLocation()
   useEffect(() => {
