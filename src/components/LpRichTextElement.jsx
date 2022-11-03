@@ -235,9 +235,9 @@ const LpRichTextElement = ({ body_content, bodyfield }) => {
             }
 
             case "contentbox": {
-              const contentboxCodename = linkedItem.elements.type.value[0]
-                .codename
-                ? linkedItem.elements.type.value[0].codename
+              const contentboxCodename = linkedItem?.elements?.type?.value[0]
+                ?.codename
+                ? linkedItem?.elements?.type?.value[0]?.codename
                 : "attnnote"
               return (
                 <div className="my-6" key={linkedItem.elements.id}>
