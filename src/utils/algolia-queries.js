@@ -1333,6 +1333,14 @@ const createObjectIdMap = (nodeSet, type) => {
       faq_items: x?.elements?.faq_items?.value
         ? x.elements.faq_items.value
         : undefined,
+      releasenotes_features:
+        type === "release-notes"
+          ? x.elements?.product_release_notes?.value
+            ? x.elements.product_release_notes.value?.map(
+              c => c?.elements?.features?.value
+            )
+            : undefined
+          : undefined,
     }
   })
 }
