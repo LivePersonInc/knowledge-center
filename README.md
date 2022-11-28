@@ -2,7 +2,9 @@
 
 # LivePerson Knowledge Center
 
-**This site is run by LivePerson’s Product Strategy and Experience team, and maintained by the Developer Experience team. Please contact dx-lp@liveperson.com for issues, comments, or questions.**
+**⚠️ The LivePerson Knowledge Center has been moved to a new, internal-only repository. LivePerson teams can reach out to LivePerson’s DX team for further details.**
+
+This site is run by LivePerson’s Product Strategy and Experience team, and maintained by the Developer Experience team.
 
 The repository generates LivePerson’s Knowledge Center, which can be found at [knowledge.liveperson.com](https://knowledge.liveperson.com/). The site is generated using Gatsby, while the content is managed using Kontent.ai. Please open an issue if you find an issue with the documentation, site structure, meta, or anything else.
 
@@ -67,8 +69,3 @@ A quick look at the top-level files and directories you’ll see in a Gatsby pro
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
-
-## Team
-
-- Development: Itay Haephrati <[ihaephrati@liveperson.com](ihaephrati@liveperson.com)>
-- Design: Bohdan Doshchak <[bdoshchak@liveperson.com](bdoshchak@liveperson.com)>
